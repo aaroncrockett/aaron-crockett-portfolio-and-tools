@@ -23,7 +23,9 @@ export default {
 			'4xl': '2.441rem',
 			'5xl': '3.052rem',
 			'6xl': '3.815rem',
+			'7xl': '4.768rem',
 			'8xl': '5.96rem',
+			'9xl': '7.451rem',
 			'10xl': '9.313rem',
 			'12xl': '14.551rem'
 		},
@@ -36,7 +38,9 @@ export default {
 			'4xl': '2.441rem',
 			'5xl': '3.052rem',
 			'6xl': '3.815rem',
+			'7xl': '4.768rem',
 			'8xl': '5.96rem',
+			'9xl': '7.451rem',
 			'10xl': '9.313rem',
 			'12xl': '14.551rem'
 		}
