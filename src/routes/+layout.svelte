@@ -8,34 +8,34 @@
 	<svelte:fragment slot="header">
 		<!-- App Bar -->
 		<div class="bg-surface-800">
-			<AppBar class="container mx-auto" background="bg-surface-800">
+			<AppBar class="container mx-auto" background="bg-surface-800 fixed top-0 right-0 left-0">
 				<svelte:fragment slot="lead">
-					<strong class="text-6xl text-secondary-500"
+					<strong class="text-2xl sm:text-4xl sm:leading-4xl leading-2xl text-secondary-500"
 						><span class="uppercase text-primary-500">A</span><span
 							class="uppercase text-tertiary-500">C</span
-						>Ditigal</strong
+						>Digital</strong
 					>
 				</svelte:fragment>
 				<svelte:fragment slot="trail">
 					<a
-						class="btn btn-sm variant-ghost-surface"
-						href="https://discord.gg/EXqV7W8MtY"
+						class="hidden text-white btn sm:inline-block variant-ghost-primary"
+						href="https://github.com/aaronmichaelhappe/portolio-skeleton-ui"
 						target="_blank"
 						rel="noreferrer"
 					>
 						Discord
 					</a>
 					<a
-						class="btn btn-sm variant-ghost-surface"
-						href="https://twitter.com/SkeletonUI"
+						class="hidden font-bold text-white btn sm:inline-block variant-ghost-primary"
+						href="https://github.com/aaronmichaelhappe/portolio-skeleton-ui"
 						target="_blank"
 						rel="noreferrer"
 					>
 						Twitter
 					</a>
 					<a
-						class="btn btn-sm variant-ghost-surface"
-						href="https://github.com/skeletonlabs/skeleton"
+						class="hidden font-bold text-white btn sm:inline-block variant-ghost-primary"
+						href="https://github.com/aaronmichaelhappe/portolio-skeleton-ui"
 						target="_blank"
 						rel="noreferrer"
 					>
