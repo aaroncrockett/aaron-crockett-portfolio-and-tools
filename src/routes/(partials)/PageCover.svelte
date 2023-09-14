@@ -4,22 +4,22 @@
 		<h3
 			class="font-bold uppercase text-surface-50 text-6xl leading-6xl sm:text-[10vw] sm:leading-[10vw] xl:text-9xl xl:leading-9xl"
 		>
-			UX.
+			WEB
 		</h3>
 		<h3
 			class="font-bold uppercase text-surface-50 text-6xl leading-6xl sm:text-[10vw] sm:leading-[10vw] xl:text-9xl xl:leading-9xl"
 		>
-			Design.
+			APPLICATION
 		</h3>
 		<h3
 			class="font-bold uppercase text-surface-50 text-6xl leading-6xl sm:text-[10vw] sm:leading-[10vw] xl:text-9xl xl:leading-9xl"
 		>
-			Dev<span class="hidden sm:inline">elopment</span>.
+			DEVELOPER
 		</h3>
 		<p
 			class="sm:pl-2 pl-1 xl:text-4xl xl:leading-4xl sm:text-[4vw] sm:leading-[4vw] text-2xl leading-base-2xl text-surface-50"
 		>
-			by Aaron Crockett
+			Frontend focus with fullstack experience.
 		</p>
 	</div>
 	<h4
