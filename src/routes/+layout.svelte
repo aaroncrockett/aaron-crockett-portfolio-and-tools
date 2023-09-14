@@ -10,11 +10,11 @@
 		<div class="bg-surface-800">
 			<AppBar class="container mx-auto" background="bg-surface-800 fixed top-0 right-0 left-0">
 				<svelte:fragment slot="lead">
-					<strong class="text-2xl sm:text-4xl sm:leading-4xl leading-2xl text-secondary-500"
-						><span class="uppercase text-primary-500">A</span><span
-							class="uppercase text-tertiary-500">C</span
-						>Digital</strong
-					>
+					<div class="text-2xl sm:text-4xl sm:leading-4xl leading-2xl text-secondary-500">
+						<span class="uppercase text-primary-500">AARON</span><span
+							class="uppercase text-tertiary-500">CROCKETT</span
+						>
+					</div>
 				</svelte:fragment>
 				<svelte:fragment slot="trail">
 					<a
