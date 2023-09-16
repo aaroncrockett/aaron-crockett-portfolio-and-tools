@@ -3,6 +3,8 @@
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import { backOut, cubicOut } from 'svelte/easing';
+	// UI related
+	import * as feather from 'feather-icons';
 	// Other
 	import classNames from 'classnames';
 
@@ -11,6 +13,12 @@
 	let headlinesTransitionsHaveEnded = false;
 	let triggerOnMountAnimations = false;
 	let headlines: string[] = [];
+
+	let downIconSvg = feather.icons['chevrons-down'].toSvg({
+		stroke: '#EF4953',
+		width: 28,
+		height: 28
+	});
 
 	onMount(() => {
 		setTimeout(() => {
@@ -77,8 +85,9 @@
 		<span
 			class={`${
 				triggerOnMountAnimations ? 'opacity-100' : 'opacity-0'
-			} transition-all duration-600 container inline-block p-4 mx-auto sm:py-4 sm:p-2`}
-			>Interactive Curriculum Vitae</span
+			} transition-all duration-600 container flex items-center p-4 mx-auto sm:py-4 sm:p-2`}
+		>
+			{@html downIconSvg} Interactive Curriculum Vitae</span
 		>
 	</h4>
 </div>
