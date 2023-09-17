@@ -3,6 +3,8 @@
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import { backOut, cubicOut } from 'svelte/easing';
+	// Store
+	import { hasScrolled } from '$lib/store';
 	// UI related
 	import * as feather from 'feather-icons';
 	// Other
@@ -12,10 +14,21 @@
 
 	let headlinesTransitionsHaveEnded = false;
 	let triggerOnMountAnimations = false;
+
+	let coverHeadlineTwColor = 'text-primary-500';
 	let headlines: string[] = [];
 
+	$: floatingIconClasses = 'floatingSpan relative -bottom-1';
+
+	$: {
+		if ($hasScrolled) {
+			coverHeadlineTwColor = 'text-surface-500';
+			floatingIconClasses = 'relative -bottom-0';
+		}
+	}
+
 	let downIconSvg = feather.icons['chevrons-down'].toSvg({
-		stroke: '#EF4953',
+		stroke: '#231F20',
 		width: 28,
 		height: 28
 	});
@@ -52,11 +65,11 @@
 			in:fly={{ y: '100%', easing: cubicOut }}
 		/>
 	{/if}
-	<div class="container relative p-2 py-12 mx-auto sm:pt-16">
+	<div class="container relative px-3 sm:px-2 pt-14 sm:pt-16 pb-12 mx-auto">
 		<div class="flex flex-col overflow-hidden">
 			{#each headlines as line}
 				<h3
-					class="font-bold uppercase text-surface-50 text-6xl leading-6xl sm:text-[10vw] sm:leading-[10vw] xl:text-9xl xl:leading-9xl"
+					class="font-bold uppercase text-surface-50 text-5xl leading-5xl sm:text-[10vw] sm:leading-[10vw] xl:text-9xl xl:leading-9xl"
 					in:fly={{
 						y: 150,
 						easing: backOut
@@ -68,7 +81,7 @@
 		</div>
 		{#if headlinesTransitionsHaveEnded}
 			<p
-				class="sm:pl-2 pl-1 xl:text-4xl xl:leading-4xl sm:text-[4vw] sm:leading-[4vw] text-2xl leading-base-2xl text-surface-50"
+				class="sm:pl-2 pl-1 xl:text-4xl xl:leading-4xl sm:text-[4vw] sm:leading-[4vw] text-2xl leading-2xl text-surface-50"
 				in:fly={{
 					x: '-100%',
 					easing: cubicOut
@@ -83,11 +96,28 @@
 		class={`z-5 absolute flex w-full items-center bottom-0 right-0 left-0 bg-surface-50 text-primary-500 sm:text-3xl sm:leading-3xl text-2xl leading-2xl`}
 	>
 		<span
-			class={`${
-				triggerOnMountAnimations ? 'opacity-100' : 'opacity-0'
-			} transition-all duration-600 container flex items-center p-4 mx-auto sm:py-4 sm:p-2`}
+			class={classNames(
+				triggerOnMountAnimations ? 'opacity-100' : 'opacity-0',
+				coverHeadlineTwColor,
+				'transition-all duration-600 container flex items-center p-4 mx-auto sm:py-4 sm:p-2'
+			)}
 		>
-			{@html downIconSvg} Interactive Curriculum Vitae</span
+			<span class={floatingIconClasses}>{@html downIconSvg} </span>Interactive Curriculum Vitae</span
 		>
 	</h4>
 </div>
+
+<style>
+	@keyframes floatEffect {
+		0%,
+		100% {
+			transform: translateY(15);
+		}
+		50% {
+			transform: translateY(-5px);
+		}
+	}
+	.floatingSpan {
+		animation: floatEffect 3.2s infinite ease-in-out;
+	}
+</style>
