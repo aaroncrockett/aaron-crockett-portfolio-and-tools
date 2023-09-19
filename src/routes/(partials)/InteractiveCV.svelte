@@ -3,7 +3,6 @@
 	import { gptQuestions } from '$lib/questions';
 
 	const { messages, handleSubmit, input } = useChat({ api: '/api/chat-bot/' });
-	console.log($messages);
 </script>
 
 <div class="container mx-auto pt-2 flex gap-4 flex-col">
