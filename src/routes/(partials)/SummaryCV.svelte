@@ -30,7 +30,7 @@
 	</h3>
 
 	<div class="grid sm:grid-cols-2 gap-4 sm:gap-8">
-		<div class="ring-0 variant-ghost-surface p-2 card">
+		<div class="flex ring-0 variant-ghost-surface p-1 card">
 			<div class="flex flex-col items-center p-4 card variant-glass">
 				<div class="py-2">{@html bagIconSvg}</div>
 				<p class="text-center">
@@ -39,7 +39,7 @@
 				</p>
 			</div>
 		</div>
-		<div class="ring-0 variant-ghost-surface p-2 card">
+		<div class="flex ring-0 variant-ghost-surface p-1 card">
 			<div class="flex flex-col items-center p-4 card variant-glass">
 				<div class="py-2">{@html lockIconSvg}</div>
 				<p class="text-center">
@@ -48,7 +48,7 @@
 				</p>
 			</div>
 		</div>
-		<div class="ring-0 variant-ghost-surface p-2 card">
+		<div class="flex ring-0 variant-ghost-surface p-1 card">
 			<div class="flex flex-col items-center p-4 card variant-glass">
 				<div class="py-2">{@html awardIconSvg}</div>
 				<p class="text-center">
@@ -58,7 +58,7 @@
 				</p>
 			</div>
 		</div>
-		<div class="ring-0 variant-ghost-surface p-2 card">
+		<div class="flex ring-0 variant-ghost-surface p-1 card">
 			<div class="flex flex-col items-center p-4 card variant-glass">
 				<div class="py-2">{@html bookIconSvg}</div>
 				<p class="text-center">
