@@ -12,6 +12,10 @@
 	import type { ModalComponent } from '@skeletonlabs/skeleton';
 	// Store
 	import { hasScrolled } from '$lib/store';
+	// Types
+	import type { PageData } from './$types';
+
+	export let data: PageData;
 
 	initializeStores();
 
@@ -38,7 +42,7 @@
 <!-- App Shell -->
 <AppShell on:scroll={scrollHandler}>
 	<svelte:fragment slot="header">
-		<Header {appBarWrapperElBg} />
+		<Header {appBarWrapperElBg} routeId="{data.route.id}}" />
 	</svelte:fragment>
 	<!-- Page Route Content -->
 	<slot />

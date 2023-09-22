@@ -10,6 +10,7 @@
 	import * as feather from 'feather-icons';
 
 	export let appBarWrapperElBg = '';
+	export let routeId = '';
 
 	let triggerOnMountTransitions = false;
 
@@ -37,16 +38,19 @@
 		height: 24
 	});
 
+	$: wrapperClasses = classNames(
+		'fixed top-0 right-0 left-0 ',
+		`${appBarWrapperElBg}`,
+		routeId != '/' && 'bg-surface-600'
+	);
+
 	onMount(() => {
 		triggerOnMountTransitions = true;
 	});
 </script>
 
 {#if triggerOnMountTransitions}
-	<div
-		transition:fade={{ easing: cubicIn, duration: 800 }}
-		class={classNames('fixed top-0 right-0 left-0', `${appBarWrapperElBg}`)}
-	>
+	<div transition:fade={{ easing: cubicIn, duration: 800 }} class={wrapperClasses}>
 		<AppBar class="container mx-auto" background="bg-none sm:!p-2 !p-1 !px-4">
 			<svelte:fragment slot="lead">
 				<div class="text-2xl uppercase sm:text-3xl sm:leading-3xl leading-2xl">
