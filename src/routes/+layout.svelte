@@ -1,14 +1,28 @@
 <script lang="ts">
 	// local
+	import SignIn from '$lib/components/SignIn.svelte';
+	import SignUp from '$lib/components/SignUp.svelte';
 	import '../app.postcss';
 	// Components/Partials
 	import Header from '$lib/components/Header.svelte';
 	// Svelte
 	import type { ComponentEvents } from 'svelte';
 	// Skeleton Labs
-	import { AppShell } from '@skeletonlabs/skeleton';
+	import { AppShell, Modal, initializeStores } from '@skeletonlabs/skeleton';
+	import type { ModalComponent } from '@skeletonlabs/skeleton';
 	// Store
 	import { hasScrolled } from '$lib/store';
+
+	initializeStores();
+
+	const modalComponentRegistry: Record<string, ModalComponent> = {
+		signIn: {
+			ref: SignIn
+		},
+		signUp: {
+			ref: SignUp
+		}
+	};
 
 	let appBarWrapperElBg = '';
 
@@ -20,6 +34,7 @@
 	}
 </script>
 
+<Modal components={modalComponentRegistry} />
 <!-- App Shell -->
 <AppShell on:scroll={scrollHandler}>
 	<svelte:fragment slot="header">
