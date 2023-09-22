@@ -8,15 +8,14 @@
 	const user = userStore(auth);
 </script>
 
-<main>
-	<PageCover />
-	<div class="pt-4">
-		<InteractiveCv />
-	</div>
-	<div class="pt-4">
-		<SummaryCV />
-	</div>
-</main>
+<PageCover />
+<div class="pt-4">
+	<InteractiveCv />
+</div>
+<div class="pt-4">
+	<SummaryCV />
+</div>
+
 <!-- about section -->
 <!-- maybe blog or linked articles -->
 <!-- footer -->

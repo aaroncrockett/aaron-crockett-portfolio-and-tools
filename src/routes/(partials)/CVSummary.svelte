@@ -30,21 +30,21 @@
 	</h3>
 
 	<div class="grid sm:grid-cols-2 gap-4 sm:gap-8">
-		<div class="flex flex-col items-center p-4 card bg-surface-50">
+		<div class="flex flex-col items-center p-4 card">
 			<div class="py-2">{@html bagIconSvg}</div>
 			<p class="text-center">
 				Developer on Famous Footwear for Caleres, a Fortune 1000 company. Developed custom and
 				highly visible landing pages for notable brands including Nike and Converse.
 			</p>
 		</div>
-		<div class="flex flex-col items-center p-4 card bg-surface-50">
+		<div class="flex flex-col items-center p-4 card">
 			<div class="py-2">{@html lockIconSvg}</div>
 			<p class="text-center">
 				Sole front-end developer for a small 3 person team (Power Admin) which relied upon me to
 				create UIs for server monitoring software.
 			</p>
 		</div>
-		<div class="flex flex-col items-center p-4 card bg-surface-50">
+		<div class="flex flex-col items-center p-4 card">
 			<div class="py-2">{@html awardIconSvg}</div>
 			<p class="text-center">
 				Proactively contributes to innovative solutions and practical improvements. Delivers
@@ -52,7 +52,7 @@
 				projects.
 			</p>
 		</div>
-		<div class="flex flex-col items-center p-4 card bg-surface-50">
+		<div class="flex flex-col items-center p-4 card">
 			<div class="py-2">{@html bookIconSvg}</div>
 			<p class="text-center">
 				Demonstrated consistent technical progression. Evolved from design, to CSS/Layout/jQuery, to

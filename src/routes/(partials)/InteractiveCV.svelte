@@ -33,7 +33,7 @@
 
 {#if $user?.uid}
 	<section
-		class="p-4 pt-8 container mx-auto flex flex-col card relative variant-ghost-secondary gap-4 justify-center items-center"
+		class="p-5 mx-auto w-3/4 flex flex-col card relative variant-ghost-secondary gap-4 justify-center items-center"
 	>
 		<h2 class="text-2xl sm:text-3xl sm:leading-3xl font-bold text-surface-500 leading-2xl p-2">
 			GPT Bot Interview.
@@ -84,9 +84,9 @@
 {/if}
 
 {#if !$user?.uid}
-	<section class="flex flex-col space-y-3 pb-4 pt-8 variant-glass px-4 card w-3/4 mx-auto">
+	<section class="flex flex-col space-y-4 p-5 card w-3/4 mx-auto variant-ringed-primary">
 		<h2
-			class="text-center text-2xl sm:text-3xl sm:leading-3xl font-bold text-primary-500 leading-2xl p-2"
+			class="text-center text-2xl sm:text-3xl sm:leading-3xl font-bold text-primary-500 leading-2xl"
 		>
 			GPT Bot Interview.
 		</h2>
