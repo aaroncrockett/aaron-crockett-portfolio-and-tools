@@ -1,5 +1,5 @@
 <script lang="ts">
-	import InteractiveCvSignInPart from './InteractiveCVSignInPart.svelte';
+	import InteractiveCVSignIntoPart from './InteractiveCVSignIntoPart.svelte';
 	import InteractiveCvBotPart from './InteractiveCVBotPart.svelte';
 
 	import { getModalStore } from '@skeletonlabs/skeleton';
@@ -26,8 +26,6 @@
 
 {#if $user?.uid}
 	<InteractiveCvBotPart />
-{/if}
-
-{#if !$user?.uid}
-	<InteractiveCvSignInPart on:click={(e) => showModal(e)} />
+{:else}
+	<InteractiveCVSignIntoPart on:click={(e) => showModal(e)} />
 {/if}
