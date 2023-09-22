@@ -20,29 +20,9 @@
 		width: 28,
 		height: 28
 	});
-	async function example() {
-		try {
-			const response = await fetch('/api/example', {
-				method: 'GET',
-				headers: {
-					'Content-Type': 'application/json'
-				}
-			});
-
-			if (response.ok) {
-				const data = await response.json();
-				console.log(data);
-			} else {
-				console.error(`Failed with status: ${response.status}`);
-			}
-		} catch (err) {
-			console.error(`Fetch failed: ${err}`);
-		}
-	}
 </script>
 
 <section class="p-4 container mx-auto variant-soft-surface card">
-	<button class="bg-red-500 p-4 w-full" on:click={example}> example </button>
 	<h3
 		class="uppercase font-bold text-2xl sm:text-3xl sm:leading-3xl leading-3xl text-center pb-6 pt-1 rounded"
 	>
