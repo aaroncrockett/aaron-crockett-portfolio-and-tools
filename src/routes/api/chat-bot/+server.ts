@@ -1,19 +1,14 @@
-import { ChatCompletionRequestMessageRoleEnum, Configuration, OpenAIApi } from 'openai-edge';
 import { OpenAIStream, StreamingTextResponse } from 'ai';
-import { OPENAI_KEY } from '$env/static/private';
+import { openAIInit } from '$lib/server/openAiApi';
 
 import type { RequestHandler } from './$types';
 
-const config = new Configuration({
-	apiKey: OPENAI_KEY
-});
-
-const openai = new OpenAIApi(config);
+const openAiInstance = openAIInit();
 
 export const POST: RequestHandler = async ({ request }) => {
 	const { messages } = await request.json();
 
-	const response = await openai.createChatCompletion({
+	const response = await openAiInstance.createChatCompletion({
 		model: 'gpt-3.5-turbo',
 		stream: true,
 		messages: messages
