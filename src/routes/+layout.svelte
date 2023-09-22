@@ -1,6 +1,7 @@
 <script lang="ts">
 	// local
 	import SignIn from '$lib/components/SignIn.svelte';
+	import SignUp from '$lib/components/SignUp.svelte';
 	import '../app.postcss';
 	// Components/Partials
 	import Header from '$lib/components/Header.svelte';
@@ -9,7 +10,6 @@
 	// Skeleton Labs
 	import { AppShell, Modal, initializeStores } from '@skeletonlabs/skeleton';
 	import type { ModalComponent } from '@skeletonlabs/skeleton';
-
 	// Store
 	import { hasScrolled } from '$lib/store';
 
@@ -17,10 +17,10 @@
 
 	const modalComponentRegistry: Record<string, ModalComponent> = {
 		signIn: {
-			ref: SignIn,
-			props: { background: 'bg-red-500' },
-			// Provide a template literal for the default component slot
-			slot: '<p>Skeleton</p>'
+			ref: SignIn
+		},
+		signUp: {
+			ref: SignUp
 		}
 	};
 
