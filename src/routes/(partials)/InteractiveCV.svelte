@@ -1,4 +1,9 @@
 <script lang="ts">
+	import { useChat } from 'ai/svelte';
+	import { gptQuestions } from '$lib/questions';
+
+	const { messages, handleSubmit, input } = useChat({ api: '/api/chat-bot/' });
+
 	import { getModalStore } from '@skeletonlabs/skeleton';
 	// Skeleton Types
 	import type { ModalSettings } from '@skeletonlabs/skeleton';
@@ -72,14 +77,25 @@
 			</div>
 		</div>
 		<label class="bold text-xl opacity-30" for="questions">Coming soon! </label>
-		<select disabled name="questions" id="questions" class="w-1/2 variant-glass-secondary card">
+		<select
+			bind:value={$input}
+			on:change={handleSubmit}
+			name="questions"
+			id="questions"
+			class="w-1/2 variant-glass-secondary card"
+		>
 			<option value="">--Feature coming soon....--</option>
-			<option value="dog">Dog</option>
-			<option value="cat">Cat</option>
-			<option value="hamster">Hamster</option>
-			<option value="parrot">Parrot</option>
-			<option value="spider">Spider</option>
-			<option value="goldfish">Goldfish</option>
+			<option value="art-dev">{gptQuestions['art-dev']} </option>
+			<option value="vue-certification">{gptQuestions['vue-certification']}</option>
 		</select>
+		<ul>
+			{#each $messages as message, index}
+				{#if index === 1}
+					<li>{message.content}</li>
+				{/if}
+			{/each}
+		</ul>
+	</div>
+</div>
 	{/if}
 </section>

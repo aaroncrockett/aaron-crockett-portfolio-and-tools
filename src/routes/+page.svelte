@@ -8,18 +8,15 @@
 	const user = userStore(auth);
 </script>
 
-<!-- User should be undefined -->
 <main>
 	<PageCover />
 	<div class="pt-4">
 		<InteractiveCv />
 	</div>
-
 	<div class="pt-4">
 		<SummaryCV />
 	</div>
 </main>
-
 <!-- about section -->
 <!-- maybe blog or linked articles -->
 <!-- footer -->
