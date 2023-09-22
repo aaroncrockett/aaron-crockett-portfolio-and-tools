@@ -2,7 +2,9 @@
 	import { useChat } from 'ai/svelte';
 	import { gptQuestions } from '$lib/questions';
 
-	const { messages, handleSubmit, input } = useChat({ api: '/api/chat-bot/' });
+	const { messages, handleSubmit, input } = useChat({
+		api: '/api/chat-bot/'
+	});
 
 	import { getModalStore } from '@skeletonlabs/skeleton';
 	// Skeleton Types
@@ -14,6 +16,13 @@
 	const modalStore = getModalStore();
 
 	const user = userStore(auth);
+
+	let selectedValue = '';
+
+	function handleSelect(e: Event) {
+		$input = selectedValue;
+		handleSubmit(e);
+	}
 
 	function showSignInModal() {
 		const modal: ModalSettings = {
@@ -63,23 +72,29 @@
 		</div>
 		<label class="bold text-xl opacity-30" for="questions">Coming soon! </label>
 		<select
-			bind:value={$input}
-			on:change={handleSubmit}
+			bind:value={selectedValue}
+			on:change={(e) => handleSelect(e)}
 			name="questions"
 			id="questions"
 			class="w-1/2 variant-glass-secondary card"
 		>
 			<option value="">--Feature coming soon....--</option>
-			<option value="art-dev">{gptQuestions['art-dev']} </option>
-			<option value="vue-certification">{gptQuestions['vue-certification']}</option>
+			<option value={`${gptQuestions['art-dev'][1]}`}>{gptQuestions['art-dev'][0]} </option>
+			<option value={`${gptQuestions['vue-certification'][1]}`}
+				>{gptQuestions['vue-certification'][0]}
+			</option>
+			<!-- <option value={`${gptQuestions['vue-certification']}`}
+				>{gptQuestions['vue-certification']}</option
+			> -->
 		</select>
-		<ul>
-			{#each $messages as message, index}
-				{#if index === 1}
-					<li>{message.content}</li>
-				{/if}
-			{/each}
-		</ul>
+		<div class="mx-auto variant-glass card w-full p-4 gap-4 flex flex-col">
+			<h4 class="text-2xl leading-2xl font-bold">Answers: {$input}</h4>
+			<div class="[&>*:nth-child(odd)]:font-bold [&>*:nth-child(even)]:pb-2">
+				{#each $messages as message}
+					<p>{message.content}</p>
+				{/each}
+			</div>
+		</div>
 	</section>
 {/if}
 
