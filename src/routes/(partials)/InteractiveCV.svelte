@@ -42,16 +42,16 @@
 
 {#if $user?.uid}
 	<section
-		class="p-5 mx-auto w-3/4 flex flex-col card relative variant-ghost-secondary gap-4 justify-center items-center"
+		class="p-5 mx-auto container md:w-4/5 flex flex-col card relative variant-ghost-secondary gap-4 justify-center items-center"
 	>
 		<h2 class="text-2xl sm:text-3xl sm:leading-3xl font-bold text-surface-500 leading-2xl p-2">
 			GPT Bot Interview.
 		</h2>
-		<p class="text-xl leading-3xl bold md:w-3/4 text-center mx-auto">
+		<p class="text-xl leading-xl bold md:w-3/4 text-center mx-auto">
 			Ask GPT a question to learn about me. Choose from a list of questions to find more about me
 			and my career journey.
 		</p>
-		<div class="variant-glass-secondary p-4 card text-surface-800 sm:w-2/3">
+		<div class="variant-glass-secondary p-4 card text-surface-800 sm:w-4/5">
 			<p>
 				Note: This is a fun feature showcasing my third-party integration skills. While I've curated
 				and guided prompts for better results, the final replies come from GPT and I have no control
@@ -99,23 +99,24 @@
 {/if}
 
 {#if !$user?.uid}
-	<section class="flex flex-col space-y-4 p-5 card w-3/4 mx-auto variant-ringed-primary">
-		<h2
-			class="text-center text-2xl sm:text-3xl sm:leading-3xl font-bold text-primary-500 leading-2xl"
-		>
-			GPT Bot Interview.
-		</h2>
-		<h3 class="text-2xl leading-2xl text-center italic text-surface-700">Sign in for access.</h3>
-		<div class="mx-auto container flex flex-col items-center space-y-4">
-			<button
-				on:click={showSignInModal}
-				class="btn variant-filled-secondary border-2 border-secondary-900 uppercase">Sign In</button
-			>
-			<button
-				on:click={showSignUpModal}
-				class="btn variant-filled-secondary border-2 border-secondary-900 text-xl uppercase"
-				>Sign Up</button
-			>
+	<section class="flex flex-col p-3 card w-3/4 mx-auto variant-soft-surface">
+		<div class="variant-ghost-surface space-y-4 p-4">
+			<h2 class="text-center text-2xl sm:text-3xl sm:leading-3xl font-bold leading-2xl">
+				GPT Bot Interview.
+			</h2>
+			<h3 class="text-2xl leading-2xl text-center italic text-secondary-200">
+				Sign in for access.
+			</h3>
+			<div class="mx-auto container flex flex-col items-center space-y-4">
+				<button
+					on:click={showSignInModal}
+					class="btn variant-ghost-secondary ring-2 font-bold text-xl uppercase">Sign In</button
+				>
+				<button
+					on:click={showSignUpModal}
+					class="btn variant-ghost-primary ring-2 font-bold text-xl uppercase">Sign Up</button
+				>
+			</div>
 		</div>
 	</section>
 {/if}
