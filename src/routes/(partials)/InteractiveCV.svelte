@@ -31,28 +31,13 @@
 	}
 </script>
 
-<section
-	class="p-4 container mx-auto flex flex-col card relative variant-ghost-secondary gap-4 justify-center items-center"
->
-	{#if !$user?.uid}
+{#if $user?.uid}
+	<section
+		class="p-4 pt-8 container mx-auto flex flex-col card relative variant-ghost-secondary gap-4 justify-center items-center"
+	>
 		<h2 class="text-2xl sm:text-3xl sm:leading-3xl font-bold text-surface-500 leading-2xl p-2">
 			GPT Bot Interview.
 		</h2>
-
-		<h3 class="text-2xl italic text-primary-500">Sign in for access.</h3>
-
-		<button
-			on:click={showSignInModal}
-			class="btn variant-ghost-primary border-2 border-primary-500 text-primary-800 uppercase"
-			>Sign In</button
-		>
-
-		<button
-			on:click={showSignUpModal}
-			class="btn variant-ghost-primary border-2 border-primary-500 text-primary-800 text-xl uppercase"
-			>Sign Up</button
-		>
-	{:else}
 		<p class="text-xl leading-3xl bold md:w-3/4 text-center mx-auto">
 			Ask GPT a question to learn about me. Choose from a list of questions to find more about me
 			and my career journey.
@@ -95,7 +80,27 @@
 				{/if}
 			{/each}
 		</ul>
-	</div>
-</div>
-	{/if}
-</section>
+	</section>
+{/if}
+
+{#if !$user?.uid}
+	<section class="flex flex-col space-y-3 pb-4 pt-8 variant-glass px-4 card w-3/4 mx-auto">
+		<h2
+			class="text-center text-2xl sm:text-3xl sm:leading-3xl font-bold text-primary-500 leading-2xl p-2"
+		>
+			GPT Bot Interview.
+		</h2>
+		<h3 class="text-2xl leading-2xl text-center italic text-surface-700">Sign in for access.</h3>
+		<div class="mx-auto container flex flex-col items-center space-y-4">
+			<button
+				on:click={showSignInModal}
+				class="btn variant-filled-secondary border-2 border-secondary-900 uppercase">Sign In</button
+			>
+			<button
+				on:click={showSignUpModal}
+				class="btn variant-filled-secondary border-2 border-secondary-900 text-xl uppercase"
+				>Sign Up</button
+			>
+		</div>
+	</section>
+{/if}
