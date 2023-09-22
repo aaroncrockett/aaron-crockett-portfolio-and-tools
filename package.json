@@ -43,5 +43,6 @@
 		"feather-icons": "^4.29.0",
 		"firebase-admin": "^11.10.1",
 		"openai-edge": "^1.2.2"
+		"sveltefire": "^0.4.2"
 	}
 }
