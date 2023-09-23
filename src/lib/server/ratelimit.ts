@@ -4,7 +4,7 @@ import { Ratelimit } from '@upstash/ratelimit';
 import { UPSTASH_REDIS_REST_TOKEN, UPSTASH_REDIS_REST_URL } from '$env/static/private';
 
 let ratelimit: unknown = null;
-
+// temp low rate limit
 export function setRateLimit() {
 	const redis = new Redis({
 		url: UPSTASH_REDIS_REST_URL,
@@ -12,7 +12,7 @@ export function setRateLimit() {
 	});
 	ratelimit = new Ratelimit({
 		redis,
-		limiter: Ratelimit.slidingWindow(3, '1 m')
+		limiter: Ratelimit.slidingWindow(1, '15 m')
 	});
 }
 

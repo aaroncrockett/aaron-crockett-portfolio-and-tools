@@ -1,4 +1,4 @@
-import { getRateLimit, setRateLimit } from '$lib/server/ratelimit';
+import { getRateLimit } from '$lib/server/ratelimit';
 import { fail } from '@sveltejs/kit';
 
 export const actions = {
