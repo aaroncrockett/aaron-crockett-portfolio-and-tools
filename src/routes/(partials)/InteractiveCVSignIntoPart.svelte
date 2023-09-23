@@ -8,12 +8,12 @@
 			<button
 				on:click
 				data-signin="signIn"
-				class="btn variant-ghost-secondary ring-2 font-bold text-xl uppercase">Sign In</button
+				class="btn btn-lg variant-ghost-secondary ring-2 font-bold uppercase">Sign In</button
 			>
 			<button
 				on:click
 				data-signup="signUp"
-				class="btn variant-ghost-primary ring-2 font-bold text-xl uppercase">Sign Up</button
+				class="btn btn-lg variant-ghost-primary ring-2 font-bold uppercase">Sign Up</button
 			>
 		</div>
 	</div>
