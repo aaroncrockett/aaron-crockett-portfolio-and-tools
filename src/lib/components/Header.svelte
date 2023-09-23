@@ -3,7 +3,9 @@
 	import { fade } from 'svelte/transition';
 	import { cubicIn } from 'svelte/easing';
 	// Skeleton Labs
-	import { AppBar } from '@skeletonlabs/skeleton';
+	import { AppBar, getDrawerStore } from '@skeletonlabs/skeleton';
+	import type { DrawerSettings } from '@skeletonlabs/skeleton';
+
 	// Other
 	import classNames from 'classnames';
 	// UI related
@@ -12,7 +14,7 @@
 	export let appBarWrapperElBg = '';
 	export let routeId = '';
 
-	let triggerOnMountTransitions = false;
+	const drawerStore = getDrawerStore();
 
 	const gitIconSvg = feather.icons['github'].toSvg({
 		stroke: '#d7424b',
@@ -38,11 +40,24 @@
 		height: 24
 	});
 
+	let triggerOnMountTransitions = false;
+
 	$: wrapperClasses = classNames(
 		'fixed top-0 right-0 left-0 ',
 		`${appBarWrapperElBg}`,
 		routeId != '/' && 'bg-surface-600'
 	);
+
+	function openDrawer() {
+		const drawerSettings: DrawerSettings = {
+			id: 'hidden-drawer',
+			// Provide your property overrides:
+			bgDrawer: 'bg-primary-500',
+			width: 'w-1/2',
+			rounded: 'rounded'
+		};
+		drawerStore.open(drawerSettings);
+	}
 
 	onMount(() => {
 		triggerOnMountTransitions = true;
@@ -54,11 +69,14 @@
 		<AppBar class="container mx-auto" background="bg-none sm:!p-2 !p-1 !px-4">
 			<svelte:fragment slot="lead">
 				<div class="text-2xl uppercase sm:text-3xl sm:leading-3xl leading-2xl">
-					<span class="text-primary-500">AARON</span>
-					<span class="text-tertiary-500">HAPPE</span>
+					<a href="/">
+						<span class="text-primary-500">AARON</span>
+						<span class="text-tertiary-500">HAPPE</span>
+					</a>
 				</div>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
+				<button on:click={openDrawer} class="uppercase text-surface-600"> HIHI </button>
 				<a
 					class="inline-block p-2 rounded-full"
 					href="https://github.com/aaronmichaelhappe/"
