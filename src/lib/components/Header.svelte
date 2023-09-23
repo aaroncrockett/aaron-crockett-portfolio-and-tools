@@ -5,7 +5,10 @@
 	// Skeleton Labs
 	import { AppBar, getDrawerStore } from '@skeletonlabs/skeleton';
 	import type { DrawerSettings } from '@skeletonlabs/skeleton';
-
+	// Firebase related
+	import { signOut } from 'firebase/auth';
+	import { auth } from '$lib/firebaseClient';
+	import { userStore } from 'sveltefire';
 	// Other
 	import classNames from 'classnames';
 	// UI related
@@ -15,6 +18,8 @@
 	export let routeId = '';
 
 	const drawerStore = getDrawerStore();
+
+	const user = userStore(auth);
 
 	const gitIconSvg = feather.icons['github'].toSvg({
 		stroke: '#d7424b',
@@ -59,6 +64,14 @@
 		drawerStore.open(drawerSettings);
 	}
 
+	function handleSignOut() {
+		signOut(auth)
+			.then()
+			.catch((error) => {
+				console.log(error);
+			});
+	}
+
 	onMount(() => {
 		triggerOnMountTransitions = true;
 	});
@@ -76,7 +89,12 @@
 				</div>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
-				<button on:click={openDrawer} class="uppercase text-surface-600"> HIHI </button>
+				<!-- <button on:click={openDrawer} class="uppercase text-surface-600"> HIHI </button> -->
+				{#if $user?.uid}
+					<button on:click={handleSignOut} class="btn btn-sm variant-soft-primary uppercase"
+						>SIGN OUT</button
+					>
+				{/if}
 				<a
 					class="inline-block p-2 rounded-full"
 					href="https://github.com/aaronmichaelhappe/"
