@@ -1,16 +1,18 @@
 <script lang="ts">
 	import { gptQuestions } from '$lib/questions';
 	import { useChat } from 'ai/svelte';
+	import { enhance, applyAction } from '$app/forms';
 
 	const { messages, handleSubmit, input } = useChat({
 		api: '/api/chat-bot/'
 	});
 
 	let selectedValue = '';
+	let selectEvent: null | Event = null;
 
-	function handleSelect(e: Event) {
+	async function handleSelect(e: Event) {
 		$input = selectedValue;
-		handleSubmit(e);
+		selectEvent = e;
 	}
 </script>
 
@@ -43,23 +45,36 @@
 			</label>
 		</div>
 	</div>
-	<label class="bold text-xl opacity-30" for="questions">Coming soon! </label>
-	<select
-		bind:value={selectedValue}
-		on:change={(e) => handleSelect(e)}
-		name="questions"
-		id="questions"
-		class="w-1/2 variant-glass-secondary card"
+	<form
+		method="POST"
+		use:enhance={() => {
+			return async ({ result }) => {
+				console.log(result);
+				if (result.type === 'success') {
+					handleSubmit(selectEvent);
+				}
+				if (result.type === 'error') {
+					await applyAction(result);
+				}
+			};
+		}}
 	>
-		<option value="">--Feature coming soon....--</option>
-		<option value={`${gptQuestions['art-dev'][1]}`}>{gptQuestions['art-dev'][0]} </option>
-		<option value={`${gptQuestions['vue-certification'][1]}`}
-			>{gptQuestions['vue-certification'][0]}
-		</option>
-		<!-- <option value={`${gptQuestions['vue-certification']}`}
-    >{gptQuestions['vue-certification']}</option
-  > -->
-	</select>
+		<label class="bold text-xl opacity-30" for="questions">Coming soon! </label>
+		<select
+			bind:value={selectedValue}
+			on:change={(e) => handleSelect(e)}
+			name="questions"
+			id="questions"
+			class="w-1/2 variant-glass-secondary card"
+		>
+			<option value="">--Feature coming soon....--</option>
+			<option value={`${gptQuestions['art-dev'][1]}`}>{gptQuestions['art-dev'][0]} </option>
+			<option value={`${gptQuestions['vue-certification'][1]}`}
+				>{gptQuestions['vue-certification'][0]}
+			</option>
+		</select>
+		<button class="btn variant-outline-primary">HEY</button>
+	</form>
 	<div class="mx-auto variant-glass card w-full p-4 gap-4 flex flex-col">
 		<h4 class="text-2xl leading-2xl font-bold">Answers: {$input}</h4>
 		<div class="[&>*:nth-child(odd)]:font-bold [&>*:nth-child(even)]:pb-2">
