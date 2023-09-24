@@ -1,22 +1,22 @@
 <script>
 	import * as feather from 'feather-icons';
 
-	const bagIconSvg = feather.icons['shopping-bag'].toSvg({
+	const bagIconSvg = feather?.icons['shopping-bag']?.toSvg({
 		stroke: '#d7424b',
 		width: 28,
 		height: 28
 	});
-	const lockIconSvg = feather.icons['lock'].toSvg({
+	const lockIconSvg = feather?.icons['lock']?.toSvg({
 		stroke: '#d7424b',
 		width: 28,
 		height: 28
 	});
-	const awardIconSvg = feather.icons['award'].toSvg({
+	const awardIconSvg = feather?.icons['award']?.toSvg({
 		stroke: '#d7424b',
 		width: 28,
 		height: 28
 	});
-	const bookIconSvg = feather.icons['book-open'].toSvg({
+	const bookIconSvg = feather?.icons['book-open']?.toSvg({
 		stroke: '#d7424b',
 		width: 28,
 		height: 28

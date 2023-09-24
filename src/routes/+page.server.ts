@@ -6,7 +6,7 @@ export const actions = {
 		const ratelimit = getRateLimit();
 		const rateLimitAttempt = await ratelimit?.limit(event.getClientAddress());
 
-		if (!rateLimitAttempt.success) {
+		if (!rateLimitAttempt?.success) {
 			// const timeRemaining = Math.floor((rateLimitAttempt.reset - new Date().getTime()) / 1000);
 			return fail(429, {
 				error: `TEST lorum ipsum`

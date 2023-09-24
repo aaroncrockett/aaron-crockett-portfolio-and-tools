@@ -27,7 +27,7 @@
 		}
 	}
 
-	let downIconSvg = feather.icons['chevrons-down'].toSvg({
+	let downIconSvg = feather?.icons['chevrons-down']?.toSvg({
 		stroke: '#231F20',
 		width: 28,
 		height: 28

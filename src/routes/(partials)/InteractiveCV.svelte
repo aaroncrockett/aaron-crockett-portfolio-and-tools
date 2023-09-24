@@ -13,7 +13,7 @@
 	const user = userStore(auth);
 
 	function showModal(e: Event) {
-		const target = e.target as HTMLElement; // Cast to HTMLElement
+		const target = e?.target as HTMLElement; // Cast to HTMLElement
 
 		const component = target?.dataset?.signin || target?.dataset?.signup;
 
@@ -21,7 +21,7 @@
 			type: 'component',
 			component: component
 		};
-		modalStore.trigger(modal);
+		modalStore?.trigger(modal);
 	}
 </script>
 

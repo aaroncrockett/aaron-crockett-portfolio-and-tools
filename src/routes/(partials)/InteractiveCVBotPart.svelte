@@ -61,14 +61,14 @@
 			use:enhance={() => {
 				buttonIsDisabled = true;
 				return async ({ result }) => {
-					if (result.type === 'success') {
+					if (result?.type === 'success') {
 						handleSubmit(selectEvent);
 					}
-					if (result.type === 'failure') {
+					if (result?.type === 'failure') {
 						rateLimitError =
 							'Rate limit is restricted to 5 requests per 15 minutes. Please try again later.';
 					}
-					if (result.type === 'error') {
+					if (result?.type === 'error') {
 						await applyAction(result);
 					}
 				};
@@ -101,7 +101,7 @@
 		{/if}
 		<div class="[&>*:nth-child(odd)]:font-bold [&>*:nth-child(even)]:pb-2">
 			{#each $messages as message}
-				<p>{message.content}</p>
+				<p>{message?.content}</p>
 			{/each}
 		</div>
 	</div>

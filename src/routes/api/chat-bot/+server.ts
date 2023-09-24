@@ -7,7 +7,7 @@ const openAiInstance = openAIInit();
 export const POST: RequestHandler = async (event) => {
 	const { messages } = await event.request.json();
 
-	const response = await openAiInstance.createChatCompletion({
+	const response = await openAiInstance?.createChatCompletion({
 		model: 'gpt-3.5-turbo',
 		stream: true,
 		messages: messages
