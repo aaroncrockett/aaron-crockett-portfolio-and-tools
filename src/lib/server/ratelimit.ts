@@ -12,7 +12,7 @@ export function setRateLimit() {
 	});
 	ratelimit = new Ratelimit({
 		redis,
-		limiter: Ratelimit?.slidingWindow(1, '15 m')
+		limiter: Ratelimit?.slidingWindow(3, '15 m')
 	});
 }
 

@@ -66,7 +66,7 @@
 					}
 					if (result?.type === 'failure') {
 						rateLimitError =
-							'Rate limit is restricted to 5 requests per 15 minutes. Please try again later.';
+							'Rate limit is restricted to 3 requests per 15 minutes during testing. Please try again later.';
 					}
 					if (result?.type === 'error') {
 						await applyAction(result);
