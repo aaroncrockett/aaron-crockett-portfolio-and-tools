@@ -40,7 +40,7 @@
 					<span>Password</span>
 					<input class="input text-surface-900" required type="password" bind:value={password} />
 				</label>
-				<button class="btn variant-ghost-primary" align="left" type="submit">Sign In</button>
+				<button class="btn variant-ghost-primary" type="submit">Sign In</button>
 			</form>
 			{#if errorMessage}
 				<div class="mt-2 text-red-500">
