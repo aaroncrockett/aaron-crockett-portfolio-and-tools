@@ -1,19 +1,29 @@
 <script lang="ts">
 	// local
+	import '../app.postcss';
 	import SignIn from '$lib/components/SignIn.svelte';
 	import SignUp from '$lib/components/SignUp.svelte';
-	import '../app.postcss';
-	// Components/Partials
 	import Header from '$lib/components/Header.svelte';
-	// Svelte
+	// Svelte & Sveltekit
 	import type { ComponentEvents } from 'svelte';
+	import type { PageData } from './$types';
 	// Skeleton Labs
-	import { AppShell, Modal, initializeStores } from '@skeletonlabs/skeleton';
+	import {
+		AppShell,
+		Drawer,
+		Modal,
+		getDrawerStore,
+		initializeStores
+	} from '@skeletonlabs/skeleton';
 	import type { ModalComponent } from '@skeletonlabs/skeleton';
-	// Store
+	// Stores and Libs
 	import { hasScrolled } from '$lib/store';
 
+	export let data: PageData;
+
 	initializeStores();
+
+	const drawerStore = getDrawerStore();
 
 	const modalComponentRegistry: Record<string, ModalComponent> = {
 		signIn: {
@@ -35,10 +45,27 @@
 </script>
 
 <Modal components={modalComponentRegistry} />
+<Drawer>
+	<div class="variant-primary p-4">
+		<p>
+			OOOPPS you found this drawer on accident! It's ok. It just includes test examples I was
+			working on. hehe.
+		</p>
+		<ul>
+			<li><a class="text-white" on:click={() => drawerStore.close()} href="/">Home</a></li>
+			<li>
+				<a class="text-white" on:click={() => drawerStore.close()} href="/form-example"
+					>Form Example</a
+				>
+			</li>
+		</ul>
+	</div>
+</Drawer>
+
 <!-- App Shell -->
 <AppShell on:scroll={scrollHandler}>
 	<svelte:fragment slot="header">
-		<Header {appBarWrapperElBg} />
+		<Header {appBarWrapperElBg} routeId="{data.route.id}}" />
 	</svelte:fragment>
 	<!-- Page Route Content -->
 	<slot />
