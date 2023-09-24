@@ -1,5 +1,6 @@
 <script>
 	import * as feather from 'feather-icons';
+
 	const bagIconSvg = feather.icons['shopping-bag'].toSvg({
 		stroke: '#d7424b',
 		width: 28,

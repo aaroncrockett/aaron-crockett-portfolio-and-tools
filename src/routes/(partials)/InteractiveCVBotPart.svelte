@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { gptQuestions } from '$lib/questions';
+	// Svelte related
 	import { useChat } from 'ai/svelte';
 	import { enhance, applyAction } from '$app/forms';
 

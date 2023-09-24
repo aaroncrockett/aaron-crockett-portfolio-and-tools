@@ -1,7 +1,7 @@
 <script lang="ts">
 	import InteractiveCVSignIntoPart from './InteractiveCVSignIntoPart.svelte';
 	import InteractiveCvBotPart from './InteractiveCVBotPart.svelte';
-
+	// Skeleton related
 	import { getModalStore } from '@skeletonlabs/skeleton';
 	// Skeleton Types
 	import type { ModalSettings } from '@skeletonlabs/skeleton';
@@ -10,11 +10,12 @@
 	import { userStore } from 'sveltefire';
 
 	const modalStore = getModalStore();
-
 	const user = userStore(auth);
 
-	function showModal(e: any) {
-		const component = e.target.dataset.signin || e.target.dataset.signup;
+	function showModal(e: Event) {
+		const target = e.target as HTMLElement; // Cast to HTMLElement
+
+		const component = target?.dataset?.signin || target?.dataset?.signup;
 
 		const modal: ModalSettings = {
 			type: 'component',

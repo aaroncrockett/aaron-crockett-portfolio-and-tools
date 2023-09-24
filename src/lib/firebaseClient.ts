@@ -1,9 +1,9 @@
 // Import the functions you need from the SDKs you need
-import { deleteApp, getApp, getApps, initializeApp } from 'firebase/app';
+import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
-import { connectFirestoreEmulator } from 'firebase/firestore';
-import { connectAuthEmulator } from 'firebase/auth';
+// import { connectFirestoreEmulator } from 'firebase/firestore';
+// import { connectAuthEmulator } from 'firebase/auth';
 
 import {
 	PUBLIC_FB_API_KEY,

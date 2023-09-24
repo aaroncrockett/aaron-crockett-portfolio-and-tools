@@ -48,8 +48,8 @@
 <Drawer>
 	<div class="variant-primary p-4">
 		<p>
-			OPPS you found this drawer on accident! It's ok. It just includes test exampels I was working
-			on. hehe.
+			OOOPPS you found this drawer on accident! It's ok. It just includes test examples I was
+			working on. hehe.
 		</p>
 		<ul>
 			<li><a class="text-white" on:click={() => drawerStore.close()} href="/">Home</a></li>

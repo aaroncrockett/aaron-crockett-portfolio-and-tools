@@ -13,17 +13,7 @@ export const POST: RequestHandler = async (event) => {
 		messages: messages
 	});
 
-	const stream = OpenAIStream(response, {
-		onStart: async () => {
-			// save to the db
-		},
-		onToken: async (token: string) => {
-			//
-		},
-		onCompletion: async (completion: string) => {
-			// save completion to db
-		}
-	});
+	const stream = OpenAIStream(response);
 
 	return new StreamingTextResponse(stream);
 };

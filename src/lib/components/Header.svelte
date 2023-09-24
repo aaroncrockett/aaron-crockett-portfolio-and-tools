@@ -3,8 +3,8 @@
 	import { fade } from 'svelte/transition';
 	import { cubicIn } from 'svelte/easing';
 	// Skeleton Labs
-	import { AppBar, getDrawerStore } from '@skeletonlabs/skeleton';
-	import type { DrawerSettings } from '@skeletonlabs/skeleton';
+	import { AppBar } from '@skeletonlabs/skeleton';
+	// import type { DrawerSettings } from '@skeletonlabs/skeleton';
 	// Firebase related
 	import { signOut } from 'firebase/auth';
 	import { auth } from '$lib/firebaseClient';
@@ -17,7 +17,7 @@
 	export let appBarWrapperElBg = '';
 	export let routeId = '';
 
-	const drawerStore = getDrawerStore();
+	// const drawerStore = getDrawerStore();
 
 	const user = userStore(auth);
 
@@ -53,16 +53,16 @@
 		routeId != '/' && 'bg-surface-600'
 	);
 
-	function openDrawer() {
-		const drawerSettings: DrawerSettings = {
-			id: 'hidden-drawer',
-			// Provide your property overrides:
-			bgDrawer: 'bg-primary-500',
-			width: 'w-1/2',
-			rounded: 'rounded'
-		};
-		drawerStore.open(drawerSettings);
-	}
+	// function openDrawer() {
+	// 	const drawerSettings: DrawerSettings = {
+	// 		id: 'hidden-drawer',
+	// 		// Provide your property overrides:
+	// 		bgDrawer: 'bg-primary-500',
+	// 		width: 'w-1/2',
+	// 		rounded: 'rounded'
+	// 	};
+	// 	drawerStore.open(drawerSettings);
+	// }
 
 	function handleSignOut() {
 		signOut(auth)
@@ -96,7 +96,7 @@
 					>
 				{/if}
 				<a
-					class="inline-block p-2 rounded-full"
+					class="inline-block p-1 sm:p-2"
 					href="https://github.com/aaronmichaelhappe/"
 					target="_blank"
 					rel="noreferrer"
@@ -109,7 +109,7 @@
 					</span>
 				</a>
 				<a
-					class="font-bold text-white inline-block"
+					class="p-1 sm:p-2 inline-block"
 					href="https://www.linkedin.com/in/aaron-happe-4741176a/"
 					target="_blank"
 					rel="noreferrer"

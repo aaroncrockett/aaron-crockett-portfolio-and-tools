@@ -7,9 +7,9 @@ export const actions = {
 		const rateLimitAttempt = await ratelimit.limit(event.getClientAddress());
 
 		if (!rateLimitAttempt.success) {
-			const timeRemaining = Math.floor((rateLimitAttempt.reset - new Date().getTime()) / 1000);
+			// const timeRemaining = Math.floor((rateLimitAttempt.reset - new Date().getTime()) / 1000);
 			return fail(429, {
-				error: `Too many requests. Please try again in ${timeRemaining} seconds.`
+				error: `TEST lorum ipsum`
 			});
 		}
 	}

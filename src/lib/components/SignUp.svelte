@@ -18,7 +18,7 @@
 
 	function handleSignUp() {
 		createUserWithEmailAndPassword(auth, email, password)
-			.then((userCredential) => {
+			.then(() => {
 				modalStore.close();
 			})
 			.catch((error) => {
