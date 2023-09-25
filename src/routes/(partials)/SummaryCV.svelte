@@ -35,8 +35,8 @@
 			<div class="flex flex-col items-center p-4 card variant-glass">
 				<div class="py-2">{@html bagIconSvg}</div>
 				<p class="text-center">
-					Developer on Famous Footwear for Caleres, a Fortune 1000 company. Developed custom and
-					highly visible landing pages for notable brands including Nike and Converse.
+					Developer for Caleres, a Fortune 1000 company. Created highly visible landing pages for
+					Famous Footwear, on notable brands including Nike and Converse.
 				</p>
 			</div>
 		</div>
@@ -44,8 +44,8 @@
 			<div class="flex flex-col items-center p-4 card variant-glass">
 				<div class="py-2">{@html lockIconSvg}</div>
 				<p class="text-center">
-					Sole front-end developer for a small 3 person team (Power Admin) which relied upon me to
-					create UIs for server monitoring software.
+					Took charge of front-end development within a compact 3-person team (Power Admin),
+					highlighting my flexibility and autonomous capacity for delivery.
 				</p>
 			</div>
 		</div>
@@ -53,9 +53,8 @@
 			<div class="flex flex-col items-center p-4 card variant-glass">
 				<div class="py-2">{@html awardIconSvg}</div>
 				<p class="text-center">
-					Proactively contributes to innovative solutions and practical improvements. Delivers
-					consistent, high-quality results. Keeps current and actively creates and maintains
-					personal projects.
+					Involved in open source projects and independent project initiatives. Keeps current with
+					technology. Friendly and communicative.
 				</p>
 			</div>
 		</div>
