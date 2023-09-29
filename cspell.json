@@ -1,0 +1,14 @@
+{
+	"language": "en",
+	"ignorePaths": [
+		"src/lib/tailwind/generated/**",
+		"static/**",
+		"pnpm-lock.yaml",
+		"package-lock.json",
+		"yarn.lock",
+		"package/**"
+	],
+	"dictionaries": ["html", "typescript", "softwareTerms", "companies"],
+	"allowCompoundWords": true,
+	"words": []
+}
