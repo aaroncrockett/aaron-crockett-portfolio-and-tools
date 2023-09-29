@@ -3,6 +3,9 @@
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import { backOut, cubicOut } from 'svelte/easing';
+	import { getContext } from 'svelte';
+	import type { Writable } from 'svelte/store';
+
 	// Store
 	import { hasScrolled } from '$lib/store';
 	// UI related
@@ -14,6 +17,7 @@
 
 	let headlinesTransitionsHaveEnded = false;
 	let triggerOnMountAnimations = false;
+	let viewPortHeightIsSet: Writable<boolean>;
 
 	let coverHeadlineTwColor = 'text-primary-500';
 	let headlines: string[] = [];
@@ -24,6 +28,15 @@
 		if ($hasScrolled) {
 			coverHeadlineTwColor = 'text-surface-500';
 			floatingIconClasses = 'relative -bottom-0';
+		}
+	}
+
+	$: {
+		if (headlinesTransitionsHaveEnded) {
+			viewPortHeightIsSet = getContext('viewport-height');
+			setTimeout(() => {
+				$viewPortHeightIsSet = true;
+			}, 400);
 		}
 	}
 
@@ -52,12 +65,7 @@
 </script>
 
 <!-- Remove scroll bars with overflow-hidden until animations are finished to avoid layout shift -->
-<div
-	class={classNames(
-		'relative h-screen',
-		`${headlinesTransitionsHaveEnded ? 'overflow-auto' : 'overflow-hidden'}`
-	)}
->
+<div class="relative h-screen">
 	<!-- Transition background intro. -->
 	{#if triggerOnMountAnimations}
 		<div

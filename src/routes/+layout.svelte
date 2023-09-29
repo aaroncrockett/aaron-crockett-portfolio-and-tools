@@ -5,7 +5,8 @@
 	import SignUp from '$lib/components/SignUp.svelte';
 	import Header from '$lib/components/Header.svelte';
 	// Svelte & Sveltekit
-	import type { ComponentEvents } from 'svelte';
+	import { setContext, type ComponentEvents } from 'svelte';
+	import { writable } from 'svelte/store';
 	import type { PageData } from './$types';
 	// Skeleton Labs
 	import {
@@ -36,6 +37,10 @@
 
 	let appBarWrapperElBg = '';
 
+	const viewportHeightSet = writable(false);
+
+	setContext('viewport-height', viewportHeightSet);
+
 	function scrollHandler(event: ComponentEvents<AppShell>['scroll']) {
 		if (!$hasScrolled) $hasScrolled = true;
 		if (event.currentTarget.scrollTop > 10) {
@@ -63,9 +68,9 @@
 </Drawer>
 
 <!-- App Shell -->
-<AppShell on:scroll={scrollHandler}>
+<AppShell class={$viewportHeightSet && 'h-screen'} on:scroll={scrollHandler}>
 	<svelte:fragment slot="header">
-		<Header {appBarWrapperElBg} routeId="{data.route.id}}" />
+		<Header {appBarWrapperElBg} routeId={data.route.id} />
 	</svelte:fragment>
 	<!-- Page Route Content -->
 	<slot />
