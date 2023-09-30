@@ -48,9 +48,7 @@
 	let triggerOnMountTransitions = false;
 
 	$: wrapperClasses = classNames(
-		'fixed top-0 right-0 left-0 ',
-		`${appBarWrapperElBg}`,
-		routeId != '/' && 'bg-surface-600'
+		routeId != '/' ? 'bg-surface-600' : `fixed top-0 right-0 left-0 ${appBarWrapperElBg}`
 	);
 
 	// function openDrawer() {
@@ -84,7 +82,7 @@
 				<div class="text-2xl uppercase sm:text-3xl sm:leading-3xl leading-2xl">
 					<a href="/">
 						<span class="text-primary-500">AARON</span>
-						<span class="text-tertiary-500">HAPPE</span>
+						<span class="text-tertiary-500">CROCKETT</span>
 					</a>
 				</div>
 			</svelte:fragment>
@@ -97,7 +95,7 @@
 				{/if}
 				<a
 					class="inline-block p-1 sm:p-2"
-					href="https://github.com/aaronmichaelhappe/"
+					href="https://github.com/aaroncrockett/"
 					target="_blank"
 					rel="noreferrer"
 				>
@@ -110,7 +108,7 @@
 				</a>
 				<a
 					class="p-1 sm:p-2 inline-block"
-					href="https://www.linkedin.com/in/aaron-happe-4741176a/"
+					href="https://www.linkedin.com/in/aaron-happe-crockett-4741176a/"
 					target="_blank"
 					rel="noreferrer"
 				>

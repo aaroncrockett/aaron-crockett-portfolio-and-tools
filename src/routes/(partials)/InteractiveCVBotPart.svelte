@@ -35,7 +35,7 @@
 		<p>
 			Note: This is a fun feature showcasing my third-party integration skills. While I've curated
 			and guided prompts for better results, the final replies come from GPT and I have no control
-			over them.. Enjoy!
+			over them.
 		</p>
 		<div class="flex justify-center pt-4">
 			<input
@@ -66,7 +66,7 @@
 					}
 					if (result?.type === 'failure') {
 						rateLimitError =
-							'Rate limit is restricted to 3 requests per 15 minutes during testing. Please try again later.';
+							'Rate limit is restricted to 5 requests per 15 minutes during testing. Please try again later.';
 					}
 					if (result?.type === 'error') {
 						await applyAction(result);
@@ -85,8 +85,11 @@
 			>
 				<option value="">--Select a question--</option>
 				<option value={`${gptQuestions['art-dev'][1]}`}>{gptQuestions['art-dev'][0]} </option>
-				<option value={`${gptQuestions['vue-certification'][1]}`}
-					>{gptQuestions['vue-certification'][0]}
+				<option value={`${gptQuestions['open-source'][1]}`}
+					>{gptQuestions['open-source'][0]}
+				</option>
+				<option value={`${gptQuestions['diverse-companies'][1]}`}
+					>{gptQuestions['diverse-companies'][0]}
 				</option>
 			</select>
 			{#if selectedValue}
