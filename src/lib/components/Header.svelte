@@ -48,9 +48,7 @@
 	let triggerOnMountTransitions = false;
 
 	$: wrapperClasses = classNames(
-		'fixed top-0 right-0 left-0 ',
-		`${appBarWrapperElBg}`,
-		routeId != '/' && 'bg-surface-600'
+		routeId != '/' ? 'bg-surface-600' : `fixed top-0 right-0 left-0 ${appBarWrapperElBg}`
 	);
 
 	// function openDrawer() {

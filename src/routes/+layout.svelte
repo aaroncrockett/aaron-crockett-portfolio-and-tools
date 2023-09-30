@@ -38,11 +38,16 @@
 	let appBarWrapperElBg = '';
 
 	const viewportHeightSet = writable(false);
-
+	// wait to set height so scroll bar doesn't distract from intro animation.
+	// child uses get context to get the store, then inform us that its time to set the vh.
 	setContext('viewport-height', viewportHeightSet);
+
+	// innerHeight as opposed to vh/screen for mobile, to account for mobile bars at bottom.
+	$: innerHeight = 0;
 
 	function scrollHandler(event: ComponentEvents<AppShell>['scroll']) {
 		if (!$hasScrolled) $hasScrolled = true;
+		// wait to add bg color as it looks better to have no bg on intro animation.
 		if (event.currentTarget.scrollTop > 10) {
 			appBarWrapperElBg = 'bg-surface-600 shadow-sm';
 		}
@@ -66,12 +71,15 @@
 		</ul>
 	</div>
 </Drawer>
+<svelte:window bind:innerHeight />
 
 <!-- App Shell -->
-<AppShell class={$viewportHeightSet && 'h-screen'} on:scroll={scrollHandler}>
-	<svelte:fragment slot="header">
-		<Header {appBarWrapperElBg} routeId={data.route.id} />
-	</svelte:fragment>
-	<!-- Page Route Content -->
-	<slot />
-</AppShell>
+<div style={$viewportHeightSet ? `height: ${innerHeight}px;` : ''}>
+	<AppShell on:scroll={scrollHandler}>
+		<svelte:fragment slot="header">
+			<Header {appBarWrapperElBg} routeId={data.route.id} />
+		</svelte:fragment>
+		<!-- Page Route Content -->
+		<slot />
+	</AppShell>
+</div>
