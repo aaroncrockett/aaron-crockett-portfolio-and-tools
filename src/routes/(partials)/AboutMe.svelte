@@ -19,7 +19,9 @@
 		</div>
 	</div>
 	<div class="w-fullp-6 sm:order-2 md:w-1/2">
-		<h3 class="text-4xl leading-4xl uppercase pb-1 text-primary-500">A little more about me.</h3>
+		<h3 class="sm:text-4xl text-2xl leading-2xl sm:leading-4xl uppercase pb-1 text-primary-500">
+			A little more about me.
+		</h3>
 		<p>
 			I live in Portland, Oregon, with my husband Nick and our two dogs, Jasper and Fred. I enjoy
 			hiking, game nights with friends, and exploring local restaurants. Every morning, I start my
