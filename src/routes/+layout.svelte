@@ -5,6 +5,7 @@
 	import SignUp from '$lib/components/SignUp.svelte';
 	import Header from '$lib/components/Header.svelte';
 	// Svelte & Sveltekit
+	import { fade } from 'svelte/transition';
 	import { setContext, type ComponentEvents } from 'svelte';
 	import { writable } from 'svelte/store';
 	import type { PageData } from './$types';
@@ -46,9 +47,9 @@
 	$: innerHeight = 0;
 
 	function scrollHandler(event: ComponentEvents<AppShell>['scroll']) {
-		if (!$hasScrolled) $hasScrolled = true;
 		// wait to add bg color as it looks better to have no bg on intro animation.
-		if (event.currentTarget.scrollTop > 10) {
+		if (event.currentTarget.scrollTop > 15) {
+			if (!$hasScrolled) $hasScrolled = true;
 			appBarWrapperElBg = 'bg-surface-600 shadow-sm';
 		}
 	}
@@ -82,15 +83,21 @@
 		<!-- Page Route Content -->
 		<slot />
 		<svelte:fragment slot="footer">
-			<div class="p-2 bg-surface-500">
-				<div class="sm:inline-block">
-					<a href="/">
-						<span class="text-primary-500">AARON</span>
-						<span class="text-tertiary-500">CROCKETT</span> |
-					</a>
+			{#if $hasScrolled}
+				<div in:fade class="bg-surface-500">
+					<div class="p-2 container mx-auto">
+						<div class="sm:inline-block">
+							<a href="/">
+								<span class="text-primary-500">AARON {$hasScrolled}</span>
+								<span class="text-tertiary-500">CROCKETT</span> |
+							</a>
+						</div>
+						<div class="sm:inline-block">
+							<span class="text-white">WEB APPLICATION DEVELOPER</span>
+						</div>
+					</div>
 				</div>
-				<div class="sm:inline-block"><span class="text-white">WEB APPLICATION DEVELOPER</span></div>
-			</div>
+			{/if}
 		</svelte:fragment>
 	</AppShell>
 </div>
