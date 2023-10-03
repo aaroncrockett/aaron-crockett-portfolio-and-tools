@@ -88,7 +88,7 @@
 					<div class="p-2 container mx-auto">
 						<div class="sm:inline-block">
 							<a href="/">
-								<span class="text-primary-500">AARON {$hasScrolled}</span>
+								<span class="text-primary-500">AARON</span>
 								<span class="text-tertiary-500">CROCKETT</span> |
 							</a>
 						</div>
