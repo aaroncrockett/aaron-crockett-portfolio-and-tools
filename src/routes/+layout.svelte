@@ -5,7 +5,6 @@
 	import SignUp from '$lib/components/SignUp.svelte';
 	import Header from '$lib/components/Header.svelte';
 	// Svelte & Sveltekit
-	import { fade } from 'svelte/transition';
 	import { setContext, type ComponentEvents } from 'svelte';
 	import { writable } from 'svelte/store';
 	import type { PageData } from './$types';
@@ -82,22 +81,20 @@
 		</svelte:fragment>
 		<!-- Page Route Content -->
 		<slot />
-		<svelte:fragment slot="footer">
-			{#if $hasScrolled}
-				<div in:fade class="bg-surface-500">
-					<div class="p-2 container mx-auto">
-						<div class="sm:inline-block">
-							<a href="/">
-								<span class="text-primary-500">AARON</span>
-								<span class="text-tertiary-500">CROCKETT</span> |
-							</a>
-						</div>
-						<div class="sm:inline-block">
-							<span class="text-white">WEB APPLICATION DEVELOPER</span>
-						</div>
+		<svelte:fragment slot="pageFooter">
+			<div class="bg-surface-500">
+				<div class="p-2 container mx-auto">
+					<div class="sm:inline-block">
+						<a href="/">
+							<span class="text-primary-500">AARON</span>
+							<span class="text-tertiary-500">CROCKETT</span> |
+						</a>
+					</div>
+					<div class="sm:inline-block">
+						<span class="text-white">WEB APPLICATION DEVELOPER</span>
 					</div>
 				</div>
-			{/if}
+			</div>
 		</svelte:fragment>
 	</AppShell>
 </div>
