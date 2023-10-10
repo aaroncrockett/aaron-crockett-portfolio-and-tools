@@ -1,6 +1,7 @@
 <script lang="ts">
-	import SignInto from '../../lib/components/SignInto.svelte';
+	import SignInto from '$lib/components/SignInto.svelte';
 	import ProjectShowCasesBotPart from './ProjectShowCasesBotPart.svelte';
+	import ProjectShowCasesSkeletalPart from './ProjectShowCasesSkeletalPart.svelte';
 	// Skeleton related
 	import { getModalStore } from '@skeletonlabs/skeleton';
 	// Skeleton Types
@@ -25,6 +26,12 @@
 	}
 </script>
 
+<h2
+	class="text-center text-3xl sm:text-4xl sm:leading-3xl text-surface-500 font-bold leading-2xl p-2"
+>
+	Project Showcases
+</h2>
+<ProjectShowCasesSkeletalPart />
 {#if $user?.uid}
 	<ProjectShowCasesBotPart />
 {:else}

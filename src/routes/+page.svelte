@@ -2,18 +2,20 @@
 	import AboutMe from './(partials)/AboutMe.svelte';
 	import PageCover from './(partials)/PageCover.svelte';
 	import SummaryCV from './(partials)/SummaryCV.svelte';
-	import InteractiveCv from './(partials)/InteractiveCV.svelte';
+	import ProjectShowCases from './(partials)/ProjectShowCases.svelte';
 </script>
 
 <PageCover />
-<div class="pt-4">
-	<InteractiveCv />
-</div>
-<div class="pt-4">
-	<SummaryCV />
-</div>
-<div class="pt-4">
-	<AboutMe />
+<div class="flex flex-col gap-4">
+	<div class="mx-auto container p-4 gap-4 flex flex-col">
+		<ProjectShowCases />
+	</div>
+	<div>
+		<SummaryCV />
+	</div>
+	<div>
+		<AboutMe />
+	</div>
 </div>
 
 <!-- about section -->
