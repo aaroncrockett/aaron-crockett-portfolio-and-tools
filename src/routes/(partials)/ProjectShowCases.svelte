@@ -1,6 +1,6 @@
 <script lang="ts">
-	import InteractiveCVSignIntoPart from './InteractiveCVSignIntoPart.svelte';
-	import InteractiveCvBotPart from './InteractiveCVBotPart.svelte';
+	import SignInto from '../../lib/components/SignInto.svelte';
+	import ProjectShowCasesBotPart from './ProjectShowCasesBotPart.svelte';
 	// Skeleton related
 	import { getModalStore } from '@skeletonlabs/skeleton';
 	// Skeleton Types
@@ -26,7 +26,7 @@
 </script>
 
 {#if $user?.uid}
-	<InteractiveCvBotPart />
+	<ProjectShowCasesBotPart />
 {:else}
-	<InteractiveCVSignIntoPart on:click={(e) => showModal(e)} />
+	<SignInto on:click={(e) => showModal(e)} />
 {/if}
