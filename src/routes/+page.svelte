@@ -8,7 +8,7 @@
 
 <PageCover />
 <div class="flex flex-col gap-4">
-	<div class="mx-auto container p-4 gap-4 flex flex-col">
+	<div class="mx-auto container p-4 gap-4 flex flex-col variant-ringed-secondary">
 		<ProjectShowCases />
 	</div>
 	<div>

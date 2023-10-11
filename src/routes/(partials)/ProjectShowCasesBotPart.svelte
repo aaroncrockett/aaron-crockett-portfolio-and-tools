@@ -22,7 +22,7 @@
 </script>
 
 <section
-	class="p-5 mx-auto container flex flex-col card relative variant-ghost-secondary gap-4 justify-center items-center"
+	class="p-5 mx-auto container flex flex-col card relative gap-4 justify-center items-center"
 >
 	<h2 class="text-2xl sm:text-3xl sm:leading-3xl font-bold text-surface-500 leading-2xl p-2">
 		GPT Bot Interview.
