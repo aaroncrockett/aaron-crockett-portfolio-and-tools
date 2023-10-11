@@ -11,3 +11,19 @@ body {
 .page-section {
 	@apply mx-auto container flex flex-col gap-4 card p-4;
 }
+
+blockquote {
+	padding-left: 2rem;
+}
+
+blockquote:before {
+	content: ' " ';
+	display: inline;
+	height: 0;
+	line-height: 0;
+	left: -10px;
+	position: relative;
+	top: 30px;
+	color: #ccc;
+	font-size: 3em;
+}
