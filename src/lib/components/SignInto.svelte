@@ -7,11 +7,13 @@
 		<div class="mx-auto container flex flex-col items-center space-y-4">
 			<button
 				on:click
+				type="button"
 				data-signin="signIn"
 				class="btn btn-lg variant-ghost-secondary ring-2 font-bold uppercase">Sign In</button
 			>
 			<button
 				on:click
+				type="button"
 				data-signup="signUp"
 				class="btn btn-lg variant-ghost-primary ring-2 font-bold uppercase">Sign Up</button
 			>

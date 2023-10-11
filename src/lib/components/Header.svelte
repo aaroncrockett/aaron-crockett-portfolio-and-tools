@@ -88,7 +88,7 @@
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<!-- {#if $user?.uid}
-					<button on:click={handleSignOut} class="btn btn-sm variant-soft-primary uppercase"
+					<button type="button" on:click={handleSignOut} class="btn btn-sm variant-soft-primary uppercase"
 						>SIGN OUT</button
 					>
 				{/if} -->
