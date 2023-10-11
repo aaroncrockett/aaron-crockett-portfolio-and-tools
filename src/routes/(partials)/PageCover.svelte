@@ -3,9 +3,6 @@
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import { backOut, cubicOut } from 'svelte/easing';
-	import { getContext } from 'svelte';
-	import type { Writable } from 'svelte/store';
-
 	// Store
 	import { hasScrolled } from '$lib/store';
 	// UI related
@@ -17,7 +14,6 @@
 
 	let headlinesTransitionsHaveEnded = false;
 	let triggerOnMountAnimations = false;
-	let viewPortHeightIsSet: Writable<boolean>;
 
 	let coverHeadlineTwColor = 'text-primary-500';
 	let headlines: string[] = [];
@@ -28,15 +24,6 @@
 		if ($hasScrolled) {
 			coverHeadlineTwColor = 'text-surface-500';
 			floatingIconClasses = 'relative -bottom-0';
-		}
-	}
-
-	$: {
-		if (headlinesTransitionsHaveEnded) {
-			viewPortHeightIsSet = getContext('viewport-height');
-			setTimeout(() => {
-				$viewPortHeightIsSet = true;
-			}, 400);
 		}
 	}
 
@@ -69,7 +56,7 @@
 	<!-- Transition background intro. -->
 	{#if triggerOnMountAnimations}
 		<div
-			class={`absolute inset-0 z-100 h-screen bg-surface-600`}
+			class="absolute inset-0 z-100 h-screen bg-surface-600"
 			in:fly={{ y: '100%', easing: cubicOut }}
 		/>
 	{/if}
@@ -101,7 +88,7 @@
 	</div>
 
 	<h4
-		class={`z-5 absolute flex w-full items-center bottom-0 right-0 left-0 bg-surface-50 text-primary-500 sm:text-3xl sm:leading-3xl text-2xl leading-2xl pb-[15%] sm:pb-0`}
+		class="z-5 absolute flex w-full items-center bottom-0 right-0 left-0 bg-surface-50 text-primary-500 sm:text-3xl sm:leading-3xl text-2xl leading-2xl pb-[15%] sm:pb-0"
 	>
 		<span
 			class={classNames(

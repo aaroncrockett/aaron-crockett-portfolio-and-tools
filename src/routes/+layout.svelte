@@ -5,17 +5,10 @@
 	import SignUp from '$lib/components/SignUp.svelte';
 	import Header from '$lib/components/Header.svelte';
 	// Svelte & Sveltekit
-	import { setContext, type ComponentEvents } from 'svelte';
-	import { writable } from 'svelte/store';
+	import type { ComponentEvents } from 'svelte';
 	import type { PageData } from './$types';
 	// Skeleton Labs
-	import {
-		AppShell,
-		Drawer,
-		Modal,
-		getDrawerStore,
-		initializeStores
-	} from '@skeletonlabs/skeleton';
+	import { AppShell, Modal, initializeStores } from '@skeletonlabs/skeleton';
 	import type { ModalComponent } from '@skeletonlabs/skeleton';
 	// Stores and Libs
 	import { hasScrolled } from '$lib/store';
@@ -23,8 +16,6 @@
 	export let data: PageData;
 
 	initializeStores();
-
-	const drawerStore = getDrawerStore();
 
 	const modalComponentRegistry: Record<string, ModalComponent> = {
 		signIn: {
@@ -36,11 +27,6 @@
 	};
 
 	let appBarWrapperElBg = '';
-
-	const viewportHeightSet = writable(false);
-	// wait to set height so scroll bar doesn't distract from intro animation.
-	// child uses get context to get the store, then inform us that its time to set the vh.
-	setContext('viewport-height', viewportHeightSet);
 
 	// innerHeight as opposed to vh/screen for mobile, to account for mobile bars at bottom.
 	$: innerHeight = 0;
@@ -55,26 +41,11 @@
 </script>
 
 <Modal components={modalComponentRegistry} />
-<Drawer>
-	<div class="variant-primary p-4">
-		<p>
-			OOOPPS you found this drawer on accident! It's ok. It just includes test examples I was
-			working on. hehe.
-		</p>
-		<ul>
-			<li><a class="text-white" on:click={() => drawerStore.close()} href="/">Home</a></li>
-			<li>
-				<a class="text-white" on:click={() => drawerStore.close()} href="/form-example"
-					>Form Example</a
-				>
-			</li>
-		</ul>
-	</div>
-</Drawer>
+
 <svelte:window bind:innerHeight />
 
 <!-- App Shell -->
-<div style={$viewportHeightSet ? `height: ${innerHeight}px;` : ''}>
+<div style={`height: ${innerHeight}px;`}>
 	<AppShell on:scroll={scrollHandler}>
 		<svelte:fragment slot="header">
 			<Header {appBarWrapperElBg} routeId={data.route.id} />
