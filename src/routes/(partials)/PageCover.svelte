@@ -88,7 +88,7 @@
 	</div>
 
 	<h4
-		class="z-5 absolute flex w-full items-center bottom-0 right-0 left-0 bg-surface-50 text-primary-500 sm:text-3xl sm:leading-3xl text-2xl leading-2xl pb-[15%] sm:pb-0"
+		class="z-5 absolute flex w-full items-center bottom-0 right-0 left-0 bg-surface-50 text-primary-500 sm:text-3xl sm:leading-3xl text-2xl leading-2xl sm:pb-0"
 	>
 		<span
 			class={classNames(
