@@ -67,7 +67,7 @@
 			<p class="text-xl font-bold inline-block leading-2xl">Project Manager, Bed Bath & Beyond</p>
 			<p class="text-xl inline-block leading-xl">Morgan Markus</p>
 		</div>
-		<div class="flex flex-col gap-1 lg:w-2/3 mx-auto variant-soft-surface card p-4">
+		<!-- <div class="flex flex-col gap-1 lg:w-2/3 mx-auto variant-soft-surface card p-4">
 			<blockquote
 				class="referral border-l-[10px] pl-4 border-surface-400 variant-soft-surface card mb-2"
 			>
@@ -79,7 +79,7 @@
 			</blockquote>
 			<p class="text-xl font-bold inline-block leading-2xl">Founder at Madness Labs</p>
 			<p class="text-xl inline-block leading-xl">Bobby Johnson</p>
-		</div>
+		</div> -->
 		<div class="flex flex-col gap-1 lg:w-2/3 mx-auto variant-soft-surface card p-4">
 			<blockquote
 				class="referral border-l-[10px] pl-4 border-surface-400 variant-soft-surface card mb-2"
