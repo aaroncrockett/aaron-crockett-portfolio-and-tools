@@ -87,12 +87,11 @@
 				</div>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
-				<!-- <button on:click={openDrawer} class="uppercase text-surface-600"> HIHI </button> -->
-				{#if $user?.uid}
+				<!-- {#if $user?.uid}
 					<button on:click={handleSignOut} class="btn btn-sm variant-soft-primary uppercase"
 						>SIGN OUT</button
 					>
-				{/if}
+				{/if} -->
 				<a
 					class="inline-block p-1 sm:p-2"
 					href="https://github.com/aaroncrockett/"
