@@ -4,6 +4,7 @@
 	import { fly } from 'svelte/transition';
 	import { backOut, cubicOut } from 'svelte/easing';
 	import { getContext } from 'svelte';
+	import { hasScrolled } from '$lib/store';
 	// Store
 	// UI related
 	import * as feather from 'feather-icons';
@@ -19,13 +20,19 @@
 	let coverHeadlineTwColor = 'text-primary-500';
 	let headlines: string[] = [];
 
+	$: floatingIconClasses = 'floatingSpan relative -bottom-1';
+	$: {
+		if ($hasScrolled) {
+			coverHeadlineTwColor = 'text-surface-500';
+			floatingIconClasses = 'relative -bottom-0';
+		}
+	}
+
 	let downIconSvg = feather?.icons['chevrons-down']?.toSvg({
 		stroke: '#231F20',
 		width: 28,
 		height: 28
 	});
-
-	$: floatingIconClasses = 'floatingSpan relative -bottom-1';
 
 	onMount(() => {
 		setTimeout(() => {
