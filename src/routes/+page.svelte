@@ -1,17 +1,21 @@
 <script lang="ts">
 	import AboutMe from './(partials)/AboutMe.svelte';
 	import PageCover from './(partials)/PageCover.svelte';
-	import SummaryCV from './(partials)/SummaryCV.svelte';
 	import ProjectShowCases from './(partials)/ProjectShowCases.svelte';
+	import References from './(partials)/References.svelte';
+	import SummaryCV from './(partials)/SummaryCV.svelte';
 </script>
 
 <PageCover />
 <div class="flex flex-col gap-4">
-	<div class="mx-auto container p-4 gap-4 flex flex-col">
+	<div class="mx-auto container p-4 gap-4 flex flex-col variant-ringed-secondary">
 		<ProjectShowCases />
 	</div>
 	<div>
 		<SummaryCV />
+	</div>
+	<div>
+		<References />
 	</div>
 	<div>
 		<AboutMe />
