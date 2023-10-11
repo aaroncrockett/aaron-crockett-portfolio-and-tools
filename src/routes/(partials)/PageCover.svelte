@@ -3,14 +3,15 @@
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import { backOut, cubicOut } from 'svelte/easing';
+	import { getContext } from 'svelte';
 	// Store
-	import { hasScrolled } from '$lib/store';
 	// UI related
 	import * as feather from 'feather-icons';
 	// Other
 	import classNames from 'classnames';
 
 	const headlinesBucket = ['WEB', 'APPLICATION', 'DEVELOPER'];
+	const innerHeight = getContext('inner-height');
 
 	let headlinesTransitionsHaveEnded = false;
 	let triggerOnMountAnimations = false;
@@ -18,20 +19,13 @@
 	let coverHeadlineTwColor = 'text-primary-500';
 	let headlines: string[] = [];
 
-	$: floatingIconClasses = 'floatingSpan relative -bottom-1';
-
-	$: {
-		if ($hasScrolled) {
-			coverHeadlineTwColor = 'text-surface-500';
-			floatingIconClasses = 'relative -bottom-0';
-		}
-	}
-
 	let downIconSvg = feather?.icons['chevrons-down']?.toSvg({
 		stroke: '#231F20',
 		width: 28,
 		height: 28
 	});
+
+	$: floatingIconClasses = 'floatingSpan relative -bottom-1';
 
 	onMount(() => {
 		setTimeout(() => {
@@ -52,11 +46,12 @@
 </script>
 
 <!-- Remove scroll bars with overflow-hidden until animations are finished to avoid layout shift -->
-<div class="relative h-screen">
+<div class="relative" style={`height: ${$innerHeight}px;`}>
 	<!-- Transition background intro. -->
 	{#if triggerOnMountAnimations}
 		<div
-			class="absolute inset-0 z-100 h-screen bg-surface-600"
+			class="absolute inset-0 z-100 bg-surface-600"
+			style={`height: ${$innerHeight}px;`}
 			in:fly={{ y: '100%', easing: cubicOut }}
 		/>
 	{/if}
@@ -97,8 +92,8 @@
 				'transition-all duration-600 container flex items-center p-4 mx-auto sm:py-4 sm:p-2'
 			)}
 		>
-			<span class={floatingIconClasses}>{@html downIconSvg} </span>Portfoio & CV</span
-		>
+			<span class={floatingIconClasses}>{@html downIconSvg} </span> Portfoio & CV
+		</span>
 	</h4>
 </div>
 

@@ -5,7 +5,9 @@
 	import SignUp from '$lib/components/SignUp.svelte';
 	import Header from '$lib/components/Header.svelte';
 	// Svelte & Sveltekit
-	import type { ComponentEvents } from 'svelte';
+	import { setContext, type ComponentEvents } from 'svelte';
+	import { writable } from 'svelte/store';
+
 	import type { PageData } from './$types';
 	// Skeleton Labs
 	import { AppShell, Modal, initializeStores } from '@skeletonlabs/skeleton';
@@ -28,8 +30,19 @@
 
 	let appBarWrapperElBg = '';
 
-	// innerHeight as opposed to vh/screen for mobile, to account for mobile bars at bottom.
+	const innerHeightStore = writable(0);
+
 	$: innerHeight = 0;
+
+	$: {
+		if (innerHeight > 0) {
+			$innerHeightStore = innerHeight;
+		}
+	}
+
+	setContext('inner-height', innerHeightStore);
+
+	// innerHeight as opposed to vh/screen for mobile, to account for mobile bars at bottom.
 
 	function scrollHandler(event: ComponentEvents<AppShell>['scroll']) {
 		// wait to add bg color as it looks better to have no bg on intro animation.
