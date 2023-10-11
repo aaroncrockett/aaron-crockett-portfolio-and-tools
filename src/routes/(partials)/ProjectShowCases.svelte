@@ -32,8 +32,8 @@
 	Project Showcases
 </h2>
 <ProjectShowCasesSkeletalPart />
-{#if $user?.uid}
+<!-- {#if $user?.uid}
 	<ProjectShowCasesBotPart />
 {:else}
 	<SignInto on:click={(e) => showModal(e)} />
-{/if}
+{/if} -->
