@@ -23,7 +23,7 @@
 	});
 </script>
 
-<section class="p-4 container mx-auto variant-soft-surface card">
+<section class="page-section variant-soft-surface">
 	<h3
 		class="uppercase font-bold text-2xl sm:text-3xl sm:leading-3xl leading-3xl text-center pb-6 pt-1 rounded"
 	>

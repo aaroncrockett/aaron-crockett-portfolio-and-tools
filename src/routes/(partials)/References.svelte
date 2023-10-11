@@ -1,4 +1,4 @@
-<section class="p-4 container mx-auto card flex flex-col gap-2">
+<section class="page-section">
 	<h3
 		class="uppercase font-bold text-2xl sm:text-3xl sm:leading-3xl leading-3xl text-center pb-4 pt-1 rounded"
 	>

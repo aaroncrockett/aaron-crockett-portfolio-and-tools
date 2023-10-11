@@ -1,4 +1,4 @@
-<section class="mx-auto container flex flex-col gap-4 items-center p-4 card">
+<section class="page-section items-center">
 	<h3
 		class="text-center text-2xl sm:text-3xl sm:leading-3xl font-bold text-primary-500 leading-2xl p-2"
 	>
