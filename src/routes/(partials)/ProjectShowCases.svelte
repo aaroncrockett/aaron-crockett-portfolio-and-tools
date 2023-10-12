@@ -30,11 +30,7 @@
 	// }
 </script>
 
-<h2
-	class="text-center text-3xl sm:text-4xl sm:leading-3xl text-surface-500 font-bold leading-2xl p-2"
->
-	Project Showcases
-</h2>
+<h2 class="page-header text-center">Project Showcases</h2>
 <ProjectShowCasesSkeletalPart />
 <!-- {#if $user?.uid}
 	<ProjectShowCasesBotPart />

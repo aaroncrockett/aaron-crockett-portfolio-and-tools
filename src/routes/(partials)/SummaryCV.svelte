@@ -23,12 +23,8 @@
 	});
 </script>
 
-<section class="page-section variant-soft-surface">
-	<h3
-		class="uppercase font-bold text-2xl sm:text-3xl sm:leading-3xl leading-3xl text-center pb-6 pt-1 rounded"
-	>
-		CV Summary
-	</h3>
+<section class="page-section variant-soft-surface card">
+	<h3 class="text-center uppercase">CV Summary</h3>
 
 	<div class="grid sm:grid-cols-2 gap-4 sm:gap-8">
 		<div class="flex ring-0 variant-ghost-surface p-1 card">

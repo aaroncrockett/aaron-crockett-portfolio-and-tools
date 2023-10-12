@@ -3,7 +3,7 @@
 	import me from '$lib/images/me-smile.png';
 </script>
 
-<section class="page-section">
+<section class="page-section card">
 	<div class="flex flex-col gap-4 md:flex-row">
 		<div class="w-full order-2 sm:order-1 flex md:w-1/2">
 			<div class="w-[45%] hidden sm:block p-2">
@@ -20,9 +20,7 @@
 			</div>
 		</div>
 		<div class="w-fullp-6 sm:order-2 md:w-1/2">
-			<h3 class="sm:text-4xl text-2xl leading-2xl sm:leading-4xl uppercase pb-1 text-primary-500">
-				A little more about me.
-			</h3>
+			<h3 class="text-primary-500">A little more about me.</h3>
 			<p>
 				I live in Portland, Oregon, with my husband Nick and our two dogs, Jasper and Fred. I enjoy
 				hiking, game nights with friends, and exploring local restaurants. Every morning, I start my

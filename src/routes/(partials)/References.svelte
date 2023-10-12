@@ -1,9 +1,5 @@
-<section class="page-section">
-	<h3
-		class="uppercase font-bold text-2xl sm:text-3xl sm:leading-3xl leading-3xl text-center pb-2 pt-1 rounded"
-	>
-		testimonials
-	</h3>
+<section class="page-section card">
+	<h3 class="uppercase text-center">testimonials</h3>
 	<p class="text-xl text-center">
 		Recommendations given on online platforms (Linked In and Zip Recruiter) gathered here in one
 		place.

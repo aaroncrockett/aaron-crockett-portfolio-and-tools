@@ -1,9 +1,5 @@
 <section class="page-section items-center">
-	<h3
-		class="text-center text-2xl sm:text-3xl sm:leading-3xl font-bold text-primary-500 leading-2xl p-2"
-	>
-		Skeletal Vue: UI Toolkit
-	</h3>
+	<h3 class="text-center uppercase text-primary-500">Skeletal Vue: UI Toolkit</h3>
 	<span class="p-4 fill-token pl-[.1rem] text-4xl">
 		<svg
 			class="fill-token sm:h-32 sm:w-32 h-24 w-24"

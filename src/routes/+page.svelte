@@ -7,8 +7,8 @@
 </script>
 
 <PageCover />
-<div class="flex flex-col gap-4">
-	<div class="mx-auto container p-4 gap-4 flex flex-col variant-ringed-secondary">
+<div class="page">
+	<div class="page-section variant-ringed-secondary rounded">
 		<ProjectShowCases />
 	</div>
 	<div>
