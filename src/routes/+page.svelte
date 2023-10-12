@@ -21,7 +21,3 @@
 		<AboutMe />
 	</div>
 </div>
-
-<!-- about section -->
-<!-- maybe blog or linked articles -->
-<!-- footer -->

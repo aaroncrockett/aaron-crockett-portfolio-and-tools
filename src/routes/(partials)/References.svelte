@@ -67,19 +67,6 @@
 			<p class="text-xl font-bold inline-block leading-2xl">Project Manager, Bed Bath & Beyond</p>
 			<p class="text-xl inline-block leading-xl">Morgan Markus</p>
 		</div>
-		<!-- <div class="flex flex-col gap-1 lg:w-2/3 mx-auto variant-soft-surface card p-4">
-			<blockquote
-				class="referral border-l-[10px] pl-4 border-surface-400 variant-soft-surface card mb-2"
-			>
-				<p class="p-2 pb-4 leading-2xl">
-					Aaron did an excellent job working for us and was an excellent coworker at Caleres too. He
-					is a talented developer and easy to get along with. I highly recommend him for your
-					development and design needs.
-				</p>
-			</blockquote>
-			<p class="text-xl font-bold inline-block leading-2xl">Founder at Madness Labs</p>
-			<p class="text-xl inline-block leading-xl">Bobby Johnson</p>
-		</div> -->
 		<div class="flex flex-col gap-1 lg:w-2/3 mx-auto variant-soft-surface card p-4">
 			<blockquote
 				class="referral border-l-[10px] pl-4 border-surface-400 variant-soft-surface card mb-2"

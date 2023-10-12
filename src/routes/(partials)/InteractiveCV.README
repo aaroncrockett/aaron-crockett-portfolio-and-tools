@@ -1,3 +1,0 @@
-	* Redis and rate limits are initlized in the root server layout.
-  * I determining a better way to make rate limits available inapplication and interact with the Vercel API. When returning an error in response to rate limit's, with vercels API, I was getting an unfriendly error. So for now I am checking rate limit via a svelte server action by posting to the page. If we hit the rate limit we can display an error. Then I am interacting with GPT via Vercel API and edge function.
-  * There must be a better way. so TODO for this. 

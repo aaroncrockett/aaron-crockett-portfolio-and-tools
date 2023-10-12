@@ -5,7 +5,6 @@
 	import { backOut, cubicOut } from 'svelte/easing';
 	import { getContext } from 'svelte';
 	import { hasScrolled } from '$lib/store';
-	// Store
 	// UI related
 	import * as feather from 'feather-icons';
 	// Other

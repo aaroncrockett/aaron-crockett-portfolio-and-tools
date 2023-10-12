@@ -40,9 +40,8 @@
 		}
 	}
 
-	setContext('inner-height', innerHeightStore);
-
 	// innerHeight as opposed to vh/screen for mobile, to account for mobile bars at bottom.
+	setContext('inner-height', innerHeightStore);
 
 	function scrollHandler(event: ComponentEvents<AppShell>['scroll']) {
 		// wait to add bg color as it looks better to have no bg on intro animation.

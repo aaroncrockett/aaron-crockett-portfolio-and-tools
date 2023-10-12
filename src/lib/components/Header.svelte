@@ -4,11 +4,10 @@
 	import { cubicIn } from 'svelte/easing';
 	// Skeleton Labs
 	import { AppBar } from '@skeletonlabs/skeleton';
-	// import type { DrawerSettings } from '@skeletonlabs/skeleton';
 	// Firebase related
-	import { signOut } from 'firebase/auth';
-	import { auth } from '$lib/firebaseClient';
-	import { userStore } from 'sveltefire';
+	// import { signOut } from 'firebase/auth';
+	// import { auth } from '$lib/firebaseClient';
+	// import { userStore } from 'sveltefire';
 	// Other
 	import classNames from 'classnames';
 	// UI related
@@ -17,9 +16,7 @@
 	export let appBarWrapperElBg = '';
 	export let routeId = '';
 
-	// const drawerStore = getDrawerStore();
-
-	const user = userStore(auth);
+	// const user = userStore(auth);
 
 	const gitIconSvg = feather.icons['github'].toSvg({
 		stroke: '#d7424b',
@@ -51,24 +48,13 @@
 		routeId != '/' ? 'bg-surface-600' : `fixed top-0 right-0 left-0 ${appBarWrapperElBg}`
 	);
 
-	// function openDrawer() {
-	// 	const drawerSettings: DrawerSettings = {
-	// 		id: 'hidden-drawer',
-	// 		// Provide your property overrides:
-	// 		bgDrawer: 'bg-primary-500',
-	// 		width: 'w-1/2',
-	// 		rounded: 'rounded'
-	// 	};
-	// 	drawerStore.open(drawerSettings);
+	// function handleSignOut() {
+	// 	signOut(auth)
+	// 		.then()
+	// 		.catch((error) => {
+	// 			console.log(error);
+	// 		});
 	// }
-
-	function handleSignOut() {
-		signOut(auth)
-			.then()
-			.catch((error) => {
-				console.log(error);
-			});
-	}
 
 	onMount(() => {
 		triggerOnMountTransitions = true;
