@@ -98,7 +98,7 @@
 				'transition-all duration-600 container flex items-center p-4 mx-auto sm:py-4 sm:p-2'
 			)}
 		>
-			<span class={floatingIconClasses}>{@html downIconSvg} </span> Portfoio & CV
+			<span class={floatingIconClasses}>{@html downIconSvg} </span> Portfolio & CV
 		</span>
 	</h4>
 </div>
