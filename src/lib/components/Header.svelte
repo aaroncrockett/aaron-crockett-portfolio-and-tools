@@ -63,7 +63,7 @@
 
 {#if triggerOnMountTransitions}
 	<div transition:fade={{ easing: cubicIn, duration: 800 }} class={wrapperClasses}>
-		<AppBar class="container mx-auto" background="bg-none sm:!p-2 !p-1 !px-4">
+		<AppBar class="grid container mx-auto" padding="sm:p-2 p-1 px-4" background="bg-none ">
 			<svelte:fragment slot="lead">
 				<div class="text-2xl uppercase sm:text-3xl sm:leading-3xl leading-2xl">
 					<a href="/">
