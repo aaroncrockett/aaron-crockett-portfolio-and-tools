@@ -83,7 +83,7 @@
 					easing: cubicOut
 				}}
 			>
-				Front-End focus with Full-Stack experience.
+				Front-End Focus With Full-Stack Experience.
 			</p>
 		{/if}
 	</div>

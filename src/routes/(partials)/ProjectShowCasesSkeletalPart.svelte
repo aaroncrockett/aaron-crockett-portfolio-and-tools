@@ -33,11 +33,18 @@
 		></span
 	>
 	<p class="lg:w-2/3 sm:w-4/5 mx-auto text-center">
+		<span class="font-bold">In development.</span> A UI Tookkit for Vue components using Skeleton's token
+		system.
+	</p>
+	<p class="lg:w-2/3 sm:w-4/5 mx-auto text-center">
 		<span class="font-bold">This is currently a portfolio project.</span> I chose it because it effectively
 		summarizes my combined professional and personal experiences. I've developed Vue components for Blackstone
 		Publishing and Power Admin, including the recreation of a component library at Blackstone. In my
 		personal projects, I've utilized Svelte and Tailwind, and recently, I've discovered the Skeleton
 		UI toolkit for Svelte. Skeleton doesn't exist for Vue and I saw an opening to create it.
+	</p>
+	<p class="lg:w-2/3 sm:w-4/5 mx-auto text-center">
+		<span class="font-bold">Docs demo site coming soon.</span>
 	</p>
 	<a class="font-bold text-xl underline" href="https://github.com/aaroncrockett/skeletal-vue-ui"
 		>Skeletal Vue on Git</a
