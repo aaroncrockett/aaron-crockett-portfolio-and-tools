@@ -2,7 +2,6 @@
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import { cubicIn } from 'svelte/easing';
-	import postcss from 'postcss';
 
 	let triggerOnMountTransitions = false;
 	onMount(() => {

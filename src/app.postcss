@@ -7,12 +7,15 @@ html,
 body {
 	@apply overflow-hidden;
 }
+a.inline-link {
+	@apply underline font-bold;
+}
 .page-one-col {
 	@apply flex flex-col gap-4 mx-auto container p-2;
 }
 
 .page-section {
-	@apply flex flex-col gap-2;
+	@apply flex flex-col gap-2 p-2;
 }
 
 h2.page-header {
@@ -23,7 +26,7 @@ h2.page-header {
 }
 
 blockquote {
-	padding-left: 2rem;
+	@apply pl-4;
 }
 
 blockquote:before {
