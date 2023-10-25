@@ -1,36 +1,27 @@
 <script lang="ts">
 	// local
 	import '../app.postcss';
-	import SignIn from '$lib/components/SignIn.svelte';
-	import SignUp from '$lib/components/SignUp.svelte';
+	//
 	import Header from '$lib/components/Header.svelte';
 	// Svelte & Sveltekit
 	import { setContext, type ComponentEvents } from 'svelte';
 	import { writable } from 'svelte/store';
-
 	import type { PageData } from './$types';
 	// Skeleton Labs
-	import { AppShell, Modal, initializeStores } from '@skeletonlabs/skeleton';
-	import type { ModalComponent } from '@skeletonlabs/skeleton';
+	import { AppShell, Drawer, getDrawerStore, initializeStores } from '@skeletonlabs/skeleton';
 	// Stores and Libs
+	import type { DrawerSettings, DrawerStore } from '@skeletonlabs/skeleton';
 	import { hasScrolled } from '$lib/store';
 
 	export let data: PageData;
 
 	initializeStores();
 
-	const modalComponentRegistry: Record<string, ModalComponent> = {
-		signIn: {
-			ref: SignIn
-		},
-		signUp: {
-			ref: SignUp
-		}
-	};
-
-	let appBarWrapperElBg = '';
+	const drawerStore = getDrawerStore();
 
 	const innerHeightStore = writable(0);
+
+	let appBarWrapperElBg = '';
 
 	$: innerHeight = 0;
 
@@ -52,12 +43,12 @@
 	}
 </script>
 
-<Modal components={modalComponentRegistry} />
-
 <svelte:window bind:innerHeight />
 
 <!-- App Shell -->
 <div style={`height: ${innerHeight}px;`}>
+	<Drawer />
+
 	<AppShell on:scroll={scrollHandler}>
 		<svelte:fragment slot="header">
 			<Header {appBarWrapperElBg} routeId={data.route.id} />

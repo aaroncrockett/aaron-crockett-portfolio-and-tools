@@ -4,19 +4,12 @@
 	import { cubicIn } from 'svelte/easing';
 	// Skeleton Labs
 	import { AppBar } from '@skeletonlabs/skeleton';
-	// Firebase related
-	// import { signOut } from 'firebase/auth';
-	// import { auth } from '$lib/firebaseClient';
-	// import { userStore } from 'sveltefire';
-	// Other
 	import classNames from 'classnames';
 	// UI related
 	import * as feather from 'feather-icons';
 
 	export let appBarWrapperElBg = '';
 	export let routeId = '';
-
-	// const user = userStore(auth);
 
 	const gitIconSvg = feather.icons['github'].toSvg({
 		stroke: '#d7424b',
@@ -48,14 +41,6 @@
 		routeId != '/' ? 'bg-surface-600' : `fixed top-0 right-0 left-0 ${appBarWrapperElBg}`
 	);
 
-	// function handleSignOut() {
-	// 	signOut(auth)
-	// 		.then()
-	// 		.catch((error) => {
-	// 			console.log(error);
-	// 		});
-	// }
-
 	onMount(() => {
 		triggerOnMountTransitions = true;
 	});
@@ -73,11 +58,6 @@
 				</div>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
-				<!-- {#if $user?.uid}
-					<button type="button" on:click={handleSignOut} class="btn btn-sm variant-soft-primary uppercase"
-						>SIGN OUT</button
-					>
-				{/if} -->
 				<a
 					class="inline-block p-1 sm:p-2"
 					href="https://github.com/aaroncrockett/"
