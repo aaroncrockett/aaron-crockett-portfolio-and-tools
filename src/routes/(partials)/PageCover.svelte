@@ -77,7 +77,7 @@
 		</div>
 		{#if headlinesTransitionsHaveEnded}
 			<p
-				class="sm:pl-2 pl-1 xl:text-4xl xl:leading-4xl sm:text-[4vw] sm:leading-[4vw] text-2xl leading-2xl text-surface-50"
+				class="sm:pl-2 pl-1 xl:text-4xl xl:leading-4xl sm:text-[4vw] sm:leading-[4vw] text-2xl leading-3xl text-surface-50"
 				in:fly={{
 					x: '-100%',
 					easing: cubicOut
