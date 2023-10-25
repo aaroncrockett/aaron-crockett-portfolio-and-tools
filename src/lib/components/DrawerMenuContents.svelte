@@ -41,6 +41,6 @@
 		>
 			Tools and more.
 		</h3>
-		<PageLinks on:click={() => drawerStore.close()} />
+		<PageLinks showChevron={true} on:click={() => drawerStore.close()} />
 	</div>
 </div>
