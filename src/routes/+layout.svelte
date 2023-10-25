@@ -7,9 +7,11 @@
 	import Footer from '$lib/components/Footer.svelte';
 
 	// Svelte & Sveltekit
+	import type { AfterNavigate } from '@sveltejs/kit';
 	import { setContext, type ComponentEvents } from 'svelte';
 	import { writable } from 'svelte/store';
 	import type { PageData } from './$types';
+	import { afterNavigate } from '$app/navigation';
 	// Skeleton Labs
 	import { AppShell, Drawer, getDrawerStore, initializeStores } from '@skeletonlabs/skeleton';
 	// Stores and Libs
@@ -64,6 +66,14 @@
 			appBarWrapperElBg = 'shadow-sm';
 		}
 	}
+
+	afterNavigate((params: AfterNavigate) => {
+		const isNewPage: boolean = params.from?.route.id !== params.to?.route.id;
+		const elemPage = document.querySelector('#page');
+		if (isNewPage && elemPage !== null) {
+			elemPage.scrollTop = 0;
+		}
+	});
 </script>
 
 <svelte:window bind:innerHeight bind:innerWidth />
