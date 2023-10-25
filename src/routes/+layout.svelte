@@ -1,10 +1,10 @@
 <script lang="ts">
+	import DrawerMenuContents from './../lib/components/DrawerMenuContents.svelte';
 	// local
 	import '../app.postcss';
 	//
 	import Header from '$lib/components/Header.svelte';
-	import SocialMediaLinks from '$lib/components/SocialMediaLinks.svelte';
-	import PageLinks from '$lib/components/PageLinks.svelte';
+	import Footer from '$lib/components/Footer.svelte';
 
 	// Svelte & Sveltekit
 	import { setContext, type ComponentEvents } from 'svelte';
@@ -15,8 +15,6 @@
 	// Stores and Libs
 	import type { DrawerSettings, DrawerStore } from '@skeletonlabs/skeleton';
 	import { hasScrolled } from '$lib/store';
-	// UI related
-	import * as feather from 'feather-icons';
 
 	export let data: PageData;
 
@@ -31,21 +29,9 @@
 		rounded: 'rounded-xl'
 	};
 
-	const drawerStore = getDrawerStore();
+	const drawerStore: DrawerStore = getDrawerStore();
 
 	const innerHeightStore = writable(0);
-
-	const homeIconSvg = feather.icons['home'].toSvg({
-		stroke: '#d7424b',
-		width: 28,
-		height: 28
-	});
-
-	const homeIconSvgSm = feather.icons['home'].toSvg({
-		stroke: '#d7424b',
-		width: 24,
-		height: 24
-	});
 
 	let appBarWrapperElBg = '';
 	let innerWidth = 0;
@@ -69,6 +55,7 @@
 
 	// innerHeight as opposed to vh/screen for mobile, to account for mobile bars at bottom.
 	setContext('inner-height', innerHeightStore);
+	setContext('drawer-store', drawerStore);
 
 	function scrollHandler(event: ComponentEvents<AppShell>['scroll']) {
 		// wait to add bg color as it looks better to have no bg on intro animation.
@@ -85,22 +72,7 @@
 <div style={`height: ${innerHeight}px;`}>
 	{#if routeId == '/' || isSmallScreen}
 		<Drawer>
-			<div class="flex">
-				<div class="flex flex-col gap-2 p-2">
-					<a on:click={() => drawerStore.close()} class="inline-block p-1 sm:p-2" href="/">
-						<span class="hidden sm:inline-block">
-							{@html homeIconSvg}
-						</span>
-						<span class=" inline-block sm:hidden">
-							{@html homeIconSvgSm}
-						</span>
-					</a>
-					<SocialMediaLinks on:click={() => drawerStore.close()} />
-				</div>
-				<div class="flex bg-surface-300 p-2 w-full">
-					<PageLinks on:click={() => drawerStore.close()} />
-				</div>
-			</div>
+			<DrawerMenuContents />
 		</Drawer>
 	{/if}
 
@@ -116,19 +88,7 @@
 		<!-- Page Route Content -->
 		<slot />
 		<svelte:fragment slot="pageFooter">
-			<div class="bg-surface-500">
-				<div class="p-2 container mx-auto">
-					<div class="sm:inline-block">
-						<a href="/">
-							<span class="text-primary-500">AARON</span>
-							<span class="text-tertiary-500">CROCKETT</span> |
-						</a>
-					</div>
-					<div class="sm:inline-block">
-						<span class="text-white">WEB APPLICATION DEVELOPER</span>
-					</div>
-				</div>
-			</div>
+			<Footer />
 		</svelte:fragment>
 	</AppShell>
 </div>
