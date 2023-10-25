@@ -3,6 +3,9 @@
 	import '../app.postcss';
 	//
 	import Header from '$lib/components/Header.svelte';
+	import SocialMediaLinks from '$lib/components/SocialMediaLinks.svelte';
+	import PageLinks from '$lib/components/PageLinks.svelte';
+
 	// Svelte & Sveltekit
 	import { setContext, type ComponentEvents } from 'svelte';
 	import { writable } from 'svelte/store';
@@ -12,22 +15,55 @@
 	// Stores and Libs
 	import type { DrawerSettings, DrawerStore } from '@skeletonlabs/skeleton';
 	import { hasScrolled } from '$lib/store';
+	// UI related
+	import * as feather from 'feather-icons';
 
 	export let data: PageData;
 
 	initializeStores();
 
+	const drawerSettings: DrawerSettings = {
+		id: 'main-menu',
+		// Provide your property overrides:
+		bgDrawer: 'bg-surface-500 text-text-primary-500',
+		bgBackdrop: 'bg-gradient-to-tr from-secondary-900/80 to-surface-900/80',
+		width: 'w-[80%] md:w-[60%]',
+		rounded: 'rounded-xl'
+	};
+
 	const drawerStore = getDrawerStore();
 
 	const innerHeightStore = writable(0);
 
+	const homeIconSvg = feather.icons['home'].toSvg({
+		stroke: '#d7424b',
+		width: 28,
+		height: 28
+	});
+
+	const homeIconSvgSm = feather.icons['home'].toSvg({
+		stroke: '#d7424b',
+		width: 24,
+		height: 24
+	});
+
 	let appBarWrapperElBg = '';
+	let innerWidth = 0;
+	let isSmallScreen = false;
 
 	$: innerHeight = 0;
+
+	$: routeId = data.route.id;
 
 	$: {
 		if (innerHeight > 0) {
 			$innerHeightStore = innerHeight;
+		}
+		if (innerWidth < 760) {
+			isSmallScreen = true;
+		} else {
+			isSmallScreen = false;
+			drawerStore.close();
 		}
 	}
 
@@ -43,15 +79,39 @@
 	}
 </script>
 
-<svelte:window bind:innerHeight />
+<svelte:window bind:innerHeight bind:innerWidth />
 
 <!-- App Shell -->
 <div style={`height: ${innerHeight}px;`}>
-	<Drawer />
+	{#if routeId == '/' || isSmallScreen}
+		<Drawer>
+			<div class="flex">
+				<div class="flex flex-col gap-2 p-2">
+					<a on:click={() => drawerStore.close()} class="inline-block p-1 sm:p-2" href="/">
+						<span class="hidden sm:inline-block">
+							{@html homeIconSvg}
+						</span>
+						<span class=" inline-block sm:hidden">
+							{@html homeIconSvgSm}
+						</span>
+					</a>
+					<SocialMediaLinks on:click={() => drawerStore.close()} />
+				</div>
+				<div class="flex bg-surface-300 p-2 w-full">
+					<PageLinks on:click={() => drawerStore.close()} />
+				</div>
+			</div>
+		</Drawer>
+	{/if}
 
 	<AppShell on:scroll={scrollHandler}>
 		<svelte:fragment slot="header">
-			<Header {appBarWrapperElBg} routeId={data.route.id} />
+			<Header
+				on:openMenu={() => drawerStore.open(drawerSettings)}
+				{appBarWrapperElBg}
+				{isSmallScreen}
+				{routeId}
+			/>
 		</svelte:fragment>
 		<!-- Page Route Content -->
 		<slot />
