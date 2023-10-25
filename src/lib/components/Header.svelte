@@ -9,10 +9,11 @@
 	import { AppBar } from '@skeletonlabs/skeleton';
 	// Other
 	import classNames from 'classnames';
+	//
+	import { page } from '$app/stores';
 	// UI related
 	import * as feather from 'feather-icons';
 	export let appBarWrapperElBg = '';
-	export let routeId = '';
 	export let isSmallScreen: Boolean;
 
 	const menuOpenIconSvg = feather.icons['menu'].toSvg({
@@ -31,8 +32,7 @@
 
 	let triggerOnMountTransitions = false;
 
-	$: isHome = routeId == '/';
-
+	$: isHome = $page?.route.id === '/';
 	$: wrapperClasses = classNames(isHome ? 'fixed top-0 right-0 left-0' : '');
 
 	onMount(() => {
@@ -70,7 +70,7 @@
 		</AppBar>
 		{#if !isHome && !isSmallScreen}
 			<div class="variant-soft-secondary">
-				<div class="container mx-auto">
+				<div class="container mx-auto py-1">
 					<PageLinks />
 				</div>
 			</div>

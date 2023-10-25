@@ -10,15 +10,14 @@
 	import type { AfterNavigate } from '@sveltejs/kit';
 	import { setContext, type ComponentEvents } from 'svelte';
 	import { writable } from 'svelte/store';
-	import type { PageData } from './$types';
 	import { afterNavigate } from '$app/navigation';
+	import { page } from '$app/stores';
+
 	// Skeleton Labs
 	import { AppShell, Drawer, getDrawerStore, initializeStores } from '@skeletonlabs/skeleton';
 	// Stores and Libs
 	import type { DrawerSettings, DrawerStore } from '@skeletonlabs/skeleton';
 	import { hasScrolled } from '$lib/store';
-
-	export let data: PageData;
 
 	initializeStores();
 
@@ -32,16 +31,17 @@
 	};
 
 	const drawerStore: DrawerStore = getDrawerStore();
-
 	const innerHeightStore = writable(0);
 
 	let appBarWrapperElBg = '';
 	let innerWidth = 0;
 	let isSmallScreen = false;
 
-	$: innerHeight = 0;
+	// innerHeight as opposed to vh/screen for mobile, to account for mobile bars at bottom.
+	setContext('inner-height', innerHeightStore);
+	setContext('drawer-store', drawerStore);
 
-	$: routeId = data.route.id;
+	$: innerHeight = 0;
 
 	$: {
 		if (innerHeight > 0) {
@@ -54,10 +54,6 @@
 			drawerStore.close();
 		}
 	}
-
-	// innerHeight as opposed to vh/screen for mobile, to account for mobile bars at bottom.
-	setContext('inner-height', innerHeightStore);
-	setContext('drawer-store', drawerStore);
 
 	function scrollHandler(event: ComponentEvents<AppShell>['scroll']) {
 		// wait to add bg color as it looks better to have no bg on intro animation.
@@ -80,7 +76,7 @@
 
 <!-- App Shell -->
 <div style={`height: ${innerHeight}px;`}>
-	{#if routeId == '/' || isSmallScreen}
+	{#if $page?.route.id == '/' || isSmallScreen}
 		<Drawer>
 			<DrawerMenuContents />
 		</Drawer>
@@ -92,7 +88,6 @@
 				on:openMenu={() => drawerStore.open(drawerSettings)}
 				{appBarWrapperElBg}
 				{isSmallScreen}
-				{routeId}
 			/>
 		</svelte:fragment>
 		<!-- Page Route Content -->
