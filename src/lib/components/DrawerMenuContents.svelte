@@ -33,7 +33,12 @@
 		</a>
 		<SocialMediaLinks on:click={() => drawerStore.close()} />
 	</div>
-	<div class="flex bg-surface-300 p-2 w-full">
+	<div class="flex flex-col variant-soft-surface p-2 w-full h-screen">
+		<h3
+			class="p-1 sm:p-2 border-b leading-sm text-tertiary-500 inline-block font-bold border-tertiary-500 !text-xl sm:text-base"
+		>
+			Tools and more.
+		</h3>
 		<PageLinks on:click={() => drawerStore.close()} />
 	</div>
 </div>
