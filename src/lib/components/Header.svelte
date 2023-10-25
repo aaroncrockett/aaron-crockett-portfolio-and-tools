@@ -11,7 +11,6 @@
 	import classNames from 'classnames';
 	// UI related
 	import * as feather from 'feather-icons';
-
 	export let appBarWrapperElBg = '';
 	export let routeId = '';
 	export let isSmallScreen: Boolean;
@@ -34,9 +33,7 @@
 
 	$: isHome = routeId == '/';
 
-	$: wrapperClasses = classNames(
-		isHome ? 'bg-surface-600' : `fixed top-0 right-0 left-0 ${appBarWrapperElBg}`
-	);
+	$: wrapperClasses = classNames(isHome ? 'fixed top-0 right-0 left-0' : '');
 
 	onMount(() => {
 		triggerOnMountTransitions = true;
@@ -46,7 +43,7 @@
 {#if triggerOnMountTransitions}
 	<div
 		transition:fade={{ easing: cubicIn, duration: 800 }}
-		class={`${wrapperClasses} ${isHome ? 'bg-none' : 'bg-surface-600'}`}
+		class={`${wrapperClasses} ${appBarWrapperElBg} bg-surface-600 `}
 	>
 		<AppBar class="container mx-auto" padding="sm:p-2 p-1 px-4" background="bg-none">
 			<svelte:fragment slot="lead">

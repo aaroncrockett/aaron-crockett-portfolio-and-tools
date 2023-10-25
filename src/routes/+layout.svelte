@@ -61,7 +61,7 @@
 		// wait to add bg color as it looks better to have no bg on intro animation.
 		if (event.currentTarget.scrollTop > 15) {
 			if (!$hasScrolled) $hasScrolled = true;
-			appBarWrapperElBg = 'bg-surface-600 shadow-sm';
+			appBarWrapperElBg = 'shadow-sm';
 		}
 	}
 </script>
