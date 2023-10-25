@@ -23,14 +23,16 @@
 
 <div class="flex">
 	<div class="flex flex-col gap-2 p-2">
-		<a on:click class="inline-block p-1 sm:p-2" href="/">
-			<span class="hidden sm:inline-block">
-				{@html homeIconSvg}
-			</span>
-			<span class=" inline-block sm:hidden">
-				{@html homeIconSvgSm}
-			</span>
-		</a>
+		<div class="border-b border-primary-500">
+			<a on:click class="inline-block p-1 sm:p-2" href="/">
+				<span class="hidden sm:inline-block">
+					{@html homeIconSvg}
+				</span>
+				<span class=" inline-block sm:hidden">
+					{@html homeIconSvgSm}
+				</span>
+			</a>
+		</div>
 		<SocialMediaLinks on:click={() => drawerStore.close()} />
 	</div>
 	<div class="flex flex-col variant-soft-surface p-2 w-full h-screen">
