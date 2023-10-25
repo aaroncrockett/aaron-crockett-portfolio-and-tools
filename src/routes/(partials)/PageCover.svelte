@@ -95,7 +95,7 @@
 			class={classNames(
 				triggerOnMountAnimations ? 'opacity-100' : 'opacity-0',
 				coverHeadlineTwColor,
-				'transition-all duration-600 container flex items-center p-4 mx-auto sm:py-4 sm:p-2'
+				'transition-all duration-600 container flex items-center mx-auto py-2'
 			)}
 		>
 			<span class={floatingIconClasses}>{@html downIconSvg} </span> Portfolio & CV
