@@ -7,7 +7,7 @@
 </script>
 
 <PageCover />
-<div class="page">
+<div class="page-one-col">
 	<div class="page-section variant-ringed-secondary rounded">
 		<ProjectShowCases />
 	</div>
