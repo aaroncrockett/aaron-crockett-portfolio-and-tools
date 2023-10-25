@@ -37,7 +37,11 @@
 		system.
 	</p>
 	<p class="lg:w-2/3 sm:w-4/5 mx-auto text-center">
-		If you need non tech speak summary of what a component library is, <a
+		<span class="font-bold">This is currently a portfolio project.</span> I chose it because it effectively
+		summarizes my recent combined professional and personal experiences.
+	</p>
+	<p class="lg:w-2/3 sm:w-4/5 mx-auto text-center">
+		If you don't know what a component library is and need a summary, <a
 			class="inline-link"
 			href="/blog">read this</a
 		>.
@@ -48,10 +52,7 @@
 		and Tailwind, and recently, I've discovered the Skeleton UI toolkit for Svelte. Skeleton doesn't
 		exist for Vue and I saw an opening to create it.
 	</p>
-	<p class="lg:w-2/3 sm:w-4/5 mx-auto text-center">
-		<span class="font-bold">This is currently a portfolio project.</span> I chose it because it effectively
-		summarizes a good chunk of my recent combined professional and personal experiences.
-	</p>
+
 	<p class="lg:w-2/3 sm:w-4/5 mx-auto text-center">
 		<span class="font-bold">Docs demo site coming soon.</span>
 	</p>

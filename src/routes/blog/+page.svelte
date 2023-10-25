@@ -2,20 +2,32 @@
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import { cubicIn } from 'svelte/easing';
+	// UI Related
+	import * as feather from 'feather-icons';
 
 	let triggerOnMountTransitions = false;
+
+	const chevronRightIconSvg = feather.icons['chevron-right'].toSvg({
+		stroke: '#000000',
+		width: 12,
+		height: 12
+	});
 	onMount(() => {
 		triggerOnMountTransitions = true;
 	});
 </script>
 
+<!-- This blog will be done in markdown. And dynamic sidebar. This is a placeholder -->
 {#if triggerOnMountTransitions}
 	<div class="page-two-col" transition:fade={{ easing: cubicIn, duration: 800 }}>
 		<div class="page-col order-2 variant-soft-surface sm:order-1">
-			This blog is under development. Sidebar coming soon.
+			<a class="flex items-center" href="/blog">
+				<span class="pr-[.1rem]">{@html chevronRightIconSvg}</span>
+				Component Libraries</a
+			>
 		</div>
 		<div class="page-col order-1 page-section sm:order-1">
-			<h2 class="page-header">Component Library's</h2>
+			<h2 class="page-header">Component Libraries</h2>
 			<div class="p-1 bg-gradient-to-r variant-gradient-primary-secondary" />
 			<div class="variant-ghost-secondary p-2 rounded">
 				<span class="block">
