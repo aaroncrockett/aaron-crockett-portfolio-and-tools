@@ -1,7 +1,8 @@
 <script lang="ts">
 	import AboutMe from './(partials)/AboutMe.svelte';
 	import PageCover from './(partials)/PageCover.svelte';
-	import ProjectShowCases from './(partials)/ProjectShowCases.svelte';
+	import ProjectShowCasesSkeletalPart from './(partials)/ProjectShowCasesSkeletalPart.svelte';
+
 	import References from './(partials)/References.svelte';
 	import SummaryCV from './(partials)/SummaryCV.svelte';
 </script>
@@ -9,7 +10,8 @@
 <PageCover />
 <div class="page-one-col">
 	<div class="page-section variant-ringed-secondary rounded">
-		<ProjectShowCases />
+		<h2 class="page-header text-center">Project Showcases</h2>
+		<ProjectShowCasesSkeletalPart />
 	</div>
 	<div>
 		<SummaryCV />

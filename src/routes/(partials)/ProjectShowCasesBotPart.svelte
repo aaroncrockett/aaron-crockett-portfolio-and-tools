@@ -1,3 +1,5 @@
+<!-- Page currently not in use.  -->
+
 <script lang="ts">
 	import { gptQuestions } from '$lib/questions';
 	// Svelte related
