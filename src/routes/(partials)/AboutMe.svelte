@@ -4,7 +4,7 @@
 </script>
 
 <section class="page-section card">
-	<div class="flex flex-col gap-4 md:flex-row">
+	<div class="flex flex-col md:flex-row">
 		<div class="w-full order-2 sm:order-1 flex md:w-1/2">
 			<div class="w-[45%] hidden sm:block p-2">
 				<!-- TODO optimize images - picture tag, smaller mobile images -->
@@ -19,7 +19,7 @@
 				<img src={me} class="border-4 rounded-md" alt="Me. Aaron Crockett." />
 			</div>
 		</div>
-		<div class="w-fullp-6 sm:order-2 md:w-1/2">
+		<div class="w-full p-6 flex flex-col gap-2 sm:order-2 md:w-1/2">
 			<h3 class="text-primary-500">A little more about me.</h3>
 			<p>
 				I live in Portland, Oregon, with my husband Nick and our two dogs, Jasper and Fred. I enjoy

@@ -27,7 +27,7 @@
 	<h3 class="text-center uppercase">CV Summary</h3>
 
 	<div class="grid sm:grid-cols-2 gap-4 sm:gap-8">
-		<div class="flex ring-0 variant-ghost-surface p-1 card">
+		<div class="box">
 			<div class="flex flex-col items-center p-4 card variant-glass">
 				<div class="py-2">{@html starIconSvg}</div>
 				<p class="text-center">
@@ -36,7 +36,7 @@
 				</p>
 			</div>
 		</div>
-		<div class="flex ring-0 variant-ghost-surface p-1 card">
+		<div class="box">
 			<div class="flex flex-col items-center p-4 card variant-glass">
 				<div class="py-2">{@html sendIconSvg}</div>
 				<p class="text-center">
@@ -45,7 +45,7 @@
 				</p>
 			</div>
 		</div>
-		<div class="flex ring-0 variant-ghost-surface p-1 card">
+		<div class="box">
 			<div class="flex flex-col items-center p-4 card variant-glass">
 				<div class="py-2">{@html bookIconSvg}</div>
 				<p class="text-center">
@@ -54,7 +54,7 @@
 				</p>
 			</div>
 		</div>
-		<div class="flex ring-0 variant-ghost-surface p-1 card">
+		<div class="box">
 			<div class="flex flex-col items-center p-4 card variant-glass">
 				<div class="py-2">{@html codeIconSvg}</div>
 				<p class="text-center">
@@ -65,3 +65,9 @@
 		</div>
 	</div>
 </section>
+
+<style lang="postcss">
+	.box {
+		@apply flex ring-0 p-1 variant-ghost-surface card;
+	}
+</style>

@@ -6,7 +6,7 @@
 	</p>
 
 	<div class="flex flex-col gap-4">
-		<div class="flex flex-col gap-1 lg:w-2/3 mx-auto variant-soft-surface card p-4">
+		<div class="referral-box">
 			<blockquote
 				class="referral border-l-[10px] pl-4 border-surface-400 variant-soft-surface card mb-2"
 			>
@@ -19,7 +19,7 @@
 			<p class="text-xl font-bold inline-block leading-2xl">Director, Global Experience Strategy</p>
 			<p class="text-xl inline-block leading-xl">Jacob White</p>
 		</div>
-		<div class="flex flex-col gap-1 lg:w-2/3 mx-auto variant-soft-surface card p-4">
+		<div class="referral-box">
 			<blockquote
 				class="referral border-l-[10px] pl-4 border-surface-400 variant-soft-surface card mb-2"
 			>
@@ -32,7 +32,7 @@
 			<p class="text-xl font-bold inline-block leading-2xl">Founder at Power Admin LLC</p>
 			<p class="text-xl inline-block leading-xl">Doug Nebeker</p>
 		</div>
-		<div class="flex flex-col gap-1 lg:w-2/3 mx-auto variant-soft-surface card p-4">
+		<div class="referral-box">
 			<blockquote
 				class="referral border-l-[10px] pl-4 border-surface-400 variant-soft-surface card mb-2"
 			>
@@ -49,7 +49,7 @@
 			</p>
 			<p class="text-xl inline-block leading-xl">Henry Leacock</p>
 		</div>
-		<div class="flex flex-col gap-1 lg:w-2/3 mx-auto variant-soft-surface card p-4">
+		<div class="referral-box">
 			<blockquote
 				class="referral border-l-[10px] pl-4 border-surface-400 variant-soft-surface card mb-2"
 			>
@@ -63,7 +63,7 @@
 			<p class="text-xl font-bold inline-block leading-2xl">Project Manager, Bed Bath & Beyond</p>
 			<p class="text-xl inline-block leading-xl">Morgan Markus</p>
 		</div>
-		<div class="flex flex-col gap-1 lg:w-2/3 mx-auto variant-soft-surface card p-4">
+		<div class="referral-box">
 			<blockquote
 				class="referral border-l-[10px] pl-4 border-surface-400 variant-soft-surface card mb-2"
 			>
@@ -82,3 +82,9 @@
 		</div>
 	</div>
 </section>
+
+<style lang="postcss">
+	.referral-box {
+		@apply flex flex-col gap-1 lg:w-2/3 mx-auto variant-soft-surface card p-4;
+	}
+</style>
