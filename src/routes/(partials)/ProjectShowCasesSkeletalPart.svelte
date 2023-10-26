@@ -59,5 +59,5 @@
 	<a class="font-bold text-xl underline" href="https://github.com/aaroncrockett/skeletal-vue"
 		>Skeletal Vue on Git</a
 	>
-	<a class="font-bold text-xl underline" href="https://www.skeleton.dev">Skeleton UI for Svelte.</a>
+	<a class="font-bold text-xl underline" href="https://www.skeleton.dev">Skeleton UI for Svelte</a>
 </section>
