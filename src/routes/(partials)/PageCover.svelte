@@ -61,7 +61,7 @@
 			in:fly={{ y: '100%', easing: cubicOut }}
 		/>
 	{/if}
-	<div class="container relative px-3 sm:px-2 pt-14 sm:pt-16 pb-12 mx-auto">
+	<div class="container relative px-3 sm:px-2 pt-20 sm:pt-16 pb-12 mx-auto">
 		<div class="flex flex-col overflow-hidden">
 			{#each headlines as line}
 				<h3
