@@ -33,7 +33,7 @@
 		></span
 	>
 	<p class="lg:w-2/3 sm:w-4/5 mx-auto text-center">
-		<span class="font-bold">In development.</span> A UI Tookkit for Vue components using Skeleton's token
+		<span class="font-bold">In development.</span> A UI Toolkit for Vue components using Skeleton's token
 		system.
 	</p>
 	<p class="lg:w-2/3 sm:w-4/5 mx-auto text-center">
