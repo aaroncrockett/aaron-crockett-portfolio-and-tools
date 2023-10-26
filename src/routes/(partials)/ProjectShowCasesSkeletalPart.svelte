@@ -56,7 +56,8 @@
 	<p class="lg:w-2/3 sm:w-4/5 mx-auto text-center">
 		<span class="font-bold">Docs demo site coming soon.</span>
 	</p>
-	<a class="font-bold text-xl underline" href="https://github.com/aaroncrockett/skeletal-vue-ui"
+	<a class="font-bold text-xl underline" href="https://github.com/aaroncrockett/skeletal-vue"
 		>Skeletal Vue on Git</a
 	>
+	<a class="font-bold text-xl underline" href="https://www.skeleton.dev">Skeleton UI for Svelte.</a>
 </section>
