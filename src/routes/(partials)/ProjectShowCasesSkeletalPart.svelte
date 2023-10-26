@@ -37,9 +37,9 @@
 	</p>
 	<p class="lg:w-2/3 sm:w-4/5 mx-auto text-center">
 		<span class="font-bold">This is currently a portfolio project.</span> I chose it because it effectively
-		summarizes my recent combined professional and personal experience. That is in Vue, Sveltekit, front-end
-		components and recreating other functionality for Vue. Also configuring, designing and deploying
-		front-end applications that function well and look good.
+		summarizes my recent combined professional and personal experience. That is in Vue, Sveltekit, Tailwind,
+		TypeScript, front-end components and recreating other functionality for Vue. Also configuring, designing
+		and deploying front-end applications that function well and look good.
 	</p>
 	<p class="lg:w-2/3 sm:w-4/5 mx-auto text-center">
 		If you don't know what a component library is and need a summary, <a
