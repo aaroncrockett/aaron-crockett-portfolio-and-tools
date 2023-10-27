@@ -8,9 +8,9 @@
 
 	// Svelte & Sveltekit
 	import type { AfterNavigate } from '@sveltejs/kit';
-	import { setContext, type ComponentEvents } from 'svelte';
+	import { setContext, onMount, type ComponentEvents } from 'svelte';
 	import { writable } from 'svelte/store';
-	import { afterNavigate } from '$app/navigation';
+	import { afterNavigate, invalidate } from '$app/navigation';
 	import { page } from '$app/stores';
 
 	// Skeleton Labs
@@ -18,6 +18,15 @@
 	// Stores and Libs
 	import type { DrawerSettings, DrawerStore } from '@skeletonlabs/skeleton';
 	import { hasScrolled } from '$lib/store';
+
+	export let data;
+
+	let { supabase, session } = data;
+	$: ({ supabase, session } = data);
+
+	$: {
+		setContext('session', session);
+	}
 
 	initializeStores();
 
@@ -69,6 +78,16 @@
 		if (isNewPage && elemPage !== null) {
 			elemPage.scrollTop = 0;
 		}
+	});
+
+	onMount(() => {
+		const { data } = supabase.auth.onAuthStateChange((event, _session) => {
+			if (_session?.expires_at !== session?.expires_at) {
+				invalidate('supabase:auth');
+			}
+		});
+
+		return () => data.subscription.unsubscribe();
 	});
 </script>
 
