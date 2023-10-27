@@ -1,16 +1,11 @@
-// import { getRateLimit } from '$lib/server/ratelimit';
-// import { fail } from '@sveltejs/kit';
+import { redirect } from '@sveltejs/kit';
 
-// export const actions = {
-// 	default: async (event) => {
-// 		const ratelimit = getRateLimit();
-// 		const rateLimitAttempt = await ratelimit?.limit(event.getClientAddress());
-
-// 		if (!rateLimitAttempt?.success) {
-// 			// const timeRemaining = Math.floor((rateLimitAttempt.reset - new Date().getTime()) / 1000);
-// 			return fail(429, {
-// 				error: `TEST lorum ipsum`
-// 			});
-// 		}
-// 	}
-// };
+export const actions = {
+	signout: async ({ locals: { supabase, getSession } }) => {
+		const session = await getSession();
+		if (session) {
+			await supabase.auth.signOut();
+			throw redirect(303, '/');
+		}
+	}
+};

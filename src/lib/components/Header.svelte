@@ -5,6 +5,7 @@
 	import { createEventDispatcher, onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import { cubicIn } from 'svelte/easing';
+	import { getContext } from 'svelte';
 	// Skeleton Labs
 	import { AppBar } from '@skeletonlabs/skeleton';
 	// Other
@@ -15,6 +16,9 @@
 	import * as feather from 'feather-icons';
 	export let appBarWrapperElBg = '';
 	export let isSmallScreen: Boolean;
+
+	let triggerOnMountTransitions = false;
+	let loading = false;
 
 	const menuOpenIconSvg = feather.icons['menu'].toSvg({
 		stroke: '#d7424b',
@@ -28,9 +32,9 @@
 		height: 24
 	});
 
-	const dispatch = createEventDispatcher();
+	const session = getContext('session');
 
-	let triggerOnMountTransitions = false;
+	const dispatch = createEventDispatcher();
 
 	$: isHome = $page?.route.id === '/';
 	$: wrapperClasses = classNames(isHome ? 'fixed top-0 right-0 left-0' : '');
@@ -55,7 +59,15 @@
 				</div>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
+				{#if session}
+					<form method="post" action="?/signout">
+						<button class="btn btn-sm font-bold variant-soft-primary" disabled={loading}
+							>Sign Out</button
+						>
+					</form>
+				{/if}
 				<SocialMediaLinks />
+
 				{#if isHome || isSmallScreen}
 					<button class="inline-block p-1 sm:p-2" on:click={() => dispatch('openMenu')}>
 						<span class="hidden sm:inline">
