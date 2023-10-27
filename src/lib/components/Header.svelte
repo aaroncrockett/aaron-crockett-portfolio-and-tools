@@ -19,7 +19,6 @@
 	export let isSmallScreen: Boolean;
 
 	let triggerOnMountTransitions = false;
-	let loading = false;
 
 	const sessionId = getContext<Writable<string>>('session-id');
 
@@ -60,11 +59,9 @@
 				</div>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
-				{#if $sessionId}
+				{#if $sessionId && isSmallScreen}
 					<form method="post" action="sign-out">
-						<button class="btn btn-sm font-bold variant-soft-primary" disabled={loading}
-							>Sign Out</button
-						>
+						<button class="btn btn-sm font-bold variant-soft-primary">Sign Out</button>
 					</form>
 				{/if}
 				<SocialMediaLinks />
