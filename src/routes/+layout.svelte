@@ -58,7 +58,7 @@
 		if (innerHeight > 0) {
 			$innerHeightStore = innerHeight;
 		}
-		if (innerWidth < 760) {
+		if (innerWidth < 640) {
 			isSmallScreen = true;
 		} else {
 			isSmallScreen = false;
