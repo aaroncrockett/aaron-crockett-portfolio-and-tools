@@ -1,12 +1,14 @@
 <script lang="ts">
 	import { getContext } from 'svelte';
 	import { page } from '$app/stores';
+	import type { Writable } from 'svelte/store';
+
 	// UI Related
 	import * as feather from 'feather-icons';
 
 	export let showChevron = false;
 
-	const session = getContext('session');
+	const sessionId = getContext<Writable<string>>('session-id');
 	const chevronRightIconSvg = feather.icons['chevron-right'].toSvg({
 		stroke: '#ffffff',
 		width: 12,
@@ -22,7 +24,7 @@
 		<span class={`${$page?.route.id == '/blog' ? 'text-primary-500 ' : ''}`}>Blog</span></span
 	>
 </a>
-{#if session}
+{#if $sessionId}
 	<a on:click class="!text-white p-1 sm:p-2 font-bold !text-xl sm:text-base" href="/tools">
 		<span class="inline-flex items-center hover:!text-tertiary-500">
 			{#if showChevron}
@@ -32,7 +34,7 @@
 		>
 	</a>
 {/if}
-{#if !session}
+{#if !$sessionId}
 	<a on:click class="!text-white p-1 sm:p-2 font-bold !text-xl sm:text-base" href="/sign-in">
 		<span class="inline-flex items-center hover:!text-tertiary-500">
 			{#if showChevron}

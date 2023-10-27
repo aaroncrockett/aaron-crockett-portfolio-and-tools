@@ -20,13 +20,13 @@
 		};
 	};
 
-	const handleSignOut: SubmitFunction = () => {
-		loading = true;
-		return async ({ update }) => {
-			loading = false;
-			update();
-		};
-	};
+	// const handleSignOut: SubmitFunction = () => {
+	// 	loading = true;
+	// 	return async ({ update }) => {
+	// 		loading = false;
+	// 		update();
+	// 	};
+	// };
 </script>
 
 <div class="page-one-col">
@@ -76,7 +76,7 @@
 			</div>
 		</form>
 
-		<form method="post" action="?/signout" use:enhance={handleSignOut}>
+		<form method="post" action="sign-out">
 			<button class="btn variant-ghost-primary" disabled={loading}>Sign Out</button>
 		</form>
 	</div>

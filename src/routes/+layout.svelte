@@ -24,8 +24,10 @@
 	let { supabase, session } = data;
 	$: ({ supabase, session } = data);
 
+	const sessionId = writable(session?.user?.id);
+
 	$: {
-		setContext('session', session);
+		setContext('session-id', sessionId);
 	}
 
 	initializeStores();

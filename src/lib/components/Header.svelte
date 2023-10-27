@@ -6,6 +6,7 @@
 	import { fade } from 'svelte/transition';
 	import { cubicIn } from 'svelte/easing';
 	import { getContext } from 'svelte';
+	import type { Writable } from 'svelte/store';
 	// Skeleton Labs
 	import { AppBar } from '@skeletonlabs/skeleton';
 	// Other
@@ -20,6 +21,8 @@
 	let triggerOnMountTransitions = false;
 	let loading = false;
 
+	const sessionId = getContext<Writable<string>>('session-id');
+
 	const menuOpenIconSvg = feather.icons['menu'].toSvg({
 		stroke: '#d7424b',
 		width: 28,
@@ -31,8 +34,6 @@
 		width: 24,
 		height: 24
 	});
-
-	const session = getContext('session');
 
 	const dispatch = createEventDispatcher();
 
@@ -59,8 +60,8 @@
 				</div>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
-				{#if session}
-					<form method="post" action="?/signout">
+				{#if $sessionId}
+					<form method="post" action="sign-out">
 						<button class="btn btn-sm font-bold variant-soft-primary" disabled={loading}
 							>Sign Out</button
 						>
