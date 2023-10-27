@@ -5,8 +5,8 @@
 	export let data;
 </script>
 
-<div class="row flex-center flex">
-	<div class="col-6 form-widget">
+<div class="page-one-col">
+	<div class=" sm:w-2/3 md:w-1/2 w-full">
 		<Auth
 			supabaseClient={data.supabase}
 			view="magic_link"
