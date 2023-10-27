@@ -7,6 +7,7 @@
 	import * as feather from 'feather-icons';
 	// Types
 	import type { DrawerStore } from '@skeletonlabs/skeleton';
+
 	const homeIconSvg = feather.icons['home'].toSvg({
 		stroke: '#d7424b',
 		width: 28,
@@ -17,6 +18,12 @@
 		stroke: '#d7424b',
 		width: 24,
 		height: 24
+	});
+
+	const chevronRightIconSvg = feather.icons['chevron-right'].toSvg({
+		stroke: '#ffffff',
+		width: 12,
+		height: 12
 	});
 	const drawerStore = getContext('drawer-store') as DrawerStore;
 </script>
@@ -42,5 +49,11 @@
 			Tools and more.
 		</h3>
 		<PageLinks showChevron={true} on:click={() => drawerStore.close()} />
+		<div class="flex items-center pl-1">
+			<span class="pr-[.1rem]">{@html chevronRightIconSvg}</span>
+			<form method="post" action="sign-out">
+				<button class="text-primary-500 uppercase font-bold">Sign Out</button>
+			</form>
+		</div>
 	</div>
 </div>
