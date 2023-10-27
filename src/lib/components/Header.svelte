@@ -46,7 +46,7 @@
 
 {#if triggerOnMountTransitions}
 	<div
-		transition:fade={{ easing: cubicIn, duration: 800 }}
+		transition:fade={{ easing: cubicIn, duration: 400 }}
 		class={`${wrapperClasses} ${appBarWrapperElBg} bg-surface-600 `}
 	>
 		<AppBar class="container mx-auto" padding="sm:p-2 p-1 px-4" background="bg-none">

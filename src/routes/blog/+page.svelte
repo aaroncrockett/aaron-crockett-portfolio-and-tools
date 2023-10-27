@@ -19,7 +19,7 @@
 
 <!-- This blog will be done in markdown. And dynamic sidebar. This is a placeholder -->
 {#if triggerOnMountTransitions}
-	<div class="page-two-col" transition:fade={{ easing: cubicIn, duration: 800 }}>
+	<div class="page-two-col" transition:fade={{ easing: cubicIn, duration: 400 }}>
 		<div class="page-col order-2 variant-soft-surface sm:order-1">
 			<a class="flex items-center" href="/blog">
 				<span class="pr-[.1rem]">{@html chevronRightIconSvg}</span>
