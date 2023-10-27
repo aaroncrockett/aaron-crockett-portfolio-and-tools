@@ -16,16 +16,17 @@
 	});
 </script>
 
-<a on:click class="!text-white p-1 sm:p-2 font-bold !text-xl sm:text-base" href="/blog">
-	<span class="inline-flex items-center hover:!text-tertiary-500">
-		{#if showChevron}
-			<span class="pr-[.1rem]">{@html chevronRightIconSvg}</span>
-		{/if}
-		<span class={`${$page?.route.id == '/blog' ? 'text-primary-500 ' : ''}`}>Blog</span></span
-	>
-</a>
 {#if $sessionId}
-	<a on:click class="!text-white p-1 sm:p-2 font-bold !text-xl sm:text-base" href="/tools">
+	<a on:click class="page-link" href="/account">
+		<span class="inline-flex items-center hover:!text-tertiary-500">
+			{#if showChevron}
+				<span class="pr-[.1rem]">{@html chevronRightIconSvg}</span>
+			{/if}
+			<span class={`${$page?.route.id == '/account' ? 'text-primary-500 ' : ''}`}>Account</span
+			></span
+		>
+	</a>
+	<a on:click class="page-link" href="/tools">
 		<span class="inline-flex items-center hover:!text-tertiary-500">
 			{#if showChevron}
 				<span class="pr-[.1rem]">{@html chevronRightIconSvg}</span>
@@ -35,7 +36,7 @@
 	</a>
 {/if}
 {#if !$sessionId}
-	<a on:click class="!text-white p-1 sm:p-2 font-bold !text-xl sm:text-base" href="/sign-in">
+	<a on:click class="page-link" href="/sign-in">
 		<span class="inline-flex items-center hover:!text-tertiary-500">
 			{#if showChevron}
 				<span class="pr-[.1rem]">{@html chevronRightIconSvg}</span>
@@ -45,3 +46,17 @@
 		>
 	</a>
 {/if}
+<a on:click class="page-link" href="/blog">
+	<span class="inline-flex items-center hover:!text-tertiary-500">
+		{#if showChevron}
+			<span class="pr-[.1rem]">{@html chevronRightIconSvg}</span>
+		{/if}
+		<span class={`${$page?.route.id == '/blog' ? 'text-primary-500 ' : ''}`}>Blog</span></span
+	>
+</a>
+
+<style lang="postcss">
+	.page-link {
+		@apply !text-white p-1  font-bold sm:text-base uppercase;
+	}
+</style>
