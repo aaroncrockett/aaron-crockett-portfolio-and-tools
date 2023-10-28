@@ -8,7 +8,6 @@
 	let { session, profile } = data;
 	$: ({ session, profile } = data);
 
-	let profileForm: HTMLFormElement;
 	let loading = false;
 	let fullName: string = profile?.full_name ?? '';
 	let username: string = profile?.username ?? '';
@@ -29,7 +28,6 @@
 		method="post"
 		action="?/update"
 		use:enhance={handleSubmit}
-		bind:this={profileForm}
 	>
 		<div>
 			<label for="email">Email</label>

@@ -21,7 +21,6 @@ export const actions = {
 		const formData = await request.formData();
 		const fullName = formData.get('fullName') as string;
 		const username = formData.get('username') as string;
-
 		const session = await getSession();
 
 		const { error } = await supabase.from('profiles').upsert({
@@ -42,12 +41,5 @@ export const actions = {
 			fullName,
 			username
 		};
-	},
-	signout: async ({ locals: { supabase, getSession } }) => {
-		const session = await getSession();
-		if (session) {
-			await supabase.auth.signOut();
-			throw redirect(303, '/');
-		}
 	}
 };
