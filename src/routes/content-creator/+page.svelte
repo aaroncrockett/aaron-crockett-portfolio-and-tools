@@ -12,6 +12,12 @@
 	let triggerOnMountTransitions = false;
 	let editor: Readable<Editor>;
 
+	const headingExtension = Heading.configure({
+		HTMLAttributes: {
+			levels: [1, 2]
+		}
+	});
+
 	onMount(() => {
 		triggerOnMountTransitions = true;
 		editor = createEditor({
@@ -79,17 +85,18 @@
 <style lang="postcss">
 	.context-button {
 		@apply variant-soft-primary p-1 rounded w-full font-bold;
-		&::before {
-			content: '';
-			position: absolute;
-			bottom: -20px; /* Adjust the position to move the triangle above the button */
-			left: 50%;
-			transform: translateX(-50%);
-			border-width: 12px; /* Adjust the size of the triangle as needed */
-			border-style: solid;
-			border-color: #000 transparent transparent; /* Changed the border-color to make the triangle point down */
-		}
 	}
+	.context-button::before {
+		content: '';
+		position: absolute;
+		bottom: -20px; /* Adjust the position to move the triangle above the button */
+		left: 50%;
+		transform: translateX(-50%);
+		border-width: 12px; /* Adjust the size of the triangle as needed */
+		border-style: solid;
+		border-color: #000 transparent transparent; /* Changed the border-color to make the triangle point down */
+	}
+
 	:global(.tiptap h1) {
 		@apply !text-3xl font-bold;
 	}
