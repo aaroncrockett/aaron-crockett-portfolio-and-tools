@@ -1,8 +1,8 @@
 <section class="page-section items-center">
 	<h3 class="text-center uppercase text-primary-500">Skeletal Vue: UI Toolkit</h3>
-	<span class="p-4 fill-token pl-[.1rem] text-4xl">
+	<span class="fill-token pl-[.1rem] text-4xl">
 		<svg
-			class="fill-token sm:h-32 sm:w-32 h-24 w-24"
+			class="fill-token sm:py-1 sm:h-24 sm:w-24 h-20 w-20"
 			version="1.1"
 			xmlns="http://www.w3.org/2000/svg"
 			xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -42,10 +42,7 @@
 		>.
 	</p>
 	<p class="section-p">
-		<span class="font-bold">This is currently a portfolio project.</span> I chose it because it effectively
-		summarizes my recent combined professional and personal experience. That is in Vue, Sveltekit, Tailwind,
-		TypeScript, front-end components and recreating other functionality for Vue. Also configuring, designing
-		and deploying front-end applications that function well and look good.
+		<span class="font-bold">This is currently a portfolio project.</span>
 	</p>
 	<p class="section-p">
 		I've developed Vue components for Blackstone Publishing and Power Admin, including the
