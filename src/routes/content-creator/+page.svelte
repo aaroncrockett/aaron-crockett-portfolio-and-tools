@@ -29,6 +29,7 @@
 		<!-- <Tiptap /> -->
 		<h3 class="page-header">Content Creator</h3>
 		<h4>A tool to create content with attached styling, tags, quizzes, notes and more.</h4>
+		<p class="font-bold">Edit the content bellow:</p>
 		<EditorContent editor={$editor} />
 		<BubbleMenu editor={$editor}>
 			<div class={'bg-surface-700 rounded p-2 flex flex-col gap-2'}>

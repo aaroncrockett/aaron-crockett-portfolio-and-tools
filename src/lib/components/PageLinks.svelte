@@ -26,12 +26,14 @@
 			></span
 		>
 	</a>
-	<a on:click class="page-link" href="/tools">
+	<a on:click class="page-link" href="/content-creator">
 		<span class="inline-flex items-center hover:!text-tertiary-500">
 			{#if showChevron}
 				<span class="pr-[.1rem]">{@html chevronRightIconSvg}</span>
 			{/if}
-			<span class={`${$page?.route.id == '/tools' ? 'text-primary-500 ' : ''}`}>Tools</span></span
+			<span class={`${$page?.route.id == '/content-creator' ? 'text-primary-500 ' : ''}`}
+				>Content Creator</span
+			></span
 		>
 	</a>
 {/if}
@@ -57,6 +59,6 @@
 
 <style lang="postcss">
 	.page-link {
-		@apply !text-white p-1  font-bold sm:text-base uppercase;
+		@apply !text-white p-1 mr-1 font-bold sm:text-base uppercase;
 	}
 </style>
