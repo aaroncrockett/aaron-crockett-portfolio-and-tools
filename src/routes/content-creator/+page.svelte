@@ -13,21 +13,85 @@
 	import TextStyle from '@tiptap/extension-text-style';
 	// Other
 	import { persisted } from 'svelte-persisted-store';
-
+	// Intro MountCheck
 	let triggerOnMountTransitions = false;
-
+	//
 	let enableCustomShortcuts = persisted('enableCustomShortcuts', false);
 	let editor: Readable<Editor>;
+	let currentColor = persisted('currentColor', '#000');
+
+	function isModifierKey(e: KeyboardEvent) {
+		return e.shiftKey && (e.metaKey || e.ctrlKey);
+	}
+	function isNavigatingsingKeyBoard(e: KeyboardEvent) {
+		return !arrowKeys.includes(e.code) && !isModifierKey(e) && e.code !== 'Tab';
+	}
+
+	const arrowKeys = ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'];
+	const whiteListDefaultKeys = ['KeyB', 'KeyI', 'KeyC'];
+
+	let prevKey = '';
 
 	function onKeyDown(e: KeyboardEvent) {
-		if (e.code === 'Digit0' && e.shiftKey && (e.metaKey || e.ctrlKey)) {
-			$enableCustomShortcuts = !$enableCustomShortcuts;
+		// Exit if the key is whitelisted.
+
+		console.log(prevKey);
+
+		if ((e.metaKey || e.ctrlKey) && whiteListDefaultKeys.includes(e.code)) {
+			return;
+		}
+		// Only remove default if modifier key is pressed and custom shortcuts are enabled
+		if ($enableCustomShortcuts && (e.metaKey || e.ctrlKey)) {
 			e.preventDefault();
+		}
+		// Toggle custom shortcut functionality
+		if (e.code === 'Digit0' && e.shiftKey && (e.metaKey || e.ctrlKey)) {
+			e.preventDefault();
+			$enableCustomShortcuts = !$enableCustomShortcuts;
+			return;
+		}
+		// Don't remove the style if we are moving with an arrow or hitting enter
+		if (isNavigatingsingKeyBoard(e) && e.code !== 'Enter') {
+			console.log('run me');
+			console.log($currentColor);
+			$editor.chain().focus().setColor($currentColor).run();
+		}
+		// Custom shortcuts
+		if ($enableCustomShortcuts) {
+			// Init Keys
+			if ((e.metaKey || e.ctrlKey) && e.code === 'KeyL') {
+				console.log('1');
+				prevKey = 'KeyL';
+				return;
+			}
+			// Init plus second keys
+			if (prevKey === 'KeyL' && e.code === 'Digit1') {
+				console.log('2');
+				$editor.chain().focus().setColor('#d7424b').run();
+				$currentColor = '#d7424b';
+				prevKey = ''; // Reset
+				return;
+			}
+			if (prevKey === 'KeyL' && e.code === 'Digit0') {
+				console.log('2');
+				$editor.chain().focus().setColor('#000000').run();
+				$currentColor = '#000000';
+				prevKey = ''; // Reset
+				return;
+			}
+			// No init keys.
+			if (e.code === 'Digit1' && (e.metaKey || e.ctrlKey)) {
+				console.log('3');
+				$editor.chain().focus().setColor('#d7424b').run();
+				$editor.commands.setHeading({ level: 1 });
+				prevKey = ''; // Reset
+				return;
+			}
 		}
 	}
 
-	function onKeyUp(e) {
-		console.log(e.code);
+	function onKeyUp(e: KeyboardEvent) {
+		// console.log(e.code);
 	}
 
 	onMount(() => {
@@ -68,7 +132,9 @@
 						id="enable-custom-shortcuts"
 						bind:checked={$enableCustomShortcuts}
 					/>
-					<label for="enable-custom-shortcuts" class="label pl-1"> Enable Custom Shortcuts </label>
+					<label for="enable-custom-shortcuts" class="label pl-1">
+						Enable Custom Shortcuts <span class="text-sm">(Cmd + Shift + 0 on mac)</span>
+					</label>
 				</div>
 			</div>
 			<div>
@@ -77,56 +143,13 @@
 			</div>
 			<EditorContent editor={$editor} />
 			<div>
-				<button class="btn variant-ghost-secondary w-auto">Submit</button>
+				<button class="btn variant-ghost-primary w-auto">Submit</button>
 			</div>
-
-			<!-- <BubbleMenu editor={$editor}>
-				<div class={'bg-surface-700 rounded p-2 flex flex-col gap-2'}>
-					<div class="flex gap-1">
-						<button
-							class="context-button"
-							on:click={() => $editor.commands.setHeading({ level: 1 })}
-						>
-							H1
-						</button>
-						<button
-							class="context-button"
-							on:click={() => $editor.commands.setHeading({ level: 2 })}
-						>
-							H2
-						</button>
-					</div>
-					<div class="flex gap-1">
-						<button
-							class="context-button"
-							on:click={() => $editor.chain().focus().setColor('#d7424b').run()}
-						>
-							Red
-						</button>
-						<button
-							class="context-button"
-							on:click={() => $editor.chain().focus().setColor('#000000').run()}
-						>
-							Black
-						</button>
-					</div>
-				</div>
-			</BubbleMenu> -->
 		</div>
 	</div>
 {/if}
 
 <style lang="postcss">
-	/* .context-button::before {
-		content: '';
-		position: absolute;
-		bottom: -20px;
-		left: 50%;
-		transform: translateX(-50%);
-		border-width: 12px;
-		border-style: solid;
-		border-color: #000 transparent transparent;
-	} */
 	:global(.tiptap h1) {
 		@apply !text-6xl font-bold;
 	}
