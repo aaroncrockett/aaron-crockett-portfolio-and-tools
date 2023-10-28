@@ -47,7 +47,7 @@
 {#if triggerOnMountTransitions}
 	<div
 		transition:fade={{ easing: cubicIn, duration: 600 }}
-		class={`${wrapperClasses} ${appBarWrapperElBg} bg-surface-600 `}
+		class={`${wrapperClasses} ${appBarWrapperElBg} bg-surface-600`}
 	>
 		<AppBar class="container mx-auto" padding="sm:p-2 p-1 px-4" background="bg-none">
 			<svelte:fragment slot="lead">

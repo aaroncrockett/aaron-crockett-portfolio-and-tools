@@ -107,6 +107,6 @@
 		@apply text-primary-500;
 	}
 	.page-col {
-		@apply p-2;
+		@apply p-2 pt-4;
 	}
 </style>
