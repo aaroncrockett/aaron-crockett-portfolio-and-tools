@@ -27,6 +27,7 @@
 	const sessionId = writable(session?.user?.id);
 
 	$: {
+		console.log($sessionId);
 		setContext('session-id', sessionId);
 	}
 

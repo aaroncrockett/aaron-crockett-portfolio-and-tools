@@ -1,6 +1,7 @@
 <script lang="ts">
 	import SocialMediaLinks from '$lib/components/SocialMediaLinks.svelte';
 	import PageLinks from '$lib/components/PageLinks.svelte';
+	import type { Writable } from 'svelte/store';
 	// Svelte
 	import { getContext } from 'svelte';
 	// UI Related
@@ -26,6 +27,7 @@
 		height: 12
 	});
 	const drawerStore = getContext('drawer-store') as DrawerStore;
+	const sessionId = getContext<Writable<string>>('session-id');
 </script>
 
 <div class="flex">
@@ -50,10 +52,12 @@
 		</h3>
 		<PageLinks showChevron={true} on:click={() => drawerStore.close()} />
 		<div class="flex items-center pl-1">
-			<span class="pr-[.1rem]">{@html chevronRightIconSvg}</span>
-			<form method="post" action="sign-out">
-				<button class="text-primary-500 uppercase font-bold">Sign Out</button>
-			</form>
+			{#if $sessionId}
+				<span class="pr-[.1rem]">{@html chevronRightIconSvg}</span>
+				<form method="post" action="sign-out">
+					<button class="text-primary-500 uppercase font-bold">Sign Out</button>
+				</form>
+			{/if}
 		</div>
 	</div>
 </div>

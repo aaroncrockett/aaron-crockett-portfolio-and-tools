@@ -1,7 +1,7 @@
 <script lang="ts">
 	import SocialMediaLinks from './SocialMediaLinks.svelte';
 	import PageLinks from '$lib/components/PageLinks.svelte';
-
+	// Svelte related
 	import { createEventDispatcher, onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import { cubicIn } from 'svelte/easing';
@@ -59,7 +59,7 @@
 				</div>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
-				{#if $sessionId && isSmallScreen}
+				{#if $sessionId}
 					<form method="post" action="sign-out">
 						<button class="btn btn-sm font-bold variant-soft-primary">Sign Out</button>
 					</form>
