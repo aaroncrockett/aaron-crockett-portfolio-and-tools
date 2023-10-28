@@ -14,24 +14,23 @@ a.stand-alone-link {
 	@apply font-bold text-xl underline;
 }
 .page-one-col {
-	@apply flex flex-col gap-4 mx-auto container p-2;
+	@apply flex flex-col gap-2 mx-auto container p-2 pt-4;
 }
-
 .page-section {
-	@apply flex flex-col gap-4 p-2;
+	@apply flex flex-col gap-2 p-2;
 }
-
 h2.page-header {
-	@apply font-bold text-3xl sm:text-4xl sm:leading-3xl leading-4xl py-1;
+	@apply font-bold text-3xl sm:text-4xl sm:leading-3xl leading-4xl py-1 pt-0;
 }
 .page-section h3 {
-	@apply font-bold text-xl sm:text-2xl sm:leading-xl leading-2xl py-1;
+	@apply font-bold text-xl sm:text-2xl sm:leading-2xl leading-3xl py-1;
 }
-
+.page-section h4 {
+	@apply text-xl sm:text-2xl sm:leading-2xl leading-3xl py-1;
+}
 blockquote {
 	@apply pl-4;
 }
-
 blockquote:before {
 	content: ' " ';
 	display: inline;
