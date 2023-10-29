@@ -10,6 +10,34 @@ export default {
 		join(require.resolve('@skeletonlabs/skeleton'), '../**/*.{html,js,svelte,ts}')
 	],
 	theme: {
+		extend: {
+			typography: (theme) => ({
+				'3xl': {
+					css: {
+						fontSize: '1.875rem',
+						lineHeight: '1.875rem'
+					}
+				},
+				'4xl': {
+					css: {
+						fontSize: '2.25rem',
+						lineHeight: '2.25rem'
+					}
+				},
+				'5xl': {
+					css: {
+						fontSize: '3.052rem',
+						lineHeight: '3.052rem'
+					}
+				},
+				'6xl': {
+					css: {
+						fontSize: '3.815rem',
+						lineHeight: '3.815rem'
+					}
+				}
+			})
+		},
 		fontFamily: {
 			brandon: ['Brandon', 'sans-serif']
 		},
@@ -45,6 +73,7 @@ export default {
 		}
 	},
 	plugins: [
+		require('@tailwindcss/typography'),
 		forms,
 		skeleton({
 			themes: {
