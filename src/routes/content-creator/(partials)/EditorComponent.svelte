@@ -8,7 +8,7 @@
 <div class="editor flex flex-col gap-2">
 	<EditorHeader />
 	<EditorContent editor={$editor} />
-	<div>
+	<!-- <div>
 		<button class="btn variant-ghost-primary w-auto">Submit</button>
-	</div>
+	</div> -->
 </div>

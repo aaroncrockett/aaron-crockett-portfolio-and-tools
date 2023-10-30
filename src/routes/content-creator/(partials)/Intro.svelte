@@ -27,6 +27,13 @@
 		</p>
 		<h4>A tool to create content with attached styling, tags, quizzes, notes and more.</h4>
 		<p class="font-bold">Edit the content bellow:</p>
-		<p class="italic">Double click on a word or sentence to edit with the context menu</p>
+		<p class="italic">current keyboard shortcuts:</p>
+		<ul>
+			<li>cmd:h+1</li>
+			<li>cmd:h+2</li>
+			<li>cmd:l+1</li>
+			<li>cmd:l+2</li>
+			<li>cmd:l+0</li>
+		</ul>
 	</div>
 {/if}
