@@ -9,7 +9,6 @@ export const portfolio: CustomThemeConfig = {
 		'--theme-font-family-heading':
 			"brandon-grotesque, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
 		'--theme-font-color-base': 'var(--color-surface-900)',
-		'--theme-font-color-dark': '255 255 255',
 		'--theme-rounded-base': '9999px',
 		'--theme-rounded-container': '4px',
 		'--theme-border-base': '1px',
