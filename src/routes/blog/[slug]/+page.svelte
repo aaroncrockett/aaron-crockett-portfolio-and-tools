@@ -70,7 +70,7 @@
 		<!-- Tags -->
 
 		<!-- Post -->
-		<div class="prose flex flex-col gap-2 py-2 border-t-2 border-surface-100 mt-1">
+		<div class="flex flex-col gap-2 py-2 border-t-2 border-surface-100 mt-1">
 			<svelte:component this={data.content} />
 		</div>
 	</article>
