@@ -31,7 +31,6 @@
 		<ProjectShowCasesSkeletalPart />
 	</section>
 	<section>
-		t/tools
 		<SummaryCV />
 	</section>
 	<section>
