@@ -42,7 +42,7 @@
 </script>
 
 {#if triggerOnMountTransitions}
-	<div transition:fade={{ easing: cubicIn, duration: 600 }} class="page-one-col page-section">
+	<section transition:fade={{ easing: cubicIn, duration: 600 }} class="page-one-col">
 		<!-- <Tiptap /> -->
 		<h3 class="page-header">Content Creator</h3>
 		<p class="italic variant-ghost-secondary p-2 rounded">Currently under development.</p>
@@ -79,7 +79,7 @@
 				</div>
 			</div>
 		</BubbleMenu>
-	</div>
+	</section>
 {/if}
 
 <style lang="postcss">
