@@ -1,9 +1,12 @@
 <script>
+	import { formatDate } from '$lib/utils';
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import { cubicIn } from 'svelte/easing';
 	// UI Related
 	import * as feather from 'feather-icons';
+
+	export let data;
 
 	let triggerOnMountTransitions = false;
 
@@ -19,14 +22,18 @@
 
 <!-- This blog will be done in markdown. And dynamic sidebar. This is a placeholder -->
 {#if triggerOnMountTransitions}
-	<div class="page-two-col" transition:fade={{ easing: cubicIn, duration: 400 }}>
-		<div class="page-col order-2 variant-soft-surface sm:order-1">
-			<a class="flex items-center" href="/blog">
-				<span class="pr-[.1rem]">{@html chevronRightIconSvg}</span>
-				Component Libraries</a
-			>
-		</div>
-		<div class="page-col order-1 page-section sm:order-1">
+	<div class="page-one-col" transition:fade={{ easing: cubicIn, duration: 400 }}>
+		<ul class="preview-posts preview-full flex flex-col gap-2">
+			{#each data.posts as post}
+				<li class="preview-post-item border-b border-surface-300 pb-2">
+					<a href="blog/{post.slug}" class="title flex items-center inline-link">{post.title}</a>
+					<p class="date">{formatDate(post.date)}</p>
+					<p class="description">{post.description}</p>
+				</li>
+			{/each}
+		</ul>
+
+		<!-- <div class="page-col order-1 page-section sm:order-1">
 			<h2 class="page-header">Component Libraries</h2>
 			<div class="p-1 bg-gradient-to-r variant-gradient-primary-secondary" />
 			<div class="variant-ghost-secondary p-2 rounded">
@@ -39,8 +46,7 @@
 
 			<p>
 				In the ever-evolving world of web development, efficiency, consistency, and reusability are
-				key factors in delivering high-quality applications. One of the tools that have gained
-				immense popularity for achieving these goals is a Component Library. In this blog post, we
+				key factors in delivering high-quality applications.  In this blog post, we
 				will dive into what a Component Library is, why it matters, and how it can streamline your
 				development process.
 			</p>
@@ -94,7 +100,7 @@
 				So, the next time you embark on a web development journey, consider harnessing the power of
 				Component Libraries to simplify your work and elevate your projects to new heights.
 			</p>
-		</div>
+		</div> -->
 	</div>
 {/if}
 
@@ -102,6 +108,12 @@
 <style lang="postcss">
 	.page-two-col {
 		@apply grid sm:grid-cols-[200px_1fr] md:grid-cols-[250px_1fr] mx-auto container gap-2;
+	}
+	.preview-posts .title {
+		@apply uppercase font-bold;
+	}
+	.preview-posts .date {
+		@apply text-sm;
 	}
 	h2 {
 		@apply text-primary-500;

@@ -19,7 +19,7 @@
 				<img src={me} class="border-4 rounded-md" alt="Me. Aaron Crockett." />
 			</div>
 		</div>
-		<div class="w-full p-6 flex flex-col gap-2 sm:order-2 md:w-1/2">
+		<div class="w-full p-2 flex flex-col gap-2 sm:order-2 md:w-1/2">
 			<h3 class="text-primary-500">A little more about me.</h3>
 			<p>
 				I live in Portland, Oregon, with my husband Nick and our two dogs, Jasper and Fred. I enjoy

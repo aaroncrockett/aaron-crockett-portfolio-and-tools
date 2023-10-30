@@ -1,4 +1,4 @@
-<section class="page-section card">
+<section class="card">
 	<h3 class="uppercase text-center">testimonials</h3>
 	<p class="text-xl text-center">
 		Recommendations given on online platforms (Linked In and Zip Recruiter) gathered here in one

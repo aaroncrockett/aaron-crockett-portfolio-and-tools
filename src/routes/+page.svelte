@@ -22,17 +22,17 @@
 	</div>
 {/if}
 <div class="page-one-col">
-	<div class="page-section variant-ringed-secondary rounded">
+	<section class=" variant-ringed-secondary rounded">
 		<h2 class="page-header text-center">Project Showcases</h2>
 		<ProjectShowCasesSkeletalPart />
-	</div>
-	<div>
+	</section>
+	<section>
 		<SummaryCV />
-	</div>
-	<div>
+	</section>
+	<section>
 		<References />
-	</div>
-	<div>
+	</section>
+	<section>
 		<AboutMe />
-	</div>
+	</section>
 </div>

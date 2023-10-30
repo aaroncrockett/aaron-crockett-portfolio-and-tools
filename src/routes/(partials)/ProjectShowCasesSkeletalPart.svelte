@@ -38,7 +38,7 @@
 	<p class="section-p">
 		If you don't know what a component library is and need a summary, <a
 			class="inline-link"
-			href="/blog">read this</a
+			href="/blog/component-libraries">read this</a
 		>.
 	</p>
 	<p class="section-p">
