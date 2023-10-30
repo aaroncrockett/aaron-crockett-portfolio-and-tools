@@ -16,17 +16,29 @@ a.stand-alone-link {
 .page-one-col {
 	@apply flex flex-col gap-2 mx-auto container p-2 pt-4;
 }
-.page-section {
+section,
+article {
 	@apply flex flex-col gap-2 p-2;
 }
+
+h1.page-header,
 h2.page-header {
-	@apply font-bold text-3xl sm:text-4xl sm:leading-3xl leading-4xl py-1 pt-0;
+	@apply font-bold text-3xl sm:text-4xl sm:leading-3xl leading-4xl py-1;
 }
-.page-section h3 {
+section h2,
+article h2 {
+	@apply font-bold text-2xl sm:text-3xl sm:leading-3xl leading-4xl py-1;
+}
+section h3,
+article h3 {
 	@apply font-bold text-xl sm:text-2xl sm:leading-2xl leading-3xl py-1;
 }
-.page-section h4 {
+section h4,
+article h4 {
 	@apply text-xl sm:text-2xl sm:leading-2xl leading-3xl py-1;
+}
+.page-section p {
+	@apply leading-2xl;
 }
 blockquote {
 	@apply pl-4;
