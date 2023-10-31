@@ -27,7 +27,7 @@
 <div class="page-one-col">
 	<section class=" variant-ringed-secondary rounded">
 		<h2 class="page-header text-center">Project Showcases</h2>
-		<ProjectShowCasesIntro />
+		<!-- <ProjectShowCasesIntro /> -->
 		<ProjectShowCasesSkeletalPart />
 	</section>
 	<section>
