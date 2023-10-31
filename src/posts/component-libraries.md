@@ -4,13 +4,9 @@ description: Component libraries. What are they and why they are important?
 date: '2023-4-14'
 categories:
   - sveltekit
-  - svelte
+  - vue
 published: true
 ---
-
-<script>
-  import { CodeBlock } from '@skeletonlabs/skeleton';
-</script>
 
 ## Introduction
 

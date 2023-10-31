@@ -5,7 +5,6 @@
 	import { cubicIn } from 'svelte/easing';
 	// Skeleton
 	import { storeHighlightJs } from '@skeletonlabs/skeleton';
-	import { CodeBlock } from '@skeletonlabs/skeleton';
 	import 'highlight.js/styles/github-dark.css';
 
 	// Highlight js
@@ -82,5 +81,11 @@
 	}
 	:global(ul) {
 		@apply my-2;
+	}
+	:global(.codeblock) {
+		@apply w-[45%];
+	}
+	:global(.code-wrap-iterator) {
+		@apply flex flex-wrap gap-2;
 	}
 </style>
