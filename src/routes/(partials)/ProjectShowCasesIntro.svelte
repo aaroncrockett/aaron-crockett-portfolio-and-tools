@@ -4,7 +4,7 @@
 		professional and personal experience.
 	</p>
 	<div class="pb-2 flex flex-col gap-2">
-		<p>
+		<p class="text-center md:text-left">
 			<span class="font-bold text-xl">Project 1: Skeletal Vue. </span> Showcases experience in:
 			<span class="font-bold">
 				Vue, Nuxt, Sveltekit, Tailwind, TypeScript, front-end component libraries
@@ -20,7 +20,7 @@
 			</span>
 		</p>
 	</div>
-	<p>
+	<p class="text-center md:text-left">
 		<span class="font-bold text-xl"
 			>Project 2: Tools and Content Creator (and this portfolio site).
 		</span>
@@ -33,5 +33,4 @@
 		<span class="font-bold">Supabase</span> in this project, although I also have hands-on
 		experience with <span class="font-bold">Firebase</span>.
 	</p>
-	<p />
 </div>
