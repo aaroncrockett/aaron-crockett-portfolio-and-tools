@@ -50,6 +50,9 @@
 		>
 			Tools and more.
 		</h3>
+		<p class="ml-2 text-tertiary-500">
+			Everything under this menu is a work in progress and under development. But feel free to look.
+		</p>
 		<PageLinks showChevron={true} on:click={() => drawerStore.close()} />
 		<div class="flex items-center pl-1">
 			{#if $sessionId}

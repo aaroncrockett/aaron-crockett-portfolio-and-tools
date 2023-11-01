@@ -1,7 +1,7 @@
 ---
 title: Template
 description: A post about how to make templates using simple algorithms
-date: '2023-10-'
+date: '2023-10-29'
 categories:
   - template
   - algorithms

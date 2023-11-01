@@ -1,7 +1,7 @@
 ---
 title: Component Libraries
 description: Component libraries. What are they and why they are important?
-date: '2023-4-14'
+date: '2023-10-26'
 categories:
   - sveltekit
   - vue
