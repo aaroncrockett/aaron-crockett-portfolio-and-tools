@@ -8,3 +8,10 @@ export type Post = {
 	categories: Categories[];
 	published: boolean;
 };
+
+// Quiz types
+export type Question = {
+	question: string;
+	options: string[];
+	correct: number[];
+};

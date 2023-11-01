@@ -58,6 +58,16 @@
 			></span
 		>
 	</a>
+	<a on:click class="page-link" href="/quiz-maker">
+		<span class="inline-flex items-center hover:!text-tertiary-500">
+			{#if showChevron}
+				<span class="pr-[.1rem]">{@html chevronRightIconSvg}</span>
+			{/if}
+			<span class={`${$page?.route.id == '/quiz-maker' ? 'text-primary-500 ' : ''}`}
+				>Quiz Maker</span
+			></span
+		>
+	</a>
 {/if}
 <a on:click class="page-link" href="/blog">
 	<span class="inline-flex items-center hover:!text-tertiary-500">
