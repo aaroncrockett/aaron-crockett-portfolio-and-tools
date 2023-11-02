@@ -12,17 +12,13 @@
 			questions[i].correct = questions[i].correct.filter((num) => num !== j);
 		}
 	}
+	function handleSubmit() {
+		dispatch('addQuiz', questions);
+	}
 </script>
 
 <section>
-	<h3>Quiz Maker</h3>
-	<form
-		on:submit={() =>
-			dispatch('quiz', {
-				questions
-			})}
-		class="flex flex-col gap-2"
-	>
+	<form method="POST" on:submit|preventDefault={handleSubmit}>
 		{#each questions as question, i}
 			<div class="mb-4 flex flex-col gap-2">
 				<div class="">
@@ -83,6 +79,8 @@
 				Add Question
 			</button>
 		</div>
-		<div><button class="btn variant-ghost-primary" type="submit">Submit Quiz</button></div>
+		<div>
+			<button class="btn variant-ghost-primary" on:click={handleSubmit}>Submit Quiz</button>
+		</div>
 	</form>
 </section>
