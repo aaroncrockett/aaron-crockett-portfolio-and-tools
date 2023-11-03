@@ -46,7 +46,7 @@
 	<p class="section-p">
 		<span class="font-bold">Docs and demo site coming soon.</span>
 	</p>
-	<a class="stand-alone-link" href="https://github.com/aaroncrockett/skeletal-vue"
+	<a class="stand-alone-link" href="https://github.com/aaroncrockett/skeletal-neue"
 		>Skeletal Neue on my Github</a
 	>
 	<a class="stand-alone-link" href="https://www.skeleton.dev">Skeleton UI Toolkit for Sveltekit</a>
