@@ -25,18 +25,12 @@
 	</div>
 {/if}
 <div class="page-one-col">
-	<section class=" variant-ringed-secondary rounded">
+	<section class="card">
 		<h2 class="page-header text-center">Project Showcases</h2>
 		<!-- <ProjectShowCasesIntro /> -->
 		<ProjectShowCasesSkeletalPart />
 	</section>
-	<section>
-		<SummaryCV />
-	</section>
-	<section>
-		<References />
-	</section>
-	<section>
-		<AboutMe />
-	</section>
+	<SummaryCV />
+	<References />
+	<AboutMe />
 </div>

@@ -23,7 +23,7 @@
 <!-- This blog will be done in markdown. And dynamic sidebar. This is a placeholder -->
 {#if triggerOnMountTransitions}
 	<div class="page-one-col" transition:fade={{ easing: cubicIn, duration: 400 }}>
-		<ul class="preview-posts preview-full flex flex-col gap-2">
+		<ul class="preview-posts preview-full space-y-2">
 			{#each data.posts as post}
 				<li class="preview-post-item border-b border-surface-300 pb-2">
 					<a href="blog/{post.slug}" class="title flex items-center inline-link">{post.title}</a>

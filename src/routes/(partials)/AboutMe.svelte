@@ -3,10 +3,10 @@
 	import me from '$lib/images/me-smile.png';
 </script>
 
-<section class="page-section card">
-	<div class="flex flex-col md:flex-row">
-		<div class="w-full order-2 sm:order-1 flex md:w-1/2">
-			<div class="w-[45%] hidden sm:block p-2">
+<section>
+	<div class="flex flex-col gap-4 md:flex-row">
+		<div class="w-full order-2 space-x-2 sm:order-1 flex md:w-1/2">
+			<div class="w-[45%] hidden sm:block">
 				<!-- TODO optimize images - picture tag, smaller mobile images -->
 				<img
 					src={dogsImg}
@@ -14,12 +14,12 @@
 					alt="My Dogs, Fred and Jasper. Jasper and Fred."
 				/>
 			</div>
-			<div class="sm:max-w-[55%] w-full p-2">
+			<div class="sm:max-w-[55%] w-full">
 				<!-- TODO optimize images - picture tag, smaller mobile images -->
 				<img src={me} class="border-4 rounded-md" alt="Me. Aaron Crockett." />
 			</div>
 		</div>
-		<div class="w-full p-2 flex flex-col gap-2 sm:order-2 md:w-1/2">
+		<div class="w-full space-y-2 sm:order-2 md:w-1/2">
 			<h3 class="text-primary-500">A little more about me.</h3>
 			<p>
 				I live in Portland, Oregon, with my husband Nick and our two dogs, Jasper and Fred. I enjoy

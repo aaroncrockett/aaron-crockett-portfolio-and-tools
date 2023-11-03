@@ -1,4 +1,4 @@
-<section class="page-section items-center">
+<section class="page-section items-center flex flex-col">
 	<h3 class="text-center uppercase text-primary-500">Skeletal Vue: UI Toolkit</h3>
 	<span class="fill-token pl-[.1rem] text-4xl">
 		<svg
@@ -32,8 +32,10 @@
 			</g></svg
 		></span
 	>
+	<p class="section-p text-2xl"><span class="font-bold">In development.</span></p>
 	<p class="section-p">
-		<span class="font-bold">In development.</span> A UI library for Vue using Skeleton's token system.
+		A UI library that is highly influenced by (and uses parts of) Skeleton UI Toolkit. See the
+		README.md in the git root directory for more info.
 	</p>
 	<p class="section-p">
 		If you don't know what a component library is and need a summary, <a
@@ -42,21 +44,12 @@
 		>.
 	</p>
 	<p class="section-p">
-		<span class="font-bold">This is currently a portfolio project.</span>
-	</p>
-	<p class="section-p">
-		I've developed Vue components for Blackstone Publishing and Power Admin, including the
-		recreation of a component library at Blackstone. In my personal projects, I've utilized Svelte
-		and Tailwind, and recently, I've discovered the Skeleton UI toolkit for Svelte. Skeleton doesn't
-		exist for Vue and I saw an opening to create it.
-	</p>
-	<p class="section-p">
-		<span class="font-bold">Docs demo site coming soon.</span>
+		<span class="font-bold">Docs and demo site coming soon.</span>
 	</p>
 	<a class="stand-alone-link" href="https://github.com/aaroncrockett/skeletal-vue"
-		>Skeletal Vue on Git</a
+		>Skeletal Neue on my Github</a
 	>
-	<a class="stand-alone-link" href="https://www.skeleton.dev">Skeleton UI for Svelte</a>
+	<a class="stand-alone-link" href="https://www.skeleton.dev">Skeleton UI Toolkit for Sveltekit</a>
 </section>
 
 <style lang="postcss">

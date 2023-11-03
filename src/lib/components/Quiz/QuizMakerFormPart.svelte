@@ -20,7 +20,7 @@
 <section>
 	<form method="POST" on:submit|preventDefault={handleSubmit}>
 		{#each questions as question, i}
-			<div class="mb-4 flex flex-col gap-2">
+			<div class="mb-4 space-y-2">
 				<div class="">
 					<label for="question"> Question: </label>
 					<input
@@ -32,7 +32,7 @@
 					/>
 				</div>
 
-				<div class="flex flex-col gap-2 p-4 bg-surface-200/30 rounded">
+				<div class="space-y-2 p-4 bg-surface-200/30 rounded">
 					{#each questions[i].options as option, j}
 						<div class="">
 							<label for="option" class="label"> Option: </label>

@@ -31,7 +31,7 @@
 </script>
 
 <div class="flex">
-	<div class="flex flex-col gap-2 p-2">
+	<div class="space-y-2 p-2">
 		<div class="border-b border-primary-500">
 			<a on:click={() => drawerStore.close()} class="inline-block p-1 sm:p-2" href="/">
 				<span class="hidden sm:inline-block">

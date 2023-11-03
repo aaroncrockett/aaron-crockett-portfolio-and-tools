@@ -47,10 +47,10 @@
 	<article class="page-one-col blog-page" transition:fade={{ easing: cubicIn, duration: 400 }}>
 		<!-- Title -->
 
-		<hgroup class="flex flex-col gap-2">
+		<hgroup class="space-y-2">
 			<h1 class="page-header text-primary-500">{data.meta.title}</h1>
 			<div class="p-1 bg-gradient-to-r variant-gradient-primary-secondary" />
-			<div class="variant-ghost-secondary p-2 pb-1 rounded">
+			<div class="variant-ghost-secondary p-2 rounded">
 				<span class="block">
 					<span class="text-secondary-800 font-bold">Written By: </span></span
 				><span class="font-bold text-xl">Aaron Crockett's AI Robot.</span>
