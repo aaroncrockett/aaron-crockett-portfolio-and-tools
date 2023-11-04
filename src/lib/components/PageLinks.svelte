@@ -26,7 +26,7 @@
 			></span
 		>
 	</a>
-	<a on:click class="page-link" href="/post-maker">
+	<!-- <a on:click class="page-link" href="/post-maker">
 		<span class="inline-flex items-center hover:!text-tertiary-500">
 			{#if showChevron}
 				<span class="pr-[.1rem]">{@html chevronRightIconSvg}</span>
@@ -35,10 +35,10 @@
 				>Post Maker</span
 			></span
 		>
-	</a>
+	</a> -->
 {/if}
 {#if !$sessionId}
-	<a on:click class="page-link" href="/sign-in">
+	<!-- <a on:click class="page-link" href="/sign-in">
 		<span class="inline-flex items-center hover:!text-tertiary-500">
 			{#if showChevron}
 				<span class="pr-[.1rem]">{@html chevronRightIconSvg}</span>
@@ -46,7 +46,7 @@
 			<span class={`${$page?.route.id == '/sign-in' ? 'text-primary-500 ' : ''}`}>Sign In</span
 			></span
 		>
-	</a>
+	</a> -->
 {/if}
 <a on:click class="page-link" href="/blog">
 	<span class="inline-flex items-center hover:!text-tertiary-500">
