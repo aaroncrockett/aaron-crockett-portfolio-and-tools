@@ -16,14 +16,14 @@
 		width: 28,
 		height: 28
 	});
-	const bookIconSvg = feather?.icons['book-open']?.toSvg({
+	const thumbsUpIconSvg = feather?.icons['thumbs-up']?.toSvg({
 		stroke: '#d7424b',
 		width: 28,
 		height: 28
 	});
 </script>
 
-<section class="page-section variant-soft-surface card">
+<section class="page-section">
 	<h3 class="text-center uppercase">CV Summary</h3>
 
 	<div class="grid sm:grid-cols-2 gap-4 sm:gap-8">
@@ -32,7 +32,18 @@
 				<div class="py-2">{@html starIconSvg}</div>
 				<p class="text-center">
 					Developer for Caleres, a Fortune 1000 company. Created highly visible landing pages for
-					Famous Footwear, on notable brands including Nike and Converse.
+					Famous Footwear, on notable brands including Nike and Converse. Received company side
+					award and recognition for this work.
+				</p>
+			</div>
+		</div>
+		<div class="box">
+			<div class="flex flex-col items-center p-4 card variant-glass">
+				<div class="py-2">{@html thumbsUpIconSvg}</div>
+				<p class="text-center">
+					Proactive developer excelling beyond assigned duties. Examples include enhancing workplace
+					productivity by developing innovative tools, and creating a component library in Vue.
+					Additionally contributed to open-source projects outside of work.
 				</p>
 			</div>
 		</div>
@@ -42,15 +53,6 @@
 				<p class="text-center">
 					Took charge of front-end development within a compact 3-person team (Power Admin),
 					highlighting my flexibility and autonomous capacity for delivery.
-				</p>
-			</div>
-		</div>
-		<div class="box">
-			<div class="flex flex-col items-center p-4 card variant-glass">
-				<div class="py-2">{@html bookIconSvg}</div>
-				<p class="text-center">
-					Created UI component library for on-the-job company usage. Creating a component library
-					for Vue and contributing to its associated Svelte open source counterpart.
 				</p>
 			</div>
 		</div>

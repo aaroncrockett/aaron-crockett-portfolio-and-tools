@@ -32,7 +32,7 @@
 		<h2 class="page-header">Account</h2>
 
 		<form
-			class="flex flex-col gap-4 sm:w-2/3 md:w-1/2 w-full"
+			class="space-y-2 sm:w-2/3 md:w-1/2 w-full"
 			method="post"
 			action="?/update"
 			use:enhance={handleSubmit}

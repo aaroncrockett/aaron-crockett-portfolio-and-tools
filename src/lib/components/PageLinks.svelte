@@ -26,14 +26,13 @@
 			></span
 		>
 	</a>
-	<!-- create a saveable version -->
-	<!-- <a on:click class="page-link" href="/content-creator">
+	<!-- <a on:click class="page-link" href="/post-maker">
 		<span class="inline-flex items-center hover:!text-tertiary-500">
 			{#if showChevron}
 				<span class="pr-[.1rem]">{@html chevronRightIconSvg}</span>
 			{/if}
-			<span class={`${$page?.route.id == '/content-creator' ? 'text-primary-500 ' : ''}`}
-				>Content Creator</span
+			<span class={`${$page?.route.id == '/post-maker' ? 'text-primary-500 ' : ''}`}
+				>Post Maker</span
 			></span
 		>
 	</a> -->
@@ -48,26 +47,6 @@
 			></span
 		>
 	</a> -->
-	<a on:click class="page-link" href="/content-creator">
-		<span class="inline-flex items-center hover:!text-tertiary-500">
-			{#if showChevron}
-				<span class="pr-[.1rem]">{@html chevronRightIconSvg}</span>
-			{/if}
-			<span class={`${$page?.route.id == '/content-creator' ? 'text-primary-500 ' : ''}`}
-				>Content Creator</span
-			></span
-		>
-	</a>
-	<a on:click class="page-link" href="/quiz-maker">
-		<span class="inline-flex items-center hover:!text-tertiary-500">
-			{#if showChevron}
-				<span class="pr-[.1rem]">{@html chevronRightIconSvg}</span>
-			{/if}
-			<span class={`${$page?.route.id == '/quiz-maker' ? 'text-primary-500 ' : ''}`}
-				>Quiz Maker</span
-			></span
-		>
-	</a>
 {/if}
 <a on:click class="page-link" href="/blog">
 	<span class="inline-flex items-center hover:!text-tertiary-500">
