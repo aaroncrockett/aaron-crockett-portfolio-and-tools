@@ -53,23 +53,21 @@ export default {
 			'7xl': '4.768rem',
 			'8xl': '5.96rem',
 			'9xl': '7.451rem',
-			'10xl': '9.313rem',
-			'12xl': '14.551rem'
+			'10xl': '9.313rem'
 		},
 		lineHeight: {
-			sm: '0.8rem',
-			base: '1rem',
-			xl: '1.25rem',
-			'2xl': '1.563rem',
-			'3xl': '1.953rem',
-			'4xl': '2.441rem',
-			'5xl': '3.052rem',
-			'6xl': '3.815rem',
-			'7xl': '4.768rem',
-			'8xl': '5.96rem',
-			'9xl': '7.451rem',
-			'10xl': '9.313rem',
-			'12xl': '14.551rem'
+			sm: '1rem',
+			base: '1.25rem',
+			xl: '1.563rem',
+			'2xl': '1.953rem',
+			'3xl': '2.441rem',
+			'4xl': '3.052rem',
+			'5xl': '3.815rem',
+			'6xl': '4.768rem',
+			'7xl': '5.96rem',
+			'8xl': '7.451rem',
+			'9xl': '9.313rem',
+			'10xl': '14.551rem'
 		}
 	},
 	plugins: [
