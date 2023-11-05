@@ -3,22 +3,38 @@
 @tailwind utilities;
 @tailwind variants;
 
+/* --- Global Selectors --- */
 html,
 body {
 	@apply overflow-hidden;
 }
+
 a.inline-link {
 	@apply underline font-bold;
 }
+
 a.stand-alone-link {
 	@apply font-bold text-xl underline;
 }
+/* only use when nested with a parent with an outline indicator as this removes visual que for accessibility otherwise */
+input.nested-input {
+	box-shadow: none;
+}
+
+/* --- Page-level Selectors --- */
+
 .page-one-col {
 	@apply flex flex-col gap-2 mx-auto container p-2 pt-4;
 }
+
 section,
 article {
-	@apply space-y-2 p-4;
+	@apply space-y-2;
+}
+
+section.indented,
+article.indented {
+	@apply p-4;
 }
 
 h1.page-header,
