@@ -40,7 +40,7 @@ export interface ColorSettings {
 	hex: string;
 	rgb: string;
 	on: string;
-	stops: string[];
+	stops: string;
 }
 
 export const tailwindColorScale = [

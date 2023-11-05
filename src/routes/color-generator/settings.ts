@@ -27,10 +27,10 @@ export const inputSettings = {
 		...colorProps
 	],
 	stops: [
-		{ value: 'all', label: 'All' },
-		{ value: 'single', label: 'Single' },
-		{ value: 'three-high-contrast', label: 'Three: High Contrast' },
-		{ value: 'three-mid-range', label: 'Three: Mid Range' }
+		{ value: '50,100,200,300,400,500,600,700,800,900', label: 'All' },
+		{ value: '500', label: 'Single' },
+		{ value: '100,500,900', label: 'Three: High' },
+		{ value: '300,500,700', label: 'Three: Mid' }
 	],
 	fonts: ['sans', 'serif', 'mono', 'system'],
 	border: ['0px', '1px', '2px', '4px', '6px', '8px']
