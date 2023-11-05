@@ -10,10 +10,10 @@
 	import type { Writable } from 'svelte/store';
 	// Skelton Labs
 	import { localStorageStore } from '@skeletonlabs/skeleton';
-	// Other Types
+	// Other Libraries
+	import chroma from 'chroma-js';
+	// Types
 	import type { ThemeOptionsCollection } from '$lib/types';
-
-	const filteredSwatchColorClasses = [];
 
 	const storeThemeOptions: Writable<ThemeOptionsCollection> = localStorageStore(
 		'storeThemeOptions',
@@ -111,14 +111,18 @@
 
 	let triggerOnMountTransitions = false;
 	let color = '#ff0000';
+	let hashErrorMessage = ''; // Initialize an error message variable
 
 	function handleColorChange(event: CustomEvent) {
-		color = event?.detail;
+		if (event?.detail.charAt(0) !== '#') {
+			hashErrorMessage = 'Invalid color format. Hex code must start with #.';
+			return;
+		}
+		if (hashErrorMessage.length) hashErrorMessage = '';
+		if (event?.detail.length === 7) {
+			color = event?.detail;
+		}
 	}
-
-	storeThemeOptions.subscribe(($storeThemeOptions) => {
-		console.log($storeThemeOptions); // This will log whenever the store changes
-	});
 
 	function handleStopsChange(event: CustomEvent) {
 		storeThemeOptions.update((currentOptions) => {
@@ -136,17 +140,33 @@
 		});
 	}
 
+	function onKeyDown(e: KeyboardEvent) {
+		if ((e.metaKey || e.ctrlKey) && e.code === 'Space') {
+			color = chroma.random();
+		}
+	}
+
 	onMount(() => {
 		triggerOnMountTransitions = true;
 	});
 </script>
 
+<svelte:window on:keydown={onKeyDown} />
+
 {#if triggerOnMountTransitions}
-	<div class="page-one-col" transition:fade={{ easing: cubicIn, duration: 600 }}>
-		<h2 class="page-header">Color Generator</h2>
-		<section>
+	<div class="page-one-col space-y-4" transition:fade={{ easing: cubicIn, duration: 600 }}>
+		<section class="flex flex-col items-center gap-4">
+			<h2 class="page-header text-center">Color Generator</h2>
+			<p class="w-2/3 text-center">
+				Press Ctrl (or Windows Key) + space to generate a random color. Enter a hex code or click to
+				pick a hex code.
+			</p>
+
 			<ColorPicker {color} on:colorChange={handleColorChange} />
-			<div class="p-4 grid grid-cols-1 gap-4">
+			<p class="text-error-500 text-xl">{hashErrorMessage}</p>
+		</section>
+		<section>
+			<div class="grid grid-cols-1 gap-2 sm:gap-4">
 				{#each $storeThemeOptions.colors as colorRow, i}
 					<div
 						class="grid grid-cols-1 lg:grid-cols-[160px_1fr_250px] gap-2 lg:gap-4 border-b-4 lg:border-b-0 border-surface-100 pb-6 lg:pb-0"

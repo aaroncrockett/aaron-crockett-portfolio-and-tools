@@ -15,7 +15,7 @@
 	export let colorsIndex: number;
 </script>
 
-<div class="flex gap-2">
+<div class="flex gap-2 order-2 lg:order-3">
 	<label class="label flex-1">
 		<span>Color Stops</span>
 		<select class="input" on:change={handleStopChange} bind:value={stops}>
