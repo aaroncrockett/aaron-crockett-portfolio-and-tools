@@ -1,4 +1,4 @@
-<section class="card space-y-4">
+<section class="card indented-content">
 	<h2 class="page-header text-center">Project Showcases</h2>
 	<div class="flex items-center gap-2 flex-col b">
 		<h3 class="text-center uppercase text-primary-500">Neue: A UI Toolkit</h3>

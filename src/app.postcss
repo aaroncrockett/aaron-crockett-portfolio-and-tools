@@ -3,42 +3,58 @@
 @tailwind utilities;
 @tailwind variants;
 
+/* --- Global Selectors --- */
 html,
 body {
 	@apply overflow-hidden;
 }
+
 a.inline-link {
 	@apply underline font-bold;
 }
+
 a.stand-alone-link {
 	@apply font-bold text-xl underline;
 }
+/* only use when nested with a parent with an outline indicator as this removes visual que for accessibility otherwise */
+input.nested-input {
+	box-shadow: none;
+}
+
+/* --- Page-level Selectors --- */
+
 .page-one-col {
 	@apply flex flex-col gap-2 mx-auto container p-2 pt-4;
 }
+
 section,
 article {
-	@apply space-y-2 p-4;
+	@apply space-y-2;
+}
+
+section.indented-content,
+article.indented-content {
+	@apply p-4;
 }
 
 h1.page-header,
 h2.page-header {
-	@apply font-bold text-3xl sm:text-4xl sm:leading-4xl leading-3xl py-1;
+	@apply font-bold text-3xl sm:text-4xl sm:leading-3xl leading-4xl py-1;
 }
 section h2,
 article h2 {
-	@apply font-bold text-2xl sm:text-3xl sm:leading-3xl leading-2xl py-1;
+	@apply font-bold text-2xl sm:text-3xl sm:leading-3xl leading-4xl py-1;
 }
 section h3,
 article h3 {
-	@apply font-bold text-xl sm:text-2xl sm:leading-2xl leading-xl py-1;
+	@apply font-bold text-xl sm:text-2xl sm:leading-2xl leading-3xl py-1;
 }
 section h4,
 article h4 {
-	@apply text-xl sm:text-2xl sm:leading-2xl leading-xl py-1;
+	@apply text-xl sm:text-2xl sm:leading-2xl leading-3xl py-1;
 }
 section p {
-	@apply leading-xl;
+	@apply leading-2xl;
 }
 blockquote {
 	@apply pl-4;

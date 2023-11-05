@@ -23,7 +23,7 @@
 	});
 </script>
 
-<section class="page-section">
+<section class="indented-content">
 	<h3 class="text-center uppercase">CV Summary</h3>
 
 	<div class="grid sm:grid-cols-2 gap-4 sm:gap-8">
