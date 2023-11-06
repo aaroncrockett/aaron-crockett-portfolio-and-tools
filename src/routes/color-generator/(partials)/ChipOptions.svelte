@@ -50,14 +50,7 @@
 		{/each}
 	</div>
 </div>
-<div class="space-y-1">
-	<p class="text-center font-bold">Colors:</p>
-	<div class="flex gap-2 flex-wrap justify-center">
-		{#each Object.keys($colorsCollectionStore) as key}
-			<span class="chip text-base variant-glass-surface">{key}</span>
-		{/each}
-	</div>
-</div>
+
 <div class="space-y-1">
 	<p class="text-center font-bold">Choose optional additional colors:</p>
 	<div class="flex gap-2 flex-wrap justify-center">
@@ -76,4 +69,23 @@
 			</button>
 		{/each}
 	</div>
+	<p class="text-center font-bold pt-2">All used colors:</p>
+	<div class="flex gap-2 flex-wrap justify-center">
+		{#each Object.keys($colorsCollectionStore) as key}
+			<span class="chip chip-static text-base bg-surface-200">{key}</span>
+		{/each}
+	</div>
 </div>
+
+<style lang="postcss">
+	.chip {
+		@apply p-3;
+	}
+	.chip-static {
+		@apply p-2;
+		cursor: default;
+	}
+	.chip-static:hover {
+		--tw-brightness: brightness(1);
+	}
+</style>

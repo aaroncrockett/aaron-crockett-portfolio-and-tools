@@ -35,14 +35,17 @@ export const colorNames = [
 ];
 
 export const colorSchemes = [
+	'blank-slate',
 	'triad',
+	'triad-high-contrast',
+	'triad-low-contrast',
 	'split-complimentary',
-	'quad',
-	'quin',
 	'analogous-triad',
 	'analogous-quad',
 	'analogous-quin',
-	'blank-slate'
+	'analogous-triad-2',
+	'analogous-quad-2',
+	'analogous-quin-2'
 ];
 
 export const additionalColorNames = ['info', 'warning', 'neutral', 'neutral-cool', 'neutral-warm'];
