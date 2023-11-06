@@ -1,7 +1,7 @@
 <script lang="ts">
 	import AboutMe from './(partials)/AboutMe.svelte';
 	import PageCover from './(partials)/PageCover.svelte';
-	import ProjectShowCasesSkeletalPart from './(partials)/ProjectShowCasesSkeletalPart.svelte';
+	import ProjectShowCases from './(partials)/ProjectShowCases.svelte';
 
 	import References from './(partials)/References.svelte';
 	import SummaryCV from './(partials)/SummaryCV.svelte';
@@ -23,7 +23,7 @@
 	</div>
 {/if}
 <div class="page-one-col">
-	<ProjectShowCasesSkeletalPart />
+	<ProjectShowCases />
 
 	<SummaryCV />
 	<References />
