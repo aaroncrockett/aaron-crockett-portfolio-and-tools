@@ -191,6 +191,30 @@
 				$colorsCollectionStore['secondary'] = baseColors[0];
 				$colorsCollectionStore['tertiary'] = baseColors[1];
 				break;
+			case 'split-complimentary':
+				baseColors = createSplitComplimentaryColors();
+				$colorsCollectionStore['primary'] = color;
+				$colorsCollectionStore['secondary'] = baseColors[0];
+				$colorsCollectionStore['tertiary'] = baseColors[1];
+				break;
+			case 'analogous-triad':
+				baseColors = createAnalogousTriadColors();
+				$colorsCollectionStore['primary'] = color;
+				$colorsCollectionStore['secondary'] = baseColors[0];
+				$colorsCollectionStore['tertiary'] = baseColors[1];
+				break;
+			case 'analogous-triad':
+				baseColors = createAnalogousTriadColors();
+				$colorsCollectionStore['primary'] = color;
+				$colorsCollectionStore['secondary'] = baseColors[0];
+				$colorsCollectionStore['tertiary'] = baseColors[1];
+			case 'analogous-quad':
+				baseColors = createAnalogousQuadColors();
+				$colorsCollectionStore['primary'] = color;
+				$colorsCollectionStore['secondary'] = baseColors[0];
+				$colorsCollectionStore['tertiary'] = baseColors[1];
+				$colorsCollectionStore['quaternary'] = baseColors[2];
+				break;
 			default:
 				baseColors = createTriadColors();
 				baseColors = createTriadColors();
@@ -206,6 +230,25 @@
 		const color2 = chroma(color).set('hsl.h', '+120');
 		const color3 = baseColor.set('hsl.h', '-120');
 		return [color2.hex(), color3.hex()];
+	}
+	function createSplitComplimentaryColors() {
+		const baseColor = chroma(color);
+		const color2 = chroma(color).set('hsl.h', '+190');
+		const color3 = baseColor.set('hsl.h', '+170');
+		return [color2.hex(), color3.hex()];
+	}
+	function createAnalogousTriadColors() {
+		const baseColor = chroma(color);
+		const color2 = chroma(color).set('hsl.h', '+20');
+		const color3 = baseColor.set('hsl.h', '+40');
+		return [color2.hex(), color3.hex()];
+	}
+	function createAnalogousQuadColors() {
+		const baseColor = chroma(color);
+		const color2 = chroma(color).set('hsl.h', '+20');
+		const color3 = baseColor.set('hsl.h', '+40');
+		const color4 = baseColor.set('hsl.h', '+60');
+		return [color2.hex(), color3.hex(), color4.hex()];
 	}
 
 	function handleColorGeneration() {

@@ -48,7 +48,7 @@ export const colorNames = [
 // 	'analogous-quin-2'
 // ];
 
-export const colorSchemes = ['triad'];
+export const colorSchemes = ['triad', 'split-complimentary', 'analogous-triad', 'analogous-quad'];
 
 export const additionalColorNames = ['info', 'warning', 'neutral', 'neutral-cool', 'neutral-warm'];
 
