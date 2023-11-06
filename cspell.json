@@ -10,5 +10,5 @@
 	],
 	"dictionaries": ["html", "typescript", "softwareTerms", "companies"],
 	"allowCompoundWords": true,
-	"words": ["Nuxt"]
+	"words": ["Nuxt", "Segoe", "Roboto", "Neue", "Noto", "Menlo", "Consolas"]
 }

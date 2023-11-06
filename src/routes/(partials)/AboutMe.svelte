@@ -3,7 +3,7 @@
 	import me from '$lib/images/me-smile.png';
 </script>
 
-<section>
+<section class="indented-content">
 	<div class="flex flex-col gap-4 md:flex-row">
 		<div class="w-full order-2 space-x-2 sm:order-1 flex md:w-1/2">
 			<div class="w-[45%] hidden sm:block">

@@ -32,7 +32,7 @@
 				<div class="py-2">{@html starIconSvg}</div>
 				<p class="text-center">
 					Developer for Caleres, a Fortune 1000 company. Created highly visible landing pages for
-					Famous Footwear, on notable brands including Nike and Converse. Received company side
+					Famous Footwear, on notable brands including Nike and Converse. Received company-wide
 					award and recognition for this work.
 				</p>
 			</div>
