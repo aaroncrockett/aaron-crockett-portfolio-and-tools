@@ -34,7 +34,7 @@
 </script>
 
 <div class="space-y-1">
-	<p class="text-center font-bold">Choose color scheme:</p>
+	<p class="text-center font-bold">Choose color scheme: (only one currently)</p>
 	<div class="flex gap-2 flex-wrap justify-center">
 		{#each colorSchemes as colorKey}
 			<button
@@ -51,7 +51,7 @@
 	</div>
 </div>
 
-<div class="space-y-1">
+<!-- <div class="space-y-1">
 	<p class="text-center font-bold">Choose optional additional colors:</p>
 	<div class="flex gap-2 flex-wrap justify-center">
 		{#each additionalColorNames as colorKey}
@@ -75,7 +75,7 @@
 			<span class="chip chip-static text-base bg-surface-200">{key}</span>
 		{/each}
 	</div>
-</div>
+</div> -->
 
 <style lang="postcss">
 	.chip {

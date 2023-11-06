@@ -304,7 +304,7 @@
 	}
 
 	function createRandomColor() {
-		color = chroma.random();
+		color = chroma.random().hex();
 	}
 
 	function onKeyDown(e: KeyboardEvent) {

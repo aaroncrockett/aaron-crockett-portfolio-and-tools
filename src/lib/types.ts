@@ -34,19 +34,21 @@ export const colorNames = [
 	'neutral-warm'
 ];
 
-export const colorSchemes = [
-	'blank-slate',
-	'triad',
-	'triad-high-contrast',
-	'triad-low-contrast',
-	'split-complimentary',
-	'analogous-triad',
-	'analogous-quad',
-	'analogous-quin',
-	'analogous-triad-2',
-	'analogous-quad-2',
-	'analogous-quin-2'
-];
+// export const colorSchemes = [
+// 	'blank-slate',
+// 	'triad',
+// 	'triad-high-contrast',
+// 	'triad-low-contrast',
+// 	'split-complimentary',
+// 	'analogous-triad',
+// 	'analogous-quad',
+// 	'analogous-quin',
+// 	'analogous-triad-2',
+// 	'analogous-quad-2',
+// 	'analogous-quin-2'
+// ];
+
+export const colorSchemes = ['triad'];
 
 export const additionalColorNames = ['info', 'warning', 'neutral', 'neutral-cool', 'neutral-warm'];
 

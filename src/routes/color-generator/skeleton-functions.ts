@@ -120,22 +120,3 @@ export function hexToTailwindRgbString(hex: string): string {
 
 	return `${parseInt(r, 16)} ${parseInt(g, 16)} ${parseInt(b, 16)}`;
 }
-
-// CSS output (for live preview)
-export function generateColorCSS(): string {
-	let newCSS = '';
-	const newPalette: Record<string, any> = {};
-	// Loop store colors
-	$storeThemeOptions.colors.forEach((color: any, i: number) => {
-		const colorKey = color.key;
-		// Generate the new color palette hex/rgb/on values
-		newPalette[color.key] = generatePalette($storeThemeOptions.colors[i].hex);
-		// The color set comment
-		newCSS += `/* ${colorKey} | ${newPalette[colorKey][500].hex} */\n\t`;
-		// CSS props for shade 50-900 per each color
-		for (let [k, v] of Object.entries(newPalette[colorKey])) {
-			newCSS += `--color-${colorKey}-${k}: ${v.rgb}; /* ⬅ ${v.hex} */\n\t`;
-		}
-	});
-	return newCSS;
-}
