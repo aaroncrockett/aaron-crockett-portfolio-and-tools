@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { inputSettings } from '../settings';
-	import type { ColorSettings } from '$lib/types';
 	import { createEventDispatcher } from 'svelte';
 
 	const dispatch = createEventDispatcher();

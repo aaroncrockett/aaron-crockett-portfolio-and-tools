@@ -9,14 +9,16 @@ export type Post = {
 	published: boolean;
 };
 
-// Quiz
+// -- Quiz
+
 export type Question = {
 	question: string;
 	options: string[];
 	correct: number[];
 };
 
-// Color Generator
+// -- Color Generator
+
 export const colorNames = [
 	'primary',
 	'secondary',
@@ -30,9 +32,26 @@ export const colorNames = [
 	'neutral',
 	'neutral-cool',
 	'neutral-warm'
-] as const;
+];
 
-export type ColorNames = (typeof ColorNames)[number];
+export const colorSchemes = [
+	'triad',
+	'split-complimentary',
+	'quad',
+	'quin',
+	'analogous-triad',
+	'analogous-quad',
+	'analogous-quin',
+	'blank-slate'
+];
+
+export const additionalColorNames = ['info', 'warning', 'neutral', 'neutral-cool', 'neutral-warm'];
+
+export type ColorNames = (typeof colorNames)[number];
+
+export type AdditionalColorNames = (typeof additionalColorNames)[number];
+
+export type ColorSchemes = (typeof colorSchemes)[number];
 
 export interface ColorSettings {
 	key: ColorNames;
@@ -41,6 +60,10 @@ export interface ColorSettings {
 	rgb: string;
 	on: string;
 	stops: string;
+}
+
+export interface ColorsCollection {
+	[key: ColorNames]: string | null;
 }
 
 export const tailwindColorScale = [

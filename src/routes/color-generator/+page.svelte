@@ -4,16 +4,19 @@
 	import ControlsLead from './(partials)/ControlsLead.svelte';
 	import ControlsTrail from './(partials)/ControlsTrail.svelte';
 	// Svelte Related
-	import { onMount } from 'svelte';
+	import { onMount, setContext } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import { cubicIn } from 'svelte/easing';
+	import { writable } from 'svelte/store';
 	import type { Writable } from 'svelte/store';
 	// Skelton Labs
 	import { localStorageStore } from '@skeletonlabs/skeleton';
 	// Other Libraries
 	import chroma from 'chroma-js';
 	// Types
-	import type { ThemeOptionsCollection } from '$lib/types';
+	import { additionalColorNames, colorSchemes } from '$lib/types';
+	import type { ThemeOptionsCollection, ColorsCollection } from '$lib/types';
+	import ChipOptions from './(partials)/ChipOptions.svelte';
 
 	const storeThemeOptions: Writable<ThemeOptionsCollection> = localStorageStore(
 		'storeThemeOptions',
@@ -22,7 +25,7 @@
 				{
 					key: 'primary',
 					label: 'Primary',
-					hex: '#0FBA81',
+					hex: '',
 					rgb: '0 0 0',
 					on: '0 0 0',
 					stops: '50,100,200,300,400,500,600,700,800,900'
@@ -30,71 +33,87 @@
 				{
 					key: 'secondary',
 					label: 'Secondary',
-					hex: '#4F46E5',
+					hex: '',
 					rgb: '0 0 0',
-					on: '255 255 255',
-					stops: '300,500,700'
+					on: '0 0 0',
+					stops: '50,100,200,300,400,500,600,700,800,900'
 				},
 				{
 					key: 'tertiary',
 					label: 'Tertiary',
-					hex: '#0EA5E9',
+					hex: '',
 					rgb: '0 0 0',
 					on: '0 0 0',
-					stops: '300,500,700'
+					stops: '50,100,200,300,400,500,600,700,800,900'
 				},
 				{
 					key: 'quaternary',
 					label: 'Quaternary',
-					hex: '#0EA5E9',
+					hex: '',
 					rgb: '0 0 0',
 					on: '0 0 0',
-					stops: '300,500,700'
+					stops: '50,100,200,300,400,500,600,700,800,900'
 				},
 				{
 					key: 'quinary',
 					label: 'Quinary',
-					hex: '#0EA5E9',
+					hex: '',
 					rgb: '0 0 0',
 					on: '0 0 0',
-					stops: '300,500,700'
-				},
-				{
-					key: 'success',
-					label: 'Success',
-					hex: '#84cc16',
-					rgb: '0 0 0',
-					on: '0 0 0',
-					stops: '300,500,700'
-				},
-				{
-					key: 'warning',
-					label: 'Warning',
-					hex: '#EAB308',
-					rgb: '0 0 0',
-					on: '0 0 0',
-					stops: '300,500,700'
-				},
-				{
-					key: 'error',
-					label: 'Error',
-					hex: '#D41976',
-					rgb: '0 0 0',
-					on: '255 255 255',
-					stops: '300,500,700'
-				},
-				{
-					key: 'info',
-					label: 'Info',
-					hex: '#D41976',
-					rgb: '0 0 0',
-					on: '255 255 255',
-					stops: '300,500,700'
+					stops: '50,100,200,300,400,500,600,700,800,900'
 				},
 				{
 					key: 'neutral',
 					label: 'Neutral',
-					hex: '#0EA5E9',
+					hex: '',
+					rgb: '0 0 0',
+					on: '0 0 0',
+					stops: '50,100,200,300,400,500,600,700,800,900'
+				},
+				{
+					key: 'neutral-cool',
+					label: 'Neutral Cool',
+					hex: '',
+					rgb: '0 0 0',
+					on: '0 0 0',
+					stops: '50,100,200,300,400,500,600,700,800,900'
+				},
+				{
+					key: 'neutral-warm',
+					label: 'Neutral Warm',
+					hex: '',
+					rgb: '0 0 0',
+					on: '0 0 0',
+					stops: '50,100,200,300,400,500,600,700,800,900'
+				},
+				{
+					key: 'info',
+					label: 'Info',
+					hex: '',
+					rgb: '0 0 0',
+					on: '0 0 0',
+					stops: '50,100,200,300,400,500,600,700,800,900'
+				},
+				{
+					key: 'success',
+					label: 'Success',
+					hex: '',
+					rgb: '0 0 0',
+					on: '0 0 0',
+					stops: '50,100,200,300,400,500,600,700,800,900'
+				},
+				{
+					key: 'error',
+					label: 'Error',
+					hex: '',
+					rgb: '0 0 0',
+					on: '0 0 0',
+					stops: '50,100,200,300,400,500,600,700,800,900'
+				},
+				{
+					key: 'warning',
+					label: 'Warning',
+					hex: '',
 					rgb: '0 0 0',
 					on: '0 0 0',
 					stops: '50,100,200,300,400,500,600,700,800,900'
@@ -108,12 +127,21 @@
 			borderBase: '1px'
 		}
 	);
+	const colorsCollectionStore = writable<ColorsCollection>({
+		primary: null,
+		secondary: null,
+		tertiary: null
+	});
+	const colorSchemeStore = writable('triad');
 
 	let triggerOnMountTransitions = false;
 	let color = '#ff0000';
-	let hashErrorMessage = ''; // Initialize an error message variable
+	let hashErrorMessage = '';
 
-	function handleColorChange(event: CustomEvent) {
+	setContext('colorSchemeStore', colorSchemeStore);
+	setContext('colorsCollectionStore', colorsCollectionStore);
+
+	function handlePrimaryColorChange(event: CustomEvent) {
 		if (event?.detail.charAt(0) !== '#') {
 			hashErrorMessage = 'Invalid color format. Hex code must start with #.';
 			return;
@@ -124,16 +152,58 @@
 		}
 	}
 
+	function createColorsCollection() {
+		let baseColors = [];
+		switch ($colorSchemeStore) {
+			case 'triad':
+				baseColors = createTriadColors();
+				$colorsCollectionStore['primary'] = baseColors[0];
+				$colorsCollectionStore['secondary'] = baseColors[1];
+				$colorsCollectionStore['tertiary'] = baseColors[2];
+				break;
+			default:
+				baseColors = createTriadColors();
+				$colorsCollectionStore['primary'] = baseColors[0];
+				$colorsCollectionStore['secondary'] = baseColors[1];
+				$colorsCollectionStore['tertiary'] = baseColors[2];
+		}
+		colorsCollectionStore.set($colorsCollectionStore);
+	}
+
+	function createTriadColors() {
+		return ['#cccccc', '#bbbbbb', '#dddddd'];
+	}
+
+	function createNeutralColor(colorType: string) {}
+
+	function handleColorGeneration() {
+		createColorsCollection();
+
+		storeThemeOptions.update((currentOptions) => {
+			return {
+				...currentOptions,
+				colors: currentOptions.colors.map((color, i) => {
+					if ($colorsCollectionStore[color.key]) {
+						if ($colorsCollectionStore[color.key] !== null) {
+							color.hex = $colorsCollectionStore[color.key] as string;
+						}
+						return color;
+					} else {
+						return color;
+					}
+				})
+			};
+		});
+	}
+
 	function handleStopsChange(event: CustomEvent) {
 		storeThemeOptions.update((currentOptions) => {
 			return {
 				...currentOptions,
 				colors: currentOptions.colors.map((color, i) => {
-					console.log(event.detail);
 					if (i === event.detail.colorIndex) {
 						return { ...color, stops: event.detail.stops };
 					}
-					console.log(color);
 					return color;
 				})
 			};
@@ -162,12 +232,14 @@
 				pick a hex code.
 			</p>
 
-			<ColorPicker {color} on:colorChange={handleColorChange} />
+			<ColorPicker {color} on:colorChange={handlePrimaryColorChange} />
 			<p class="text-error-500 text-xl">{hashErrorMessage}</p>
+			<ChipOptions />
+			<button class="btn variant-ghost-primary" on:click={handleColorGeneration}>Generate</button>
 		</section>
 		<section>
 			<div class="grid grid-cols-1 gap-2 sm:gap-4">
-				{#each $storeThemeOptions.colors as colorRow, i}
+				{#each $storeThemeOptions.colors.filter((colorRow) => colorRow.hex !== '') as colorRow, i}
 					<div
 						class="grid grid-cols-1 lg:grid-cols-[160px_1fr_250px] gap-2 lg:gap-4 border-b-4 lg:border-b-0 border-surface-100 pb-6 lg:pb-0"
 					>
