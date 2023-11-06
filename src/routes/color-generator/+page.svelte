@@ -322,10 +322,10 @@
 <svelte:head>{@html livePreviewStylesheet}</svelte:head>
 
 {#if triggerOnMountTransitions}
-	<div class="page-one-col space-y-4" transition:fade={{ easing: cubicIn, duration: 600 }}>
-		<section class="flex flex-col items-center gap-4">
+	<div class="page-one-col space-y-2" transition:fade={{ easing: cubicIn, duration: 600 }}>
+		<section class="flex flex-col items-center lg:gap-4 gap-2">
 			<h2 class="page-header text-center">Color Generator</h2>
-			<p class="w-2/3 text-center">
+			<p class="w-2/3 text-center leading-[1.25rem]">
 				<span class="md:inline hidden"
 					>Press Ctrl (or Windows Key) + space to generate a random color.
 				</span>Enter a hex code or click to pick a hex code.
