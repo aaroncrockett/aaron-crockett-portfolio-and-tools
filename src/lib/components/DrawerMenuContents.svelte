@@ -42,7 +42,9 @@
 				</span>
 			</a>
 		</div>
-		<SocialMediaLinks on:click={() => drawerStore.close()} />
+		<div class="flex flex-col items-center space-y-2">
+			<SocialMediaLinks on:click={() => drawerStore.close()} />
+		</div>
 	</div>
 	<div class="flex flex-col variant-soft-surface p-2 w-full h-screen">
 		<h3
