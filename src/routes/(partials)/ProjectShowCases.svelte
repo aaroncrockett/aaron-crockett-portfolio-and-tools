@@ -2,14 +2,12 @@
 	<h2 class="page-header text-center">Project Showcases</h2>
 	<div class="flex items-center gap-2 flex-col b">
 		<div class="foliole-logo-wrapper foliole-logo-wrapper-options">
-			<a href="https://foliole-ui-foliole-dev-git-dev-foliole.vercel.app/"
+			<a href="https://foliole-ui-foliole-dev.vercel.app/"
 				><span class="foliole-logo foliole-logo-options foliole-logo-vertical" /></a
 			>
 		</div>
 		<h3 class="foliole-color text-center uppercase text-gray-600 text-3xl p-0">
-			<a href="https://foliole-ui-foliole-dev-git-dev-foliole.vercel.app/"
-				>Foliole UI: Library and Toolkit</a
-			>
+			<a href="https://foliole-ui-foliole-dev.vercel.app/">Foliole UI: Library and Toolkit</a>
 		</h3>
 
 		<p class="text-xl">A Framework agnostic UI Toolkit</p>
@@ -22,7 +20,7 @@
 		<a href="https://github.com/Foliole-UI-Toolkit/foliole-ui" class="inline-link"
 			>Foliole on github.</a
 		>
-		<a href="https://foliole-ui-foliole-dev-git-dev-foliole.vercel.app/" class="inline-link"
+		<a href="https://foliole-ui-foliole-dev.vercel.app/" class="inline-link"
 			>Foliole UI: Demo Site</a
 		>
 	</div>
