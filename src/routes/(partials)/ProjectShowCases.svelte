@@ -36,7 +36,7 @@
 		@apply lg:w-2/3 sm:w-4/5 mx-auto text-center;
 	}
 	.foliole-color {
-		color: #444;
+		color: rgb(59 130 177);
 	}
 	.foliole-logo {
 		@apply flex self-center flex-shrink-0 border-[.175rem] rounded-tl-lg rounded-tr-sm rounded-bl-sm rounded-br-lg shadow-sm;
