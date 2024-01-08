@@ -1,22 +1,27 @@
 <script lang="ts">
-	import dogsImg from '$lib/images/jasper-fred.png';
-	import me from '$lib/images/me-smile.png';
+	import dogsImg from '$lib/images/jasper-fred.webp';
+	import dogsImgMd from '$lib/images/jasper-fred-md.webp';
+	import dogsImgSm from '$lib/images/jasper-fred-sm.webp';
+	import me from '$lib/images/me-smile.webp';
 </script>
 
 <section class="indented-content">
 	<div class="flex flex-col gap-4 md:flex-row">
 		<div class="w-full order-2 space-x-2 sm:order-1 flex md:w-1/2">
 			<div class="w-[45%] hidden sm:block">
-				<!-- TODO optimize images - picture tag, smaller mobile images -->
-				<img
-					src={dogsImg}
-					class="border-4 rounded-md"
-					alt="My Dogs, Fred and Jasper. Jasper and Fred."
-				/>
+				<picture>
+					<source media="(min-width: 768px)" srcset={dogsImgMd} />
+					<source media="(max-width: 767px)" srcset={dogsImgSm} />
+					<img
+						src={dogsImg}
+						class="border-4 rounded-md"
+						alt="My Dogs, Fred and Jasper. Jasper and Fred."
+						loading="lazy"
+					/>
+				</picture>
 			</div>
 			<div class="sm:max-w-[55%] w-full">
-				<!-- TODO optimize images - picture tag, smaller mobile images -->
-				<img src={me} class="border-4 rounded-md" alt="Me. Aaron Crockett." />
+				<img src={me} class="border-4 rounded-md" alt="Me. Aaron Crockett." loading="lazy" />
 			</div>
 		</div>
 		<div class="w-full space-y-2 sm:order-2 md:w-1/2">
