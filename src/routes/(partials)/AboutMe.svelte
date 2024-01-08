@@ -17,17 +17,26 @@
 						class="border-4 rounded-md"
 						alt="My Dogs, Fred and Jasper. Jasper and Fred."
 						loading="lazy"
+						width="901"
+						height="900"
 					/>
 				</picture>
 			</div>
 			<div class="sm:max-w-[55%] w-full">
-				<img src={me} class="border-4 rounded-md" alt="Me. Aaron Crockett." loading="lazy" />
+				<img
+					src={me}
+					class="border-4 rounded-md"
+					alt="Me. Aaron Crockett."
+					loading="lazy"
+					width="446"
+					height="490"
+				/>
 			</div>
 		</div>
 		<div class="w-full space-y-2 sm:order-2 md:w-1/2">
 			<h3 class="text-primary-500">A little more about me.</h3>
 			<p>
-				I live in Portland, Oregon, with my husband Nick and our two dogs, Jasper and Fred. I enjoy
+				I live in Portland, Oregon, with my husband Nick a nd our two dogs, Jasper and Fred. I enjoy
 				hiking, game nights with friends, and exploring local restaurants. Every morning, I start my
 				day by going for a jog either at the park or along the riverfront, followed by meditation,
 				before I begin work.
