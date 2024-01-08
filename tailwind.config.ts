@@ -39,7 +39,23 @@ export default {
 			})
 		},
 		fontFamily: {
-			brandon: ['Brandon', 'sans-serif']
+			brandon: [
+				'Brandon',
+				'ui-sans-serif',
+				'system-ui',
+				'-apple-system',
+				'BlinkMacSystemFont',
+				"'Segoe UI'",
+				'Roboto',
+				"'Helvetica Foliole'",
+				'Arial',
+				"'Noto Sans'",
+				'sans-serif',
+				"'Apple Color Emoji'",
+				"'Segoe UI Emoji'",
+				"'Segoe UI Symbol'",
+				"'Noto Color Emoji'"
+			]
 		},
 		fontSize: {
 			sm: '0.8rem',
