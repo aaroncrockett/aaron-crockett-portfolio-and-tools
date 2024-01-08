@@ -1,40 +1,10 @@
 <script lang="ts">
-	import * as feather from 'feather-icons';
 	import { clipboard } from '@skeletonlabs/skeleton';
+	import MailSvg from '$lib/components/icons/MailSvg.svelte';
+	import GitSvg from '$lib/components/icons/GitSvg.svelte';
+	import LinkedInSvg from '$lib/components/icons/LinkedInSvg.svelte';
 
 	const emailAddress: string = 'aaron.crockett.00@gmail.com';
-
-	const gitIconSvg = feather.icons['github'].toSvg({
-		stroke: '#d7424b',
-		width: 28,
-		height: 28
-	});
-	const linkedIconSvg = feather.icons['linkedin'].toSvg({
-		stroke: '#d7424b',
-		width: 28,
-		height: 28
-	});
-	const mailIconSvg = feather.icons['mail'].toSvg({
-		stroke: '#d7424b',
-		width: 28,
-		height: 28
-	});
-
-	const gitIconSvgSm = feather.icons['github'].toSvg({
-		stroke: '#d7424b',
-		width: 22,
-		height: 22
-	});
-	const linkedIconSvgSm = feather.icons['linkedin'].toSvg({
-		stroke: '#d7424b',
-		width: 22,
-		height: 22
-	});
-	const mailIconSvgSm = feather.icons['mail'].toSvg({
-		stroke: '#d7424b',
-		width: 22,
-		height: 22
-	});
 
 	let copied = false;
 
@@ -51,10 +21,10 @@
 		<span class="text-sm text-tertiary-500">COPIED 👍</span>
 	{:else}
 		<span class="hidden sm:inline">
-			{@html mailIconSvg}
+			<MailSvg />
 		</span>
 		<span class="inline sm:hidden">
-			{@html mailIconSvgSm}
+			<MailSvg size="w-6 h-6" />
 		</span>
 	{/if}
 </button>
@@ -67,10 +37,10 @@
 	rel="noreferrer"
 >
 	<span class="hidden sm:inline">
-		{@html gitIconSvg}
+		<GitSvg />
 	</span>
 	<span class="inline sm:hidden">
-		{@html gitIconSvgSm}
+		<GitSvg size="w-6 h-6" />
 	</span>
 </a>
 <a
@@ -81,9 +51,9 @@
 	rel="noreferrer"
 >
 	<span class="hidden sm:inline">
-		{@html linkedIconSvg}
+		<LinkedInSvg />
 	</span>
 	<span class="inline sm:hidden">
-		{@html linkedIconSvgSm}
+		<LinkedInSvg size="w-6 h-6" />
 	</span>
 </a>

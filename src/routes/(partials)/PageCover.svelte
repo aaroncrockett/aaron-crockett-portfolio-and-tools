@@ -6,7 +6,7 @@
 	import { getContext } from 'svelte';
 	import { hasScrolled } from '$lib/store';
 	// UI related
-	import * as feather from 'feather-icons';
+	import DownDoubleSvg from '$lib/components/icons/DownDoubleSvg.svelte';
 	// Other
 	import classNames from 'classnames';
 
@@ -26,12 +26,6 @@
 			floatingIconClasses = 'relative -bottom-0';
 		}
 	}
-
-	let downIconSvg = feather?.icons['chevrons-down']?.toSvg({
-		stroke: '#231F20',
-		width: 28,
-		height: 28
-	});
 
 	onMount(() => {
 		setTimeout(() => {
@@ -98,7 +92,7 @@
 				'transition-all duration-600 container flex items-center mx-auto py-2'
 			)}
 		>
-			<span class={floatingIconClasses}>{@html downIconSvg} </span> Portfolio & CV Summary
+			<span class={floatingIconClasses}><DownDoubleSvg /></span> Portfolio & CV Summary
 		</span>
 	</h4>
 </div>

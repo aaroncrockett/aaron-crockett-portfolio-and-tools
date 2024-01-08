@@ -1,6 +1,7 @@
 <script lang="ts">
 	import SocialMediaLinks from './SocialMediaLinks.svelte';
 	import PageLinks from '$lib/components/PageLinks.svelte';
+	import MenuSvg from '$lib/components/icons/MenuSvg.svelte';
 	// Svelte related
 	import { createEventDispatcher, onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
@@ -14,25 +15,12 @@
 	//
 	import { page } from '$app/stores';
 	// UI related
-	import * as feather from 'feather-icons';
 	export let appBarWrapperElBg = '';
 	export let isSmallScreen: Boolean;
 
 	let triggerOnMountTransitions = false;
 
 	const sessionId = getContext<Writable<string>>('session-id');
-
-	const menuOpenIconSvg = feather.icons['menu'].toSvg({
-		stroke: '#d7424b',
-		width: 28,
-		height: 28
-	});
-
-	const menuOpenIconSvgSm = feather.icons['menu'].toSvg({
-		stroke: '#d7424b',
-		width: 24,
-		height: 24
-	});
 
 	const dispatch = createEventDispatcher();
 
@@ -69,10 +57,10 @@
 				{#if isHome || isSmallScreen}
 					<button class="inline-block p-1 sm:p-2" on:click={() => dispatch('openMenu')}>
 						<span class="hidden sm:inline">
-							{@html menuOpenIconSvg}
+							<MenuSvg />
 						</span>
 						<span class="inline sm:hidden">
-							{@html menuOpenIconSvgSm}
+							<MenuSvg size="w-6 h-6" />
 						</span>
 					</button>
 				{/if}

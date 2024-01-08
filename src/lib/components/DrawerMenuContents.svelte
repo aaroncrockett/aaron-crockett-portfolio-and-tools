@@ -1,31 +1,14 @@
 <script lang="ts">
 	import SocialMediaLinks from '$lib/components/SocialMediaLinks.svelte';
 	import PageLinks from '$lib/components/PageLinks.svelte';
-	import type { Writable } from 'svelte/store';
+	import HomeSvg from '$lib/components/icons/HomeSvg.svelte';
+	import ChevronRightSvg from '$lib/components/icons/ChevonRightSvg.svelte';
 	// Svelte
+	import type { Writable } from 'svelte/store';
 	import { getContext } from 'svelte';
-	// UI Related
-	import * as feather from 'feather-icons';
 	// Types
 	import type { DrawerStore } from '@skeletonlabs/skeleton';
 
-	const homeIconSvg = feather.icons['home'].toSvg({
-		stroke: '#d7424b',
-		width: 28,
-		height: 28
-	});
-
-	const homeIconSvgSm = feather.icons['home'].toSvg({
-		stroke: '#d7424b',
-		width: 24,
-		height: 24
-	});
-
-	const chevronRightIconSvg = feather.icons['chevron-right'].toSvg({
-		stroke: '#ffffff',
-		width: 12,
-		height: 12
-	});
 	const drawerStore = getContext('drawer-store') as DrawerStore;
 	const sessionId = getContext<Writable<string>>('session-id');
 </script>
@@ -35,10 +18,10 @@
 		<div class="border-b border-primary-500">
 			<a on:click={() => drawerStore.close()} class="inline-block p-1 sm:p-2" href="/">
 				<span class="hidden sm:inline-block">
-					{@html homeIconSvg}
+					<HomeSvg />
 				</span>
 				<span class=" inline-block sm:hidden">
-					{@html homeIconSvgSm}
+					<HomeSvg size="w-6 h-6" />
 				</span>
 			</a>
 		</div>
@@ -58,7 +41,7 @@
 		<PageLinks showChevron={true} on:click={() => drawerStore.close()} />
 		<div class="flex items-center pl-1">
 			{#if $sessionId}
-				<span class="pr-[.1rem]">{@html chevronRightIconSvg}</span>
+				<span class="pr-[.1rem]"><ChevronRightSvg /></span>
 				<form method="post" action="sign-out">
 					<button class="text-primary-500 uppercase font-bold">Sign Out</button>
 				</form>
