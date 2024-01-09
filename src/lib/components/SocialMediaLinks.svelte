@@ -76,7 +76,7 @@
 <a
 	on:click
 	class=" sm:p-1 inline-block"
-	href="https://www.linkedin.com/in/aaron-happe-crockett-4741176a/"
+	href="https://www.linkedin.com/in/aaron-crockett-4741176a/"
 	target="_blank"
 	rel="noreferrer"
 >

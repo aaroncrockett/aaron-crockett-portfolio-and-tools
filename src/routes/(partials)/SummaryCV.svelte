@@ -1,4 +1,5 @@
 <script>
+	// Summary CV
 	import * as feather from 'feather-icons';
 
 	const starIconSvg = feather?.icons['star']?.toSvg({
@@ -29,21 +30,19 @@
 	<div class="grid sm:grid-cols-2 gap-4 sm:gap-8">
 		<div class="box">
 			<div class="flex flex-col items-center p-4 card variant-glass">
-				<div class="py-2">{@html awardUpIconSvg}</div>
+				<div class="py-2">{@html starIconSvg}</div>
 				<p class="text-center">
-					Developer for Caleres, a Fortune 1000 company. Created highly visible landing pages for
-					Famous Footwear, on notable brands including Nike and Converse. Received company-wide
-					award and recognition for this work.
+					Over 10 years of industry-related experience across a spectrum of team sizes and company
+					scales.
 				</p>
 			</div>
 		</div>
 		<div class="box">
 			<div class="flex flex-col items-center p-4 card variant-glass">
-				<div class="py-2">{@html starIconSvg}</div>
+				<div class="py-2">{@html awardUpIconSvg}</div>
 				<p class="text-center">
-					Increased productivity by developing intelligent tools on the job. Created a Vue component
-					library for the company catalog and contributed to open-source projects. Currently
-					creating my own UI component toolkit to be published on npm.
+					Created highly engaging experiences for Famous Footwear, on notable brands including Nike
+					and Converse. Won a company wide award for Converse Landing page.
 				</p>
 			</div>
 		</div>
@@ -51,8 +50,8 @@
 			<div class="flex flex-col items-center p-4 card variant-glass">
 				<div class="py-2">{@html sendIconSvg}</div>
 				<p class="text-center">
-					Led front-end development within a small, 3-person team (Power Admin), demonstrating
-					flexibility and the ability to deliver autonomously.
+					Took charge of front-end development within a 3-person team, highlighting my autonomous
+					capacity for delivery.
 				</p>
 			</div>
 		</div>
@@ -60,9 +59,9 @@
 			<div class="flex flex-col items-center p-4 card variant-glass">
 				<div class="py-2">{@html codeIconSvg}</div>
 				<p class="text-center">
-					Demonstrated consistent technical progression. Evolved from design, to CSS/Layout/jQuery,
-					to sole front-end developer of applications, and to full-stack contributions. Described as
-					proactive, flexible, innovative and friendly.
+					Proactive, flexible, friendly, ambitious and creative. Versatile skill set that includes
+					development and visual design. Contributed to open source and hackathons. Creating my own
+					open source project. Teaching Experience.
 				</p>
 			</div>
 		</div>

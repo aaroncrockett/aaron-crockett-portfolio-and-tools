@@ -1,4 +1,4 @@
-<section class="card indented-content">
+<section class="references card indented-content">
 	<h3 class="uppercase text-center">testimonials</h3>
 	<p class="text-xl text-center">
 		Recommendations given on online platforms (Linked In and Zip Recruiter) gathered here in one
@@ -6,6 +6,23 @@
 	</p>
 
 	<div class="flex flex-col gap-4">
+		<div class="referral-box">
+			<blockquote
+				class="referral border-l-[10px] pl-4 border-surface-400 variant-soft-surface card mb-2"
+			>
+				<p class="p-2 pb-4">
+					I had the benefit of working side-by-side with Aaron as a frontend web developer at
+					Caleres for a number of years. He is thoughtful and creative with his problem solving, and
+					he puts in the effort to make sure his work is always quality down to the detail. His
+					pressence at work was a joy as he always had something nice to say or a story to share. He
+					would be a wonderful addition to any team seeking his talents!
+				</p>
+			</blockquote>
+			<p class="text-xl font-bold inline-block leading-3xl">
+				Analytics Implementation Engineer, Pluto TV
+			</p>
+			<p class="text-xl inline-block leading-xl">Henry Leacock</p>
+		</div>
 		<div class="referral-box">
 			<blockquote
 				class="referral border-l-[10px] pl-4 border-surface-400 variant-soft-surface card mb-2"
@@ -23,31 +40,14 @@
 			<blockquote
 				class="referral border-l-[10px] pl-4 border-surface-400 variant-soft-surface card mb-2"
 			>
-				<p class="p-2 pb-4">
-					Aaron did a good job updating our entire website (switching to a more modern style) and
-					also working on our product's web interface, converting it from JavaScript (and ext.js) to
-					Vue. He's a very knowledgeable developer.
+				<p class=" p-2 pb-4">
+					Aaron did an excellent job for us. I knew I could always count on him to get high quality
+					work done on time. He was a great team player and a pleasure to work with. I highly
+					recommend him.
 				</p>
 			</blockquote>
-			<p class="text-xl font-bold inline-block">Founder at Power Admin LLC</p>
-			<p class="text-xl inline-block leading-xl">Doug Nebeker</p>
-		</div>
-		<div class="referral-box">
-			<blockquote
-				class="referral border-l-[10px] pl-4 border-surface-400 variant-soft-surface card mb-2"
-			>
-				<p class="p-2 pb-4">
-					I had the benefit of working side-by-side with Aaron as a frontend web developer at
-					Caleres for a number of years. He is thoughtful and creative with his problem solving, and
-					he puts in the effort to make sure his work is always quality down to the detail. His
-					pressence at work was a joy as he always had something nice to say or a story to share. He
-					would be a wonderful addition to any team seeking his talents!
-				</p>
-			</blockquote>
-			<p class="text-xl font-bold inline-block leading-3xl">
-				Analytics Implementation Engineer, Pluto TV
-			</p>
-			<p class="text-xl inline-block leading-xl">Henry Leacock</p>
+			<p class="text-xl font-bold inline-block">Owner, Madness Labs.</p>
+			<p class="text-xl inline-block leading-xl">Bobby Johnson</p>
 		</div>
 		<div class="referral-box">
 			<blockquote

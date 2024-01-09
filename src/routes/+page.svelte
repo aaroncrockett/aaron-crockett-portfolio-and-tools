@@ -24,7 +24,6 @@
 {/if}
 <div class="page-one-col">
 	<ProjectShowCases />
-
 	<SummaryCV />
 	<References />
 	<AboutMe />
