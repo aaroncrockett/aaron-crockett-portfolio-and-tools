@@ -33,7 +33,7 @@
 				<div class="py-2">{@html starIconSvg}</div>
 				<p class="text-center">
 					Over 10 years of industry-related experience across a spectrum of team sizes and company
-					scales.
+					scales including 5 years of experience working for a large fortune 1000 company.
 				</p>
 			</div>
 		</div>
