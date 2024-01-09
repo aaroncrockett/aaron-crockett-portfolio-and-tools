@@ -29,7 +29,7 @@
 
 	<div class="grid sm:grid-cols-2 gap-4 sm:gap-8">
 		<div class="box">
-			<div class="flex flex-col items-center p-4 card variant-glass">
+			<div class="flex flex-col w-full items-center p-4 card variant-glass">
 				<div class="py-2">{@html starIconSvg}</div>
 				<p class="text-center">
 					Over 10 years of industry-related experience across a spectrum of team sizes and company
@@ -38,7 +38,7 @@
 			</div>
 		</div>
 		<div class="box">
-			<div class="flex flex-col items-center p-4 card variant-glass">
+			<div class="flex flex-col w-full items-center p-4 card variant-glass">
 				<div class="py-2">{@html awardUpIconSvg}</div>
 				<p class="text-center">
 					Created highly engaging experiences for Famous Footwear, on notable brands including Nike
@@ -47,7 +47,7 @@
 			</div>
 		</div>
 		<div class="box">
-			<div class="flex flex-col items-center p-4 card variant-glass">
+			<div class="flex flex-col w-full items-center p-4 card variant-glass">
 				<div class="py-2">{@html sendIconSvg}</div>
 				<p class="text-center">
 					Took charge of front-end development within a 3-person team, highlighting my autonomous
@@ -56,7 +56,7 @@
 			</div>
 		</div>
 		<div class="box">
-			<div class="flex flex-col items-center p-4 card variant-glass">
+			<div class="flex flex-col w-full items-center p-4 card variant-glass">
 				<div class="py-2">{@html codeIconSvg}</div>
 				<p class="text-center">
 					Proactive, flexible, friendly, ambitious and creative. Versatile skill set that includes
