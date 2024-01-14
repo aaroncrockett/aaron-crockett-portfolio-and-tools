@@ -1,14 +1,14 @@
 <section class="card indented-content">
-	<h2 class="page-header text-center">Project Showcases</h2>
+	<h3 class="text-center uppercase">Project ShowCases</h3>
 	<div class="flex items-center gap-2 flex-col b">
 		<div class="foliole-logo-wrapper foliole-logo-wrapper-options">
 			<a href="https://foliole-ui-docs.vercel.app/"
 				><span class="foliole-logo foliole-logo-options foliole-logo-vertical" /></a
 			>
 		</div>
-		<h3 class="foliole-color text-center uppercase text-gray-600 text-3xl p-0">
+		<h4 class="foliole-color text-gray-600 text-4xl p-0">
 			<a href="https://foliole-ui-docs.vercel.app/">Foliole UI: Library and Toolkit</a>
-		</h3>
+		</h4>
 
 		<p class="text-xl">A Framework agnostic UI Toolkit</p>
 		<p class="section-p">
