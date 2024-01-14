@@ -22,7 +22,7 @@
 					/>
 				</picture>
 			</div>
-			<div class="sm:max-w-[55%] w-full">
+			<div class="sm:max-w-[55%] w-full sm:block flex justify-center">
 				<img
 					src={me}
 					class="border-4 rounded-md"
