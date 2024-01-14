@@ -9,15 +9,18 @@
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import { cubicIn } from 'svelte/easing';
+	import { page } from '$app/stores';
 
 	let triggerOnMountTransitions = false;
+
+	$: returnHome = $page.url.search === '?return-home';
 
 	onMount(() => {
 		triggerOnMountTransitions = true;
 	});
 </script>
 
-{#if triggerOnMountTransitions}
+{#if !returnHome && triggerOnMountTransitions}
 	<div transition:fade={{ easing: cubicIn, duration: 400 }}>
 		<PageCover />
 	</div>

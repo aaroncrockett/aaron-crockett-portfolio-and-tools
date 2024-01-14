@@ -33,7 +33,7 @@
 <div class="flex">
 	<div class="space-y-2 p-2">
 		<div class="border-b border-primary-500">
-			<a on:click={() => drawerStore.close()} class="inline-block p-1 sm:p-2" href="/">
+			<a on:click={() => drawerStore.close()} class="inline-block p-1 sm:p-2" href="/?return-home">
 				<span class="hidden sm:inline-block">
 					{@html homeIconSvg}
 				</span>

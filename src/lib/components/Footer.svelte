@@ -1,7 +1,7 @@
 <div class="bg-surface-500">
 	<div class="p-2 container mx-auto">
 		<div class="sm:inline-block">
-			<a href="/">
+			<a href="/?return-home">
 				<span class="text-primary-500">AARON</span>
 				<span class="text-tertiary-500">CROCKETT</span> |
 			</a>
