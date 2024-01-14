@@ -65,7 +65,8 @@
 				<div class="py-2">{@html codeIconSvg}</div>
 				<p class="text-center">
 					<span class="font-bold">Proactive, flexible, friendly and creative.</span> Versatile skill
-					set that includes development and visual design.
+					set that includes <span class="font-bold">development and visual design. </span> Self-taught
+					developer, avid learner and creator. Masters Degree in the arts and teaching experience.
 				</p>
 			</div>
 		</div>
