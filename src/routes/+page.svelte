@@ -4,8 +4,7 @@
 	import ProjectShowCases from './(partials)/ProjectShowCases.svelte';
 	import References from './(partials)/References.svelte';
 	import SummaryCV from './(partials)/SummaryCV.svelte';
-	//
-	import Slider from '$lib/components/Slider/index.svelte';
+
 	// Svelte related
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
@@ -20,8 +19,6 @@
 		triggerOnMountTransitions = true;
 	});
 </script>
-
-<Slider />
 
 {#if !returnHome && triggerOnMountTransitions}
 	<div transition:fade={{ easing: cubicIn, duration: 400 }}>
