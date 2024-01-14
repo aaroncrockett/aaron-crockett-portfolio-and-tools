@@ -6,7 +6,7 @@
 				><span class="foliole-logo foliole-logo-options foliole-logo-vertical" /></a
 			>
 		</div>
-		<h4 class="foliole-color text-gray-600 text-4xl p-0">
+		<h4 class="foliole-color text-gray-600 text-4xl p-0 text-center">
 			<a href="https://foliole-ui-docs.vercel.app/">Foliole UI: Library and Toolkit</a>
 		</h4>
 
@@ -22,11 +22,6 @@
 		>
 		<a href="https://foliole-ui-docs.vercel.app/" class="inline-link">Foliole UI: Demo Site</a>
 	</div>
-	<hr />
-	<div class="flex items-center gap-2 flex-col">
-		<h3 class="text-center uppercase">Portfolio Toolkit</h3>
-		<a href="/color-generator" class="inline-link"><span>Tailwind Color Generator</span></a>
-	</div>
 </section>
 
 <style lang="postcss">
@@ -38,15 +33,15 @@
 	}
 	.foliole-logo {
 		@apply flex self-center flex-shrink-0 border-[.175rem] rounded-tl-lg rounded-tr-sm rounded-bl-sm rounded-br-lg shadow-sm;
-		border-color: rgb(100, 100, 100);
+		border-color: rgb(112, 132, 146);
 	}
 
 	.foliole-logo-options {
-		background: linear-gradient(45deg, rgb(205, 215, 215), rgb(138, 202, 253));
+		background: linear-gradient(45deg, rgb(164, 214, 255), rgb(138, 202, 253));
 	}
 
 	.foliole-logo-vertical {
-		@apply flex-col w-8 h-8;
+		@apply flex-col w-7 h-7;
 	}
 
 	.foliole-logo-wrapper {

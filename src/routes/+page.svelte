@@ -1,5 +1,6 @@
 <script lang="ts">
 	import AboutMe from './(partials)/AboutMe.svelte';
+	import Designs from './(partials)/Designs.svelte';
 	import PageCover from './(partials)/PageCover.svelte';
 	import ProjectShowCases from './(partials)/ProjectShowCases.svelte';
 	import References from './(partials)/References.svelte';
@@ -25,9 +26,15 @@
 		<PageCover />
 	</div>
 {/if}
+{#if returnHome}
+	<div class="mx-auto container px-4 pt-1">
+		<a class="font-bold text-secondary-900/90 text-sm" href="/">Re-animate intro.</a>
+	</div>
+{/if}
+
 <div class="page-one-col">
 	<ProjectShowCases />
+	<Designs />
 	<SummaryCV />
-	<References />
 	<AboutMe />
 </div>
