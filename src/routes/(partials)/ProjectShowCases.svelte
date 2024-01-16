@@ -14,7 +14,7 @@
 
 		<div class="card p-4 variant-ghost-secondary lg:w-2/3">
 			<h4 class="text-gray-900 text-center font-bold">Project summary</h4>
-			<p>
+			<p class="text-center">
 				The UI Library portion is being created for Power Admin usage. The Theme Generator is my
 				addition. This includes:
 			</p>

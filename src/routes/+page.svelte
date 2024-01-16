@@ -33,8 +33,24 @@
 {/if}
 
 <div class="page-one-col">
+	<h1 class="hp-hide-headings">Aaron Crockett</h1>
+	<h2 class="hp-hide-headings">Web Application Developer.</h2>
 	<ProjectShowCases />
 	<Designs />
 	<SummaryCV />
 	<AboutMe />
 </div>
+
+<style>
+	.hp-hide-headings {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
+	}
+</style>
