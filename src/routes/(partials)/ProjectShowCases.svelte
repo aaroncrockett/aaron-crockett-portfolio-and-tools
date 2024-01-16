@@ -19,12 +19,19 @@
 				addition. This includes:
 			</p>
 			<ul class="list-inside text-center">
-				<li class="list-disc font-bold">The UI and visual experience.</li>
+				<li class="list-disc font-bold">UI and visual experience.</li>
 				<li class="list-disc font-bold">Tailwind Plugin.</li>
 				<li class="list-disc font-bold">
-					The script to generate CSS for Tailwind and vanilla JS purposes.
+					Node.js script to generate CSS (and the CSSinJS) for Tailwind and vanilla JS purposes.
 				</li>
+				<li class="list-disc font-bold">Vue Components.</li>
 				<li class="list-disc font-bold">Theme Generator.</li>
+
+				<li class="list-disc font-bold">Monorepo using pnpm.</li>
+				<li class="list-disc font-bold">
+					Initial testing using Vitest and Svelte Testing Library. (in progress)
+				</li>
+				<li class="list-disc font-bold">Early project rules and changesets. (in progress)</li>
 				<li class="list-disc font-bold">Deployment to Vercel.</li>
 			</ul>
 			<p>
