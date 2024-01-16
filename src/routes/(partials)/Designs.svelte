@@ -31,4 +31,8 @@
 			/>
 		</picture>
 	</div>
+	<p class="italic text-center">
+		Both designs done by me. Left: Design Mock-up for PA SM Interface. Right: Actual interface used
+		in production in 2021.
+	</p>
 </section>
