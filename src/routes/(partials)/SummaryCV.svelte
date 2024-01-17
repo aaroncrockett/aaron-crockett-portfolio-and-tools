@@ -55,7 +55,7 @@
 				<p class="text-center">
 					<span class="font-bold">During my 4+ year tenure at Power Admin</span>, I took charge of
 					front-end development within a 3-person team,
-					<span class="font-bold">independently engineering two SPAs for product development</span> highlighting
+					<span class="font-bold">independently engineering SPAs for product development</span> highlighting
 					my autonomous capacity for delivery.
 				</p>
 			</div>
