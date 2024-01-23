@@ -53,11 +53,12 @@
 			<div class="flex flex-col w-full items-center p-4 card variant-glass">
 				<div class="py-2">{@html sendIconSvg}</div>
 				<p class="text-center">
-					<span class="font-bold">During my 4+ year tenure at Power Admin</span>, I took charge of
-					front-end development within a 3-person team,
 					<span class="font-bold"
-						>independently engineering Web Apps and UIs for product development</span
-					> highlighting my autonomous capacity for delivery.
+						>Took charge of front-end development within a 3-person team,
+						<span class="font-bold"
+							>independently engineering Web Apps and UIs for product development</span
+						> highlighting my autonomous capacity for delivery.
+					</span>
 				</p>
 			</div>
 		</div>

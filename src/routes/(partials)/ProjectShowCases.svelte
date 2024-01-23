@@ -21,10 +21,9 @@
 		<div class="card p-4 variant-ghost-secondary lg:w-2/3 space-y-4">
 			<h4 class="text-gray-900 text-center font-bold">Project Summary</h4>
 			<p>
-				The base of this project is being made for Power Admin. It came about because I used
-				Skeleton UI for Svelte Projects. But we also have projects in Vue. And custom components in
-				Vue. And projects that use vue without a build (within Windows software), which don't use
-				tailwind. So creating a more flexible library well-suited library made sense to us.
+				The base of this project is being made for a client. It arose because we used Skeleton UI
+				for Svelte Projects. But we also have projects in Vue. And custom components in Vue. And
+				projects that use vue without a build (within Windows software).
 			</p>
 			<p>
 				I expanded the project for fun and learning. I named it Foliole UI Toolkit. I am also
