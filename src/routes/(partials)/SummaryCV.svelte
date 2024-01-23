@@ -54,9 +54,10 @@
 				<div class="py-2">{@html sendIconSvg}</div>
 				<p class="text-center">
 					<span class="font-bold"
-						>Took charge of front-end development within a 3-person team,
+						>Took charge of front-end development at Power Admin,
 						<span class="font-bold"
-							>independently engineering Web Apps and UIs for product development</span
+							>independently engineering the front end of web appplications and UIs for product
+							development</span
 						> highlighting my autonomous capacity for delivery.
 					</span>
 				</p>

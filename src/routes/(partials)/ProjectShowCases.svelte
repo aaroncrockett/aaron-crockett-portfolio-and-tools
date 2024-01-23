@@ -21,14 +21,14 @@
 		<div class="card p-4 variant-ghost-secondary lg:w-2/3 space-y-4">
 			<h4 class="text-gray-900 text-center font-bold">Project Summary</h4>
 			<p>
-				The base of this project is being made for a client. It arose because we used Skeleton UI
-				for Svelte Projects. But we also have projects in Vue. And custom components in Vue. And
-				projects that use vue without a build (within Windows software).
+				The base of this project is being made for a client. It arose because the client has UIs
+				written in Vue, without a build system. They are currently developing web applications using
+				Tailwind. They need UI component solutions that can work regardless of the framework and CSS
+				solution, in past current and future projects.
 			</p>
 			<p>
-				I expanded the project for fun and learning. I named it Foliole UI Toolkit. I am also
-				creating a theme generator to define colors, margins, padding, and more. The application has
-				been deployed to Vercel.
+				I expanded the project for fun and learning by adding a Theme Generator. I named it Foliole
+				UI Toolkit. The application has been deployed to Vercel.
 			</p>
 			<p class="font-bold text-[18px] text-center">
 				I am responsible for the project in its entirety, which includes:
