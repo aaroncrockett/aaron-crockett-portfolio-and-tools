@@ -21,6 +21,10 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Aaron Crockett - Web Application Developer</title>
+</svelte:head>
+
 {#if !returnHome && triggerOnMountTransitions}
 	<div transition:fade={{ easing: cubicIn, duration: 400 }}>
 		<PageCover />
