@@ -13,10 +13,10 @@
 					<source media="(min-width: 768px)" srcset={dogsImgMd} />
 					<source media="(max-width: 767px)" srcset={dogsImgSm} />
 					<img
+						loading="lazy"
 						src={dogsImg}
 						class="border-4 rounded-md"
 						alt="My Dogs, Fred and Jasper. Jasper and Fred."
-						loading="lazy"
 						width="901"
 						height="900"
 					/>
@@ -24,10 +24,10 @@
 			</div>
 			<div class="sm:max-w-[55%] w-full sm:block flex justify-center">
 				<img
+					loading="lazy"
 					src={me}
 					class="border-4 rounded-md"
 					alt="Me. Aaron Crockett."
-					loading="lazy"
 					width="446"
 					height="490"
 				/>
