@@ -7,7 +7,7 @@
 
 <section class="">
 	<h4
-		class="foliole-color text-4xl leading-5xl md:text-6xl p-0 md:leading-8xl font-bold text-center"
+		class="text-secondary-700 text-4xl leading-5xl md:text-6xl p-0 md:leading-8xl font-bold text-center"
 	>
 		Interface Design Examples
 	</h4>

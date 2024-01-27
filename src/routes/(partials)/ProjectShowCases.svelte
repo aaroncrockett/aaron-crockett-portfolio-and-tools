@@ -1,6 +1,6 @@
 <script>
 	import folioCg from '$lib/images/foliole-cg.webp';
-	import folioHl from '$lib/images/foliole-hl.webp';
+	import folioHp from '$lib/images/foliole-hp.webp';
 	import folioInterface from '$lib/images/foliole-interface.webp';
 	import folioInterfaceSm from '$lib/images/foliole-interface.webp';
 </script>
@@ -11,9 +11,9 @@
 	<div class="space-y-8">
 		<div>
 			<h4
-				class="foliole-color text-4xl leading-5xl md:text-6xl p-0 md:leading-8xl font-bold text-center md:text-left"
+				class="text-secondary-700 text-4xl leading-5xl md:text-6xl p-0 md:leading-8xl font-bold text-center md:text-left"
 			>
-				<a href="https://foliole-ui-docs.vercel.app7">Foliole UI: Library and Toolkit</a>
+				<a href="https://foliole-ui-docs.vercel.app">Foliole UI: Library and Toolkit</a>
 			</h4>
 			<p class="text-2xl text-center leading-3xl md:text-4xl md:leading-4xl md:text-left">
 				A Framework agnostic UI Toolkit.
@@ -25,22 +25,22 @@
 				<img
 					src={folioInterface}
 					class="border-4 rounded-md w-full"
-					alt="App Supervisor Interface."
+					alt="Foliole UI - Interface."
 					width="650"
 					height="1200"
 				/>
 			</picture>
 			<img
-				src={folioHl}
+				src={folioHp}
 				class="border-4 rounded-md md:block hidden md:w-[calc(33.33%-.25rem)] flex-initial h-auto"
-				alt="App Supervisor Interface."
+				alt="Foliole UI - Home Page."
 				width="900"
 				height="492"
 			/>
 			<img
 				src={folioCg}
 				class="border-4 rounded-md md:block hidden md:w-[calc(33.33%-.25rem)] flex-initial h-auto"
-				alt="App Supervisor Interface."
+				alt="Foliole UI - Color Generator."
 				width="650"
 				height="1200"
 			/>
@@ -48,7 +48,7 @@
 		<div class="space-y-4 area-two-col mx-auto">
 			<div class="space-y-4">
 				<h4
-					class="foliole-color text-4xl leading-5xl md:text-6xl p-0 md:leading-8xl font-bold text-center md:text-left"
+					class="text-surface-800 text-3xl leading-4xl md:text-4xl p-0 md:leading-5xl font-bold text-center md:text-left"
 				>
 					Project Summary
 				</h4>
