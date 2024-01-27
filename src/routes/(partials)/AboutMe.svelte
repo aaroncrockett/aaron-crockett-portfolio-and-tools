@@ -5,7 +5,12 @@
 	import me from '$lib/images/me-smile.webp';
 </script>
 
-<section class="indented-content">
+<section>
+	<h4
+		class="text-primary-500 text-4xl leading-5xl md:text-6xl p-0 md:leading-8xl font-bold text-center md:text-left"
+	>
+		A little more about me.
+	</h4>
 	<div class="flex flex-col gap-4 md:flex-row">
 		<div class="w-full order-2 space-x-2 sm:order-1 flex md:w-1/2">
 			<div class="w-[45%] hidden sm:block">
@@ -27,14 +32,13 @@
 					loading="lazy"
 					src={me}
 					class="border-4 rounded-md"
-					alt="Me. Aaron Crockett."
+					alt="Aaron Crockett."
 					width="446"
 					height="490"
 				/>
 			</div>
 		</div>
 		<div class="w-full space-y-2 sm:order-2 md:w-1/2">
-			<h3 class="text-primary-500">A little more about me.</h3>
 			<p>
 				I live in Portland, Oregon, with my husband Nick and our two dogs, Jasper and Fred. Outside
 				of creating and engineering, I enjoy hiking, game nights with friends, and exploring local

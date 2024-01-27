@@ -24,8 +24,10 @@
 	});
 </script>
 
-<section class="page-section">
-	<h3 class="text-center uppercase">CV Summary</h3>
+<section class="page-section mt-2">
+	<h4 class="text-4xl leading-5xl md:text-6xl p-0 md:leading-8xl font-bold text-center">
+		CV Summary
+	</h4>
 
 	<div class="grid sm:grid-cols-2 gap-2">
 		<div class="box">
@@ -53,13 +55,11 @@
 			<div class="flex flex-col w-full items-center p-4 card variant-glass">
 				<div class="py-2">{@html sendIconSvg}</div>
 				<p class="text-center">
+					Took charge of front-end development at Power Admin,
 					<span class="font-bold"
-						>Took charge of front-end development at Power Admin,
-						<span class="font-bold"
-							>independently engineering the front end of web appplications and UIs for product
-							development</span
-						> highlighting my autonomous capacity for delivery.
-					</span>
+						>independently engineering the front end of web appplications and UIs for product
+						development</span
+					> highlighting my autonomous capacity for delivery.
 				</p>
 			</div>
 		</div>

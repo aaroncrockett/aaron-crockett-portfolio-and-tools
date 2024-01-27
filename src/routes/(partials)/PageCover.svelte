@@ -2,6 +2,8 @@
 	// Svelte
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
+	import { tweened } from 'svelte/motion';
+
 	import { backOut, cubicOut } from 'svelte/easing';
 	import { getContext } from 'svelte';
 	import { hasScrolled } from '$lib/store';
@@ -19,11 +21,15 @@
 	let coverHeadlineTwColor = 'text-primary-500';
 	let headlines: string[] = [];
 
+	const opacity = tweened(1, { duration: 800, easing: cubicOut });
+
 	$: floatingIconClasses = 'floatingSpan relative -bottom-1';
 	$: {
 		if ($hasScrolled) {
 			coverHeadlineTwColor = 'text-surface-500';
 			floatingIconClasses = 'relative -bottom-0';
+
+			$opacity = 0;
 		}
 	}
 
@@ -49,10 +55,22 @@
 			}, 450);
 		}, 400);
 	});
+	const starIconSvg = feather?.icons['star']?.toSvg({
+		stroke: '#110F10',
+		width: 50,
+		height: 50
+	});
+	const starIconSvgSm = feather?.icons['star']?.toSvg({
+		stroke: '#110F10',
+		width: 36,
+		height: 36
+	});
+	const starIconDataUrl = `url('data:image/svg+xml;base64,${btoa(starIconSvg)}')`;
+	const starIconSmDataUrl = `url('data:image/svg+xml;base64,${btoa(starIconSvgSm)}')`;
 </script>
 
 <!-- Remove scroll bars with overflow-hidden until animations are finished to avoid layout shift -->
-<div class="relative" style={`height: ${$innerHeight}px;`}>
+<div class="relative bg-primary-500 overflow-hidden" style={`height: ${$innerHeight}px;`}>
 	<!-- Transition background intro. -->
 	{#if triggerOnMountAnimations}
 		<div
@@ -61,7 +79,17 @@
 			in:fly={{ y: '100%', easing: cubicOut }}
 		/>
 	{/if}
-	<div class="container relative px-3 sm:px-2 pt-20 sm:pt-16 pb-12 mx-auto">
+	<div class="flex flex-wrap absolute inset-0 z-1">
+		<div
+			class="flex flex-wrap absolute inset-0 z-1 opacity-[.05] hidden md:block"
+			style={`background-image: ${starIconDataUrl}; background-repeat: repeat;`}
+		/>
+		<div
+			class="flex flex-wrap absolute inset-0 z-1 opacity-[.05] md:hidden"
+			style={`background-image: ${starIconSmDataUrl}; background-repeat: repeat;`}
+		/>
+	</div>
+	<div class="container relative px-3 sm:px-2 pt-20 sm:pt-16 pb-12 mx-auto z-1">
 		<div class="flex flex-col overflow-hidden">
 			{#each headlines as line}
 				<h3
@@ -92,13 +120,15 @@
 		class="z-5 absolute flex w-full items-center bottom-0 right-0 left-0 bg-surface-50 text-primary-500 sm:text-3xl sm:leading-3xl text-xl leading-xl sm:pb-0"
 	>
 		<span
+			style="opacity: {$opacity}"
 			class={classNames(
 				triggerOnMountAnimations ? 'opacity-100' : 'opacity-0',
 				coverHeadlineTwColor,
 				'transition-all duration-600 container flex items-center mx-auto py-2'
 			)}
 		>
-			<span class={floatingIconClasses}>{@html downIconSvg} </span> Portfolio & CV Summary
+			<span class={floatingIconClasses}>{@html downIconSvg}</span> Portfolio & CV Summary Portfolio &
+			CV Summary
 		</span>
 	</h4>
 </div>

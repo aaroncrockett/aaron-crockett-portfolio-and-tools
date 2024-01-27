@@ -3,7 +3,6 @@
 	import Designs from './(partials)/Designs.svelte';
 	import PageCover from './(partials)/PageCover.svelte';
 	import ProjectShowCases from './(partials)/ProjectShowCases.svelte';
-	import References from './(partials)/References.svelte';
 	import SummaryCV from './(partials)/SummaryCV.svelte';
 
 	// Svelte related
@@ -36,7 +35,7 @@
 	</div>
 {/if}
 
-<div class="page-one-col">
+<div class="page-one-col pt-0">
 	<h1 class="hp-hide-headings">Aaron Crockett</h1>
 	<h2 class="hp-hide-headings">Web Application Developer.</h2>
 	<ProjectShowCases />

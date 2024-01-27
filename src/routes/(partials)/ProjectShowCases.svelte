@@ -1,64 +1,106 @@
-<section class=" indented-content">
-	<h3 class="text-center uppercase">Project ShowCases</h3>
-	<div class="flex items-center gap-2 flex-col">
-		<div class="foliole-logo-wrapper foliole-logo-wrapper-options mt-1">
-			<a href="https://foliole-ui-docs.vercel.app/"
-				><span class="foliole-logo foliole-logo-options foliole-logo-vertical" /></a
+<script>
+	import folioCg from '$lib/images/foliole-cg.webp';
+	import folioHl from '$lib/images/foliole-hl.webp';
+	import folioInterface from '$lib/images/foliole-interface.webp';
+	import folioInterfaceSm from '$lib/images/foliole-interface.webp';
+</script>
+
+<section>
+	<h3 class="text-center md:text-left">Project ShowCases</h3>
+
+	<div class="space-y-8">
+		<div>
+			<h4
+				class="foliole-color text-4xl leading-5xl md:text-6xl p-0 md:leading-8xl font-bold text-center md:text-left"
 			>
+				<a href="https://foliole-ui-docs.vercel.app7">Foliole UI: Library and Toolkit</a>
+			</h4>
+			<p class="text-2xl text-center leading-3xl md:text-4xl md:leading-4xl md:text-left">
+				A Framework agnostic UI Toolkit.
+			</p>
 		</div>
-		<h4 class="foliole-color text-4xl p-0 text-center leading-3xl font-bold">
-			<a href="https://foliole-ui-docs.vercel.app/">Foliole UI: Library and Toolkit</a>
-		</h4>
-
-		<p class="text-xl">A Framework agnostic UI Toolkit.</p>
-		<p class="section-p">
-			If you don't know what a component library is and need a summary, <a
-				class="inline-link"
-				href="/blog/component-libraries">read this</a
-			>.
-		</p>
-
-		<div class="card p-4 variant-ghost-secondary lg:w-2/3 space-y-4">
-			<h4 class="text-gray-900 text-center font-bold">Project Summary</h4>
-			<p>
-				The base of this project is being made for a client. It arose because the client has UIs
-				written in Vue, without a build system. They are currently developing web applications using
-				Tailwind. They need UI component solutions that can work regardless of the framework and CSS
-				solution, in past current and future projects.
-			</p>
-			<p>
-				I expanded the project for fun and learning by adding a Theme Generator. I named it Foliole
-				UI Toolkit. The application has been deployed to Vercel.
-			</p>
-			<p class="font-bold text-[18px] text-center">
-				I am responsible for the project in its entirety, which includes:
-			</p>
-			<div class="foliole-list-wrapper">
-				<ul>
-					<li><span>👉</span> UI and visual experience.</li>
-					<li><span>👉</span> Site in Astro.</li>
-					<li><span>👉</span> Tailwind Plugin.</li>
-					<li>
-						<span>👉</span> Node.js script to generate CSS (and the CSSinJS) for Tailwind and vanilla
-						CSS purposes.
-					</li>
-					<li><span>👉</span> Theme Generator written in Svelte.</li>
-				</ul>
-				<ul>
-					<li><span>👉</span> Vue Components.</li>
-					<li><span>👉</span> Monorepo using pnpm.</li>
-					<li>
-						<span>👉</span> Initial testing using Vitest and Svelte Testing Library. (in progress)
-					</li>
-					<li><span>👉</span> Early project rules and changesets. (in progress)</li>
-					<li><span>👉</span> Deployment to Vercel.</li>
-				</ul>
-			</div>
-			<div class="flex flex-col items-center space-y-2">
-				<a href="https://github.com/Foliole-UI-Toolkit/foliole-ui" class="inline-link"
-					>Foliole on github.</a
+		<div class="flex flex-col gap-2 md:flex-row justify-center md:justify-between items-center">
+			<picture class=" md:w-[calc(33.33%-.25rem)] flex-initial h-auto">
+				<source media="(max-width: 767px)" srcset={folioInterfaceSm} />
+				<img
+					src={folioInterface}
+					class="border-4 rounded-md w-full"
+					alt="App Supervisor Interface."
+					width="650"
+					height="1200"
+				/>
+			</picture>
+			<img
+				src={folioHl}
+				class="border-4 rounded-md md:block hidden md:w-[calc(33.33%-.25rem)] flex-initial h-auto"
+				alt="App Supervisor Interface."
+				width="900"
+				height="492"
+			/>
+			<img
+				src={folioCg}
+				class="border-4 rounded-md md:block hidden md:w-[calc(33.33%-.25rem)] flex-initial h-auto"
+				alt="App Supervisor Interface."
+				width="650"
+				height="1200"
+			/>
+		</div>
+		<div class="space-y-4 area-two-col mx-auto">
+			<div class="space-y-4">
+				<h4
+					class="foliole-color text-4xl leading-5xl md:text-6xl p-0 md:leading-8xl font-bold text-center md:text-left"
 				>
-				<a href="https://foliole-ui-docs.vercel.app/" class="inline-link">Foliole UI: Demo Site</a>
+					Project Summary
+				</h4>
+				<p>
+					If you don't know what a component library is and need a summary, <a
+						class="inline-link"
+						href="/blog/component-libraries">read this</a
+					>.
+				</p>
+				<p>
+					The base of this project is being made for a client. It arose because the client has UIs
+					written in Vue, without a build system. They are currently developing web applications
+					using Tailwind. They need UI component solutions that can work regardless of the framework
+					and CSS solution, in past current and future projects.
+				</p>
+				<p>
+					I expanded the project for fun and learning by adding a Theme Generator. I named it
+					Foliole UI Toolkit. The application has been deployed to Vercel.
+				</p>
+				<div class="flex flex-col items-center space-y-2">
+					<a href="https://github.com/Foliole-UI-Toolkit/foliole-ui" class="inline-link"
+						>Foliole on github.</a
+					>
+					<a href="https://foliole-ui-docs.vercel.app/" class="inline-link">Foliole UI: Demo Site</a
+					>
+				</div>
+			</div>
+			<div class="card p-4">
+				<p class="font-bold text-[18px] text-center">
+					I am responsible for the project in its entirety, which includes:
+				</p>
+				<div>
+					<ul>
+						<li><span>👉</span> UI and visual experience.</li>
+						<li><span>👉</span> Site in Astro.</li>
+						<li><span>👉</span> Tailwind Plugin.</li>
+						<li>
+							<span>👉</span> Node.js script to generate CSS (and the CSSinJS) for Tailwind and vanilla
+							CSS purposes.
+						</li>
+						<li><span>👉</span> Theme Generator written in Svelte.</li>
+					</ul>
+					<ul>
+						<li><span>👉</span> Vue Components.</li>
+						<li><span>👉</span> Monorepo using pnpm.</li>
+						<li>
+							<span>👉</span> Initial testing using Vitest and Svelte Testing Library. (in progress)
+						</li>
+						<li><span>👉</span> Early project rules and changesets. (in progress)</li>
+						<li><span>👉</span> Deployment to Vercel.</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -68,9 +110,7 @@
 	.section-p {
 		@apply lg:w-2/3 sm:w-4/5 mx-auto text-center;
 	}
-	.foliole-color {
-		color: rgb(59 130 177);
-	}
+
 	.foliole-logo {
 		@apply flex self-center flex-shrink-0 border-[.175rem] rounded-tl-lg rounded-tr-sm rounded-bl-sm rounded-br-lg shadow-sm;
 		border-color: rgb(112, 132, 146);
@@ -113,10 +153,13 @@
 		@apply grid gap-x-4 justify-around;
 		grid-template-columns: repeat(auto-fit, minmax(1rem, 18rem));
 	}
-	.foliole-list-wrapper li {
+	ul li {
 		@apply leading-[30px] mb-1 text-[18px] text-secondary-900 font-bold;
 	}
-	.foliole-list-wrapper li span {
+	ul li span {
 		margin-right: 0.25rem;
+	}
+	.img-responsive {
+		@apply max-w-full h-auto object-cover;
 	}
 </style>

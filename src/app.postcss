@@ -25,17 +25,29 @@ input.nested-input {
 /* --- Page-level Selectors --- */
 
 .page-one-col {
-	@apply flex flex-col gap-4 mx-auto container px-2 pt-4 pb-6;
+	@apply flex flex-col gap-4 mx-auto lg:container px-4 pt-4;
 }
 
 section,
 article {
-	@apply space-y-2;
+	@apply space-y-4;
 }
 
 section.indented-content,
 article.indented-content {
 	@apply p-4;
+}
+
+.area-two-col {
+	@apply flex flex-col md:flex-row md:space-x-8 space-x-0;
+}
+
+.area-two-col div:first-of-type {
+	@apply md:w-3/5;
+}
+
+.area-two-col div:nth-of-type(2) {
+	@apply md:w-2/5;
 }
 
 h1.page-header,
@@ -44,11 +56,11 @@ h2.page-header {
 }
 section h2,
 article h2 {
-	@apply font-bold text-2xl sm:text-3xl sm:leading-3xl leading-4xl sm:py-1;
+	@apply font-bold text-2xl sm:text-3xl sm:leading-3xl leading-4xl sm:py-2;
 }
 section h3,
 article h3 {
-	@apply font-bold text-xl sm:text-2xl sm:leading-2xl leading-3xl sm:py-1;
+	@apply font-bold uppercase sm:text-xl sm:leading-xl;
 }
 section h4,
 article h4 {
@@ -70,4 +82,8 @@ blockquote:before {
 	top: 30px;
 	color: #ccc;
 	font-size: 3em;
+}
+
+.foliole-color {
+	color: rgb(59 130 177);
 }
