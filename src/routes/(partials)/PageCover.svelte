@@ -21,7 +21,7 @@
 	let coverHeadlineTwColor = 'text-primary-500';
 	let headlines: string[] = [];
 
-	const opacity = tweened(1, { duration: 800, easing: cubicOut });
+	const opacity = tweened(1, { duration: 400, easing: cubicOut });
 
 	$: floatingIconClasses = 'floatingSpan relative -bottom-1';
 	$: {
@@ -122,9 +122,8 @@
 		<span
 			style="opacity: {$opacity}"
 			class={classNames(
-				triggerOnMountAnimations ? 'opacity-100' : 'opacity-0',
 				coverHeadlineTwColor,
-				'transition-all duration-600 container flex items-center mx-auto py-2'
+				'duration-200 container flex items-center mx-auto py-2'
 			)}
 		>
 			<span class={floatingIconClasses}>{@html downIconSvg}</span> Portfolio & CV Summary Portfolio &

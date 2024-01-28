@@ -1,108 +1,156 @@
-<script>
+<script lang="ts">
 	import folioCg from '$lib/images/foliole-cg.webp';
 	import folioHp from '$lib/images/foliole-hp.webp';
 	import folioInterface from '$lib/images/foliole-interface.webp';
 	import folioInterfaceSm from '$lib/images/foliole-interface.webp';
+	//
+	import { fly } from 'svelte/transition';
+	import { inview } from 'svelte-inview';
+	//
+	import { hasScrolled } from '$lib/store';
+
+	const inViewOptions = { rootMargin: '-50px', unobserveOnEnter: true };
+
+	$: isFuiImgsInView = false;
 </script>
 
 <section>
-	<h3 class="text-center md:text-left">Project ShowCases</h3>
-
+	{#if $hasScrolled}
+		<h3
+			in:fly={{ duration: 400, y: -20, delay: 500 }}
+			class={` ${
+				$hasScrolled ? 'opacity-100' : 'opacity-0'
+			} fade-in-view  text-center md:text-left`}
+		>
+			Project ShowCases
+		</h3>
+	{/if}
 	<div class="space-y-8">
-		<div>
-			<h4
-				class="text-secondary-700 text-4xl leading-5xl md:text-6xl p-0 md:leading-8xl font-bold text-center md:text-left"
-			>
-				<a href="https://foliole-ui-docs.vercel.app">Foliole UI: Library and Toolkit</a>
-			</h4>
-			<p class="text-2xl text-center leading-3xl md:text-4xl md:leading-4xl md:text-left">
-				A Framework agnostic UI Toolkit.
-			</p>
-		</div>
-		<div class="flex flex-col gap-2 md:flex-row justify-center md:justify-between items-center">
-			<picture class=" md:w-[calc(33.33%-.25rem)] flex-initial h-auto">
-				<source media="(max-width: 767px)" srcset={folioInterfaceSm} />
-				<img
-					src={folioInterface}
-					class="border-4 rounded-md w-full"
-					alt="Foliole UI - Interface."
-					width="650"
-					height="1200"
-				/>
-			</picture>
-			<img
-				src={folioHp}
-				class="border-4 rounded-md md:block hidden md:w-[calc(33.33%-.25rem)] flex-initial h-auto"
-				alt="Foliole UI - Home Page."
-				width="900"
-				height="492"
-			/>
-			<img
-				src={folioCg}
-				class="border-4 rounded-md md:block hidden md:w-[calc(33.33%-.25rem)] flex-initial h-auto"
-				alt="Foliole UI - Color Generator."
-				width="650"
-				height="1200"
-			/>
-		</div>
-		<div class="space-y-4 area-two-col mx-auto">
-			<div class="space-y-4">
+		<div
+			in:fly={{ duration: 400, y: -20, delay: 500 }}
+			class={` ${$hasScrolled ? 'opacity-100' : 'opacity-0'} fade-in-view `}
+		>
+			{#if $hasScrolled}
 				<h4
-					class="text-surface-800 text-3xl leading-4xl md:text-4xl p-0 md:leading-5xl font-bold text-center md:text-left"
+					class="text-secondary-700 text-4xl leading-5xl md:text-6xl p-0 md:leading-8xl font-bold text-center md:text-left"
 				>
-					Project Summary
+					<a href="https://foliole-ui-docs.vercel.app">Foliole UI: Library and Toolkit</a>
 				</h4>
-				<p>
-					If you don't know what a component library is and need a summary, <a
-						class="inline-link"
-						href="/blog/component-libraries">read this</a
-					>.
+				<p
+					use:inview={inViewOptions}
+					on:inview_enter={(event) => {
+						const { inView } = event.detail;
+						isFuiImgsInView = inView;
+					}}
+					class="text-2xl text-center leading-3xl md:text-4xl md:leading-4xl md:text-left"
+				>
+					A Framework agnostic UI Toolkit.
 				</p>
-				<p>
-					The base of this project is being made for a client. It arose because the client has UIs
-					written in Vue, without a build system. They are currently developing web applications
-					using Tailwind. They need UI component solutions that can work regardless of the framework
-					and CSS solution, in past current and future projects.
-				</p>
-				<p>
-					I expanded the project for fun and learning by adding a Theme Generator. I named it
-					Foliole UI Toolkit. The application has been deployed to Vercel.
-				</p>
-				<div class="flex flex-col items-center space-y-2">
-					<a href="https://github.com/Foliole-UI-Toolkit/foliole-ui" class="inline-link"
-						>Foliole on github.</a
-					>
-					<a href="https://foliole-ui-docs.vercel.app/" class="inline-link">Foliole UI: Demo Site</a
-					>
-				</div>
-			</div>
-			<div class="card p-4">
-				<p class="font-bold text-[18px] text-center">
-					I am responsible for the project in its entirety, which includes:
-				</p>
-				<div>
-					<ul>
-						<li><span>👉</span> UI and visual experience.</li>
-						<li><span>👉</span> Site in Astro.</li>
-						<li><span>👉</span> Tailwind Plugin.</li>
-						<li>
-							<span>👉</span> Node.js script to generate CSS (and the CSSinJS) for Tailwind and vanilla
-							CSS purposes.
-						</li>
-						<li><span>👉</span> Theme Generator written in Svelte.</li>
-					</ul>
-					<ul>
-						<li><span>👉</span> Vue Components.</li>
-						<li><span>👉</span> Monorepo using pnpm.</li>
-						<li>
-							<span>👉</span> Initial testing using Vitest and Svelte Testing Library. (in progress)
-						</li>
-						<li><span>👉</span> Early project rules and changesets. (in progress)</li>
-						<li><span>👉</span> Deployment to Vercel.</li>
-					</ul>
-				</div>
-			</div>
+			{/if}
 		</div>
+
+		<div
+			class={`${
+				isFuiImgsInView ? 'opacity-100' : 'opacity-0'
+			} fade-in-view flex flex-col gap-2 md:flex-row justify-center md:justify-between items-center`}
+		>
+			{#if $hasScrolled && isFuiImgsInView}
+				<picture
+					in:fly={{ duration: 400, x: -100, delay: 520 }}
+					class=" md:w-[calc(33.33%-.25rem)] flex-initial h-auto"
+				>
+					<source media="(max-width: 767px)" srcset={folioInterfaceSm} />
+					<img
+						src={folioInterface}
+						class="border-4 rounded-md w-full"
+						alt="Foliole UI - Interface."
+						width="650"
+						height="1200"
+					/>
+				</picture>
+			{/if}
+			{#if $hasScrolled && isFuiImgsInView}
+				<img
+					src={folioHp}
+					class="border-4 rounded-md md:block hidden md:w-[calc(33.33%-.25rem)] flex-initial h-auto"
+					alt="Foliole UI - Home Page."
+					width="900"
+					height="492"
+					in:fly={{ duration: 400, x: -100, delay: 560 }}
+				/>
+			{/if}
+			{#if $hasScrolled && isFuiImgsInView}
+				<img
+					src={folioCg}
+					class={` fade-in-view border-4 rounded-md md:block hidden md:w-[calc(33.33%-.25rem)] flex-initial h-auto}`}
+					alt="Foliole UI - Color Generator."
+					width="1200"
+					height="650"
+					in:fly={{ duration: 400, x: -100, delay: 600 }}
+				/>
+			{/if}
+		</div>
+		{#if $hasScrolled && isFuiImgsInView}
+			<div class="space-y-4 area-two-col mx-auto">
+				<div class="space-y-4">
+					<h4
+						class="text-surface-800 text-3xl leading-4xl md:text-4xl p-0 md:leading-5xl font-bold text-center md:text-left"
+					>
+						Project Summary
+					</h4>
+					<p>
+						If you don't know what a component library is and need a summary, <a
+							class="inline-link"
+							href="/blog/component-libraries">read this</a
+						>.
+					</p>
+					<p>
+						The base of this project is being made for a client. It arose because the client has UIs
+						written in Vue, without a build system. They are currently developing web applications
+						using Tailwind. They need UI component solutions that can work regardless of the
+						framework and CSS solution, in past current and future projects.
+					</p>
+					<p>
+						I expanded the project for fun and learning by adding a Theme Generator. I named it
+						Foliole UI Toolkit. The application has been deployed to Vercel.
+					</p>
+					<div class="flex flex-col items-center space-y-2">
+						<a href="https://github.com/Foliole-UI-Toolkit/foliole-ui" class="inline-link"
+							>Foliole on github.</a
+						>
+						<a href="https://foliole-ui-docs.vercel.app/" class="inline-link"
+							>Foliole UI: Demo Site</a
+						>
+					</div>
+				</div>
+				<div class="card p-4">
+					<p class="font-bold text-[18px] text-center">
+						I am responsible for the project in its entirety, which includes:
+					</p>
+					<div>
+						<ul>
+							<li><span>👉</span> UI and visual experience.</li>
+							<li><span>👉</span> Site in Astro.</li>
+							<li><span>👉</span> Tailwind Plugin.</li>
+							<li>
+								<span>👉</span> Node.js script to generate CSS (and the CSSinJS) for Tailwind and vanilla
+								CSS purposes.
+							</li>
+							<li><span>👉</span> Theme Generator written in Svelte.</li>
+						</ul>
+						<ul>
+							<li><span>👉</span> Vue Components.</li>
+							<li><span>👉</span> Monorepo using pnpm.</li>
+							<li>
+								<span>👉</span> Initial testing using Vitest and Svelte Testing Library. (in progress)
+							</li>
+							<li><span>👉</span> Early project rules and changesets. (in progress)</li>
+							<li><span>👉</span> Deployment to Vercel.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		{/if}
 	</div>
 </section>
 
@@ -161,5 +209,8 @@
 	}
 	.img-responsive {
 		@apply max-w-full h-auto object-cover;
+	}
+	.fade-in-view {
+		@apply transition-opacity duration-700 ease-in-out delay-500;
 	}
 </style>
