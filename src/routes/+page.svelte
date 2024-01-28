@@ -13,7 +13,17 @@
 
 	let triggerOnMountTransitions = false;
 
+	const completedViews = {
+		projectShowCases: false,
+		designs: false
+	};
+
 	$: returnHome = $page.url.search === '?return-home';
+
+	function handleInviewComplete(event) {
+		console.log(event.detail.value);
+		completedViews[event.detail.value] = true;
+	}
 
 	onMount(() => {
 		triggerOnMountTransitions = true;
@@ -38,9 +48,13 @@
 <div class="page-one-col pt-0">
 	<h1 class="hp-hide-headings">Aaron Crockett</h1>
 	<h2 class="hp-hide-headings">Web Application Developer.</h2>
-	<ProjectShowCases />
-	<Designs />
-	<SummaryCV />
+	<ProjectShowCases {returnHome} on:inview-complete={handleInviewComplete} />
+	{#if completedViews.projectShowCases}
+		<Designs on:inview-complete={handleInviewComplete} />
+	{/if}
+	{#if completedViews.designs}
+		<SummaryCV />
+	{/if}
 	<AboutMe />
 </div>
 

@@ -4,23 +4,35 @@
 	import folioInterface from '$lib/images/foliole-interface.webp';
 	import folioInterfaceSm from '$lib/images/foliole-interface.webp';
 	//
+	import { createEventDispatcher, onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import { inview } from 'svelte-inview';
 	//
 	import { hasScrolled } from '$lib/store';
 
+	export let returnHome = false;
+
 	const inViewOptions = { rootMargin: '-50px', unobserveOnEnter: true };
 
-	$: isFuiImgsInView = false;
+	const dispatch = createEventDispatcher();
+
+	$: isFuiHlInView = false;
+	$: isFuiImgsView = false;
+	$: initView = ($hasScrolled || returnHome) && mounted;
+	$: {
+		if (isFuiImgsView) dispatch('inview-complete', { value: 'projectShowCases' });
+	}
+	$: mounted = false;
+	onMount(() => {
+		mounted = true;
+	});
 </script>
 
 <section>
-	{#if $hasScrolled}
+	{#if initView}
 		<h3
 			in:fly={{ duration: 400, y: -20, delay: 500 }}
-			class={` ${
-				$hasScrolled ? 'opacity-100' : 'opacity-0'
-			} fade-in-view  text-center md:text-left`}
+			class={`${initView ? 'opacity-100' : 'opacity-0'} fade-in-view  text-center md:text-left`}
 		>
 			Project ShowCases
 		</h3>
@@ -28,9 +40,9 @@
 	<div class="space-y-8">
 		<div
 			in:fly={{ duration: 400, y: -20, delay: 500 }}
-			class={` ${$hasScrolled ? 'opacity-100' : 'opacity-0'} fade-in-view `}
+			class={` ${initView ? 'opacity-100' : 'opacity-0'} fade-in-view `}
 		>
-			{#if $hasScrolled}
+			{#if initView}
 				<h4
 					class="text-secondary-700 text-4xl leading-5xl md:text-6xl p-0 md:leading-8xl font-bold text-center md:text-left"
 				>
@@ -40,7 +52,7 @@
 					use:inview={inViewOptions}
 					on:inview_enter={(event) => {
 						const { inView } = event.detail;
-						isFuiImgsInView = inView;
+						isFuiHlInView = inView;
 					}}
 					class="text-2xl text-center leading-3xl md:text-4xl md:leading-4xl md:text-left"
 				>
@@ -51,10 +63,10 @@
 
 		<div
 			class={`${
-				isFuiImgsInView ? 'opacity-100' : 'opacity-0'
+				isFuiHlInView ? 'opacity-100' : 'opacity-0'
 			} fade-in-view flex flex-col gap-2 md:flex-row justify-center md:justify-between items-center`}
 		>
-			{#if $hasScrolled && isFuiImgsInView}
+			{#if initView && isFuiHlInView}
 				<picture
 					in:fly={{ duration: 400, x: -100, delay: 520 }}
 					class=" md:w-[calc(33.33%-.25rem)] flex-initial h-auto"
@@ -69,7 +81,7 @@
 					/>
 				</picture>
 			{/if}
-			{#if $hasScrolled && isFuiImgsInView}
+			{#if initView && isFuiHlInView}
 				<img
 					src={folioHp}
 					class="border-4 rounded-md md:block hidden md:w-[calc(33.33%-.25rem)] flex-initial h-auto"
@@ -79,7 +91,7 @@
 					in:fly={{ duration: 400, x: -100, delay: 560 }}
 				/>
 			{/if}
-			{#if $hasScrolled && isFuiImgsInView}
+			{#if initView && isFuiHlInView}
 				<img
 					src={folioCg}
 					class={` fade-in-view border-4 rounded-md md:block hidden md:w-[calc(33.33%-.25rem)] flex-initial h-auto}`}
@@ -90,65 +102,81 @@
 				/>
 			{/if}
 		</div>
-		{#if $hasScrolled && isFuiImgsInView}
-			<div class="space-y-4 area-two-col mx-auto">
-				<div class="space-y-4">
-					<h4
-						class="text-surface-800 text-3xl leading-4xl md:text-4xl p-0 md:leading-5xl font-bold text-center md:text-left"
+		{#if initView && isFuiHlInView}
+			<div
+				use:inview={inViewOptions}
+				on:inview_enter={(event) => {
+					const { inView } = event.detail;
+					isFuiImgsView = inView;
+				}}
+				class="space-y-4 area-two-col mx-auto"
+			>
+				{#if isFuiImgsView}
+					<div
+						in:fly={{ duration: 400, x: 100, delay: 500 }}
+						class={`${isFuiImgsView ? 'opacity-100' : 'opacity-0'} space-y-4`}
 					>
-						Project Summary
-					</h4>
-					<p>
-						If you don't know what a component library is and need a summary, <a
-							class="inline-link"
-							href="/blog/component-libraries">read this</a
-						>.
-					</p>
-					<p>
-						The base of this project is being made for a client. It arose because the client has UIs
-						written in Vue, without a build system. They are currently developing web applications
-						using Tailwind. They need UI component solutions that can work regardless of the
-						framework and CSS solution, in past current and future projects.
-					</p>
-					<p>
-						I expanded the project for fun and learning by adding a Theme Generator. I named it
-						Foliole UI Toolkit. The application has been deployed to Vercel.
-					</p>
-					<div class="flex flex-col items-center space-y-2">
-						<a href="https://github.com/Foliole-UI-Toolkit/foliole-ui" class="inline-link"
-							>Foliole on github.</a
+						<h4
+							class="text-surface-800 text-3xl leading-4xl md:text-4xl p-0 md:leading-5xl font-bold text-center md:text-left"
 						>
-						<a href="https://foliole-ui-docs.vercel.app/" class="inline-link"
-							>Foliole UI: Demo Site</a
-						>
+							Project Summary
+						</h4>
+						<p>
+							If you don't know what a component library is and need a summary, <a
+								class="inline-link"
+								href="/blog/component-libraries">read this</a
+							>.
+						</p>
+						<p>
+							The base of this project is being made for a client. It arose because the client has
+							UIs written in Vue, without a build system. They are currently developing web
+							applications using Tailwind. They need UI component solutions that can work regardless
+							of the framework and CSS solution, in past current and future projects.
+						</p>
+						<p>
+							I expanded the project for fun and learning by adding a Theme Generator. I named it
+							Foliole UI Toolkit. The application has been deployed to Vercel.
+						</p>
+						<div class="flex flex-col items-center space-y-2">
+							<a href="https://github.com/Foliole-UI-Toolkit/foliole-ui" class="inline-link"
+								>Foliole on github.</a
+							>
+							<a href="https://foliole-ui-docs.vercel.app/" class="inline-link"
+								>Foliole UI: Demo Site</a
+							>
+						</div>
 					</div>
-				</div>
-				<div class="card p-4">
-					<p class="font-bold text-[18px] text-center">
-						I am responsible for the project in its entirety, which includes:
-					</p>
-					<div>
-						<ul>
-							<li><span>👉</span> UI and visual experience.</li>
-							<li><span>👉</span> Site in Astro.</li>
-							<li><span>👉</span> Tailwind Plugin.</li>
-							<li>
-								<span>👉</span> Node.js script to generate CSS (and the CSSinJS) for Tailwind and vanilla
-								CSS purposes.
-							</li>
-							<li><span>👉</span> Theme Generator written in Svelte.</li>
-						</ul>
-						<ul>
-							<li><span>👉</span> Vue Components.</li>
-							<li><span>👉</span> Monorepo using pnpm.</li>
-							<li>
-								<span>👉</span> Initial testing using Vitest and Svelte Testing Library. (in progress)
-							</li>
-							<li><span>👉</span> Early project rules and changesets. (in progress)</li>
-							<li><span>👉</span> Deployment to Vercel.</li>
-						</ul>
+
+					<div
+						in:fly={{ duration: 400, x: -100, delay: 500 }}
+						class={`${isFuiImgsView ? 'opacity-100' : 'opacity-0'} card p-4`}
+					>
+						<p class="font-bold text-[18px] text-center">
+							I am responsible for the project in its entirety, which includes:
+						</p>
+						<div>
+							<ul>
+								<li><span>👉</span> UI and visual experience.</li>
+								<li><span>👉</span> Site in Astro.</li>
+								<li><span>👉</span> Tailwind Plugin.</li>
+								<li>
+									<span>👉</span> Node.js script to generate CSS (and the CSSinJS) for Tailwind and vanilla
+									CSS purposes.
+								</li>
+								<li><span>👉</span> Theme Generator written in Svelte.</li>
+							</ul>
+							<ul>
+								<li><span>👉</span> Vue Components.</li>
+								<li><span>👉</span> Monorepo using pnpm.</li>
+								<li>
+									<span>👉</span> Initial testing using Vitest and Svelte Testing Library. (in progress)
+								</li>
+								<li><span>👉</span> Early project rules and changesets. (in progress)</li>
+								<li><span>👉</span> Deployment to Vercel.</li>
+							</ul>
+						</div>
 					</div>
-				</div>
+				{/if}
 			</div>
 		{/if}
 	</div>

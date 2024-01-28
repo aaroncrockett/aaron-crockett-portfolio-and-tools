@@ -1,5 +1,8 @@
 <script>
 	// Summary CV
+	import { createEventDispatcher, onMount } from 'svelte';
+	import { fly } from 'svelte/transition';
+	import { inview } from 'svelte-inview';
 	import * as feather from 'feather-icons';
 
 	const starIconSvg = feather?.icons['star']?.toSvg({
@@ -22,58 +25,92 @@
 		width: 28,
 		height: 28
 	});
+
+	//
+	const inViewOptions = { rootMargin: '-50px', unobserveOnEnter: true };
+
+	const dispatch = createEventDispatcher();
+
+	$: isInView = false;
+
+	$: {
+		if (isInView) dispatch('inview-complete', { value: 'summaryCV' });
+	}
+
+	$: mounted = false;
+
+	onMount(() => {
+		mounted = true;
+	});
 </script>
 
-<section class="page-section mt-2">
-	<h4 class="text-4xl leading-5xl md:text-6xl p-0 md:leading-8xl font-bold text-center">
-		CV Summary
-	</h4>
+<section
+	use:inview={inViewOptions}
+	on:inview_enter={(event) => {
+		const { inView } = event.detail;
+		isInView = inView;
+	}}
+	class="page-section mt-2"
+>
+	{#if mounted && isInView}
+		<h4
+			in:fly={{ duration: 400, y: -20, delay: 500 }}
+			class={`${
+				mounted ? 'opacity-100' : 'opacity-0'
+			} text-4xl leading-5xl md:text-6xl p-0 md:leading-8xl font-bold text-center`}
+		>
+			CV Summary
+		</h4>
 
-	<div class="grid sm:grid-cols-2 gap-2">
-		<div class="box">
-			<div class="flex flex-col w-full items-center p-4 card variant-glass">
-				<div class="py-2">{@html starIconSvg}</div>
-				<p class="text-center">
-					<span class="font-bold">Over 10 years of industry-related experience</span> across a
-					spectrum of team sizes and company scales including
-					<span class="font-bold">5 years of experience working for a fortune 1000 company</span>.
-				</p>
+		<div
+			in:fly={{ duration: 400, x: -100, delay: 500 }}
+			class={`${mounted ? 'opacity-100' : 'opacity-0'} grid sm:grid-cols-2 gap-2`}
+		>
+			<div class="box">
+				<div class="flex flex-col w-full items-center p-4 card variant-glass">
+					<div class="py-2">{@html starIconSvg}</div>
+					<p class="text-center">
+						<span class="font-bold">Over 10 years of industry-related experience</span> across a
+						spectrum of team sizes and company scales including
+						<span class="font-bold">5 years of experience working for a fortune 1000 company</span>.
+					</p>
+				</div>
+			</div>
+			<div class="box">
+				<div class="flex flex-col w-full items-center p-4 card variant-glass">
+					<div class="py-2">{@html awardUpIconSvg}</div>
+					<p class="text-center">
+						<span class="font-bold">During my 5 year tenure at Caleres,</span> I created highly
+						engaging experiences for Famous Footwear, on notable brands including
+						<span class="font-bold">Nike and Converse.</span> Won a company wide award for Converse Landing
+						page.
+					</p>
+				</div>
+			</div>
+			<div class="box">
+				<div class="flex flex-col w-full items-center p-4 card variant-glass">
+					<div class="py-2">{@html sendIconSvg}</div>
+					<p class="text-center">
+						Took charge of front-end development at Power Admin,
+						<span class="font-bold"
+							>independently engineering the front end of web appplications and UIs for product
+							development</span
+						> highlighting my autonomous capacity for delivery.
+					</p>
+				</div>
+			</div>
+			<div class="box">
+				<div class="flex flex-col w-full items-center p-4 card variant-glass">
+					<div class="py-2">{@html codeIconSvg}</div>
+					<p class="text-center">
+						<span class="font-bold">Proactive, flexible, friendly and creative.</span> Versatile
+						skill set that includes <span class="font-bold">development and visual design. </span> Self-taught
+						developer, avid learner and creator. Masters Degree in the arts and teaching experience.
+					</p>
+				</div>
 			</div>
 		</div>
-		<div class="box">
-			<div class="flex flex-col w-full items-center p-4 card variant-glass">
-				<div class="py-2">{@html awardUpIconSvg}</div>
-				<p class="text-center">
-					<span class="font-bold">During my 5 year tenure at Caleres,</span> I created highly
-					engaging experiences for Famous Footwear, on notable brands including
-					<span class="font-bold">Nike and Converse.</span> Won a company wide award for Converse Landing
-					page.
-				</p>
-			</div>
-		</div>
-		<div class="box">
-			<div class="flex flex-col w-full items-center p-4 card variant-glass">
-				<div class="py-2">{@html sendIconSvg}</div>
-				<p class="text-center">
-					Took charge of front-end development at Power Admin,
-					<span class="font-bold"
-						>independently engineering the front end of web appplications and UIs for product
-						development</span
-					> highlighting my autonomous capacity for delivery.
-				</p>
-			</div>
-		</div>
-		<div class="box">
-			<div class="flex flex-col w-full items-center p-4 card variant-glass">
-				<div class="py-2">{@html codeIconSvg}</div>
-				<p class="text-center">
-					<span class="font-bold">Proactive, flexible, friendly and creative.</span> Versatile skill
-					set that includes <span class="font-bold">development and visual design. </span> Self-taught
-					developer, avid learner and creator. Masters Degree in the arts and teaching experience.
-				</p>
-			</div>
-		</div>
-	</div>
+	{/if}
 </section>
 
 <style lang="postcss">
