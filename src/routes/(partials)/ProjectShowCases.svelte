@@ -20,7 +20,9 @@
 	$: isFuiImgsView = false;
 	$: initView = ($hasScrolled || returnHome) && mounted;
 	$: {
-		if (isFuiImgsView) dispatch('inview-complete', { value: 'projectShowCases' });
+		if (isFuiImgsView) {
+			dispatch('inview-complete', { value: 'projectShowCases' });
+		}
 	}
 	$: mounted = false;
 	onMount(() => {

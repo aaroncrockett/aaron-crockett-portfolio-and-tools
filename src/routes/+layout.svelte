@@ -25,6 +25,7 @@
 	$: ({ supabase, session } = data);
 
 	const sessionId = writable(session?.user?.id);
+	const allInview = writable(false);
 
 	$: {
 		console.log($sessionId);
@@ -52,6 +53,7 @@
 	// innerHeight as opposed to vh/screen for mobile, to account for mobile bars at bottom.
 	setContext('inner-height', innerHeightStore);
 	setContext('drawer-store', drawerStore);
+	setContext('all-inview', allInview);
 
 	$: innerHeight = 0;
 
@@ -115,7 +117,7 @@
 		<!-- Page Route Content -->
 		<slot />
 		<svelte:fragment slot="pageFooter">
-			<Footer />
+			<Footer visible={$allInview} />
 		</svelte:fragment>
 	</AppShell>
 </div>

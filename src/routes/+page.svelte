@@ -6,23 +6,28 @@
 	import SummaryCV from './(partials)/SummaryCV.svelte';
 
 	// Svelte related
-	import { onMount } from 'svelte';
+	import { getContext, onMount } from 'svelte';
+	import type { Writable } from 'svelte/store';
 	import { fade } from 'svelte/transition';
 	import { cubicIn } from 'svelte/easing';
 	import { page } from '$app/stores';
+
+	const allInview = getContext<Writable<boolean>>('all-inview');
 
 	let triggerOnMountTransitions = false;
 
 	const completedViews = {
 		projectShowCases: false,
-		designs: false
+		designs: false,
+		summaryCV: false
 	};
 
 	$: returnHome = $page.url.search === '?return-home';
 
-	function handleInviewComplete(event) {
-		console.log(event.detail.value);
+	function handleInviewComplete(event: any) {
 		completedViews[event.detail.value] = true;
+
+		if (event.detail.value === 'summaryCV') $allInview = true;
 	}
 
 	onMount(() => {
@@ -53,9 +58,12 @@
 		<Designs on:inview-complete={handleInviewComplete} />
 	{/if}
 	{#if completedViews.designs}
-		<SummaryCV />
+		<SummaryCV on:inview-complete={handleInviewComplete} />
 	{/if}
-	<AboutMe />
+
+	{#if completedViews.summaryCV}
+		<AboutMe />
+	{/if}
 </div>
 
 <style>
