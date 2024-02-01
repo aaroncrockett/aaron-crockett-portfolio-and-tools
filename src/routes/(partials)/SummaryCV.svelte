@@ -95,7 +95,7 @@
 						<span class="font-bold"
 							>independently engineering the front end of web appplications and UIs for product
 							development</span
-						> highlighting my autonomous capacity for delivery.
+						>.
 					</p>
 				</div>
 			</div>

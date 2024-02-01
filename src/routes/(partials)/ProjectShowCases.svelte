@@ -130,15 +130,10 @@
 							>.
 						</p>
 						<p>
-							The base of this project is being made for a client. It arose because the client has
-							UIs written in Vue, without a build system. They are currently developing web
-							applications using Tailwind. They need UI component solutions that can work regardless
-							of the framework and CSS solution, in past current and future projects.
+							I began creating this UI Library for fun and for my portfolio. I plan on using it in
+							my own projects in the future. It includes a Theme Generator.
 						</p>
-						<p>
-							I expanded the project for fun and learning by adding a Theme Generator. I named it
-							Foliole UI Toolkit. The application has been deployed to Vercel.
-						</p>
+
 						<div class="flex flex-col items-center space-y-2">
 							<a href="https://github.com/Foliole-UI-Toolkit/foliole-ui" class="inline-link"
 								>Foliole on github.</a
