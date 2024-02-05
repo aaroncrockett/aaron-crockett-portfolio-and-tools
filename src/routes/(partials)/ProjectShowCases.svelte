@@ -129,10 +129,7 @@
 								href="/blog/component-libraries">read this</a
 							>.
 						</p>
-						<p>
-							I began creating this UI Library for fun and for my portfolio. I plan on using it in
-							my own projects in the future. It includes a Theme Generator.
-						</p>
+						<p>More details about this project coming.</p>
 
 						<div class="flex flex-col space-y-1">
 							<a href="https://github.com/Foliole-UI-Toolkit/foliole-ui" class="inline-link"
