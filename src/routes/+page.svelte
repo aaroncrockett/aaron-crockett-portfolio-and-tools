@@ -19,7 +19,8 @@
 	const completedViews = {
 		projectShowCases: false,
 		designs: false,
-		summaryCV: false
+		summaryCV: false,
+		aboutMe: false
 	};
 
 	$: returnHome = $page.url.search === '?return-home';
@@ -27,7 +28,7 @@
 	function handleInviewComplete(event: any) {
 		completedViews[event.detail.value] = true;
 
-		if (event.detail.value === 'summaryCV') $allInview = true;
+		if (event.detail.value === 'aboutMe') $allInview = true;
 	}
 
 	onMount(() => {
@@ -57,12 +58,13 @@
 	{#if completedViews.projectShowCases}
 		<Designs on:inview-complete={handleInviewComplete} />
 	{/if}
+
 	{#if completedViews.designs}
 		<SummaryCV on:inview-complete={handleInviewComplete} />
 	{/if}
 
 	{#if completedViews.summaryCV}
-		<AboutMe />
+		<AboutMe on:inview-complete={handleInviewComplete} />
 	{/if}
 </div>
 

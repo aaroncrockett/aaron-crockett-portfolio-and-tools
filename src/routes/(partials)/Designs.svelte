@@ -1,9 +1,11 @@
 <script lang="ts">
+	// Lib Assets
 	import paFSnew from '$lib/images/pa-sm-new-deisgn-2024.webp';
 	import paFSnewSm from '$lib/images/pa-sm-new-design-2024-sm.webp';
 	import appSupp from '$lib/images/app-sup-interface.webp';
 	import appSuppSm from '$lib/images/app-sup-interface-sm.webp';
 
+	// Svelte related
 	import { createEventDispatcher, onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import { inview } from 'svelte-inview';
@@ -32,16 +34,17 @@
 		const { inView } = event.detail;
 		isInView = inView;
 	}}
+	class="section-mini-chunk"
 >
 	{#if mounted && isInView}
-		<h4
+		<h3
 			in:fly={{ duration: 400, y: -20, delay: 500 }}
 			class={`${
-				mounted ? 'opacity-100' : 'opacity-0'
-			} text-secondary-700 text-4xl leading-5xl md:text-6xl p-0 md:leading-8xl font-bold text-center`}
+				isInView ? 'opacity-100' : 'opacity-0'
+			} display-header text-secondary-700 text-center`}
 		>
 			Interface Design Examples
-		</h4>
+		</h3>
 
 		<div class="space-y-4">
 			<div
@@ -73,7 +76,7 @@
 					/>
 				</picture>
 			</div>
-			<p class={`${mounted ? 'opacity-100' : 'opacity-0'} italic text-center`}>
+			<p class={`${isInView ? 'opacity-100' : 'opacity-0'} italic text-center`}>
 				Both designs done by me. Left: Design Mock-up for PA SM Interface. Right: Actual interface
 				used in production in 2021.
 			</p>

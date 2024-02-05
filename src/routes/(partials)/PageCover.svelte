@@ -105,7 +105,7 @@
 		</div>
 		{#if headlinesTransitionsHaveEnded}
 			<p
-				class=" xl:text-4xl xl:leading-4xl sm:text-[4vw] sm:leading-[4vw] text-2xl leading-3xl text-surface-50"
+				class=" text-5xl leading-5xl sm:text-[8vw] sm:leading-[9vw] xl:text-8xl xl:leading-7xl uppercase text-surface-50"
 				in:fly={{
 					x: '-100%',
 					easing: cubicOut
@@ -126,8 +126,7 @@
 				'duration-200 container flex items-center mx-auto py-2'
 			)}
 		>
-			<span class={floatingIconClasses}>{@html downIconSvg}</span> Portfolio & CV Summary Portfolio &
-			CV Summary
+			<span class={floatingIconClasses}>{@html downIconSvg}</span> Portfolio, CV & More.
 		</span>
 	</h4>
 </div>

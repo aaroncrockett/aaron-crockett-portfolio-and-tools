@@ -48,7 +48,7 @@
 		<!-- Title -->
 
 		<hgroup class="space-y-2">
-			<h1 class="page-header text-primary-500">{data.meta.title}</h1>
+			<h1 class="content-page-header text-primary-500">{data.meta.title}</h1>
 			<div class="p-1 bg-gradient-to-r variant-gradient-primary-secondary" />
 			<div class="variant-ghost-secondary p-2 rounded">
 				<span class="block">

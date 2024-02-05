@@ -1,9 +1,10 @@
 <script>
 	// Summary CV
-	import { createEventDispatcher, onMount } from 'svelte';
+
 	import { fly } from 'svelte/transition';
 	import { inview } from 'svelte-inview';
 	import * as feather from 'feather-icons';
+	import { createEventDispatcher, onMount } from 'svelte';
 
 	const starIconSvg = feather?.icons['star']?.toSvg({
 		stroke: '#d7424b',
@@ -50,21 +51,29 @@
 		const { inView } = event.detail;
 		isInView = inView;
 	}}
-	class="page-section mt-2"
+	class="section-chunk"
 >
 	{#if mounted && isInView}
 		<h4
 			in:fly={{ duration: 400, y: -20, delay: 500 }}
 			class={`${
-				mounted ? 'opacity-100' : 'opacity-0'
-			} text-4xl leading-5xl md:text-6xl p-0 md:leading-8xl font-bold text-center`}
+				isInView ? 'opacity-100' : 'opacity-0'
+			} display-header-small fade-in-view text-center md:text-left`}
+		>
+			CV & More.
+		</h4>
+		<h3
+			in:fly={{ duration: 400, y: -20, delay: 500 }}
+			class={`${
+				isInView ? 'opacity-100' : 'opacity-0'
+			}  display-header text-center md:ltext-left text-surface-600 md:!mb-8 !mb-4`}
 		>
 			CV Summary
-		</h4>
+		</h3>
 
 		<div
 			in:fly={{ duration: 400, x: -100, delay: 500 }}
-			class={`${mounted ? 'opacity-100' : 'opacity-0'} grid sm:grid-cols-2 gap-2`}
+			class={`${isInView ? 'opacity-100' : 'opacity-0'} grid sm:grid-cols-2 gap-2`}
 		>
 			<div class="box">
 				<div class="flex flex-col w-full items-center p-4 card variant-glass">

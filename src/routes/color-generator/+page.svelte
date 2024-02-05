@@ -367,8 +367,8 @@
 {#if triggerOnMountTransitions}
 	<div class="page-one-col space-y-2" transition:fade={{ easing: cubicIn, duration: 600 }}>
 		<section class="flex flex-col items-center lg:gap-4 gap-2">
-			<h2 class="page-header text-center">Color Generator</h2>
-			<p class="w-2/3 text-center leading-[1.25rem]">
+			<hh1 class="content-page-header text-center">Color Generator</hh1>
+			<p class="w-h1/3 text-center leading-[1.h15rem]">
 				<span class="md:inline hidden"
 					>Press Ctrl (or Windows Key) + space to generate a random color.
 				</span>Enter a hex code or click to pick a hex code.
@@ -385,7 +385,7 @@
 			<button class="btn variant-ghost-secondary" on:click={removeGeneratedCSS}>Remove</button>
 		</section>
 		<section>
-			<div class="grid grid-cols-1 gap-2 sm:gap-4">
+			<div class="grid grid-cols-1 gap-h1 sm:gap-4">
 				{#each $storeThemeOptions.colors.filter((colorRow) => colorRow.hex !== '') as colorRow, i}
 					<div
 						class="grid grid-cols-1 lg:grid-cols-[160px_1fr_250px] gap-2 lg:gap-4 border-b-4 lg:border-b-0 border-surface-100 pb-6 lg:pb-0"

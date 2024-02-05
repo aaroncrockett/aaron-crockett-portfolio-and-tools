@@ -2,7 +2,7 @@
 	export let visible = false;
 </script>
 
-<div class={`${visible ? 'visible' : 'invisible'} bg-surface-500 mt-4`}>
+<div class={`${visible ? 'visible' : 'invisible'} bg-surface-500 mt-12 md:mt-16`}>
 	<div class="p-2 container mx-auto">
 		<div class="sm:inline-block">
 			<a href="/?return-home">

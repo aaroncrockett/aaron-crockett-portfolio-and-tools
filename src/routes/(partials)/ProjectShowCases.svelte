@@ -16,6 +16,8 @@
 
 	const dispatch = createEventDispatcher();
 
+	// TODO: Refactor to use new inViewMounted helper! It has been implimented in AboutMe, Designs and Summary CV
+
 	$: isFuiHlInView = false;
 	$: isFuiImgsView = false;
 	$: initView = ($hasScrolled || returnHome) && mounted;
@@ -32,12 +34,14 @@
 
 <section>
 	{#if initView}
-		<h3
+		<h4
 			in:fly={{ duration: 400, y: -20, delay: 500 }}
-			class={`${initView ? 'opacity-100' : 'opacity-0'} fade-in-view  text-center md:text-left`}
+			class={`${
+				initView ? 'opacity-100' : 'opacity-0'
+			} display-header-small fade-in-view text-center md:text-left`}
 		>
 			Project ShowCases
-		</h3>
+		</h4>
 	{/if}
 	<div class="space-y-8">
 		<div
@@ -45,21 +49,19 @@
 			class={` ${initView ? 'opacity-100' : 'opacity-0'} fade-in-view `}
 		>
 			{#if initView}
-				<h4
-					class="text-secondary-700 text-4xl leading-5xl md:text-6xl p-0 md:leading-8xl font-bold text-center md:text-left"
-				>
+				<h3 class="display-header text-secondary-700 text-center md:text-left">
 					<a href="https://foliole-ui-docs.vercel.app">Foliole UI: Library and Toolkit</a>
-				</h4>
-				<p
+				</h3>
+				<h4
 					use:inview={inViewOptions}
 					on:inview_enter={(event) => {
 						const { inView } = event.detail;
 						isFuiHlInView = inView;
 					}}
-					class="text-2xl text-center leading-3xl md:text-4xl md:leading-4xl md:text-left"
+					class="display-header text-center md:text-left"
 				>
 					A Framework agnostic UI Toolkit.
-				</p>
+				</h4>
 			{/if}
 		</div>
 
@@ -118,11 +120,9 @@
 						in:fly={{ duration: 400, x: 100, delay: 500 }}
 						class={`${isFuiImgsView ? 'opacity-100' : 'opacity-0'} space-y-4`}
 					>
-						<h4
-							class="text-surface-800 text-3xl leading-4xl md:text-4xl p-0 md:leading-5xl font-bold text-center md:text-left"
-						>
+						<h5 class="display-header text-surface-800 text-center md:text-left">
 							Project Summary
-						</h4>
+						</h5>
 						<p>
 							If you don't know what a component library is and need a summary, <a
 								class="inline-link"
@@ -134,7 +134,7 @@
 							my own projects in the future. It includes a Theme Generator.
 						</p>
 
-						<div class="flex flex-col items-center space-y-2">
+						<div class="flex flex-col space-y-1">
 							<a href="https://github.com/Foliole-UI-Toolkit/foliole-ui" class="inline-link"
 								>Foliole on github.</a
 							>
@@ -146,13 +146,13 @@
 
 					<div
 						in:fly={{ duration: 400, x: -100, delay: 500 }}
-						class={`${isFuiImgsView ? 'opacity-100' : 'opacity-0'} card p-4`}
+						class={`${isFuiImgsView ? 'opacity-100' : 'opacity-0'} card p-6`}
 					>
 						<p class="font-bold text-[18px] text-center">
 							I am responsible for the project in its entirety, which includes:
 						</p>
 						<div>
-							<ul>
+							<ul class="hp-project-list">
 								<li><span>👉</span> UI and visual experience.</li>
 								<li><span>👉</span> Site in Astro.</li>
 								<li><span>👉</span> Tailwind Plugin.</li>
@@ -162,7 +162,7 @@
 								</li>
 								<li><span>👉</span> Theme Generator written in Svelte.</li>
 							</ul>
-							<ul>
+							<ul class="hp-project-list">
 								<li><span>👉</span> Vue Components.</li>
 								<li><span>👉</span> Monorepo using pnpm.</li>
 								<li>
@@ -222,15 +222,11 @@
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 	}
-	.foliole-list-wrapper {
-		@apply grid gap-x-4 justify-around;
-		grid-template-columns: repeat(auto-fit, minmax(1rem, 18rem));
+	ul.hp-project-list li {
+		@apply leading-[32px] mb-1 text-[18px] text-secondary-900 font-bold;
 	}
-	ul li {
-		@apply leading-[30px] mb-1 text-[18px] text-secondary-900 font-bold;
-	}
-	ul li span {
-		margin-right: 0.25rem;
+	ul.hp-project-list li span {
+		@apply mr-1 text-[16px];
 	}
 	.img-responsive {
 		@apply max-w-full h-auto object-cover;
