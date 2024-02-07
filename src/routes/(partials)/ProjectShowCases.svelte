@@ -43,7 +43,7 @@
 			Project ShowCases
 		</h4>
 	{/if}
-	<div class="space-y-8">
+	<div class="space-y-6">
 		<div
 			in:fly={{ duration: 400, y: -20, delay: 500 }}
 			class={` ${initView ? 'opacity-100' : 'opacity-0'} fade-in-view `}

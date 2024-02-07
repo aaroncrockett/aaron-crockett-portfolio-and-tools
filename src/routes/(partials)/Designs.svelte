@@ -34,7 +34,7 @@
 		const { inView } = event.detail;
 		isInView = inView;
 	}}
-	class="section-mini-chunk"
+	class="section-mini-chunk space-y-6"
 >
 	{#if mounted && isInView}
 		<h3
@@ -46,40 +46,38 @@
 			Interface Design Examples
 		</h3>
 
-		<div class="space-y-4">
-			<div
-				in:fly={{ duration: 400, x: -200, delay: 500 }}
-				class={`${
-					mounted ? 'opacity-100' : 'opacity-0'
-				} flex flex-col gap-4 md:flex-row mt-8 mb-4 justify-center items-center`}
-			>
-				<picture>
-					<source media="(max-width: 767px)" srcset={paFSnewSm} />
-					<img
-						src={paFSnew}
-						class="border-4 rounded-md"
-						alt="App Supervisor Interface."
-						loading="lazy"
-						width="450"
-						height="800"
-					/>
-				</picture>
-				<picture>
-					<source media="(max-width: 767px)" srcset={appSuppSm} />
-					<img
-						src={appSupp}
-						class="border-4 rounded-md"
-						alt="App Supervisor Interface."
-						loading="lazy"
-						width="450"
-						height="800"
-					/>
-				</picture>
-			</div>
-			<p class={`${isInView ? 'opacity-100' : 'opacity-0'} italic text-center`}>
-				Both designs done by me. Left: Design Mock-up for PA SM Interface. Right: Actual interface
-				used in production in 2021.
-			</p>
+		<div
+			in:fly={{ duration: 400, x: -200, delay: 500 }}
+			class={`${
+				mounted ? 'opacity-100' : 'opacity-0'
+			} flex flex-col gap-4 md:flex-row justify-center items-center`}
+		>
+			<picture>
+				<source media="(max-width: 767px)" srcset={paFSnewSm} />
+				<img
+					src={paFSnew}
+					class="border-4 rounded-md"
+					alt="App Supervisor Interface."
+					loading="lazy"
+					width="450"
+					height="800"
+				/>
+			</picture>
+			<picture>
+				<source media="(max-width: 767px)" srcset={appSuppSm} />
+				<img
+					src={appSupp}
+					class="border-4 rounded-md"
+					alt="App Supervisor Interface."
+					loading="lazy"
+					width="450"
+					height="800"
+				/>
+			</picture>
 		</div>
+		<p class={`${isInView ? 'opacity-100' : 'opacity-0'} italic text-center pt-2`}>
+			Both designs done by me. Left: Design Mock-up for PA SM Interface. Right: Actual interface
+			used in production in 2021.
+		</p>
 	{/if}
 </section>
