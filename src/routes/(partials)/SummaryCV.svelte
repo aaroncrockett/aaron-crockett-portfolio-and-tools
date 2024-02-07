@@ -66,7 +66,7 @@
 			in:fly={{ duration: 400, y: -20, delay: 500 }}
 			class={`${
 				isInView ? 'opacity-100' : 'opacity-0'
-			}  display-header text-center md:ltext-left text-surface-600 md:!mb-8 !mb-4`}
+			}  display-header text-center md:ltext-left text-primary-600 md:!mb-8 !mb-4`}
 		>
 			CV Summary
 		</h3>

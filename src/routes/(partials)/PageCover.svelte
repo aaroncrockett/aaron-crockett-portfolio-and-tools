@@ -18,15 +18,14 @@
 	let headlinesTransitionsHaveEnded = false;
 	let triggerOnMountAnimations = false;
 
-	let coverHeadlineTwColor = 'text-primary-500';
+	let coverHeadlineTwColor = 'text-secondary-600';
 	let headlines: string[] = [];
 
 	const opacity = tweened(1, { duration: 400, easing: cubicOut });
 
-	$: floatingIconClasses = 'floatingSpan relative -bottom-1';
+	$: floatingIconClasses = 'floatingSpan relative -bottom-1 ';
 	$: {
 		if ($hasScrolled) {
-			coverHeadlineTwColor = 'text-surface-500';
 			floatingIconClasses = 'relative -bottom-0';
 
 			$opacity = 0;
@@ -117,7 +116,7 @@
 	</div>
 
 	<h4
-		class="z-5 absolute flex w-full items-center bottom-0 right-0 left-0 bg-surface-50 text-primary-500 sm:text-3xl sm:leading-3xl text-xl leading-xl sm:pb-0"
+		class="z-5 absolute flex w-full items-center bottom-0 right-0 left-0 bg-surface-50 text-tertiary-300 sm:text-3xl sm:leading-3xl text-xl leading-xl sm:pb-0"
 	>
 		<span
 			style="opacity: {$opacity}"

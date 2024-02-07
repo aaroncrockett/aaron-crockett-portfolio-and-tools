@@ -40,7 +40,7 @@
 			in:fly={{ duration: 400, y: -20, delay: 500 }}
 			class={`${
 				isInView ? 'opacity-100' : 'opacity-0'
-			} display-header text-primary-500 text-center md:!mb-8 !mb-4 md:text-left`}
+			} display-header text-primary-600 text-center md:!mb-8 !mb-4 md:text-left`}
 		>
 			A little more about me.
 		</h3>

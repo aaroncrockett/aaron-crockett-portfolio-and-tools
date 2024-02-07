@@ -49,7 +49,7 @@
 			class={` ${initView ? 'opacity-100' : 'opacity-0'} fade-in-view `}
 		>
 			{#if initView}
-				<h3 class="display-header text-secondary-700 text-center md:text-left">
+				<h3 class="display-header text-primary-600 text-center md:text-left">
 					<a href="https://foliole-ui-docs.vercel.app">Foliole UI: Library and Toolkit</a>
 				</h3>
 				<h4
