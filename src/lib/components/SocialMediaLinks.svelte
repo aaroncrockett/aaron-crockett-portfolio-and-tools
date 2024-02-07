@@ -22,18 +22,18 @@
 
 	const gitIconSvgSm = feather.icons['github'].toSvg({
 		stroke: '#d7424b',
-		width: 22,
-		height: 22
+		width: 24,
+		height: 24
 	});
 	const linkedIconSvgSm = feather.icons['linkedin'].toSvg({
 		stroke: '#d7424b',
-		width: 22,
-		height: 22
+		width: 24,
+		height: 24
 	});
 	const mailIconSvgSm = feather.icons['mail'].toSvg({
 		stroke: '#d7424b',
-		width: 22,
-		height: 22
+		width: 24,
+		height: 24
 	});
 
 	let copied = false;
@@ -46,7 +46,11 @@
 	}
 </script>
 
-<button on:click={handleCopied} class="inline-block sm:p-1" use:clipboard={emailAddress}>
+<button
+	on:click={handleCopied}
+	class="inline-block sm:m-2 m-[.325rem]"
+	use:clipboard={emailAddress}
+>
 	{#if copied}
 		<span class="text-sm text-tertiary-500">COPIED 👍</span>
 	{:else}
@@ -61,7 +65,7 @@
 
 <a
 	on:click
-	class="inline-block sm:p-1"
+	class="inline-block sm:p-2 p-[.325rem]"
 	href="https://github.com/aaroncrockett/"
 	target="_blank"
 	rel="noreferrer"
@@ -75,7 +79,7 @@
 </a>
 <a
 	on:click
-	class=" sm:p-1 inline-block"
+	class="inline-block sm:p-2 p-[.325rem]"
 	href="https://www.linkedin.com/in/aaron-crockett-4741176a/"
 	target="_blank"
 	rel="noreferrer"

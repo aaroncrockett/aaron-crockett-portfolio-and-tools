@@ -51,7 +51,7 @@
 				in:fly={{ duration: 400, x: -200, delay: 500 }}
 				class={`${
 					mounted ? 'opacity-100' : 'opacity-0'
-				} flex flex-col gap-4 md:flex-row justify-center items-center`}
+				} flex flex-col gap-4 md:flex-row mt-8 mb-4 justify-center items-center`}
 			>
 				<picture>
 					<source media="(max-width: 767px)" srcset={paFSnewSm} />

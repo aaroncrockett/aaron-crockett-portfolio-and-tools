@@ -100,11 +100,17 @@
 				<div class="flex flex-col w-full items-center p-4 card variant-glass">
 					<div class="py-2">{@html sendIconSvg}</div>
 					<p class="text-center">
-						Took charge of front-end development at Power Admin,
+						<span class="font-bold">Power Admin:</span> Created web applications, web sites, and
+						interfaces. Worked independently,
 						<span class="font-bold"
-							>independently engineering the front end of web appplications and UIs for product
-							development</span
-						>.
+							>showcasing my ability to independently engineer projects from start to finish.</span
+						>
+					</p>
+					<p class="text-center">
+						<span class="font-bold">Blackstone Publishing:</span> Collaborated on fullstack
+						development on the internal company catalog. Created new web application features and
+						parts of the web architecture. maintained legacy code,
+						<span class="font-bold">showcasing my versatility.</span>
 					</p>
 				</div>
 			</div>
@@ -112,9 +118,12 @@
 				<div class="flex flex-col w-full items-center p-4 card variant-glass">
 					<div class="py-2">{@html codeIconSvg}</div>
 					<p class="text-center">
-						<span class="font-bold">Proactive, flexible, friendly and creative.</span> Versatile
-						skill set that includes <span class="font-bold">development and visual design. </span> Self-taught
-						developer, avid learner and creator. Masters Degree in the arts and teaching experience.
+						<span class="font-bold"
+							>Proactive, flexible, friendly. Both technical and creative.</span
+						>
+						Versatile skill set that includes
+						<span class="font-bold">development and visual design. </span> Self-taught developer, avid
+						learner and creator. Masters Degree in the arts and teaching experience.
 					</p>
 				</div>
 			</div>

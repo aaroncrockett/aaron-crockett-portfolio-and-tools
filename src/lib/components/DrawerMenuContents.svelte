@@ -31,18 +31,18 @@
 </script>
 
 <div class="flex">
-	<div class="space-y-2 p-2">
-		<div class="border-b border-primary-500">
-			<a on:click={() => drawerStore.close()} class="inline-block p-1 sm:p-2" href="/?return-home">
+	<div class="space-y-4 p-2">
+		<div class="border-primary-500">
+			<a on:click={() => drawerStore.close()} class="inline-block p-2 pb-0" href="/?return-home">
 				<span class="hidden sm:inline-block">
 					{@html homeIconSvg}
 				</span>
-				<span class=" inline-block sm:hidden">
+				<span class=" inline-block space-y-2 sm:hidden">
 					{@html homeIconSvgSm}
 				</span>
 			</a>
 		</div>
-		<div class="flex flex-col items-center space-y-2">
+		<div class="flex flex-col items-center space-y-4">
 			<SocialMediaLinks on:click={() => drawerStore.close()} />
 		</div>
 	</div>

@@ -60,11 +60,6 @@
 				</div>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
-				{#if $sessionId}
-					<form method="post" action="sign-out">
-						<button class="btn btn-sm font-bold variant-soft-primary">Sign Out</button>
-					</form>
-				{/if}
 				<SocialMediaLinks />
 
 				{#if isHome || isSmallScreen}
