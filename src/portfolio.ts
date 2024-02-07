@@ -54,6 +54,10 @@ export const portfolio: CustomThemeConfig = {
 		'--color-tertiary-700': '191 152 5', // #bf9805
 		'--color-tertiary-800': '153 122 4', // #997a04
 		'--color-tertiary-900': '125 99 3', // #7d6303
+
+		// tertiary | #FFCB06
+		'--color-cta-500': '74, 95, 240',
+
 		// success | #ABD037
 		'--color-success-50': '242 248 225', // #f2f8e1
 		'--color-success-100': '238 246 215', // #eef6d7
