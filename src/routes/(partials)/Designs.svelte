@@ -46,7 +46,7 @@
 			Interface Design Examples
 		</h3>
 
-		<div class="space-y-4">
+		<div class="space-y-4 pt-4">
 			<div
 				in:fly={{ duration: 400, x: -200, delay: 500 }}
 				class={`${
