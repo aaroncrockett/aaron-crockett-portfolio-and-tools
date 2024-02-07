@@ -5,7 +5,6 @@
 	import { cubicIn } from 'svelte/easing';
 	// Skeleton
 	import { storeHighlightJs } from '@skeletonlabs/skeleton';
-	import 'highlight.js/styles/github-dark.css';
 
 	// Highlight js
 	import hljs from 'highlight.js/lib/core';
