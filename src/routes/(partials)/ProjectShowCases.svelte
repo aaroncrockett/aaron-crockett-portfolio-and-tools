@@ -98,7 +98,7 @@
 			{#if initView && isFuiHlInView}
 				<img
 					src={folioCg}
-					class={` fade-in-view border-4 rounded-md md:block hidden md:w-[calc(33.33%-.25rem)] flex-initial h-auto}`}
+					class={`fade-in-view border-4 rounded-md md:block hidden md:w-[calc(33.33%-.25rem)] flex-initial h-auto}`}
 					alt="Foliole UI - Color Generator."
 					width="1200"
 					height="650"
@@ -118,7 +118,7 @@
 				{#if isFuiImgsView}
 					<div
 						in:fly={{ duration: 400, x: 100, delay: 500 }}
-						class={`${isFuiImgsView ? 'opacity-100' : 'opacity-0'} space-y-4`}
+						class={`${isFuiImgsView ? 'opacity-100' : 'opacity-0'} space-y-4 mt-2`}
 					>
 						<h5 class="display-header text-surface-800 text-center md:text-left">
 							Project Summary
@@ -131,7 +131,7 @@
 						</p>
 						<p>More details about this project coming.</p>
 
-						<div class="flex flex-col space-y-1">
+						<div class="flex flex-col space-y-2 !mb-6 !mt-6">
 							<a href="https://github.com/Foliole-UI-Toolkit/foliole-ui" class="inline-link"
 								>Foliole on github.</a
 							>
@@ -143,7 +143,7 @@
 
 					<div
 						in:fly={{ duration: 400, x: -100, delay: 500 }}
-						class={`${isFuiImgsView ? 'opacity-100' : 'opacity-0'} card p-6`}
+						class={`${isFuiImgsView ? 'opacity-100' : 'opacity-0'} card p-4`}
 					>
 						<p class="font-bold text-[18px] text-center">
 							I am responsible for the project in its entirety, which includes:
