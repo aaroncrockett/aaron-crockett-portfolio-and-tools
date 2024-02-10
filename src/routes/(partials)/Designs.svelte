@@ -41,16 +41,16 @@
 			in:fly={{ duration: 400, y: -20, delay: 500 }}
 			class={`${
 				isInView ? 'opacity-100' : 'opacity-0'
-			} display-header text-primary-600 text-center`}
+			} display-header text-primary-600 text-center fade-in-view`}
 		>
 			Interface Design Examples
 		</h3>
 
 		<div
-			in:fly={{ duration: 400, x: -200, delay: 500 }}
+			in:fly={{ duration: 400, x: -200, delay: 700 }}
 			class={`${
-				mounted ? 'opacity-100' : 'opacity-0'
-			} flex flex-col gap-4 md:flex-row justify-center items-center`}
+				isInView ? 'opacity-100' : 'opacity-0'
+			} flex flex-col gap-4 md:flex-row justify-center items-center fade-in-view`}
 		>
 			<picture>
 				<source media="(max-width: 767px)" srcset={paFSnewSm} />
@@ -75,7 +75,7 @@
 				/>
 			</picture>
 		</div>
-		<p class={`${isInView ? 'opacity-100' : 'opacity-0'} italic text-center pt-2`}>
+		<p class={`${isInView ? 'opacity-100' : 'opacity-0'} italic text-center pt-2 fade-in-view`}>
 			Both designs done by me. Left: Design Mock-up for PA SM Interface. Right: Actual interface
 			used in production in 2021.
 		</p>

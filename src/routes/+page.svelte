@@ -51,7 +51,7 @@
 	</div>
 {/if}
 
-<div class="page-one-col pt-0">
+<div class="ac-hp page-one-col pt-0">
 	<h1 class="hp-hide-headings">Aaron Crockett</h1>
 	<h2 class="hp-hide-headings">Web Application Developer.</h2>
 	<ProjectShowCases {returnHome} on:inview-complete={handleInviewComplete} />
@@ -69,6 +69,12 @@
 </div>
 
 <style>
+	:global(.ac-hp .img-responsive) {
+		@apply max-w-full h-auto object-cover;
+	}
+	:global(.ac-hp .fade-in-view) {
+		@apply transition-opacity duration-700 ease-in-out delay-500;
+	}
 	.hp-hide-headings {
 		position: absolute;
 		width: 1px;

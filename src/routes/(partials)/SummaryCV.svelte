@@ -72,8 +72,8 @@
 				CV Summary
 			</h3>
 			<div
-				in:fly={{ duration: 400, x: -100, delay: 500 }}
-				class={`${isInView ? 'opacity-100' : 'opacity-0'} grid sm:grid-cols-2 gap-2`}
+				in:fly={{ duration: 400, x: -100, delay: 700 }}
+				class={`${isInView ? 'opacity-100' : 'opacity-0'} grid sm:grid-cols-2 gap-2 fade-in-view`}
 			>
 				<div class="box">
 					<div class="flex flex-col w-full items-center p-4 card variant-glass">

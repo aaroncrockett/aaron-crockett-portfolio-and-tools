@@ -68,7 +68,7 @@
 		<div
 			class={`${
 				isFuiHlInView ? 'opacity-100' : 'opacity-0'
-			} fade-in-view flex flex-col gap-2 md:flex-row justify-center md:justify-between items-center`}
+			} flex flex-col gap-2 md:flex-row justify-center md:justify-between items-center fade-in-view`}
 		>
 			{#if initView && isFuiHlInView}
 				<picture
@@ -224,11 +224,5 @@
 	}
 	ul.hp-project-list li span {
 		@apply mr-1 text-[16px];
-	}
-	.img-responsive {
-		@apply max-w-full h-auto object-cover;
-	}
-	.fade-in-view {
-		@apply transition-opacity duration-700 ease-in-out delay-500;
 	}
 </style>

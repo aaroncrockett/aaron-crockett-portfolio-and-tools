@@ -40,13 +40,15 @@
 			in:fly={{ duration: 400, y: -20, delay: 500 }}
 			class={`${
 				isInView ? 'opacity-100' : 'opacity-0'
-			} display-header text-primary-600 text-center md:!mb-8 !mb-4 md:text-left`}
+			} display-header text-primary-600 text-center md:!mb-8 !mb-4 md:text-left fade-in-view `}
 		>
 			A little more about me.
 		</h3>
 		<div
-			in:fly={{ duration: 400, x: 200, delay: 500 }}
-			class={`${isInView ? 'opacity-100' : 'opacity-0'}  flex flex-col gap-4 md:flex-row`}
+			in:fly={{ duration: 400, x: 200, delay: 700 }}
+			class={`${
+				isInView ? 'opacity-100' : 'opacity-0'
+			}  flex flex-col gap-4 md:flex-row fade-in-view `}
 		>
 			<div class="w-full order-2 space-x-2 sm:order-1 flex md:w-1/2">
 				<div class="w-[45%] hidden sm:block">
