@@ -11,7 +11,6 @@
 	import { inview } from 'svelte-inview';
 
 	const dispatch = createEventDispatcher();
-
 	const inViewOptions = { rootMargin: '-50px', unobserveOnEnter: true };
 
 	$: isInView = false;
