@@ -102,16 +102,15 @@
 						<div class="py-2">{@html sendIconSvg}</div>
 						<p class="text-center">
 							<span class="font-bold">Power Admin:</span> Created web applications, web sites, and
-							interfaces. Worked independently,
+							interfaces. Self-managed where I worked directly with the sole proprietor/stakeholder,
 							<span class="font-bold"
 								>showcasing my ability to independently engineer projects from start to finish.</span
 							>
 						</p>
 						<p class="text-center">
-							<span class="font-bold">Blackstone Publishing:</span> Collaborated on fullstack
-							development on the internal company catalog. Created new web application features and
-							parts of the web architecture. maintained legacy code,
-							<span class="font-bold">showcasing my versatility.</span>
+							<span class="font-bold">Blackstone Publishing:</span> Contributed to full-stack development
+							for the internal company catalog, showcasing my continuous integration and software maintenance
+							skills for daily operational use.
 						</p>
 					</div>
 				</div>
@@ -123,8 +122,8 @@
 								>Proactive, flexible, friendly. Both technical and creative.</span
 							>
 							Versatile skill set that includes
-							<span class="font-bold">development and visual design. </span> Self-taught developer, avid
-							learner and creator. Masters Degree in the arts and teaching experience.
+							<span class="font-bold">development and visual design sense. </span> Self-taught developer,
+							avid learner and creator.
 						</p>
 					</div>
 				</div>
