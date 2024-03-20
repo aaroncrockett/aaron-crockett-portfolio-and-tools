@@ -42,17 +42,18 @@
 		setTimeout(() => {
 			triggerOnMountAnimations = true;
 			let index = 0;
-			// Create headline line in chunks from headlinesBucket to animate in.
-			const interval = setInterval(() => {
-				if (index < headlinesBucket.length) {
-					headlines = [...headlines, headlinesBucket[index]];
-					index++;
-				} else {
-					headlinesTransitionsHaveEnded = true;
-					clearInterval(interval);
-				}
-			}, 450);
-		}, 400);
+			setTimeout(() => {
+				const interval = setInterval(() => {
+					if (index < headlinesBucket.length) {
+						headlines = [...headlines, headlinesBucket[index]];
+						index++;
+					} else {
+						headlinesTransitionsHaveEnded = true;
+						clearInterval(interval);
+					}
+				}, 350);
+			}, 75);
+		}, 750);
 	});
 	const starIconSvg = feather?.icons['star']?.toSvg({
 		stroke: '#110F10',
@@ -73,7 +74,7 @@
 	<!-- Transition background intro. -->
 	{#if triggerOnMountAnimations}
 		<div
-			class="absolute inset-0 z-100 bg-surface-600"
+			class={` absolute inset-0 z-100 bg-surface-600 fade-in-view `}
 			style={`height: ${$innerHeight}px;`}
 			in:fly={{ y: '100%', easing: cubicOut }}
 		/>
