@@ -50,7 +50,7 @@
 		>
 			{#if initView}
 				<h3 class="display-header text-primary-600 text-center md:text-left">
-					<a href="https://foliole-ui-docs.vercel.app">Foliole UI: Library and Toolkit</a>
+					Leaf UI: Library and Toolkit
 				</h3>
 				<h4
 					use:inview={inViewOptions}
@@ -137,7 +137,7 @@
 
 						<div class="flex flex-col space-y-2 !mb-6 !mt-6">
 							<a href="https://github.com/aaroncrockett/leaf-ui" class="inline-link"
-								>Foliole on github.</a
+								>Leaf UI on github.</a
 							>
 						</div>
 					</div>

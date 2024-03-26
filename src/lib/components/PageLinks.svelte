@@ -18,7 +18,7 @@
 
 {#if $sessionId}
 	<a on:click class="page-link" href="/account">
-		<span class="inline-flex items-center hover:!text-tertiary-500">
+		<span class="inline-flex items-center hover:!text-secondary-500">
 			{#if showChevron}
 				<span class="pr-[.1rem]">{@html chevronRightIconSvg}</span>
 			{/if}
@@ -49,7 +49,7 @@
 	</a> -->
 {/if}
 <a on:click class="page-link" href="/color-generator">
-	<span class="inline-flex items-center hover:!text-tertiary-500">
+	<span class="inline-flex items-center hover:!text-secondary-500">
 		{#if showChevron}
 			<span class="pr-[.1rem]">{@html chevronRightIconSvg}</span>
 		{/if}
@@ -59,7 +59,7 @@
 	>
 </a>
 <a on:click class="page-link" href="/blog">
-	<span class="inline-flex items-center hover:!text-tertiary-500">
+	<span class="inline-flex items-center hover:!text-secondary-500">
 		{#if showChevron}
 			<span class="pr-[.1rem]">{@html chevronRightIconSvg}</span>
 		{/if}

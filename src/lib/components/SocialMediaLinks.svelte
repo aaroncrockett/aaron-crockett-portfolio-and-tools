@@ -52,7 +52,7 @@
 	use:clipboard={emailAddress}
 >
 	{#if copied}
-		<span class="text-sm text-tertiary-500">COPIED 👍</span>
+		<span class="text-sm text-secondary-500">COPIED 👍</span>
 	{:else}
 		<span class="hidden sm:inline">
 			{@html mailIconSvg}
