@@ -113,7 +113,7 @@
 					const { inView } = event.detail;
 					isFuiImgsView = inView;
 				}}
-				class="space-y-4 area-two-col mx-auto"
+				class="space-y-4 area-two-col lg:ml-[10%] lg:mr-[7.5%]"
 			>
 				{#if isFuiImgsView}
 					<div
@@ -129,14 +129,15 @@
 								href="/blog/component-libraries">read this</a
 							>.
 						</p>
-						<p>More details about this project coming.</p>
+						<p>
+							This project is in progress. The above images display an earlier design and project
+							name. The code can be seen on github under "Leaf-UI". Live docs site coming soon. More
+							details about this project coming.
+						</p>
 
 						<div class="flex flex-col space-y-2 !mb-6 !mt-6">
-							<a href="https://github.com/Foliole-UI-Toolkit/foliole-ui" class="inline-link"
+							<a href="https://github.com/aaroncrockett/leaf-ui" class="inline-link"
 								>Foliole on github.</a
-							>
-							<a href="https://foliole-ui-docs.vercel.app/" class="inline-link"
-								>Foliole UI: Demo Site</a
 							>
 						</div>
 					</div>
@@ -151,21 +152,19 @@
 						<div>
 							<ul class="hp-project-list">
 								<li><span>👉</span> UI and visual experience.</li>
-								<li><span>👉</span> Site in Astro.</li>
+								<li><span>👉</span> Docs site in Next.js.</li>
 								<li><span>👉</span> Tailwind Plugin.</li>
 								<li>
 									<span>👉</span> Node.js script to generate CSS (and the CSSinJS) for Tailwind and vanilla
 									CSS purposes.
 								</li>
-								<li><span>👉</span> Theme Generator written in Svelte.</li>
+								<li><span>👉</span> Theme Generator written in React.</li>
 							</ul>
 							<ul class="hp-project-list">
+								<li><span>👉</span> React Components.</li>
 								<li><span>👉</span> Vue Components.</li>
 								<li><span>👉</span> Monorepo using pnpm.</li>
-								<li>
-									<span>👉</span> Initial testing using Vitest and Svelte Testing Library. (in progress)
-								</li>
-								<li><span>👉</span> Early project rules and changesets. (in progress)</li>
+								<li><span>👉</span> Rules using Husky.</li>
 								<li><span>👉</span> Deployment to Vercel.</li>
 							</ul>
 						</div>
