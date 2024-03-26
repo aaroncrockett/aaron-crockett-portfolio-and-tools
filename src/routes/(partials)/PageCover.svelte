@@ -53,7 +53,7 @@
 					}
 				}, 350);
 			}, 75);
-		}, 750);
+		}, 625);
 	});
 	const starIconSvg = feather?.icons['star']?.toSvg({
 		stroke: '#110F10',
