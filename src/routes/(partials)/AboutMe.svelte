@@ -36,7 +36,7 @@
 >
 	{#if mounted && isInView}
 		<h3
-			in:fly={{ duration: 400, y: -20, delay: 500 }}
+			in:fly={{ duration: 400, y: -20, delay: 250 }}
 			class={`${
 				isInView ? 'opacity-100' : 'opacity-0'
 			} display-header text-primary-600 text-center md:!mb-8 !mb-4 md:text-left fade-in-view `}

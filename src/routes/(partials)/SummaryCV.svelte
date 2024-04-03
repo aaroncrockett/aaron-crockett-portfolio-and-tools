@@ -55,7 +55,7 @@
 >
 	{#if mounted && isInView}
 		<h4
-			in:fly={{ duration: 400, y: -20, delay: 500 }}
+			in:fly={{ duration: 400, y: -20, delay: 250 }}
 			class={`${
 				isInView ? 'opacity-100' : 'opacity-0'
 			} display-header-small fade-in-view text-center md:text-left`}
@@ -64,7 +64,7 @@
 		</h4>
 		<div class="space-y-6">
 			<h3
-				in:fly={{ duration: 400, y: -20, delay: 500 }}
+				in:fly={{ duration: 400, y: -20, delay: 250 }}
 				class={`${
 					isInView ? 'opacity-100' : 'opacity-0'
 				}  display-header text-center md:ltext-left text-primary-600`}
@@ -72,7 +72,7 @@
 				CV Summary
 			</h3>
 			<div
-				in:fly={{ duration: 400, x: -100, delay: 700 }}
+				in:fly={{ duration: 400, x: -100, delay: 400 }}
 				class={`${isInView ? 'opacity-100' : 'opacity-0'} grid sm:grid-cols-2 gap-2 fade-in-view`}
 			>
 				<div class="box">

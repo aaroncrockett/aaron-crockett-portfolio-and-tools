@@ -35,7 +35,7 @@
 <section>
 	{#if initView}
 		<h4
-			in:fly={{ duration: 400, y: -20, delay: 500 }}
+			in:fly={{ duration: 400, y: -20, delay: 250 }}
 			class={`${
 				initView ? 'opacity-100' : 'opacity-0'
 			} display-header-small fade-in-view text-center md:text-left`}
