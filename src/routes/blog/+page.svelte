@@ -26,7 +26,7 @@
 		<ul class="preview-posts preview-full space-y-2">
 			{#each data.posts as post}
 				<li class="preview-post-item border-b border-surface-300 pb-2">
-					<a href="blog/{post.slug}" class="title flex items-center inline-link">{post.title}</a>
+					<a href="/blog/{post.slug}" class="title flex items-center inline-link">{post.title}</a>
 					<p class="date">{formatDate(post.date)}</p>
 					<p class="description">{post.description}</p>
 				</li>
