@@ -38,7 +38,7 @@
 
 	$: returnHome = $page.url.search === '?return-home';
 	$: isHome = $page?.route.id === '/';
-	$: wrapperClasses = classNames(isHome && !returnHome ? 'fixed top-0 right-0 left-0' : '');
+	$: wrapperClasses = classNames(isHome && !returnHome ? 'fixedz-20 top-0 right-0 left-0' : '');
 
 	onMount(() => {
 		triggerOnMountTransitions = true;

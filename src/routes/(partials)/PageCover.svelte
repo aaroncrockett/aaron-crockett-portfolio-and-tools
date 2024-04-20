@@ -51,22 +51,10 @@
 						headlinesTransitionsHaveEnded = true;
 						clearInterval(interval);
 					}
-				}, 350);
+				}, 400);
 			}, 75);
-		}, 625);
+		}, 500);
 	});
-	const starIconSvg = feather?.icons['star']?.toSvg({
-		stroke: '#110F10',
-		width: 50,
-		height: 50
-	});
-	const starIconSvgSm = feather?.icons['star']?.toSvg({
-		stroke: '#110F10',
-		width: 36,
-		height: 36
-	});
-	const starIconDataUrl = `url('data:image/svg+xml;base64,${btoa(starIconSvg)}')`;
-	const starIconSmDataUrl = `url('data:image/svg+xml;base64,${btoa(starIconSvgSm)}')`;
 </script>
 
 <!-- Remove scroll bars with overflow-hidden until animations are finished to avoid layout shift -->
@@ -79,25 +67,26 @@
 			in:fly={{ y: '100%', easing: cubicOut }}
 		/>
 	{/if}
-	<div class="flex flex-wrap absolute inset-0 z-1">
-		<div
-			class="flex flex-wrap absolute inset-0 z-1 opacity-[.05] hidden md:block"
-			style={`background-image: ${starIconDataUrl}; background-repeat: repeat;`}
-		/>
-		<div
-			class="flex flex-wrap absolute inset-0 z-1 opacity-[.05] md:hidden"
-			style={`background-image: ${starIconSmDataUrl}; background-repeat: repeat;`}
-		/>
-	</div>
+
 	<div class="container relative px-3 sm:px-2 pt-20 sm:pt-16 pb-12 mx-auto z-1">
-		<div class="flex flex-col overflow-hidden">
-			{#each headlines as line}
+		<div class="flex flex-col overflow-hidden relative">
+			<div class="absolute z-10">
+				{#each headlines as line}
+					<h3
+						class="font-bold uppercase text-surface-50 text-5xl leading-5xl sm:text-[8vw] sm:leading-[9vw] xl:text-8xl xl:leading-7xl"
+						in:fly={{
+							y: 150,
+							easing: backOut
+						}}
+					>
+						{line}
+					</h3>
+				{/each}
+			</div>
+
+			{#each headlinesBucket as line}
 				<h3
-					class="font-bold uppercase text-surface-50 text-5xl leading-5xl sm:text-[8vw] sm:leading-[9vw] xl:text-8xl xl:leading-7xl"
-					in:fly={{
-						y: 150,
-						easing: backOut
-					}}
+					class=" font-bold uppercase text-secondary-800 opacity-50 text-5xl leading-5xl sm:text-[8vw] sm:leading-[9vw] xl:text-8xl xl:leading-7xl"
 				>
 					{line}
 				</h3>

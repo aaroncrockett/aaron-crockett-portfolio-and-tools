@@ -73,7 +73,7 @@
 		@apply max-w-full h-auto object-cover;
 	}
 	:global(.ac-hp .fade-in-view) {
-		@apply transition-opacity duration-700 ease-in-out delay-500;
+		@apply transition-opacity duration-500 ease-in-out delay-200;
 	}
 	.hp-hide-headings {
 		position: absolute;

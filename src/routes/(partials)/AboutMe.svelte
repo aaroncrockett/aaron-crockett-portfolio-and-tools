@@ -3,7 +3,7 @@
 	import dogsImg from '$lib/images/jasper-fred.webp';
 	import dogsImgMd from '$lib/images/jasper-fred-md.webp';
 	import dogsImgSm from '$lib/images/jasper-fred-sm.webp';
-	import me from '$lib/images/me-smile.webp';
+	import me from '$lib/images/headshot.jpg';
 
 	// Svelte related
 	import { createEventDispatcher, onMount } from 'svelte';
@@ -77,10 +77,10 @@
 			</div>
 			<div class="w-full space-y-2 sm:order-2 md:w-1/2">
 				<p>
-					I live in Portland, Oregon, with my husband Nick and our two dogs, Jasper and Fred.
-					Outside of creating and engineering, I enjoy hiking, game nights with friends, and
-					exploring local restaurants. Every morning, I start my day by going for a jog either at
-					the park or along the riverfront, followed by meditation, before I begin work.
+					I live in Portland, Oregon, with my husband Nick and my dog, Jasper and Fred. Outside of
+					creating and engineering, I enjoy hiking, game nights with friends, and exploring local
+					restaurants. Every morning, I start my day by going for a jog either at the park or along
+					the riverfront, followed by meditation, before I begin work.
 				</p>
 				<p>
 					I have always had a passion for creating things. Earlier in life I pursued my interests in
