@@ -22,13 +22,17 @@
 	let headlines: string[] = [];
 
 	const opacity = tweened(1, { duration: 400, easing: cubicOut });
+	let hideElement: boolean;
+	$: hideElement = false;
 
 	$: floatingIconClasses = 'floatingSpan relative -bottom-1 ';
 	$: {
-		if ($hasScrolled) {
+		if ($hasScrolled && !hideElement) {
 			floatingIconClasses = 'relative -bottom-0';
-
 			$opacity = 0;
+			setTimeout(() => {
+				hideElement = true;
+			}, 600);
 		}
 	}
 
@@ -104,21 +108,21 @@
 			</p>
 		{/if}
 	</div>
-
-	<h4
-		class="z-5 absolute flex w-full items-center bottom-0 right-0 left-0 bg-surface-50 text-tertiary-300 sm:text-3xl sm:leading-3xl text-xl leading-xl sm:pb-0"
-	>
-		<span
-			style="opacity: {$opacity}"
-			class={classNames(
-				coverHeadlineTwColor,
-				'duration-200 container flex items-center mx-auto py-2'
-			)}
-		>
-			<span class={floatingIconClasses}>{@html downIconSvg}</span> Portfolio, CV & More.
-		</span>
-	</h4>
 </div>
+<h4
+	class="z-5 absolute flex w-full items-center bottom-0 right-0 left-0 bg-surface-50 text-tertiary-300 sm:text-3xl sm:leading-3xl text-xl leading-xl sm:pb-0"
+>
+	<span
+		style="opacity: {$opacity}"
+		class={classNames(
+			coverHeadlineTwColor,
+			'duration-200 container flex items-center mx-auto py-2',
+			hideElement ? 'hidden' : ''
+		)}
+	>
+		<span class={floatingIconClasses}>{@html downIconSvg}</span> Portfolio, CV & More.
+	</span>
+</h4>
 
 <style>
 	@keyframes floatEffect {
