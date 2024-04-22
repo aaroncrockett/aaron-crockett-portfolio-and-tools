@@ -94,7 +94,10 @@
 			/>
 		</svelte:fragment>
 		<!-- Page Route Content -->
-		<slot />
+		<div class="continaer">
+			<slot />
+		</div>
+
 		<svelte:fragment slot="pageFooter">
 			<Footer visible={$allInview} />
 		</svelte:fragment>

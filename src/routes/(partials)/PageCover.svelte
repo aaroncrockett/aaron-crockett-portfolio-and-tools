@@ -12,7 +12,11 @@
 	// Other
 	import classNames from 'classnames';
 
-	const headlinesBucket = ['WEB', 'APPLICATION', 'DEVELOPER'];
+	const headlinesBucket = [
+		['<', 'WEB', '/>'],
+		['<', 'APP', '/>'],
+		['<', 'DEVELOPER', '/>']
+	];
 
 	const innerHeight = getContext('inner-height');
 
@@ -25,7 +29,7 @@
 
 	let coverHeadlineTwColor = 'text-secondary-500';
 
-	let headlines: string[] = [];
+	let headlines: string[][] = [];
 
 	$: hideHl = false;
 	$: floatingIconClasses = 'floatingSpan relative -bottom-1 ';
@@ -75,27 +79,27 @@
 		/>
 	{/if}
 
-	<div class="container relative px-3 sm:px-2 mx-auto z-1">
+	<div class="container relative px-3 sm:px-2 mx-auto z-1 pt-2">
 		<div class="flex flex-col overflow-hidden relative">
 			<div class="absolute z-10">
-				{#each headlines as line}
+				{#each headlines as line, index}
 					<h3
-						class="font-bold uppercase text-surface-50 text-[8.75vw] leading-[11vw] md:leading-[10vw] lg:leading-[8.75vw]"
+						class="font-bold text-surface-400 text-[8.75vw] opacity-90 leading-[11vw] md:leading-[10vw] lg:leading-[8.75vw]"
 						in:fly={{
 							y: 150,
 							easing: backOut
 						}}
 					>
-						{line}
+						{line[0]}<span class=" text-white">{line[1]}</span>{line[2]}
 					</h3>
 				{/each}
 			</div>
 
-			{#each headlinesBucket as line}
+			{#each headlinesBucket as line, index}
 				<h3
-					class=" font-bold uppercase text-secondary-800 opacity-50 text-[8.75vw] leading-[11vw] md:leading-[10vw] lg:leading-[8.75vw]"
+					class=" font-bold text-secondary-900 opacity-50 text-[8.75vw] leading-[11vw] md:leading-[10vw] lg:leading-[8.75vw]"
 				>
-					{line}
+					{line[0]}<span class="">{line[1]}</span>{line[2]}
 				</h3>
 			{/each}
 		</div>
@@ -107,7 +111,9 @@
 					easing: cubicOut
 				}}
 			>
-				PORTFOLIO.
+				<span class=" text-surface-400">&lt;</span><span
+					class="lowercase italic text-secondary-500 opacity-90 font-normal">portfolio</span
+				><span class=" text-surface-400">/&gt;</span>
 			</p>
 		{/if}
 	</div>

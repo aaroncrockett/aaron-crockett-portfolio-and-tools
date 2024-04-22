@@ -18,11 +18,11 @@
 
 	// TODO: Refactor to use new inViewMounted helper! It has been implimented in AboutMe, Designs and Summary CV
 
-	$: isFuiHlInView = false;
-	$: isFuiImgsView = false;
+	$: isHlInView = false;
+	$: isImgsView = false;
 	$: initView = ($hasScrolled || returnHome) && mounted;
 	$: {
-		if (isFuiImgsView) {
+		if (isImgsView) {
 			dispatch('inview-complete', { value: 'projectShowCases' });
 		}
 	}
@@ -49,14 +49,14 @@
 			class={` ${initView ? 'opacity-100' : 'opacity-0'} fade-in-view `}
 		>
 			{#if initView}
-				<h3 class="display-header text-primary-500 text-center md:text-left">
+				<h3 class="display-header text-primary-600 text-center md:text-left">
 					Leaf UI: Library and Toolkit
 				</h3>
 				<h4
 					use:inview={inViewOptions}
 					on:inview_enter={(event) => {
 						const { inView } = event.detail;
-						isFuiHlInView = inView;
+						isHlInView = inView;
 					}}
 					class="display-header text-center md:text-left"
 				>
@@ -67,10 +67,10 @@
 
 		<div
 			class={`${
-				isFuiHlInView ? 'opacity-100' : 'opacity-0'
-			} flex flex-col gap-2 md:flex-row justify-center md:justify-between items-center fade-in-view`}
+				isHlInView ? 'opacity-100' : 'opacity-0'
+			} project-showcases-anchor flex flex-col gap-2 md:flex-row justify-center md:justify-between items-center fade-in-view`}
 		>
-			{#if initView && isFuiHlInView}
+			{#if initView && isHlInView}
 				<picture
 					in:fly={{ duration: 400, x: -100, delay: 520 }}
 					class=" md:w-[calc(33.33%-.25rem)] flex-initial h-auto"
@@ -85,7 +85,7 @@
 					/>
 				</picture>
 			{/if}
-			{#if initView && isFuiHlInView}
+			{#if initView && isHlInView}
 				<img
 					src={folioHp}
 					class="border-4 rounded-md md:block hidden md:w-[calc(33.33%-.25rem)] flex-initial h-auto"
@@ -95,7 +95,7 @@
 					in:fly={{ duration: 400, x: -100, delay: 560 }}
 				/>
 			{/if}
-			{#if initView && isFuiHlInView}
+			{#if initView && isHlInView}
 				<img
 					src={folioCg}
 					class={`fade-in-view border-4 rounded-md md:block hidden md:w-[calc(33.33%-.25rem)] flex-initial h-auto}`}
@@ -106,19 +106,19 @@
 				/>
 			{/if}
 		</div>
-		{#if initView && isFuiHlInView}
+		{#if initView && isHlInView}
 			<div
 				use:inview={inViewOptions}
 				on:inview_enter={(event) => {
 					const { inView } = event.detail;
-					isFuiImgsView = inView;
+					isImgsView = inView;
 				}}
 				class="space-y-4 area-two-col lg:ml-[10%] lg:mr-[7.5%]"
 			>
-				{#if isFuiImgsView}
+				{#if isImgsView}
 					<div
 						in:fly={{ duration: 400, x: 100, delay: 500 }}
-						class={`${isFuiImgsView ? 'opacity-100' : 'opacity-0'} space-y-4 mt-2`}
+						class={`${isImgsView ? 'opacity-100' : 'opacity-0'} space-y-4 mt-2`}
 					>
 						<h5 class="display-header text-surface-800 text-center md:text-left">
 							Project Summary
@@ -144,7 +144,7 @@
 
 					<div
 						in:fly={{ duration: 400, x: -100, delay: 500 }}
-						class={`${isFuiImgsView ? 'opacity-100' : 'opacity-0'} card p-4`}
+						class={`${isImgsView ? 'opacity-100' : 'opacity-0'} card p-4`}
 					>
 						<p class="font-bold text-[18px] text-center">
 							I am responsible for the project in its entirety, which includes:
