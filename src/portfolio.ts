@@ -38,8 +38,8 @@ export const portfolio: CustomThemeConfig = {
 		'--color-secondary-200': '210 237 251', // #d2edfb
 		'--color-secondary-300': '183 226 249', // #b7e2f9
 		'--color-secondary-400': '128 204 245', // #80ccf5
-		'--color-secondary-500': '74 182 240', // #4AB6F0
-		'--color-secondary-600': '67 164 216', // #43a4d8
+		'--color-secondary-500': '56 137 180', // #4AB6F0
+		'--color-secondary-600': '56 137 180', // #43a4d8
 		'--color-secondary-700': '56 137 180', // #3889b4
 		'--color-secondary-800': '44 109 144', // #2c6d90
 		'--color-secondary-900': '36 89 118', // #245976

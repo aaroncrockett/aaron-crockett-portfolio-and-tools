@@ -3,7 +3,7 @@
 	import dogsImg from '$lib/images/jasper-fred.webp';
 	import dogsImgMd from '$lib/images/jasper-fred-md.webp';
 	import dogsImgSm from '$lib/images/jasper-fred-sm.webp';
-	import me from '$lib/images/headshot.jpg';
+	import me from '$lib/images/headshot-right.jpg';
 
 	// Svelte related
 	import { createEventDispatcher, onMount } from 'svelte';

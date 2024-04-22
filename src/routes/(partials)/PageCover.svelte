@@ -13,25 +13,28 @@
 	import classNames from 'classnames';
 
 	const headlinesBucket = ['WEB', 'APPLICATION', 'DEVELOPER'];
+
 	const innerHeight = getContext('inner-height');
+
+	const opacity = tweened(1, { duration: 400, easing: cubicOut });
+
+	let hideHl: boolean;
 
 	let headlinesTransitionsHaveEnded = false;
 	let triggerOnMountAnimations = false;
 
-	let coverHeadlineTwColor = 'text-secondary-600';
+	let coverHeadlineTwColor = 'text-secondary-500';
+
 	let headlines: string[] = [];
 
-	const opacity = tweened(1, { duration: 400, easing: cubicOut });
-	let hideElement: boolean;
-	$: hideElement = false;
-
+	$: hideHl = false;
 	$: floatingIconClasses = 'floatingSpan relative -bottom-1 ';
 	$: {
-		if ($hasScrolled && !hideElement) {
+		if ($hasScrolled && !hideHl) {
 			floatingIconClasses = 'relative -bottom-0';
 			$opacity = 0;
 			setTimeout(() => {
-				hideElement = true;
+				hideHl = true;
 			}, 600);
 		}
 	}
@@ -72,12 +75,12 @@
 		/>
 	{/if}
 
-	<div class="container relative px-3 sm:px-2 pt-20 sm:pt-16 pb-12 mx-auto z-1">
+	<div class="container relative px-3 sm:px-2 mx-auto z-1">
 		<div class="flex flex-col overflow-hidden relative">
 			<div class="absolute z-10">
 				{#each headlines as line}
 					<h3
-						class="font-bold uppercase text-surface-50 text-5xl leading-5xl sm:text-[8vw] sm:leading-[9vw] xl:text-8xl xl:leading-7xl"
+						class="font-bold uppercase text-surface-50 text-[8.75vw] leading-[11vw] md:leading-[10vw] lg:leading-[8.75vw]"
 						in:fly={{
 							y: 150,
 							easing: backOut
@@ -90,7 +93,7 @@
 
 			{#each headlinesBucket as line}
 				<h3
-					class=" font-bold uppercase text-secondary-800 opacity-50 text-5xl leading-5xl sm:text-[8vw] sm:leading-[9vw] xl:text-8xl xl:leading-7xl"
+					class=" font-bold uppercase text-secondary-800 opacity-50 text-[8.75vw] leading-[11vw] md:leading-[10vw] lg:leading-[8.75vw]"
 				>
 					{line}
 				</h3>
@@ -98,7 +101,7 @@
 		</div>
 		{#if headlinesTransitionsHaveEnded}
 			<p
-				class=" text-5xl leading-5xl sm:text-[8vw] sm:leading-[9vw] xl:text-8xl xl:leading-7xl uppercase text-surface-50"
+				class=" font-bold text-[8.75vw] leading-[11vw] md:leading-[10vw] lg:leading-[8.75vw] uppercase text-surface-50"
 				in:fly={{
 					x: '-100%',
 					easing: cubicOut
@@ -110,14 +113,14 @@
 	</div>
 </div>
 <h4
-	class="z-5 absolute flex w-full items-center bottom-0 right-0 left-0 bg-surface-50 text-tertiary-300 sm:text-3xl sm:leading-3xl text-xl leading-xl sm:pb-0"
+	class="z-5 absolute flex w-full items-center bottom-0 right-0 left-0 bg-surface-50 text-tertiary-500 sm:text-3xl sm:leading-3xl text-xl leading-xl sm:pb-0"
 >
 	<span
 		style="opacity: {$opacity}"
 		class={classNames(
 			coverHeadlineTwColor,
 			'duration-200 container flex items-center mx-auto py-2',
-			hideElement ? 'hidden' : ''
+			hideHl ? 'hidden' : ''
 		)}
 	>
 		<span class={floatingIconClasses}>{@html downIconSvg}</span> Portfolio, CV & More.
