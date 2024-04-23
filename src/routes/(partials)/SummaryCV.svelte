@@ -109,23 +109,15 @@
 								>showcasing my ability to independently engineer projects from start to finish.</span
 							>
 						</p>
-						<p class="text-center">
-							<span class="font-bold">Blackstone Publishing:</span> Contributed to full-stack development
-							for the internal company catalog, showcasing my continuous integration and software maintenance
-							skills for daily operational use.
-						</p>
 					</div>
 				</div>
 				<div class="box">
 					<div class="flex flex-col items-center w-full p-4 card variant-glass">
 						<div class="py-2">{@html codeIconSvg}</div>
 						<p class="text-center">
-							<span class="font-bold"
-								>Proactive, flexible, friendly. Both technical and creative.</span
-							>
-							Versatile skill set that includes
-							<span class="font-bold">development and visual design sense. </span> Self-taught developer,
-							avid learner and creator.
+							<span class="font-bold">Blackstone Publishing:</span> Contributed to full-stack development
+							for the internal company catalog, showcasing my continuous integration and software maintenance
+							skills for daily operational use.
 						</p>
 					</div>
 				</div>

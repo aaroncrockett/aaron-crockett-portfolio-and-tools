@@ -147,16 +147,43 @@
 				}}
 				class="p-4 md:pt-6"
 			>
-				<p class="pb-2 text-2xl leading-2xl md:leading-3xl text-surface-100 md:text-3xl md:w-2/3">
+				<p class="pb-4 text-2xl leading-2xl md:leading-3xl text-surface-100 md:text-3xl md:w-2/3">
 					Greetings! I'm Aaron Crockett, and welcome to my portfolio.
 				</p>
-				<p class="text-lg text-justify text-surface-100 leading-2x md:w-2/3">
+				<p class="pb-4 text-lg text-justify text-surface-100 leading-2x md:w-2/3">
 					With over a decade of industry experience, I've collaborated with teams of various sizes,
 					honing my skills across a diverse spectrum—from design to front-end engineering and full
-					stack development. This portfolio serves as a gateway, offering a glimpse, including my
-					GitHub repository and a selection of designs I've crafted. Interested in learning more?
-					Feel free to reach out via email to request my resume.
+					stack development.
 				</p>
+				<p class="pb-4 text-lg text-justify text-surface-100 leading-2x md:w-2/3">
+					I have created highly visible and engaging experiences for Famous Footwear, on notable
+					brands including Nike and Converse. Showcased my ability to thrive in a Fortune 1000
+					company, within large, diverse and dynamic teams. I have experience collaborating directly
+					with a sole proprietor. Illustrating my autonomy through self-management, I was entrusted
+					as the sole developer of UIs for new products on a small team. In addition, I Contributed
+					to Full Stack development for the internal company catalog, demonstrating my ability to
+					create continually integrated applications integral for daily company operations.
+				</p>
+				<p class="pb-4 text-lg text-justify text-surface-100 leading-2x md:w-2/3">
+					This portfolio serves as a gateway, offering a glimpse, including my GitHub repository and
+					a selection of designs I've crafted. Interested in learning more? Feel free to reach out
+					via email to request my resume.
+				</p>
+				<!-- <p class="pb-4 text-lg text-justify text-surface-100 leading-2x md:w-2/3">
+					<span class="font-bold">Primary Tech Expertise:</span> Next.js • React.js • React Query • Vue.js
+					• Pinia • CSS • Tailwind CSS • Sass • REST • TypeScript • Figma • Git •Jest
+				</p> -->
+				<!-- <p class="pb-4 text-lg text-justify text-surface-100 leading-2x md:w-2/3">
+					<span class="font-bold">Secondary Tech Expertise:</span> Cypress • Docker • Express.js • Firebase
+					• GSAP • jQuery • Node.js • Npm • Pnpm • Svelte/SvelteKit • Storybook • SQL/ORMs • Vercel •
+					Vite • Vuex • WordPress
+				</p>
+				<p class="pb-12 text-lg text-justify text-surface-100 leading-2x md:w-2/3">
+					<span class="font-bold">Skills:</span> Front-End Development • Full Stack Development • Responsive
+					Web Design • Cross Browser Compatibility • Project Management • Workflow Optimization • Version
+					Control • Agile Development • Web Application Development • Cross-Functional Team Collaboration
+					• Single Page Applications (SPA) • Server Side Render (SSR) • Hydration
+				</p> -->
 			</div>
 		{/if}
 	</div>
