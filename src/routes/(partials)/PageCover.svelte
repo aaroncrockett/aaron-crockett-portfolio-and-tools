@@ -1,7 +1,7 @@
 <script lang="ts">
 	// Svelte
 	import { onMount } from 'svelte';
-	import { fly } from 'svelte/transition';
+	import { fade, fly } from 'svelte/transition';
 	import { tweened } from 'svelte/motion';
 
 	import { backOut, cubicOut } from 'svelte/easing';
@@ -13,8 +13,7 @@
 	import classNames from 'classnames';
 
 	const headlinesBucket = [
-		['<', 'WEB', '/>'],
-		['<', 'APP', '/>'],
+		['<', 'WEB-APP', '/>'],
 		['<', 'DEVELOPER', '/>']
 	];
 
@@ -87,7 +86,7 @@
 </script>
 
 <!-- Remove scroll bars with overflow-hidden until animations are finished to avoid layout shift -->
-<div class="relative bg-primary-500" style={`height: ${$innerHeight}px;`}>
+<div class="relative bg-secondary-900" style={`height: ${$innerHeight}px;`}>
 	<!-- Transition background intro. -->
 	{#if triggerOnMountAnimations}
 		<div
@@ -102,7 +101,7 @@
 			<div class="absolute z-10">
 				{#each headlines as line, index}
 					<h3
-						class="font-bold text-[8.5vw] leading-[11vw] md:leading-[10vw] lg:leading-[8.5vw]"
+						class="font-bold text-[6vw] leading-[7vw] md:leading-[6.5vw] lg:leading-[6vw]"
 						in:fly={{
 							y: 150,
 							easing: backOut
@@ -117,7 +116,7 @@
 
 			{#each headlinesBucket as line, index}
 				<h3
-					class=" font-bold text-surface-900 opacity-90 text-[8.5vw] leading-[11vw] md:leading-[10vw] lg:leading-[8.5vw]"
+					class=" font-bold text-surface-900 opacity-90 text-[6vw] leading-[7vw] md:leading-[6.5vw] lg:leading-[6vw]"
 				>
 					<span class="opacity-50 text-secondary-900">{line[0]}</span><span
 						class="opacity-50 text-secondary-900">{line[1]}</span
@@ -128,7 +127,7 @@
 		{#if headlinesTransitionsHaveEnded}
 			<button
 				on:click={handleScrollTo}
-				class=" font-bold text-[8.5vw] text-surface-900 opacity-90 leading-[11vw] md:leading-[10vw] lg:leading-[8.5vw] uppercase"
+				class=" font-bold text-[6vw] text-surface-900 opacity-90 leading-[7vw] md:leading-[6.5vw] lg:leading-[6vw] uppercase"
 				in:fly={{
 					x: '-100%',
 					easing: cubicOut
@@ -139,8 +138,31 @@
 				><span class="opacity-50 text-secondary-900">/&gt;</span>
 			</button>
 		{/if}
+		{#if headlinesTransitionsHaveEnded}
+			<div
+				in:fly={{
+					x: '-100%',
+					easing: cubicOut,
+					duration: 800
+				}}
+			>
+				<p
+					class="pt-10 pb-2 text-2xl leading-2xl md:leading-4xl text-surface-100 md:text-4xl md:w-2/3"
+				>
+					Greetings! I'm Aaron Crockett, and welcome to my portfolio.
+				</p>
+				<p class="text-lg text-surface-100 leading-2x md:w-2/3">
+					With over a decade of industry experience, I've collaborated with teams of various sizes,
+					honing my skills across a diverse spectrum—from design to front-end engineering and full
+					stack development. This portfolio serves as a gateway, offering a glimpse, including my
+					GitHub repository and a selection of designs I've crafted. Interested in learning more?
+					Feel free to reach out via email to request my resume.
+				</p>
+			</div>
+		{/if}
 	</div>
 </div>
+
 <button
 	on:click={handleScrollTo}
 	class={` ${
