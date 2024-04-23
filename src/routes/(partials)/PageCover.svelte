@@ -96,18 +96,18 @@
 		/>
 	{/if}
 
-	<div class="container relative px-3 sm:px-2 mx-auto z-1 pt-2">
-		<div class="flex flex-col overflow-hidden relative">
+	<div class="container relative px-2 pt-2 mx-auto md:pt-1 z-1">
+		<div class="relative flex flex-col overflow-hidden">
 			<div class="absolute z-10">
 				{#each headlines as line, index}
 					<h3
-						class="font-bold text-[6vw] leading-[7vw] md:leading-[6.5vw] lg:leading-[6vw]"
+						class="font-bold text-4xl leading-4xl md:text-[5vw] md:leading-[6vw] lg:leading-[5.5vw]"
 						in:fly={{
 							y: 150,
 							easing: backOut
 						}}
 					>
-						<span class="opacity-0">{line[0]}</span><span class=" text-white">{line[1]}</span><span
+						<span class="opacity-0">{line[0]}</span><span class="text-white">{line[1]}</span><span
 							class="opacity-0">{line[2]}</span
 						>
 					</h3>
@@ -116,7 +116,7 @@
 
 			{#each headlinesBucket as line, index}
 				<h3
-					class=" font-bold text-surface-900 opacity-90 text-[6vw] leading-[7vw] md:leading-[6.5vw] lg:leading-[6vw]"
+					class="font-bold text-surface-900 opacity-90 text-4xl leading-4xl md:text-[5vw] md:leading-[6vw] lg:leading-[5.5vw]"
 				>
 					<span class="opacity-50 text-secondary-900">{line[0]}</span><span
 						class="opacity-50 text-secondary-900">{line[1]}</span
@@ -127,14 +127,14 @@
 		{#if headlinesTransitionsHaveEnded}
 			<button
 				on:click={handleScrollTo}
-				class=" font-bold text-[6vw] text-surface-900 opacity-90 leading-[7vw] md:leading-[6.5vw] lg:leading-[6vw] uppercase"
+				class="font-bold text-4xl leading-4xl md:text-[5vw] text-surface-900 opacity-90 md:leading-[5.5vw] lg:leading-[5vw] uppercase"
 				in:fly={{
 					x: '-100%',
 					easing: cubicOut
 				}}
 			>
 				<span class="opacity-50 text-secondary-900">&lt;</span><span
-					class="lowercase italic font-normal text-secondary-500">portfolio</span
+					class="italic font-normal lowercase text-secondary-500">portfolio</span
 				><span class="opacity-50 text-secondary-900">/&gt;</span>
 			</button>
 		{/if}
@@ -145,13 +145,12 @@
 					easing: cubicOut,
 					duration: 800
 				}}
+				class="p-4 md:pt-6"
 			>
-				<p
-					class="pt-10 pb-2 text-2xl leading-2xl md:leading-4xl text-surface-100 md:text-4xl md:w-2/3"
-				>
+				<p class="pb-2 text-2xl leading-2xl md:leading-3xl text-surface-100 md:text-3xl md:w-2/3">
 					Greetings! I'm Aaron Crockett, and welcome to my portfolio.
 				</p>
-				<p class="text-lg text-surface-100 leading-2x md:w-2/3">
+				<p class="text-lg text-justify text-surface-100 leading-2x md:w-2/3">
 					With over a decade of industry experience, I've collaborated with teams of various sizes,
 					honing my skills across a diverse spectrum—from design to front-end engineering and full
 					stack development. This portfolio serves as a gateway, offering a glimpse, including my

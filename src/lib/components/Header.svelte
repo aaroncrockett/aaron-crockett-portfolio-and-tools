@@ -76,7 +76,7 @@
 		</AppBar>
 		{#if !isHome && !isSmallScreen}
 			<div class="variant-soft-secondary">
-				<div class="container mx-auto py-1">
+				<div class="container py-1 mx-auto">
 					<PageLinks />
 				</div>
 			</div>

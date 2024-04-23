@@ -31,13 +31,13 @@
 </script>
 
 <div class="flex">
-	<div class="space-y-4 p-2">
+	<div class="p-2 space-y-4">
 		<div class="border-primary-500">
 			<a on:click={() => drawerStore.close()} class="inline-block p-2 pb-0" href="/?return-home">
 				<span class="hidden sm:inline-block">
 					{@html homeIconSvg}
 				</span>
-				<span class=" inline-block space-y-2 sm:hidden">
+				<span class="inline-block  space-y-2 sm:hidden">
 					{@html homeIconSvgSm}
 				</span>
 			</a>
@@ -46,7 +46,7 @@
 			<SocialMediaLinks on:click={() => drawerStore.close()} />
 		</div>
 	</div>
-	<div class="flex flex-col variant-soft-surface p-2 w-full h-screen">
+	<div class="flex flex-col w-full h-screen p-2 variant-soft-surface">
 		<h3
 			class="p-1 sm:p-2 border-b leading-sm text-primary-500 inline-block font-bold border-primary-500 !text-xl mb-2 sm:text-base"
 		>
@@ -60,7 +60,7 @@
 			{#if $sessionId}
 				<span class="pr-[.1rem]">{@html chevronRightIconSvg}</span>
 				<form method="post" action="sign-out">
-					<button class="text-primary-500 uppercase font-bold">Sign Out</button>
+					<button class="font-bold uppercase text-primary-500">Sign Out</button>
 				</form>
 			{/if}
 		</div>

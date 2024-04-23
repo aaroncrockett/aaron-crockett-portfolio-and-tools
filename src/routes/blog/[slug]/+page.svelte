@@ -49,18 +49,18 @@
 		<hgroup class="space-y-2">
 			<h1 class="content-page-header text-primary-500">{data.meta.title}</h1>
 			<div class="p-1 bg-gradient-to-r variant-gradient-primary-secondary" />
-			<div class="variant-ghost-secondary p-2 rounded">
+			<div class="p-2 rounded variant-ghost-secondary">
 				<span class="block">
-					<span class="text-secondary-800 font-bold">Written By: </span></span
-				><span class="font-bold text-xl">Aaron Crockett's AI Robot.</span>
+					<span class="font-bold text-secondary-800">Written By: </span></span
+				><span class="text-xl font-bold">Aaron Crockett's AI Robot.</span>
 
-				<span class="font-bold block italic"> {formatDate(data.meta.date)}</span>
+				<span class="block italic font-bold"> {formatDate(data.meta.date)}</span>
 			</div>
 		</hgroup>
 		<div class="tags">
-			<span class="bg-surface-100 p-1 rounded">
+			<span class="p-1 rounded bg-surface-100">
 				{#each data.meta.categories as category}
-					<span class="surface-4 text-primary-500 pr-2 font-bold">&num;{category}</span>
+					<span class="pr-2 font-bold surface-4 text-primary-500">&num;{category}</span>
 				{/each}
 			</span>
 		</div>
@@ -68,7 +68,7 @@
 		<!-- Tags -->
 
 		<!-- Post -->
-		<div class="flex flex-col gap-2 py-2 border-t-2 border-surface-100 mt-1">
+		<div class="flex flex-col py-2 mt-1 border-t-2 gap-2 border-surface-100">
 			<svelte:component this={data.content} />
 		</div>
 	</article>

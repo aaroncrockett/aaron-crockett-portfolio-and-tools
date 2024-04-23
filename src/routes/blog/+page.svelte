@@ -25,8 +25,8 @@
 	<div class="page-one-col" transition:fade={{ easing: cubicIn, duration: 400 }}>
 		<ul class="preview-posts preview-full space-y-2">
 			{#each data.posts as post}
-				<li class="preview-post-item border-b border-surface-300 pb-2">
-					<a href="/blog/{post.slug}" class="title flex items-center inline-link">{post.title}</a>
+				<li class="pb-2 border-b preview-post-item border-surface-300">
+					<a href="/blog/{post.slug}" class="flex items-center title inline-link">{post.title}</a>
 					<p class="date">{formatDate(post.date)}</p>
 					<p class="description">{post.description}</p>
 				</li>

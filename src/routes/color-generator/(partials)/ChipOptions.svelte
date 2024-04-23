@@ -34,8 +34,8 @@
 </script>
 
 <div class="space-y-1">
-	<p class="text-center font-bold">Choose color scheme: (only one currently)</p>
-	<div class="flex gap-2 flex-wrap justify-center">
+	<p class="font-bold text-center">Choose color scheme: (only one currently)</p>
+	<div class="flex flex-wrap justify-center gap-2">
 		{#each colorSchemes as colorKey}
 			<button
 				class={`chip text-base ${
@@ -52,8 +52,8 @@
 </div>
 
 <!-- <div class="space-y-1">
-	<p class="text-center font-bold">Choose optional additional colors:</p>
-	<div class="flex gap-2 flex-wrap justify-center">
+	<p class="font-bold text-center">Choose optional additional colors:</p>
+	<div class="flex flex-wrap justify-center gap-2">
 		{#each additionalColorNames as colorKey}
 			<button
 				class={`chip text-base ${
@@ -69,10 +69,10 @@
 			</button>
 		{/each}
 	</div>
-	<p class="text-center font-bold pt-2">All used colors:</p>
-	<div class="flex gap-2 flex-wrap justify-center">
+	<p class="pt-2 font-bold text-center">All used colors:</p>
+	<div class="flex flex-wrap justify-center gap-2">
 		{#each Object.keys($colorsCollectionStore) as key}
-			<span class="chip chip-static text-base bg-surface-200">{key}</span>
+			<span class="text-base chip chip-static bg-surface-200">{key}</span>
 		{/each}
 	</div>
 </div> -->

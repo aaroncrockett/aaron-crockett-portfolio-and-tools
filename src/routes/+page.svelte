@@ -46,12 +46,12 @@
 	</div>
 {/if}
 {#if returnHome}
-	<div class="mx-auto container px-4 pt-1">
-		<a class="font-bold text-secondary-900/90 text-sm" href="/">Re-animate intro.</a>
+	<div class="container px-4 pt-1 mx-auto">
+		<a class="text-sm font-bold text-secondary-900/90" href="/">Re-animate intro.</a>
 	</div>
 {/if}
 
-<div class="ac-hp page-one-col pt-0">
+<div class="pt-0 ac-hp page-one-col">
 	<h1 class="hp-hide-headings">Aaron Crockett</h1>
 	<h2 class="hp-hide-headings">Web Application Developer.</h2>
 	<ProjectShowCases {returnHome} on:inview-complete={handleInviewComplete} />

@@ -4,7 +4,7 @@
 </script>
 
 <label class="label">
-	<span class="lg:font-normal font-bold">{label}</span>
+	<span class="font-bold lg:font-normal">{label}</span>
 	<div class="grid grid-cols-[auto_1fr] gap-4 place-items-end">
 		<input class="input" type="color" bind:value={hex} />
 		<input class="input" type="text" bind:value={hex} placeholder="#BADA55" />

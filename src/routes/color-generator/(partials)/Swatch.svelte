@@ -10,7 +10,7 @@
 	{#each Object.entries(swatchColorClasses[color]).filter( ([shade]) => stops.includes(shade) ) as [shade, shadeClasses]}
 		<div class="grid grid-rows-[1fr_40px] text-center w-full">
 			<!-- Label -->
-			<div class="text-surface-700 dark:text-surface-300 text-sm">
+			<div class="text-sm text-surface-700 dark:text-surface-300">
 				{shade}
 			</div>
 			<!-- Swatch -->

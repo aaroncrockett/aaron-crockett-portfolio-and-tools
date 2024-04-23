@@ -51,13 +51,13 @@ published: false
   {#each Array(25) as _, i (i)}
 
     {#if (i % 5 === 0 && i % 3 === 0 ) }
-      <p class="card variant-filled-primary p-1">FIZZBUZZ: {i} </p>
+      <p class="p-1 card variant-filled-primary">FIZZBUZZ: {i} </p>
     {:else if i % 5 === 0}
-      <p class="card variant-filled-secondary p-1">FIZZ: {i} </p>
+      <p class="p-1 card variant-filled-secondary">FIZZ: {i} </p>
     {:else if i % 3 === 0}
-      <p class="card variant-filled-tertiary p-1">BUZZ: {i} </p>
+      <p class="p-1 card variant-filled-tertiary">BUZZ: {i} </p>
     {:else}
-      <p class="card variant-filled-surface p-1">NOT {i} </p>
+      <p class="p-1 card variant-filled-surface">NOT {i} </p>
     {/if}
 
   {/each}

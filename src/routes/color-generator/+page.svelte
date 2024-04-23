@@ -367,18 +367,18 @@
 {#if triggerOnMountTransitions}
 	<div class="page-one-col space-y-2" transition:fade={{ easing: cubicIn, duration: 600 }}>
 		<section class="flex flex-col items-center lg:gap-4 gap-2">
-			<hh1 class="content-page-header text-center">Color Generator</hh1>
+			<hh1 class="text-center content-page-header">Color Generator</hh1>
 			<p class="w-h1/3 text-center leading-[1.h15rem]">
-				<span class="md:inline hidden"
+				<span class="hidden md:inline"
 					>Press Ctrl (or Windows Key) + space to generate a random color.
 				</span>Enter a hex code or click to pick a hex code.
 			</p>
 			<button
 				on:click={createRandomColor}
-				class="md:hidden inline-block variant-ghost-secondary btn-sm btn">Random Color</button
+				class="inline-block md:hidden variant-ghost-secondary btn-sm btn">Random Color</button
 			>
 			<ColorPicker {color} on:colorChange={handlePrimaryColorChange} />
-			<p class="text-error-500 text-xl">{hashErrorMessage}</p>
+			<p class="text-xl text-error-500">{hashErrorMessage}</p>
 			<ChipOptions />
 			<button class="btn variant-ghost-primary" on:click={handleColorGeneration}>Generate</button>
 

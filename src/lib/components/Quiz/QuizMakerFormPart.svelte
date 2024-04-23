@@ -32,19 +32,19 @@
 					/>
 				</div>
 
-				<div class="space-y-2 p-4 bg-surface-200/30 rounded">
+				<div class="p-4 rounded space-y-2 bg-surface-200/30">
 					{#each questions[i].options as option, j}
 						<div class="">
 							<label for="option" class="label"> Option: </label>
 							<input
 								name="option"
 								type="text"
-								class="input w-2/3"
+								class="w-2/3 input"
 								bind:value={questions[i].options[j]}
 								placeholder="Option"
 							/>
 						</div>
-						<div class="flex ml-4 border-b-2 border-surface-200 pb-2">
+						<div class="flex pb-2 ml-4 border-b-2 border-surface-200">
 							<input
 								type="checkbox"
 								name="is-correct"

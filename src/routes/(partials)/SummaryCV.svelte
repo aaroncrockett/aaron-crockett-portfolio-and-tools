@@ -78,7 +78,7 @@
 				class={`${isInView ? 'opacity-100' : 'opacity-0'} grid sm:grid-cols-2 gap-2 fade-in-view`}
 			>
 				<div class="box">
-					<div class="flex flex-col w-full items-center p-4 card variant-glass">
+					<div class="flex flex-col items-center w-full p-4 card variant-glass">
 						<div class="py-2">{@html starIconSvg}</div>
 						<p class="text-center">
 							<span class="font-bold">Over 10 years of industry-related experience</span> across a
@@ -89,7 +89,7 @@
 					</div>
 				</div>
 				<div class="box">
-					<div class="flex flex-col w-full items-center p-4 card variant-glass">
+					<div class="flex flex-col items-center w-full p-4 card variant-glass">
 						<div class="py-2">{@html awardUpIconSvg}</div>
 						<p class="text-center">
 							<span class="font-bold">During my 5 year tenure at Caleres,</span> I created highly
@@ -100,7 +100,7 @@
 					</div>
 				</div>
 				<div class="box">
-					<div class="flex flex-col w-full items-center p-4 card variant-glass">
+					<div class="flex flex-col items-center w-full p-4 card variant-glass">
 						<div class="py-2">{@html sendIconSvg}</div>
 						<p class="text-center">
 							<span class="font-bold">Power Admin:</span> Created web applications, web sites, and
@@ -117,7 +117,7 @@
 					</div>
 				</div>
 				<div class="box">
-					<div class="flex flex-col w-full items-center p-4 card variant-glass">
+					<div class="flex flex-col items-center w-full p-4 card variant-glass">
 						<div class="py-2">{@html codeIconSvg}</div>
 						<p class="text-center">
 							<span class="font-bold"

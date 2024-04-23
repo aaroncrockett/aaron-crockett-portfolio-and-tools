@@ -44,7 +44,7 @@
 			class={` ${initView ? 'opacity-100' : 'opacity-0'} fade-in-view `}
 		>
 			{#if initView}
-				<h3 class="display-header text-primary-600 text-center md:text-left">
+				<h3 class="text-center display-header text-primary-600 md:text-left">
 					Leaf UI: Library and Toolkit
 				</h3>
 				<h4
@@ -53,7 +53,7 @@
 						const { inView } = event.detail;
 						initView = inView;
 					}}
-					class="display-header text-center md:text-left"
+					class="text-center display-header md:text-left"
 				>
 					A Framework agnostic UI Toolkit.
 				</h4>
@@ -73,7 +73,7 @@
 					<source media="(max-width: 767px)" srcset={folioInterfaceSm} />
 					<img
 						src={folioInterface}
-						class="border-4 rounded-md w-full"
+						class="w-full border-4 rounded-md"
 						alt="Foliole UI - Interface."
 						width="650"
 						height="1200"
@@ -115,7 +115,7 @@
 						in:fly={{ duration: 400, x: 100, delay: 500 }}
 						class={`${isImgsView ? 'opacity-100' : 'opacity-0'} space-y-4 mt-2`}
 					>
-						<h5 class="display-header text-surface-800 text-center md:text-left">
+						<h5 class="text-center display-header text-surface-800 md:text-left">
 							Project Summary
 						</h5>
 						<p>

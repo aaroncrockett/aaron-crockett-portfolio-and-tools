@@ -46,7 +46,7 @@
 {/each}
 {#if !submitted}
 	<div>
-		<button class="btn variant-ghost-primary p-2" on:click={checkAnswers}>Submit</button>
+		<button class="p-2 btn variant-ghost-primary" on:click={checkAnswers}>Submit</button>
 	</div>
 {/if}
 <p>Your score is: {score}</p>
