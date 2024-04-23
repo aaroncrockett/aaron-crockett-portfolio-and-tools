@@ -15,7 +15,9 @@
 
 	const dispatch = createEventDispatcher();
 
-	$: isInView = false;
+	export let setInView = false;
+
+	$: isInView = setInView;
 
 	$: {
 		if (isInView) dispatch('inview-complete', { value: 'designs' });

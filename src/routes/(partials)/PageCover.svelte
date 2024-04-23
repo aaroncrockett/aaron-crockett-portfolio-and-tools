@@ -66,10 +66,28 @@
 			}, 75);
 		}, 500);
 	});
+
+	function handleScrollTo() {
+		// const elemPage = document.querySelector('#page');
+
+		$hasScrolled = true;
+
+		hideHl = true;
+
+		setTimeout(() => {
+			const elemPage = document.querySelector('#page');
+
+			elemPage.scrollTo({
+				top: document.body.scrollHeight,
+
+				behavior: 'smooth'
+			});
+		}, 50);
+	}
 </script>
 
 <!-- Remove scroll bars with overflow-hidden until animations are finished to avoid layout shift -->
-<div class="relative bg-primary-500 overflow-hidden" style={`height: ${$innerHeight}px;`}>
+<div class="relative bg-primary-500" style={`height: ${$innerHeight}px;`}>
 	<!-- Transition background intro. -->
 	{#if triggerOnMountAnimations}
 		<div
@@ -84,54 +102,61 @@
 			<div class="absolute z-10">
 				{#each headlines as line, index}
 					<h3
-						class="font-bold text-surface-400 text-[8.75vw] opacity-90 leading-[11vw] md:leading-[10vw] lg:leading-[8.75vw]"
+						class="font-bold text-[8.5vw] leading-[11vw] md:leading-[10vw] lg:leading-[8.5vw]"
 						in:fly={{
 							y: 150,
 							easing: backOut
 						}}
 					>
-						{line[0]}<span class=" text-white">{line[1]}</span>{line[2]}
+						<span class="opacity-0">{line[0]}</span><span class=" text-white">{line[1]}</span><span
+							class="opacity-0">{line[2]}</span
+						>
 					</h3>
 				{/each}
 			</div>
 
 			{#each headlinesBucket as line, index}
 				<h3
-					class=" font-bold text-secondary-900 opacity-50 text-[8.75vw] leading-[11vw] md:leading-[10vw] lg:leading-[8.75vw]"
+					class=" font-bold text-surface-900 opacity-90 text-[8.5vw] leading-[11vw] md:leading-[10vw] lg:leading-[8.5vw]"
 				>
-					{line[0]}<span class="">{line[1]}</span>{line[2]}
+					<span class="opacity-50 text-secondary-900">{line[0]}</span><span
+						class="opacity-50 text-secondary-900">{line[1]}</span
+					><span class="opacity-50 text-secondary-900">{line[2]}</span>
 				</h3>
 			{/each}
 		</div>
 		{#if headlinesTransitionsHaveEnded}
-			<p
-				class=" font-bold text-[8.75vw] leading-[11vw] md:leading-[10vw] lg:leading-[8.75vw] uppercase text-surface-50"
+			<button
+				on:click={handleScrollTo}
+				class=" font-bold text-[8.5vw] text-surface-900 opacity-90 leading-[11vw] md:leading-[10vw] lg:leading-[8.5vw] uppercase"
 				in:fly={{
 					x: '-100%',
 					easing: cubicOut
 				}}
 			>
-				<span class=" text-surface-400">&lt;</span><span
-					class="lowercase italic text-secondary-500 opacity-90 font-normal">portfolio</span
-				><span class=" text-surface-400">/&gt;</span>
-			</p>
+				<span class="opacity-50 text-secondary-900">&lt;</span><span
+					class="lowercase italic font-normal text-secondary-500">portfolio</span
+				><span class="opacity-50 text-secondary-900">/&gt;</span>
+			</button>
 		{/if}
 	</div>
 </div>
-<h4
-	class="z-5 absolute flex w-full items-center bottom-0 right-0 left-0 bg-surface-50 text-tertiary-500 sm:text-3xl sm:leading-3xl text-xl leading-xl sm:pb-0"
+<button
+	on:click={handleScrollTo}
+	class={` ${
+		hideHl ? 'hidden' : ''
+	} overflow-hidden z-5 absolute flex w-full items-center bottom-0 right-0 left-0 bg-surface-50 text-secondary-500 sm:text-3xl sm:leading-3xl text-xl leading-xl sm:pb-0`}
 >
 	<span
 		style="opacity: {$opacity}"
 		class={classNames(
 			coverHeadlineTwColor,
-			'duration-200 container flex items-center mx-auto py-2',
-			hideHl ? 'hidden' : ''
+			'duration-200 container flex items-center mx-auto py-2'
 		)}
 	>
 		<span class={floatingIconClasses}>{@html downIconSvg}</span> Portfolio, CV & More.
 	</span>
-</h4>
+</button>
 
 <style>
 	@keyframes floatEffect {

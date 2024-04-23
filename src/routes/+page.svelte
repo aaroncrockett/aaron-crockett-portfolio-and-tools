@@ -17,10 +17,10 @@
 	let triggerOnMountTransitions = false;
 
 	const completedViews = {
-		projectShowCases: false,
-		designs: false,
-		summaryCV: false,
-		aboutMe: false
+		projectShowCases: true,
+		designs: true,
+		summaryCV: true,
+		aboutMe: true
 	};
 
 	$: returnHome = $page.url.search === '?return-home';

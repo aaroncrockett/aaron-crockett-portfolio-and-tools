@@ -21,7 +21,7 @@
 
 	export let data;
 
-	const allInview = writable(false);
+	const allInview = writable(true);
 
 	initializeStores();
 

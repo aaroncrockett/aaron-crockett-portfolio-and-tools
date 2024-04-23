@@ -18,18 +18,13 @@
 
 	// TODO: Refactor to use new inViewMounted helper! It has been implimented in AboutMe, Designs and Summary CV
 
-	$: isHlInView = false;
 	$: isImgsView = false;
-	$: initView = ($hasScrolled || returnHome) && mounted;
+	$: initView = $hasScrolled || returnHome;
 	$: {
 		if (isImgsView) {
 			dispatch('inview-complete', { value: 'projectShowCases' });
 		}
 	}
-	$: mounted = false;
-	onMount(() => {
-		mounted = true;
-	});
 </script>
 
 <section>
@@ -56,7 +51,7 @@
 					use:inview={inViewOptions}
 					on:inview_enter={(event) => {
 						const { inView } = event.detail;
-						isHlInView = inView;
+						initView = inView;
 					}}
 					class="display-header text-center md:text-left"
 				>
@@ -67,10 +62,10 @@
 
 		<div
 			class={`${
-				isHlInView ? 'opacity-100' : 'opacity-0'
+				initView ? 'opacity-100' : 'opacity-0'
 			} project-showcases-anchor flex flex-col gap-2 md:flex-row justify-center md:justify-between items-center fade-in-view`}
 		>
-			{#if initView && isHlInView}
+			{#if initView}
 				<picture
 					in:fly={{ duration: 400, x: -100, delay: 520 }}
 					class=" md:w-[calc(33.33%-.25rem)] flex-initial h-auto"
@@ -85,7 +80,7 @@
 					/>
 				</picture>
 			{/if}
-			{#if initView && isHlInView}
+			{#if initView}
 				<img
 					src={folioHp}
 					class="border-4 rounded-md md:block hidden md:w-[calc(33.33%-.25rem)] flex-initial h-auto"
@@ -95,7 +90,7 @@
 					in:fly={{ duration: 400, x: -100, delay: 560 }}
 				/>
 			{/if}
-			{#if initView && isHlInView}
+			{#if initView}
 				<img
 					src={folioCg}
 					class={`fade-in-view border-4 rounded-md md:block hidden md:w-[calc(33.33%-.25rem)] flex-initial h-auto}`}
@@ -106,7 +101,7 @@
 				/>
 			{/if}
 		</div>
-		{#if initView && isHlInView}
+		{#if initView}
 			<div
 				use:inview={inViewOptions}
 				on:inview_enter={(event) => {

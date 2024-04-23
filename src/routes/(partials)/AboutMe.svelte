@@ -13,7 +13,9 @@
 	const dispatch = createEventDispatcher();
 	const inViewOptions = { rootMargin: '-50px', unobserveOnEnter: true };
 
-	$: isInView = false;
+	export let setInView = true;
+
+	$: isInView = setInView;
 
 	$: {
 		if (isInView) dispatch('inview-complete', { value: 'aboutMe' });

@@ -4,10 +4,6 @@
 @tailwind variants;
 
 /* --- Global Selectors --- */
-html,
-body {
-	@apply overflow-hidden;
-}
 
 a.inline-link {
 	@apply font-bold text-secondary-500;
@@ -15,6 +11,10 @@ a.inline-link {
 
 a.stand-alone-link {
 	@apply font-bold text-xl underline;
+}
+
+body {
+	overflow: hidden;
 }
 
 /* only use when nested with a parent with an outline indicator as this removes visual que for accessibility otherwise */
