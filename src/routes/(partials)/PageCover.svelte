@@ -145,17 +145,17 @@
 					easing: cubicOut,
 					duration: 800
 				}}
-				class="p-4 md:pt-6"
+				class="p-4 md:pt-6 max-w-[920px]"
 			>
-				<p class="pb-4 text-2xl leading-2xl md:leading-3xl text-surface-100 md:text-3xl md:w-2/3">
+				<p class="pb-4 text-2xl leading-2xl md:leading-3xl text-surface-100 md:text-3xl">
 					Greetings! I'm Aaron Crockett, and welcome to my portfolio.
 				</p>
-				<p class="pb-4 text-lg text-justify text-surface-100 leading-2x md:w-2/3">
+				<p class="pb-4 text-lg text-justify text-surface-100 leading-2x">
 					With over a decade of industry experience, I've collaborated with teams of various sizes,
 					honing my skills across a diverse spectrum—from design to front-end engineering and full
 					stack development.
 				</p>
-				<p class="pb-4 text-lg text-justify text-surface-100 leading-2x md:w-2/3">
+				<p class="pb-4 text-lg text-justify text-surface-100 leading-2x">
 					I have created highly visible and engaging experiences for Famous Footwear, on notable
 					brands including Nike and Converse. Showcased my ability to thrive in a Fortune 1000
 					company, within large, diverse and dynamic teams. I have experience collaborating directly
@@ -164,7 +164,7 @@
 					to Full Stack development for the internal company catalog, demonstrating my ability to
 					create continually integrated applications integral for daily company operations.
 				</p>
-				<p class="pb-4 text-lg text-justify text-surface-100 leading-2x md:w-2/3">
+				<p class="pb-4 text-lg text-justify text-surface-100 leading-2x">
 					This portfolio serves as a gateway, offering a glimpse, including my GitHub repository and
 					a selection of designs I've crafted. Interested in learning more? Feel free to reach out
 					via email to request my resume.
