@@ -101,7 +101,7 @@
 			<div class="absolute z-10">
 				{#each headlines as line, index}
 					<h3
-						class="font-bold text-4xl leading-4xl md:text-[5vw] md:leading-[6vw] lg:leading-[5.5vw]"
+						class="font-bold text-4xl leading-4xl md:text-[4vw] md:leading-[5vw] lg:leading-[4.5vw]"
 						in:fly={{
 							y: 150,
 							easing: backOut
@@ -116,7 +116,7 @@
 
 			{#each headlinesBucket as line, index}
 				<h3
-					class="font-bold text-surface-900 opacity-90 text-4xl leading-4xl md:text-[5vw] md:leading-[6vw] lg:leading-[5.5vw]"
+					class="font-bold text-surface-900 opacity-90 text-4xl leading-4xl md:text-[4vw] md:leading-[5vw] lg:leading-[4.5vw]"
 				>
 					<span class="opacity-50 text-secondary-900">{line[0]}</span><span
 						class="opacity-50 text-secondary-900">{line[1]}</span
@@ -127,7 +127,7 @@
 		{#if headlinesTransitionsHaveEnded}
 			<button
 				on:click={handleScrollTo}
-				class="font-bold text-4xl leading-4xl md:text-[5vw] text-surface-900 opacity-90 md:leading-[5.5vw] lg:leading-[5vw] uppercase"
+				class="font-bold text-3xl leading-3xl md:text-[4vw] text-surface-900 opacity-90 md:leading-[4.5vw] lg:leading-[4vw] uppercase"
 				in:fly={{
 					x: '-100%',
 					easing: cubicOut
@@ -145,7 +145,7 @@
 					easing: cubicOut,
 					duration: 800
 				}}
-				class="p-4 md:pt-6 max-w-[920px]"
+				class="p-4 md:pt-6 max-w-[1080px]"
 			>
 				<p class="pb-4 text-2xl leading-2xl md:leading-3xl text-surface-100 md:text-3xl">
 					Greetings! I'm Aaron Crockett, and welcome to my portfolio.
@@ -155,14 +155,15 @@
 					honing my skills across a diverse spectrum—from design to front-end engineering and full
 					stack development.
 				</p>
-				<p class="pb-4 text-lg text-justify text-surface-100 leading-2x">
+				<p class="hidden pb-4 text-lg text-justify text-surface-100 leading-2x xl:block">
 					I have created highly visible and engaging experiences for Famous Footwear, on notable
-					brands including Nike and Converse. Showcased my ability to thrive in a Fortune 1000
-					company, within large, diverse and dynamic teams. I have experience collaborating directly
-					with a sole proprietor. Illustrating my autonomy through self-management, I was entrusted
-					as the sole developer of UIs for new products on a small team. In addition, I Contributed
-					to Full Stack development for the internal company catalog, demonstrating my ability to
-					create continually integrated applications integral for daily company operations.
+					brands including Nike and Converse where I showcased my ability to thrive in a Fortune
+					1000 company, within large, diverse and dynamic teams. I have experience collaborating
+					directly with a sole proprietor. Illustrating my autonomy through self-management, I was
+					entrusted as the sole developer of UIs for new products on a small team. In addition, I
+					Contributed to Full Stack development for the internal company catalog, demonstrating my
+					ability to create continually integrated applications integral for daily company
+					operations.
 				</p>
 				<p class="pb-4 text-lg text-justify text-surface-100 leading-2x">
 					This portfolio serves as a gateway, offering a glimpse, including my GitHub repository and
