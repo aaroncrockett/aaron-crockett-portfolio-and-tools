@@ -7,8 +7,8 @@
 		<div>
 			<div class="sm:inline-block">
 				<a href="/?return-home">
-					<span class="text-primary-500">AARON</span>
-					<span class="text-tertiary-500">CROCKETT</span> |
+					<span class="text-primary-500">Aaron</span>
+					<span class="text-tertiary-500">Crockett</span> |
 				</a>
 			</div>
 			<div class="sm:inline-block">

@@ -60,7 +60,7 @@
 				</div>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
-				<SocialMediaLinks />
+				<!-- <SocialMediaLinks /> -->
 
 				{#if isHome || isSmallScreen}
 					<button class="inline-block p-1 sm:p-2" on:click={() => dispatch('openMenu')}>

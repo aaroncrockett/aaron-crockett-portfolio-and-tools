@@ -12,6 +12,8 @@
 	// Other
 	import classNames from 'classnames';
 
+	import SocialMediaLinks from '../../lib/components/SocialMediaLinks.svelte';
+
 	const headlinesBucket = [
 		['<', 'Web-App', '/>'],
 		['<', 'Engineer', '/>']
@@ -96,100 +98,105 @@
 		/>
 	{/if}
 
-	<div class="container relative px-2 pt-2 mx-auto md:pt-1 z-1">
-		<div class="relative flex flex-col overflow-hidden">
-			<div class="absolute z-10">
-				{#each headlines as line, index}
-					<h3
-						class="uppercase text-5xl leading-5xl md:text-[7vw] md:leading-[7vw]"
-						in:fly={{
-							y: 150,
-							easing: backOut
-						}}
-					>
-						<span class="opacity-0">{line[0]}</span><span class="text-white">{line[1]}</span><span
-							class="opacity-0">{line[2]}</span
+	<div class="flex flex-col lg:flex-row gap-2 pt-2 container mx-auto h-full md:space-between">
+		<div class="relative lg:w-1/2 md:pt-1 z-1">
+			<div class="relative flex flex-col overflow-hidden">
+				<div class="absolute z-10">
+					{#each headlines as line, index}
+						<h3
+							class="uppercase text-5xl leading-5xl md:text-[7vw] md:leading-[7vw]"
+							in:fly={{
+								y: 150,
+								easing: backOut
+							}}
 						>
+							<span class="opacity-0">{line[0]}</span><span class="text-white">{line[1]}</span><span
+								class="opacity-0">{line[2]}</span
+							>
+						</h3>
+					{/each}
+				</div>
+
+				{#each headlinesBucket as line, index}
+					<h3
+						class="uppercase text-surface-900 opacity-90 text-5xl leading-5xl md:text-[7vw] md:leading-[7vw]"
+					>
+						<span class="opacity-50 text-secondary-900">{line[0]}</span><span
+							class="opacity-50 text-secondary-900">{line[1]}</span
+						><span class="opacity-50 text-secondary-900">{line[2]}</span>
 					</h3>
 				{/each}
 			</div>
-
-			{#each headlinesBucket as line, index}
-				<h3
-					class="uppercase text-surface-900 opacity-90 text-5xl leading-5xl md:text-[7vw] md:leading-[7vw]"
+			{#if headlinesTransitionsHaveEnded}
+				<button
+					on:click={handleScrollTo}
+					class="text-surface-900 opacity-90 text-5xl leading-5xl md:text-[7vw] md:leading-[7vw]"
+					in:fly={{
+						x: '-100%',
+						easing: cubicOut
+					}}
 				>
-					<span class="opacity-50 text-secondary-900">{line[0]}</span><span
-						class="opacity-50 text-secondary-900">{line[1]}</span
-					><span class="opacity-50 text-secondary-900">{line[2]}</span>
-				</h3>
-			{/each}
-		</div>
-		{#if headlinesTransitionsHaveEnded}
-			<button
-				on:click={handleScrollTo}
-				class="text-surface-900 opacity-90 text-5xl leading-5xl md:text-[7vw] md:leading-[7vw]"
-				in:fly={{
-					x: '-100%',
-					easing: cubicOut
-				}}
-			>
-				<span class="opacity-50 text-secondary-900 uppercase">&lt;</span><span
-					class="italic font-normal text-secondary-500">Portfolio</span
-				><span class="opacity-50 text-secondary-900 uppercase">/&gt;</span>
-			</button>
-		{/if}
-		{#if headlinesTransitionsHaveEnded}
-			<div
-				in:fly={{
-					x: '-100%',
-					easing: cubicOut,
-					duration: 800
-				}}
-				class="p-4 md:pt-6 max-w-[1080px]"
-			>
-				<p class="pb-4 text-2xl leading-2xl md:leading-3xl text-surface-100 md:text-3xl">
-					Greetings! I'm Aaron Crockett.
-				</p>
-				<div class="flex md:flex-row flex-col align-center">
-					<p class="pb-4 text-lg text-justify text-surface-100 leading-2x md:w-3/5">
+					<span class="opacity-50 text-secondary-900 uppercase">&lt;</span><span
+						class="italic font-normal text-secondary-500">Portfolio</span
+					><span class="opacity-50 text-secondary-900 uppercase">/&gt;</span>
+				</button>
+			{/if}
+			{#if headlinesTransitionsHaveEnded}
+				<div
+					in:fly={{
+						x: '-100%',
+						easing: cubicOut,
+						duration: 800
+					}}
+					class="p-4 md:pt-6 max-w-[1080px]"
+				>
+					<p class="pb-4 text-2xl leading-2xl md:leading-3xl text-surface-100 md:text-3xl">
+						Greetings! I'm Aaron Crockett.
+					</p>
+
+					<p class="pb-4 text-lg text-justify text-surface-100 leading-2x">
 						With over a decade of industry experience, I've collaborated with teams of various
 						sizes, honing my skills across a diverse spectrum—from design to front-end engineering
 						and full stack development.
 					</p>
-				</div>
 
-				<!-- <p class="hidden pb-4 text-lg text-justify text-surface-100 leading-2x xl:block">
-					I have created highly visible and engaging experiences for Famous Footwear, on notable
-					brands including Nike and Converse where I showcased my ability to thrive in a Fortune
-					1000 company, within large, diverse and dynamic teams. I have experience collaborating
-					directly with a sole proprietor. Illustrating my autonomy through self-management, I was
-					entrusted as the sole developer of UIs for new products on a small team. In addition, I
-					Contributed to Full Stack development for the internal company catalog, demonstrating my
-					ability to create continually integrated applications integral for daily company
-					operations.
-				</p> -->
-				<p class="pb-4 text-lg text-justify text-surface-100 leading-2x md:w-3/5">
-					This portfolio serves as a gateway, offering a glimpse, including my GitHub repository and
-					a selection of designs I've crafted. Interested in learning more? Feel free to reach out
-					via email to request my resume.
-				</p>
-				<!-- <p class="pb-4 text-lg text-justify text-surface-100 leading-2x md:w-3/5">
-					<span class="font-bold">Primary Tech Expertise:</span> Next.js • React.js • React Query • Vue.js
-					• Pinia • CSS • Tailwind CSS • Sass • REST • TypeScript • Figma • Git •Jest
-				</p> -->
-				<!-- <p class="pb-4 text-lg text-justify text-surface-100 leading-2x md:w-3/5">
-					<span class="font-bold">Secondary Tech Expertise:</span> Cypress • Docker • Express.js • Firebase
-					• GSAP • jQuery • Node.js • Npm • Pnpm • Svelte/SvelteKit • Storybook • SQL/ORMs • Vercel •
-					Vite • Vuex • WordPress
-				</p>
-				<p class="pb-12 text-lg text-justify text-surface-100 leading-2x md:w-3/5">
-					<span class="font-bold">Skills:</span> Front-End Development • Full Stack Development • Responsive
-					Web Design • Cross Browser Compatibility • Project Management • Workflow Optimization • Version
-					Control • Agile Development • Web Application Development • Cross-Functional Team Collaboration
-					• Single Page Applications (SPA) • Server Side Render (SSR) • Hydration
-				</p> -->
-			</div>
-		{/if}
+					<!-- <p class="hidden pb-4 text-lg text-justify text-surface-100 leading-2x xl:block">
+						I have created highly visible and engaging experiences for Famous Footwear, on notable
+						brands including Nike and Converse where I showcased my ability to thrive in a Fortune
+						1000 company, within large, diverse and dynamic teams. I have experience collaborating
+						directly with a sole proprietor. Illustrating my autonomy through self-management, I was
+						entrusted as the sole developer of UIs for new products on a small team. In addition, I
+						Contributed to Full Stack development for the internal company catalog, demonstrating my
+						ability to create continually integrated applications integral for daily company
+						operations.
+					</p> -->
+					<p class="pb-4 text-lg text-justify text-surface-100 leading-2x">
+						This portfolio serves as a gateway, offering a glimpse. Interested in learning more?
+						Feel free to reach out via email to request my resume.
+					</p>
+					<!-- <p class="pb-4 text-lg text-justify text-surface-100 leading-2x md:w-3/5">
+						<span class="font-bold">Primary Tech Expertise:</span> Next.js • React.js • React Query • Vue.js
+						• Pinia • CSS • Tailwind CSS • Sass • REST • TypeScript • Figma • Git •Jest
+					</p> -->
+					<!-- <p class="pb-4 text-lg text-justify text-surface-100 leading-2x md:w-3/5">
+						<span class="font-bold">Secondary Tech Expertise:</span> Cypress • Docker • Express.js • Firebase
+						• GSAP • jQuery • Node.js • Npm • Pnpm • Svelte/SvelteKit • Storybook • SQL/ORMs • Vercel •
+						Vite • Vuex • WordPress
+					</p>
+					<p class="pb-12 text-lg text-justify text-surface-100 leading-2x md:w-3/5">
+						<span class="font-bold">Skills:</span> Front-End Development • Full Stack Development • Responsive
+						Web Design • Cross Browser Compatibility • Project Management • Workflow Optimization • Version
+						Control • Agile Development • Web Application Development • Cross-Functional Team Collaboration
+						• Single Page Applications (SPA) • Server Side Render (SSR) • Hydration
+					</p> -->
+				</div>
+			{/if}
+		</div>
+		<div
+			class="lg:w-1/2 relative z-20 flex-col justify-center gap-4 pb-28 items-center opacity-40 lg:flex hidden"
+		>
+			<SocialMediaLinks hpLarge={true} />
+		</div>
 	</div>
 </div>
 
@@ -197,17 +204,17 @@
 	on:click={handleScrollTo}
 	class={` ${
 		hideHl ? 'hidden' : ''
-	} overflow-hidden z-5 absolute flex w-full items-center bottom-0 right-0 left-0 bg-surface-50 text-secondary-700 sm:text-3xl sm:leading-3xl text-xl leading-xl sm:pb-0`}
+	} overflow-hidden z-5 absolute flex w-full items-center justify-center bottom-0 right-0 left-0 bg-surface-50 text-secondary-700 sm:text-3xl sm:leading-3xl text-xl leading-xl sm:pb-0`}
 >
-	<span
+	<div
 		style="opacity: {$opacity}"
 		class={classNames(
 			coverHeadlineTwColor,
-			'duration-200 container flex items-center mx-auto py-2'
+			'duration-200 container flex items-center mx-auto py-2 w-full text-center justify-center'
 		)}
 	>
 		<span class={floatingIconClasses}>{@html downIconSvg}</span> Portfolio, CV & More.
-	</span>
+	</div>
 </button>
 
 <style>
