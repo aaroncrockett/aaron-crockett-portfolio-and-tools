@@ -38,7 +38,7 @@
 			Project ShowCases
 		</h4>
 	{/if}
-	<div class="space-y-6">
+	<div class="space-y-4">
 		<div
 			in:fly={{ duration: 400, y: -20, delay: 500 }}
 			class={` ${initView ? 'opacity-100' : 'opacity-0'} fade-in-view `}
@@ -108,7 +108,7 @@
 					const { inView } = event.detail;
 					isImgsView = inView;
 				}}
-				class="space-y-4 area-two-col lg:ml-[10%] lg:mr-[7.5%]"
+				class="space-y-4 area-two-col lg:ml-[10%] lg:mr-[7.5%] !mt-2"
 			>
 				{#if isImgsView}
 					<div

@@ -77,7 +77,7 @@
 				/>
 			</picture>
 		</div>
-		<p class={`${isInView ? 'opacity-100' : 'opacity-0'} italic text-center pt-2 fade-in-view`}>
+		<p class={`${isInView ? 'opacity-100' : 'opacity-0'} italic text-center !mt-2 fade-in-view`}>
 			Both designs done by me. Left: Design Mock-up for PA SM Interface. Right: Actual interface
 			used in production in 2021.
 		</p>

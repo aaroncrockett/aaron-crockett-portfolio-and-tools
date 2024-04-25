@@ -151,7 +151,7 @@
 					class="p-4 md:pt-6 max-w-[1080px]"
 				>
 					<p class="pb-4 text-2xl leading-2xl md:leading-3xl text-surface-100 md:text-3xl">
-						Greetings! I'm Aaron Crockett.
+						Greetings!
 					</p>
 
 					<p class="pb-4 text-lg text-justify text-surface-100 leading-2x">
