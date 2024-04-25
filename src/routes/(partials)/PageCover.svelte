@@ -98,8 +98,8 @@
 		/>
 	{/if}
 
-	<div class="flex flex-col lg:flex-row gap-2 pt-2 container mx-auto h-full md:space-between">
-		<div class="relative lg:w-1/2 md:pt-1 z-1">
+	<div class="flex flex-col lg:flex-row gap-2 pt-2 px-2 container mx-auto h-full md:space-between">
+		<div class="relative lg:w-[55%] md:pt-1 z-1">
 			<div class="relative flex flex-col overflow-hidden">
 				<div class="absolute z-10">
 					{#each headlines as line, index}
@@ -193,7 +193,7 @@
 			{/if}
 		</div>
 		<div
-			class="lg:w-1/2 relative z-20 flex-col justify-center gap-4 pb-28 items-center opacity-40 lg:flex hidden"
+			class="lg:w-[45%] relative z-20 flex-col justify-center gap-4 pb-28 items-center opacity-50 lg:flex hidden"
 		>
 			<SocialMediaLinks hpLarge={true} />
 		</div>

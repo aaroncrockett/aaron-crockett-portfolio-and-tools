@@ -23,13 +23,13 @@
 	const sessionId = getContext<Writable<string>>('session-id');
 
 	const menuOpenIconSvg = feather.icons['menu'].toSvg({
-		stroke: '#d7424b',
+		stroke: '#ffffff',
 		width: 28,
 		height: 28
 	});
 
 	const menuOpenIconSvgSm = feather.icons['menu'].toSvg({
-		stroke: '#d7424b',
+		stroke: '#ffffff',
 		width: 24,
 		height: 24
 	});
