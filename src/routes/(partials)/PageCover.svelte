@@ -13,8 +13,8 @@
 	import classNames from 'classnames';
 
 	const headlinesBucket = [
-		['<', 'WEB-APP', '/>'],
-		['<', 'DEVELOPER', '/>']
+		['<', 'Web-App', '/>'],
+		['<', 'Engineer', '/>']
 	];
 
 	const innerHeight = getContext('inner-height');
@@ -26,7 +26,7 @@
 	let headlinesTransitionsHaveEnded = false;
 	let triggerOnMountAnimations = false;
 
-	let coverHeadlineTwColor = 'text-secondary-500';
+	let coverHeadlineTwColor = 'text-secondary-700';
 
 	let headlines: string[][] = [];
 
@@ -101,7 +101,7 @@
 			<div class="absolute z-10">
 				{#each headlines as line, index}
 					<h3
-						class="font-bold text-4xl leading-4xl md:text-[4vw] md:leading-[5vw] lg:leading-[4.5vw]"
+						class="uppercase text-5xl leading-5xl md:text-[7vw] md:leading-[7vw]"
 						in:fly={{
 							y: 150,
 							easing: backOut
@@ -116,7 +116,7 @@
 
 			{#each headlinesBucket as line, index}
 				<h3
-					class="font-bold text-surface-900 opacity-90 text-4xl leading-4xl md:text-[4vw] md:leading-[5vw] lg:leading-[4.5vw]"
+					class="uppercase text-surface-900 opacity-90 text-5xl leading-5xl md:text-[7vw] md:leading-[7vw]"
 				>
 					<span class="opacity-50 text-secondary-900">{line[0]}</span><span
 						class="opacity-50 text-secondary-900">{line[1]}</span
@@ -127,15 +127,15 @@
 		{#if headlinesTransitionsHaveEnded}
 			<button
 				on:click={handleScrollTo}
-				class="font-bold text-3xl leading-3xl md:text-[4vw] text-surface-900 opacity-90 md:leading-[4.5vw] lg:leading-[4vw] uppercase"
+				class="text-surface-900 opacity-90 text-5xl leading-5xl md:text-[7vw] md:leading-[7vw]"
 				in:fly={{
 					x: '-100%',
 					easing: cubicOut
 				}}
 			>
-				<span class="opacity-50 text-secondary-900">&lt;</span><span
-					class="italic font-normal lowercase text-secondary-500">portfolio</span
-				><span class="opacity-50 text-secondary-900">/&gt;</span>
+				<span class="opacity-50 text-secondary-900 uppercase">&lt;</span><span
+					class="italic font-normal text-secondary-500">Portfolio</span
+				><span class="opacity-50 text-secondary-900 uppercase">/&gt;</span>
 			</button>
 		{/if}
 		{#if headlinesTransitionsHaveEnded}
@@ -148,14 +148,17 @@
 				class="p-4 md:pt-6 max-w-[1080px]"
 			>
 				<p class="pb-4 text-2xl leading-2xl md:leading-3xl text-surface-100 md:text-3xl">
-					Greetings! I'm Aaron Crockett, and welcome to my portfolio.
+					Greetings! I'm Aaron Crockett.
 				</p>
-				<p class="pb-4 text-lg text-justify text-surface-100 leading-2x">
-					With over a decade of industry experience, I've collaborated with teams of various sizes,
-					honing my skills across a diverse spectrum—from design to front-end engineering and full
-					stack development.
-				</p>
-				<p class="hidden pb-4 text-lg text-justify text-surface-100 leading-2x xl:block">
+				<div class="flex md:flex-row flex-col align-center">
+					<p class="pb-4 text-lg text-justify text-surface-100 leading-2x md:w-3/5">
+						With over a decade of industry experience, I've collaborated with teams of various
+						sizes, honing my skills across a diverse spectrum—from design to front-end engineering
+						and full stack development.
+					</p>
+				</div>
+
+				<!-- <p class="hidden pb-4 text-lg text-justify text-surface-100 leading-2x xl:block">
 					I have created highly visible and engaging experiences for Famous Footwear, on notable
 					brands including Nike and Converse where I showcased my ability to thrive in a Fortune
 					1000 company, within large, diverse and dynamic teams. I have experience collaborating
@@ -164,22 +167,22 @@
 					Contributed to Full Stack development for the internal company catalog, demonstrating my
 					ability to create continually integrated applications integral for daily company
 					operations.
-				</p>
-				<p class="pb-4 text-lg text-justify text-surface-100 leading-2x">
+				</p> -->
+				<p class="pb-4 text-lg text-justify text-surface-100 leading-2x md:w-3/5">
 					This portfolio serves as a gateway, offering a glimpse, including my GitHub repository and
 					a selection of designs I've crafted. Interested in learning more? Feel free to reach out
 					via email to request my resume.
 				</p>
-				<!-- <p class="pb-4 text-lg text-justify text-surface-100 leading-2x md:w-2/3">
+				<!-- <p class="pb-4 text-lg text-justify text-surface-100 leading-2x md:w-3/5">
 					<span class="font-bold">Primary Tech Expertise:</span> Next.js • React.js • React Query • Vue.js
 					• Pinia • CSS • Tailwind CSS • Sass • REST • TypeScript • Figma • Git •Jest
 				</p> -->
-				<!-- <p class="pb-4 text-lg text-justify text-surface-100 leading-2x md:w-2/3">
+				<!-- <p class="pb-4 text-lg text-justify text-surface-100 leading-2x md:w-3/5">
 					<span class="font-bold">Secondary Tech Expertise:</span> Cypress • Docker • Express.js • Firebase
 					• GSAP • jQuery • Node.js • Npm • Pnpm • Svelte/SvelteKit • Storybook • SQL/ORMs • Vercel •
 					Vite • Vuex • WordPress
 				</p>
-				<p class="pb-12 text-lg text-justify text-surface-100 leading-2x md:w-2/3">
+				<p class="pb-12 text-lg text-justify text-surface-100 leading-2x md:w-3/5">
 					<span class="font-bold">Skills:</span> Front-End Development • Full Stack Development • Responsive
 					Web Design • Cross Browser Compatibility • Project Management • Workflow Optimization • Version
 					Control • Agile Development • Web Application Development • Cross-Functional Team Collaboration
@@ -194,7 +197,7 @@
 	on:click={handleScrollTo}
 	class={` ${
 		hideHl ? 'hidden' : ''
-	} overflow-hidden z-5 absolute flex w-full items-center bottom-0 right-0 left-0 bg-surface-50 text-secondary-500 sm:text-3xl sm:leading-3xl text-xl leading-xl sm:pb-0`}
+	} overflow-hidden z-5 absolute flex w-full items-center bottom-0 right-0 left-0 bg-surface-50 text-secondary-700 sm:text-3xl sm:leading-3xl text-xl leading-xl sm:pb-0`}
 >
 	<span
 		style="opacity: {$opacity}"

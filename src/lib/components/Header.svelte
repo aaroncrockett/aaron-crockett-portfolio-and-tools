@@ -52,10 +52,10 @@
 	>
 		<AppBar class="container mx-auto" padding="sm:p-2 p-1 px-4" background="bg-none">
 			<svelte:fragment slot="lead">
-				<div class="text-2xl uppercase sm:text-3xl sm:leading-3xl leading-2xl">
+				<div class="text-2xl sm:text-3xl sm:leading-3xl leading-2xl">
 					<a href="/?return-home">
-						<span class="text-primary-500">AARON</span>
-						<span class="text-tertiary-500">CROCKETT</span>
+						<span class="text-primary-500">Aaron</span>
+						<span class="text-tertiary-500">Crockett</span>
 					</a>
 				</div>
 			</svelte:fragment>

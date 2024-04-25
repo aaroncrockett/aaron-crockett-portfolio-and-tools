@@ -12,7 +12,7 @@
 				</a>
 			</div>
 			<div class="sm:inline-block">
-				<span class="text-white">WEB APPLICATION DEVELOPER</span>
+				<span class="text-white">Web Application Engineer</span>
 			</div>
 		</div>
 
