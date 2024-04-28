@@ -157,8 +157,8 @@
 					</p>
 
 					<p class="pb-4 text-lg text-justify text-surface-100 leading-2x">
-						With over a decade of industry experience, I've collaborated with teams of various
-						sizes, honing my skills across a diverse spectrum—from design to front-end engineering
+						With over 12 years of industry experience, I've collaborated with teams of various
+						sizes, honing my skills across a diverse spectrum—from design to front end engineering
 						and full stack development.
 					</p>
 
