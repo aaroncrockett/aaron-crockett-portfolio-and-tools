@@ -46,7 +46,7 @@
 	</div>
 {/if}
 {#if returnHome}
-	<div class="container px-4 pt-1 mx-auto">
+	<div class="lg:container px-5 pt-3 mx-auto">
 		<a class="text-sm font-bold text-secondary-900/90" href="/">Re-animate intro.</a>
 	</div>
 {/if}

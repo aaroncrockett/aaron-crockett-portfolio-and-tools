@@ -49,12 +49,16 @@ blockquote:before {
 
 /* --- Page-level Selectors --- */
 
+section {
+	@apply lg:container mx-auto p-5;
+}
+
 .page-one-col {
-	@apply flex flex-col gap-4 mx-auto lg:container px-4 pt-4;
+	@apply flex flex-col gap-8;
 }
 
 .area-two-col {
-	@apply flex flex-col md:flex-row md:space-x-8 space-x-0 mt-0;
+	@apply flex gap-8 flex-col md:flex-row md:space-x-8  space-x-0 mt-0;
 }
 
 .area-two-col > div:first-of-type {

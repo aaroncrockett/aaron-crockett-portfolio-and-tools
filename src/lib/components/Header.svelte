@@ -1,5 +1,4 @@
 <script lang="ts">
-	import SocialMediaLinks from './SocialMediaLinks.svelte';
 	import PageLinks from '$lib/components/PageLinks.svelte';
 	// Svelte related
 	import { createEventDispatcher, onMount } from 'svelte';
@@ -50,7 +49,7 @@
 		transition:fade={{ easing: cubicIn, duration: 400 }}
 		class={`${wrapperClasses} ${appBarWrapperElBg} bg-surface-600`}
 	>
-		<AppBar class="container mx-auto" padding="sm:p-2 p-1 px-4" background="bg-none">
+		<AppBar class="lg:container mx-auto" padding="p-5" background="bg-none">
 			<svelte:fragment slot="lead">
 				<div class="text-2xl sm:text-3xl sm:leading-3xl leading-2xl">
 					<a href="/?return-home">
@@ -60,8 +59,6 @@
 				</div>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
-				<!-- <SocialMediaLinks /> -->
-
 				{#if isHome || isSmallScreen}
 					<button class="inline-block p-1 sm:p-2" on:click={() => dispatch('openMenu')}>
 						<span class="hidden sm:inline">

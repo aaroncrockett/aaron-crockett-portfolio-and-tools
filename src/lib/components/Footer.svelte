@@ -3,7 +3,7 @@
 </script>
 
 <div class={`${visible ? 'visible' : 'invisible'} bg-surface-500 mt-12 md:mt-16`}>
-	<div class="container flex justify-between p-2 mx-auto">
+	<div class="lg:container flex justify-between p-5 mx-auto">
 		<div>
 			<div class="sm:inline-block">
 				<a href="/?return-home">

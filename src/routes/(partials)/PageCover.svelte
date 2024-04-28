@@ -98,7 +98,9 @@
 		/>
 	{/if}
 
-	<div class="flex flex-col lg:flex-row gap-2 pt-2 px-2 container mx-auto h-full md:space-between">
+	<div
+		class="flex flex-col lg:flex-row gap-2 pt-2 px-3 lg:container mx-auto h-full md:space-between"
+	>
 		<div class="relative lg:w-[55%] md:pt-1 z-1">
 			<div class="relative flex flex-col overflow-hidden">
 				<div class="absolute z-10">
@@ -148,7 +150,7 @@
 						easing: cubicOut,
 						duration: 800
 					}}
-					class="p-4 md:pt-6 max-w-[1080px]"
+					class="p-5 md:pt-6 max-w-[1080px]"
 				>
 					<p class="pb-4 text-2xl leading-2xl md:leading-3xl text-surface-100 md:text-3xl">
 						Greetings!

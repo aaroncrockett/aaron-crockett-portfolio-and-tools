@@ -81,7 +81,7 @@
 					<div class="flex flex-col items-center w-full p-4 card variant-glass">
 						<div class="py-2">{@html starIconSvg}</div>
 						<p class="text-center">
-							<span class="font-bold">Over 10 years of industry-related experience</span> across a
+							<span class="font-bold">Over 12 years of industry-related experience</span> across a
 							spectrum of team sizes and company scales including
 							<span class="font-bold">5 years of experience working for a fortune 1000 company</span
 							>.
