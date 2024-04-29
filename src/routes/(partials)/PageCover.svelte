@@ -159,7 +159,8 @@
 					<p class="pb-4 text-lg text-justify text-surface-100 leading-2x">
 						With over 12 years of industry experience, I've collaborated with teams of various
 						sizes, honing my skills across a diverse spectrum—from design to front end engineering
-						and full stack development.
+						and full stack development. Feel free to reach out via email to request my resume or
+						visit one of my links.
 					</p>
 
 					<!-- <p class="hidden pb-4 text-lg text-justify text-surface-100 leading-2x xl:block">
@@ -172,10 +173,7 @@
 						ability to create continually integrated applications integral for daily company
 						operations.
 					</p> -->
-					<p class="pb-4 text-lg text-justify text-surface-100 leading-2x">
-						This portfolio serves as a gateway, offering a glimpse. Interested in learning more?
-						Feel free to reach out via email to request my resume.
-					</p>
+					<p class="pb-4 text-lg text-justify text-surface-100 leading-2x" />
 					<!-- <p class="pb-4 text-lg text-justify text-surface-100 leading-2x md:w-3/5">
 						<span class="font-bold">Primary Tech Expertise:</span> Next.js • React.js • React Query • Vue.js
 						• Pinia • CSS • Tailwind CSS • Sass • REST • TypeScript • Figma • Git •Jest
