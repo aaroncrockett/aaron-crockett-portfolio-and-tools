@@ -1,17 +1,17 @@
 <script lang="ts">
 	// Svelte
-	import { onMount } from 'svelte';
+	import { getContext, onMount } from 'svelte';
+	// Transitions
 	import { fade, fly } from 'svelte/transition';
 	import { tweened } from 'svelte/motion';
-
 	import { backOut, cubicOut } from 'svelte/easing';
-	import { getContext } from 'svelte';
+	// Stores
 	import { hasScrolled } from '$lib/store';
 	// UI related
 	import * as feather from 'feather-icons';
 	// Other
 	import classNames from 'classnames';
-
+	// Components
 	import SocialMediaLinks from '../../lib/components/SocialMediaLinks.svelte';
 
 	const headlinesBucket = [
