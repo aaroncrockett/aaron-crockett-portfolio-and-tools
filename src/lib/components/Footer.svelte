@@ -2,7 +2,7 @@
 	export let visible = false;
 </script>
 
-<div class={`${visible ? 'visible' : 'invisible'} bg-surface-500 mt-12 md:mt-16`}>
+<div class={`${visible ? 'visible' : 'invisible'} bg-surface-500 mt-6 md:mt-8`}>
 	<div class="lg:container flex justify-between p-5 mx-auto">
 		<div>
 			<div class="sm:inline-block">

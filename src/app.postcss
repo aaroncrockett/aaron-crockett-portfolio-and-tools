@@ -22,11 +22,6 @@ input.nested-input {
 	box-shadow: none !important;
 }
 
-section,
-article {
-	@apply space-y-4;
-}
-
 section p {
 	@apply leading-xl mb-2;
 }
@@ -54,11 +49,11 @@ section {
 }
 
 .page-one-col {
-	@apply flex flex-col gap-8;
+	@apply flex flex-col;
 }
 
 .area-two-col {
-	@apply flex gap-8 flex-col md:flex-row md:space-x-8  space-x-0 mt-0;
+	@apply flex flex-col md:flex-row md:space-x-8  space-x-0 mt-0;
 }
 
 .area-two-col > div:first-of-type {
