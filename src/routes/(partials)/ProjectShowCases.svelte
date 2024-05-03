@@ -169,7 +169,6 @@
 		{/if}
 	</div>
 </section>
-↘️
 
 <style lang="postcss">
 	.section-p {
