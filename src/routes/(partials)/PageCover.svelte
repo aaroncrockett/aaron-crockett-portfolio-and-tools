@@ -14,10 +14,7 @@
 	// Components
 	import SocialMediaLinks from '../../lib/components/SocialMediaLinks.svelte';
 
-	const headlinesBucket = [
-		['<', 'Web-App', '/>'],
-		['<', 'Engineer', '/>']
-	];
+	const headlinesBucket = [['<', 'Web-App', '/>']];
 
 	const innerHeight = getContext('inner-height');
 
@@ -101,12 +98,12 @@
 	<div
 		class="flex flex-col lg:flex-row gap-2 pt-2 px-3 lg:container mx-auto h-full md:space-between"
 	>
-		<div class="relative lg:w-[55%] md:pt-1 z-1">
+		<div class="relative lg:w-[60%] md:pt-1 z-1">
 			<div class="relative flex flex-col overflow-hidden">
 				<div class="absolute z-10">
 					{#each headlines as line, index}
 						<h3
-							class="uppercase text-5xl leading-5xl md:text-[7vw] md:leading-[7vw]"
+							class="uppercase text-6xl leading-5xl pt-4 md:leading-7xl md:pt-8 md:text-8xl xl:pt-12 xl:leading-8xl xl:text-9xl"
 							in:fly={{
 								y: 150,
 								easing: backOut
@@ -121,7 +118,7 @@
 
 				{#each headlinesBucket as line, index}
 					<h3
-						class="uppercase text-surface-900 opacity-90 text-5xl leading-5xl md:text-[7vw] md:leading-[7vw]"
+						class="uppercase text-surface-900 opacity-90 text-6xl pt-4 leading-5xl md:pt-8 md:leading-7xl md:text-8xl xl:pt-12 xl:leading-8xl xl:text-9xl"
 					>
 						<span class="opacity-50 text-secondary-900">{line[0]}</span><span
 							class="opacity-50 text-secondary-900">{line[1]}</span
@@ -132,14 +129,14 @@
 			{#if headlinesTransitionsHaveEnded}
 				<button
 					on:click={handleScrollTo}
-					class="text-surface-900 opacity-90 text-5xl leading-5xl md:text-[7vw] md:leading-[7vw]"
+					class="text-surface-900 opacity-90 text-6xl leading-5xl md:leading-7xl md:text-8xl xl:leading-8xl xl:text-9xl"
 					in:fly={{
 						x: '-100%',
 						easing: cubicOut
 					}}
 				>
 					<span class="opacity-50 text-secondary-900 uppercase">&lt;</span><span
-						class="italic font-normal text-secondary-500">Portfolio</span
+						class="italic font-normal text-secondary-500">Engineer</span
 					><span class="opacity-50 text-secondary-900 uppercase">/&gt;</span>
 				</button>
 			{/if}
@@ -150,13 +147,15 @@
 						easing: cubicOut,
 						duration: 800
 					}}
-					class="p-5 md:pt-6 max-w-[1080px]"
+					class="p-5 md:pt-5 pt-6 lg:pt-5 max-w-[1080px]"
 				>
-					<p class="pb-4 text-2xl leading-2xl md:leading-3xl text-surface-100 md:text-3xl">
+					<p class="pb-2 text-2xl leading-2xl md:leading-3xl text-surface-100 md:text-3xl">
 						Greetings!
 					</p>
 
-					<p class="pb-4 text-lg text-justify text-surface-100 leading-2x">
+					<p
+						class="text-lg text-justify text-surface-100 leading-2x lg:w-3/4 w-full sm:w-2/3 md:3/5"
+					>
 						With over 12 years of industry experience, I've collaborated with teams of various
 						sizes, honing my skills across a diverse spectrum—from design to front end engineering
 						and full stack development. Feel free to reach out via email to request my resume or
@@ -193,7 +192,7 @@
 			{/if}
 		</div>
 		<div
-			class="lg:w-[45%] relative z-20 flex-col justify-center gap-4 pb-28 items-center opacity-50 lg:flex hidden"
+			class="lg:w-[40%] relative z-20 flex-col justify-center gap-4 pb-28 items-center xl:items-start opacity-50 lg:flex hidden"
 		>
 			<SocialMediaLinks hpLarge={true} />
 		</div>
@@ -213,7 +212,7 @@
 			'duration-200 container flex items-center mx-auto py-2 w-full text-center justify-center'
 		)}
 	>
-		<span class={floatingIconClasses}>{@html downIconSvg}</span> Portfolio, CV & More.
+		<span class={floatingIconClasses}>{@html downIconSvg}</span> Portfolio & More.
 	</div>
 </button>
 

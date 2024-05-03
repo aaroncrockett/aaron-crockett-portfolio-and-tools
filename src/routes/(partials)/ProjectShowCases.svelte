@@ -108,17 +108,17 @@
 					const { inView } = event.detail;
 					isImgsView = inView;
 				}}
-				class="space-y-4 area-two-col lg:ml-[10%] lg:mr-[7.5%] !mt-2"
+				class="space-y-4 area-two-col !mt-2"
 			>
 				{#if isImgsView}
 					<div
 						in:fly={{ duration: 400, x: 100, delay: 500 }}
-						class={`${isImgsView ? 'opacity-100' : 'opacity-0'} space-y-4 mt-2`}
+						class={`${isImgsView ? 'opacity-100' : 'opacity-0'} space-y-4 mt-4`}
 					>
 						<h5 class="text-center display-header text-surface-800 md:text-left">
 							Project Summary
 						</h5>
-						<p>
+						<p class="!mt-[.75rem]">
 							If you don't know what a component library is and need a summary, <a
 								class="inline-link"
 								href="/blog/component-libraries">read this</a
@@ -130,37 +130,37 @@
 							details about this project coming.
 						</p>
 
-						<div class="flex flex-col space-y-2 !mb-6 !mt-6">
+						<p class="flex flex-col space-y-2 pb-7 md:pb-0">
 							<a href="https://github.com/aaroncrockett/leaf-ui" class="inline-link"
 								>Leaf UI on github.</a
 							>
-						</div>
+						</p>
 					</div>
 
 					<div
 						in:fly={{ duration: 400, x: -100, delay: 500 }}
-						class={`${isImgsView ? 'opacity-100' : 'opacity-0'} card p-4 !mt-1 md:!mt-4`}
+						class={`${isImgsView ? 'opacity-100' : 'opacity-0'} card p-4 pt-5 !mt-1 md:!mt-4`}
 					>
-						<p class="font-bold text-[18px] text-center">
+						<p class="text-xl text-center">
 							I am responsible for the project in its entirety, which includes:
 						</p>
 						<div>
 							<ul class="hp-project-list">
-								<li><span>👉</span> UI and visual experience.</li>
-								<li><span>👉</span> Docs site in Next.js.</li>
-								<li><span>👉</span> Tailwind Plugin.</li>
+								<li><span>↘️</span> UI and visual experience.</li>
+								<li><span>↘️</span> Docs site in Next.js.</li>
+								<li><span>↘️</span> Tailwind Plugin.</li>
 								<li>
-									<span>👉</span> Node.js script to generate CSS (and the CSSinJS) for Tailwind and vanilla
+									<span>↘️</span> Node.js script to generate CSS (and the CSSinJS) for Tailwind and vanilla
 									CSS purposes.
 								</li>
-								<li><span>👉</span> Theme Generator written in React.</li>
+								<li><span>↘️</span> Theme Generator written in React.</li>
 							</ul>
 							<ul class="hp-project-list">
-								<li><span>👉</span> React Components.</li>
-								<li><span>👉</span> Vue Components.</li>
-								<li><span>👉</span> Monorepo using pnpm.</li>
-								<li><span>👉</span> Rules using Husky.</li>
-								<li><span>👉</span> Deployment to Vercel.</li>
+								<li><span>↘️</span> React Components.</li>
+								<li><span>↘️</span> Vue Components.</li>
+								<li><span>↘️</span> Monorepo using pnpm.</li>
+								<li><span>↘️</span> Rules using Husky.</li>
+								<li><span>↘️</span> Deployment to Vercel.</li>
 							</ul>
 						</div>
 					</div>
@@ -169,6 +169,7 @@
 		{/if}
 	</div>
 </section>
+↘️
 
 <style lang="postcss">
 	.section-p {
@@ -214,9 +215,9 @@
 		-webkit-text-fill-color: transparent;
 	}
 	ul.hp-project-list li {
-		@apply leading-[32px] mb-1 text-[18px] text-secondary-900 font-bold;
+		@apply leading-xl mb-1;
 	}
 	ul.hp-project-list li span {
-		@apply mr-1 text-[16px];
+		@apply mr-1 leading-xl;
 	}
 </style>
