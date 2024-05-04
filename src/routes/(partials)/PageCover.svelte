@@ -168,7 +168,7 @@
 						class="btn btn-lg variant-ghost-secondary text-center !text-white mx-auto mt-3 uppercase"
 						>Free Consultation</button
 					> -->
-					<div class="md:hidden flex mt-3">
+					<div class="md:hidden flex mt-4">
 						<SocialMediaLinks />
 					</div>
 				</div>

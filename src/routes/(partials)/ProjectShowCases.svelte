@@ -139,7 +139,7 @@
 
 					<div
 						in:fly={{ duration: 400, x: -100, delay: 500 }}
-						class={`${isImgsView ? 'opacity-100' : 'opacity-0'} card p-4 pt-5 !mt-1 md:!mt-4`}
+						class={`${isImgsView ? 'opacity-100' : 'opacity-0'} card p-4 pt-5 !mt-2 md:!mt-4`}
 					>
 						<p class="text-xl text-center">
 							I am responsible for the project in its entirety, which includes:

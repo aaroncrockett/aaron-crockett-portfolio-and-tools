@@ -51,7 +51,7 @@
 				isInView ? 'opacity-100' : 'opacity-0'
 			}  flex flex-col gap-4 md:flex-row fade-in-view `}
 		>
-			<div class="flex order-2 w-full space-x-2 sm:order-1 md:w-1/2">
+			<div class="flex order-2 w-full space-x-2 sm:order-1 md:w-1/2 mt-4 sm:mt-1">
 				<div class="w-[45%] hidden sm:block">
 					<picture>
 						<source media="(min-width: 768px)" srcset={dogsImgMd} />
