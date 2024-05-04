@@ -22,8 +22,12 @@ input.nested-input {
 	box-shadow: none !important;
 }
 
+p {
+	@apply text-contrast-gray leading-2xl font-sans;
+}
+
 section p {
-	@apply leading-xl mb-4;
+	@apply mb-4 font-sans;
 }
 
 blockquote {
@@ -69,19 +73,19 @@ h1.content-page-header {
 }
 
 h3.display-header {
-	@apply text-4xl leading-3xl md:leading-5xl md:text-6xl p-0;
+	@apply text-4xl leading-3xl md:leading-5xl md:text-6xl p-0 text-contrast-gray;
 }
 
 h4.display-header {
-	@apply text-2xl leading-3xl md:text-4xl md:leading-5xl;
+	@apply text-2xl leading-3xl md:text-4xl md:leading-5xl text-contrast-gray;
 }
 
 h5.display-header {
-	@apply text-2xl leading-2xl md:text-2xl md:leading-3xl;
+	@apply text-2xl leading-2xl md:text-2xl md:leading-3xl text-contrast-gray;
 }
 
 h4.display-header-small {
-	@apply uppercase sm:text-xl sm:leading-xl border-b-[.375rem] border-surface-600 mb-10 pb-1;
+	@apply uppercase font-bold sm:text-xl sm:leading-xl border-b-4 text-contrast-gray border-contrast-gray mb-10 pb-1;
 }
 
 section.section-chunk {

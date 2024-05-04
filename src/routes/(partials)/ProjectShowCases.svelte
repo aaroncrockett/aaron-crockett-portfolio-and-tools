@@ -33,7 +33,7 @@
 			in:fly={{ duration: 400, y: -20, delay: 250 }}
 			class={`${
 				initView ? 'opacity-100' : 'opacity-0'
-			} display-header-small fade-in-view text-center md:text-left`}
+			} display-header-small fade-in-view text-center  md:text-left`}
 		>
 			Project ShowCases
 		</h4>
@@ -44,7 +44,7 @@
 			class={` ${initView ? 'opacity-100' : 'opacity-0'} fade-in-view `}
 		>
 			{#if initView}
-				<h3 class="text-center display-header text-primary-600 md:text-left">
+				<h3 class="text-center display-header text-contrast-gray-sat md:text-left">
 					Leaf UI: Library and Toolkit
 				</h3>
 				<h4

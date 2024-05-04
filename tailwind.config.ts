@@ -11,6 +11,13 @@ export default {
 	],
 	theme: {
 		extend: {
+			colors: {
+				'contrast-gray': '#292929',
+				'contrast-gray-sat': '#231F20'
+			},
+			fontFamily: {
+				sans: ['Open Sans', 'sans-serif']
+			},
 			typography: (theme) => ({
 				'3xl': {
 					css: {

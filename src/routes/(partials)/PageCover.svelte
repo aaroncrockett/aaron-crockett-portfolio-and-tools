@@ -136,7 +136,7 @@
 					}}
 				>
 					<span class="opacity-50 text-secondary-900 uppercase">&lt;</span><span
-						class="italic font-normal text-secondary-500">Engineering</span
+						class="italic font-normal text-secondary-600">Engineering</span
 					><span class="opacity-50 text-secondary-900 uppercase">/&gt;</span>
 				</button>
 			{/if}
@@ -149,13 +149,11 @@
 					}}
 					class="p-5 md:pt-5 pt-6 lg:pt-5 max-w-[1080px]"
 				>
-					<p class="pb-2 text-2xl leading-2xl md:leading-3xl text-surface-100 md:text-3xl">
+					<h4 class="pb-2 text-2xl leading-2xl md:leading-3xl text-white md:text-3xl">
 						Greetings!
-					</p>
+					</h4>
 
-					<p
-						class="text-lg text-justify text-surface-100 leading-2x lg:w-3/4 w-full sm:w-4/5 md:3/5"
-					>
+					<p class="text-white text-lg text-justify leading-2x lg:w-3/4 w-full sm:w-4/5 md:3/5">
 						With over 12 years of industry experience, I've collaborated with teams of various
 						sizes, honing my skills across a diverse spectrum—from front end and full stack
 						engineering to design. Feel free to reach out via email to request my resume or visit
