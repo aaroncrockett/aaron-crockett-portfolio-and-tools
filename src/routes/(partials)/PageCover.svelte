@@ -98,7 +98,7 @@
 	<div
 		class="flex flex-col lg:flex-row gap-2 pt-2 px-3 lg:container mx-auto h-full md:space-between"
 	>
-		<div class="relative lg:w-[60%] md:pt-1 z-1">
+		<div class="relative lg:w-2/3 md:pt-1 z-1">
 			<div class="relative flex flex-col overflow-hidden">
 				<div class="absolute z-10">
 					{#each headlines as line, index}
@@ -136,7 +136,7 @@
 					}}
 				>
 					<span class="opacity-50 text-secondary-900 uppercase">&lt;</span><span
-						class="italic font-normal text-secondary-500">Engineer</span
+						class="italic font-normal text-secondary-500">Engineering</span
 					><span class="opacity-50 text-secondary-900 uppercase">/&gt;</span>
 				</button>
 			{/if}
@@ -154,12 +154,12 @@
 					</p>
 
 					<p
-						class="text-lg text-justify text-surface-100 leading-2x lg:w-3/4 w-full sm:w-2/3 md:3/5"
+						class="text-lg text-justify text-surface-100 leading-2x lg:w-3/4 w-full sm:w-4/5 md:3/5"
 					>
 						With over 12 years of industry experience, I've collaborated with teams of various
-						sizes, honing my skills across a diverse spectrum—from design to front end engineering
-						and full stack development. Feel free to reach out via email to request my resume or
-						visit one of my links.
+						sizes, honing my skills across a diverse spectrum—from front end and full stack
+						engineering to design. Feel free to reach out via email to request my resume or visit
+						one of the social media links.
 					</p>
 					<!-- <p class="pb-2 text-2xl leading-2xl md:leading-3xl text-surface-100 md:text-3xl">
 						Building modern applications that converge thoughtful user-centric design with the
@@ -177,9 +177,9 @@
 			{/if}
 		</div>
 		<div
-			class="lg:w-[40%] relative z-20 flex-col justify-center gap-4 pb-28 items-center xl:items-start opacity-50 lg:flex hidden"
+			class="lg:w-1/3 relative z-20 flex-col justify-center gap-4 pb-28 items-center xl:items-start opacity-50 lg:flex hidden"
 		>
-			<div class="hidden md:block">
+			<div class="hidden md:flex flex-col">
 				<SocialMediaLinks hpLarge={true} />
 			</div>
 		</div>

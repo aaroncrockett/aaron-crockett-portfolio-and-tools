@@ -62,7 +62,7 @@
 				isInView ? 'opacity-100' : 'opacity-0'
 			} display-header-small fade-in-view text-center md:text-left`}
 		>
-			CV & More.
+			Further details
 		</h4>
 		<div class="space-y-6">
 			<h3

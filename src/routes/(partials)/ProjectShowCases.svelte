@@ -146,21 +146,21 @@
 						</p>
 						<div>
 							<ul class="hp-project-list">
-								<li><span>↘️</span> UI and visual experience.</li>
-								<li><span>↘️</span> Docs site in Next.js.</li>
-								<li><span>↘️</span> Tailwind Plugin.</li>
+								<li><span>↗️</span> UI and visual experience.</li>
+								<li><span>↗️</span> Docs site in Next.js.</li>
+								<li><span>↗️</span> Tailwind Plugin.</li>
 								<li>
-									<span>↘️</span> Node.js script to generate CSS (and the CSSinJS) for Tailwind and vanilla
+									<span>↗️</span> Node.js script to generate CSS (and the CSSinJS) for Tailwind and vanilla
 									CSS purposes.
 								</li>
-								<li><span>↘️</span> Theme Generator written in React.</li>
+								<li><span>↗️</span> Theme Generator written in React.</li>
 							</ul>
 							<ul class="hp-project-list">
-								<li><span>↘️</span> React Components.</li>
-								<li><span>↘️</span> Vue Components.</li>
-								<li><span>↘️</span> Monorepo using pnpm.</li>
-								<li><span>↘️</span> Rules using Husky.</li>
-								<li><span>↘️</span> Deployment to Vercel.</li>
+								<li><span>↗️</span> React Components.</li>
+								<li><span>↗️</span> Vue Components.</li>
+								<li><span>↗️</span> Monorepo using pnpm.</li>
+								<li><span>↗️</span> Rules using Husky.</li>
+								<li><span>↗️</span> Deployment to Vercel.</li>
 							</ul>
 						</div>
 					</div>
