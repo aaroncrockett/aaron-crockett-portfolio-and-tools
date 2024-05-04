@@ -153,7 +153,9 @@
 						Greetings!
 					</h4>
 
-					<p class="text-white text-lg text-justify leading-2x lg:w-3/4 w-full sm:w-4/5 md:3/5">
+					<p
+						class="text-white text-lg text-justify leading-[1.9rem] lg:w-3/4 w-full sm:w-4/5 md:3/5"
+					>
 						With over 12 years of industry experience, I've collaborated with teams of various
 						sizes, honing my skills across a diverse spectrum—from front end and full stack
 						engineering to design. Feel free to reach out via email to request my resume or visit
