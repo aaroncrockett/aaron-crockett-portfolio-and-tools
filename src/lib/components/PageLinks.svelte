@@ -22,8 +22,7 @@
 			{#if showChevron}
 				<span class="pr-[.1rem]">{@html chevronRightIconSvg}</span>
 			{/if}
-			<span class={`${$page?.route.id == '/account' ? 'text-primary-500 ' : ''}`}>Account</span
-			></span
+			<span class={`${$page?.route.id == '/account' ? 'text-white ' : ''}`}>Account</span></span
 		>
 	</a>
 	<!-- <a on:click class="page-link" href="/post-maker">
@@ -31,7 +30,7 @@
 			{#if showChevron}
 				<span class="pr-[.1rem]">{@html chevronRightIconSvg}</span>
 			{/if}
-			<span class={`${$page?.route.id == '/post-maker' ? 'text-primary-500 ' : ''}`}
+			<span class={`${$page?.route.id == '/post-maker' ? 'text-white ' : ''}`}
 				>Post Maker</span
 			></span
 		>
@@ -43,27 +42,26 @@
 			{#if showChevron}
 				<span class="pr-[.1rem]">{@html chevronRightIconSvg}</span>
 			{/if}
-			<span class={`${$page?.route.id == '/sign-in' ? 'text-primary-500 ' : ''}`}>Sign In</span
+			<span class={`${$page?.route.id == '/sign-in' ? 'text-white ' : ''}`}>Sign In</span
 			></span
 		>
 	</a> -->
 {/if}
-<a on:click class="page-link" href="/color-generator">
-	<span class="inline-flex items-center hover:!text-secondary-500">
+<a on:click class="page-link text-secondary" href="/color-generator">
+	<span class="inline-flex items-center hover:!text-white">
 		{#if showChevron}
 			<span class="pr-[.1rem]">{@html chevronRightIconSvg}</span>
 		{/if}
-		<span class={`${$page?.route.id == '/color-generator' ? 'text-primary-500 ' : ''}`}
-			>Color Generator</span
+		<span class={`${$page?.route.id == '/color-generator' ? 'white ' : ''}`}>Color Generator</span
 		></span
 	>
 </a>
 <a on:click class="page-link" href="/blog">
-	<span class="inline-flex items-center hover:!text-secondary-500">
+	<span class="inline-flex items-center hover:!text-white">
 		{#if showChevron}
 			<span class="pr-[.1rem]">{@html chevronRightIconSvg}</span>
 		{/if}
-		<span class={`${$page?.route.id == '/blog' ? 'text-primary-500 ' : ''}`}>Blog</span></span
+		<span class={`${$page?.route.id == '/blog' ? '' : ''}`}>Blog</span></span
 	>
 </a>
 

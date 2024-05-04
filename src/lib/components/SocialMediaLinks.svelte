@@ -23,33 +23,33 @@
 	});
 
 	const gitIconSvg = feather.icons['github'].toSvg({
-		stroke: '#d7424b',
+		stroke: '#FFFFFF',
 		width: 28,
 		height: 28
 	});
 	const linkedIconSvg = feather.icons['linkedin'].toSvg({
-		stroke: '#d7424b',
+		stroke: '#FFFFFF',
 		width: 28,
 		height: 28
 	});
 	const mailIconSvg = feather.icons['mail'].toSvg({
-		stroke: '#d7424b',
+		stroke: '#FFFFFF',
 		width: 28,
 		height: 28
 	});
 
 	const gitIconSvgSm = feather.icons['github'].toSvg({
-		stroke: '#d7424b',
+		stroke: '#FFFFFF',
 		width: 24,
 		height: 24
 	});
 	const linkedIconSvgSm = feather.icons['linkedin'].toSvg({
-		stroke: '#d7424b',
+		stroke: '#FFFFFF',
 		width: 24,
 		height: 24
 	});
 	const mailIconSvgSm = feather.icons['mail'].toSvg({
-		stroke: '#d7424b',
+		stroke: '#FFFFFF',
 		width: 24,
 		height: 24
 	});

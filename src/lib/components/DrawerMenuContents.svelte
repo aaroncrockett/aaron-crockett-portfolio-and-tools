@@ -10,13 +10,13 @@
 	import type { DrawerStore } from '@skeletonlabs/skeleton';
 
 	const homeIconSvg = feather.icons['home'].toSvg({
-		stroke: '#d7424b',
+		stroke: '#ffffff',
 		width: 28,
 		height: 28
 	});
 
 	const homeIconSvgSm = feather.icons['home'].toSvg({
-		stroke: '#d7424b',
+		stroke: '#ffffff',
 		width: 24,
 		height: 24
 	});
@@ -37,7 +37,7 @@
 				<span class="hidden sm:inline-block">
 					{@html homeIconSvg}
 				</span>
-				<span class="inline-block  space-y-2 sm:hidden">
+				<span class="inline-block space-y-2 sm:hidden">
 					{@html homeIconSvgSm}
 				</span>
 			</a>
@@ -48,11 +48,11 @@
 	</div>
 	<div class="flex flex-col w-full h-screen p-2 variant-soft-surface">
 		<h3
-			class="p-1 sm:p-2 border-b leading-sm text-primary-500 inline-block font-bold border-primary-500 !text-xl mb-2 sm:text-base"
+			class="p-1 sm:p-2 border-b leading-sm text-white inline-block font-bold border-white !text-xl mb-2 sm:text-base"
 		>
 			Tools and more.
 		</h3>
-		<p class="ml-2 text-tertiary-500">
+		<p class="ml-2 text-surface-100 italic mb-3">
 			Everything under this menu is a work in progress and under development. But feel free to look.
 		</p>
 		<PageLinks showChevron={true} on:click={() => drawerStore.close()} />

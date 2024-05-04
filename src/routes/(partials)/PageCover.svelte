@@ -161,40 +161,27 @@
 						and full stack development. Feel free to reach out via email to request my resume or
 						visit one of my links.
 					</p>
-
-					<!-- <p class="hidden pb-4 text-lg text-justify text-surface-100 leading-2x xl:block">
-						I have created highly visible and engaging experiences for Famous Footwear, on notable
-						brands including Nike and Converse where I showcased my ability to thrive in a Fortune
-						1000 company, within large, diverse and dynamic teams. I have experience collaborating
-						directly with a sole proprietor. Illustrating my autonomy through self-management, I was
-						entrusted as the sole developer of UIs for new products on a small team. In addition, I
-						Contributed to Full Stack development for the internal company catalog, demonstrating my
-						ability to create continually integrated applications integral for daily company
-						operations.
-					</p> -->
-					<p class="pb-4 text-lg text-justify text-surface-100 leading-2x" />
-					<!-- <p class="pb-4 text-lg text-justify text-surface-100 leading-2x md:w-3/5">
-						<span class="font-bold">Primary Tech Expertise:</span> Next.js • React.js • React Query • Vue.js
-						• Pinia • CSS • Tailwind CSS • Sass • REST • TypeScript • Figma • Git •Jest
-					</p> -->
-					<!-- <p class="pb-4 text-lg text-justify text-surface-100 leading-2x md:w-3/5">
-						<span class="font-bold">Secondary Tech Expertise:</span> Cypress • Docker • Express.js • Firebase
-						• GSAP • jQuery • Node.js • Npm • Pnpm • Svelte/SvelteKit • Storybook • SQL/ORMs • Vercel •
-						Vite • Vuex • WordPress
+					<!-- <p class="pb-2 text-2xl leading-2xl md:leading-3xl text-surface-100 md:text-3xl">
+						Building modern applications that converge thoughtful user-centric design with the
+						current technological landscape.
 					</p>
-					<p class="pb-12 text-lg text-justify text-surface-100 leading-2x md:w-3/5">
-						<span class="font-bold">Skills:</span> Front-End Development • Full Stack Development • Responsive
-						Web Design • Cross Browser Compatibility • Project Management • Workflow Optimization • Version
-						Control • Agile Development • Web Application Development • Cross-Functional Team Collaboration
-						• Single Page Applications (SPA) • Server Side Render (SSR) • Hydration
-					</p> -->
+
+					<button
+						class="btn btn-lg variant-ghost-secondary text-center !text-white mx-auto mt-3 uppercase"
+						>Free Consultation</button
+					> -->
+					<div class="md:hidden flex mt-3">
+						<SocialMediaLinks />
+					</div>
 				</div>
 			{/if}
 		</div>
 		<div
 			class="lg:w-[40%] relative z-20 flex-col justify-center gap-4 pb-28 items-center xl:items-start opacity-50 lg:flex hidden"
 		>
-			<SocialMediaLinks hpLarge={true} />
+			<div class="hidden md:block">
+				<SocialMediaLinks hpLarge={true} />
+			</div>
 		</div>
 	</div>
 </div>
