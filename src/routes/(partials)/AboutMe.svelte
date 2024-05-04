@@ -41,7 +41,7 @@
 			in:fly={{ duration: 400, y: -20, delay: 250 }}
 			class={`${
 				isInView ? 'opacity-100' : 'opacity-0'
-			} display-header !text-primary-500 text-center md:!mb-8 !mb-4 md:text-left fade-in-view `}
+			} display-header !text-primary-500 text-center !mb-4 md:text-left fade-in-view `}
 		>
 			A little more about me.
 		</h3>
@@ -51,7 +51,7 @@
 				isInView ? 'opacity-100' : 'opacity-0'
 			}  flex flex-col gap-4 md:flex-row fade-in-view `}
 		>
-			<div class="flex order-2 w-full space-x-2 sm:order-1 md:w-1/2 mt-4 sm:mt-1">
+			<div class="flex order-2 w-full space-x-2 sm:order-1 md:w-1/2 mt-3 sm:mt-0">
 				<div class="w-[45%] hidden sm:block">
 					<picture>
 						<source media="(min-width: 768px)" srcset={dogsImgMd} />
