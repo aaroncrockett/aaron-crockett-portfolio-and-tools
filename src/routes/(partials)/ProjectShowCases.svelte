@@ -118,7 +118,7 @@
 						<h5 class="text-center display-header text-surface-800 md:text-left">
 							Project Summary
 						</h5>
-						<p class="!mt-[.8375rem]">
+						<p class="!mt-[.5rem]">
 							If you don't know what a component library is and need a summary, <a
 								class="inline-link"
 								href="/blog/component-libraries">read this</a
