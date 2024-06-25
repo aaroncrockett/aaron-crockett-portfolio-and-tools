@@ -117,9 +117,9 @@
 					<div class="flex flex-col items-center w-full p-4 card variant-glass">
 						<div class="py-2">{@html codeIconSvg}</div>
 						<p class="text-center">
-							<span class="italic font-semibold">Blackstone Publishing:</span> Contributed to full-stack
-							development for the internal company catalog, showcasing my continuous integration and
-							software maintenance skills for daily operational use.
+							<span class="italic font-semibold">MFA: In Painting and Design</span> I obtained my MFA
+							in Painting from SIUE where I also taught 2D Design. I then worked as freelance web designer
+							before transitioning to web development.
 						</p>
 					</div>
 				</div>
